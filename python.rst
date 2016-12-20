@@ -19,6 +19,7 @@ voljo `tukaj <http://docs.python.org/3.4/>`_.
   skripta/python/datoteke
   skripta/python/baze_podatkov
   skripta/python/tkinter
+  skripta/python/knjiznice
   skripta/python/pygame
 
 .. vim: spell spelllang=sl
