@@ -1,0 +1,6 @@
+Nameščanje knjičnic
+===================
+
+Python ima veliko knjižnic. Nekaj jih je vključenih skupaj s Pythonom in jih
+verjetno že poznate: `random`, `tkinter`,
+
