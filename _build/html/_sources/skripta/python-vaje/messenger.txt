@@ -10,7 +10,8 @@ odgovarjati na njih s predpisanimi pravili.
 Namestitev knjižnice
 --------------------
 Ker ne želimo začeti iz nič, bomo uporabili že narejeno knjižnico ``fbchat``.
-Maks jo je malo popravljal, da deluje s pythonom 3.
+Popravljena knjižnica, ki deluje dobro tudi s pythonom 3, je na voljo na
+https://github.com/MKolman/fbchat.
 
 Ustvarimo virtualno okolje in namestimo knjižnico.::
 
