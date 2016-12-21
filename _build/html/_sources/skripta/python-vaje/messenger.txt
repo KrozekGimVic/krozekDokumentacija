@@ -15,7 +15,8 @@ https://github.com/MKolman/fbchat.
 
 Ustvarimo virtualno okolje in namestimo knjižnico.::
 
-  virtualenv venv -p /bin/python3
+  sudo apt-get install virtualenv lib32z1-dev libxml2-dev libxslt-dev gcc libz3-dev
+  virtualenv venv -p /usr/bin/python3
   source venv/bin/activate
   pip install -e git+https://github.com/MKolman/fbchat.git#egg=fbchat
 

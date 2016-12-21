@@ -177,7 +177,8 @@ odgovarjati na njih s predpisanimi pravili.</p>
 Popravljena knjižnica, ki deluje dobro tudi s pythonom 3, je na voljo na
 <a class="reference external" href="https://github.com/MKolman/fbchat">https://github.com/MKolman/fbchat</a>.</p>
 <p>Ustvarimo virtualno okolje in namestimo knjižnico.:</p>
-<div class="highlight-python"><div class="highlight"><pre>virtualenv venv -p /bin/python3
+<div class="highlight-python"><div class="highlight"><pre>sudo apt-get install virtualenv lib32z1-dev libxml2-dev libxslt-dev gcc libz3-dev
+virtualenv venv -p /usr/bin/python3
 source venv/bin/activate
 pip install -e git+https://github.com/MKolman/fbchat.git#egg=fbchat
 </pre></div>
