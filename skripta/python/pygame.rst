@@ -53,6 +53,16 @@ in ga zgradi in namesti
     sudo python3 setup.py install
 
 
+Samodejna namestitev
+""""""""""""""""""""
+
+Vse zgornje korake lahko združimo v eno datoteko. To datoteko lahko preneseš :download:`tukaj <datoteke/install_pygame.sh>` in jo zaženeš z ukazom
+
+.. code-block:: bash
+
+    bash install_pygame.sh
+
+
 
 Preverjanje namestitve
 ----------------------
