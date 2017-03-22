@@ -16,3 +16,4 @@ Vsebina:
   skripta/python-vaje/pogovor
   skripta/python-vaje/kvazi_besede
   skripta/python-vaje/mario_vs_snake
+  skripta/python-vaje/projekti
