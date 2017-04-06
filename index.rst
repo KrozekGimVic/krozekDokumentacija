@@ -52,6 +52,11 @@ Vsebina:
 
   opengl
 
+.. toctree::
+  :maxdepth: 2
+
+  razbijanje
+
 Dokumentacija zunanjih vaj:
 
 .. toctree::
