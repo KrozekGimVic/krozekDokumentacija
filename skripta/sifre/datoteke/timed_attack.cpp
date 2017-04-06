@@ -21,13 +21,13 @@ int main() {
             if (num == 0 && s[i] != 'a') {
                 cout << "napacno" << endl;
                 prav = false;
-                break;
+                return 1;
             }
 
             if (num == 1 && s[i] != 'b') {
                 cout << "napacno" << endl;
                 prav = false;
-                break;
+                return 1;
             }
         }
     }
