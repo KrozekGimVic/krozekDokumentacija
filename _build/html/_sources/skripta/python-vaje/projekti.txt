@@ -98,3 +98,12 @@ Računalniki so precej dobri v reševanju takšnih problemov.
 
 Iz :download:`tukaj<datoteke/1000sudoku_plain.txt>` lahko prenesete 10000 sudokujev
 in jih poskusite rešiti z vašim programom.
+
+Umetna inteligenca za igranje iger
+----------------------------------
+
+:download:`Tukaj<datoteke/tictactoe.py>` lahko preneseš narejeno igro
+tri v vrsto za dva igralca. Naredi umetno inteligenco, ki pri igranju nikoli ne
+izgubi.
+
+
