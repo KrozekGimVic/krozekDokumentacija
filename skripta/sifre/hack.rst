@@ -7,7 +7,7 @@ Hacking
 Napad surove moči
 -----------------
 
-Dano imaš program :download:`brute_force<datoteke/brute_force>`. Če v program napišeš
+Dan imaš program :download:`brute_force<datoteke/brute_force>`. Če v program napišeš
 pravilno geslo, boš dobil dostop do naslednjega problema.
 
 Napiši program, ki bo poizkusil v program vnesti vse nize osmih malih črk
@@ -36,4 +36,4 @@ začetnih znakov. Uporabi to dejstvo, da po vrsti uganeš vse znake v geslu.
 GUI
 ---
 
-Pri delanju si pomagaj z datoteko `cracker_gui.zip<datoteke/cracker_gui.zip>`.
+Pri delanju si pomagaj z datoteko :download:`cracker_gui.zip<datoteke/cracker_gui.zip>`.
