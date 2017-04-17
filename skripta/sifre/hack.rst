@@ -31,3 +31,9 @@ Naslednji program ima geslo dolgo 1000 znakov sestavljeno iz črk "a" in "b".
 Program po vrsti primerja geslo z vašim vhodom in neha čim najde razliko med
 njima. To pomeni, da je čas izvajanja programa odvisen od števila ujemajočih
 začetnih znakov. Uporabi to dejstvo, da po vrsti uganeš vse znake v geslu.
+
+
+GUI
+---
+
+Pri delanju si pomagaj z datoteko `cracker_gui.zip<datoteke/cracker_gui.zip>`.
