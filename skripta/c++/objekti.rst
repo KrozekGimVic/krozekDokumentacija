@@ -342,7 +342,7 @@ bo imela težav:
   parametre ali ne, lahko določimo že s tem, da parametrom predpišemo const ali
   ne.
 
-Static metode in spremelnjivke
+Static metode in spremenljivke
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Statične so metode, ki za svoje delovanje ne potrebujejo objekta in ne dostopajo
