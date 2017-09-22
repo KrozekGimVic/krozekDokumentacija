@@ -1,0 +1,273 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>tutorialsPythonBasic.basic.sorting.selectionsort module &mdash; Programerski krožek na Gimnaziji Vič 0.1 documentation</title>
+  
+
+  
+  
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+    <link rel="top" title="Programerski krožek na Gimnaziji Vič 0.1 documentation" href="../index.html"/>
+        <link rel="up" title="tutorialsPythonBasic.basic.sorting package" href="tutorialsPythonBasic.basic.sorting.html"/>
+        <link rel="next" title="tutorialsPythonBasic.medium package" href="tutorialsPythonBasic.medium.html"/>
+        <link rel="prev" title="tutorialsPythonBasic.basic.sorting.quicksort module" href="tutorialsPythonBasic.basic.sorting.quicksort.html"/> 
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-nav-search">
+        <a href="../index.html" class="fa fa-home"> Programerski krožek na Gimnaziji Vič</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        
+        
+            <ul>
+<li class="toctree-l1"><a class="reference internal" href="../python.html">Python</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../skripta/python/osnove.html">Osnove</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../skripta/python/turtle.html">Želvja grafika</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../skripta/python/podatkovni_tipi.html">Podatkovni tipi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../skripta/python/funkcije_in_classi.html">Funkcije in razredi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../skripta/python/datoteke.html">Datoteke</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../skripta/python/baze_podatkov.html">Podatkovne baze</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../skripta/python/tkinter.html">Tkinter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../skripta/python/knjiznice.html">Nameščanje knjižnic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../skripta/python/pygame.html">Pygame</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../python-vaje.html">Python vaje</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../skripta/python-vaje/osnove.html">Osnovne vaje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../skripta/python-vaje/turtle.html">Vaje iz želvje grafike</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../skripta/python-vaje/podatkovni_tipi_in_funkcije.html">Vaje iz podatkovnih tipov in funkcij</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../skripta/python-vaje/datoteke.html">Datoteke</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../skripta/python-vaje/bozicne-vaje/vaje.html">Božične vaje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../skripta/python-vaje/vislice.html">Vislice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../skripta/python-vaje/messenger.html">Facebook messenger bot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../skripta/python-vaje/pogovor.html">Zakodiran pogovor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../skripta/python-vaje/kvazi_besede.html">Psevdo besede</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../skripta/python-vaje/mario_vs_snake.html">Mario vs Snake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../skripta/python-vaje/projekti.html">Projekti dijakov</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../c++.html">C++</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../skripta/c++/uvod.html">Uvod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../skripta/c++/osnove.html">Osnove</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../skripta/c++/podatkovni_tipi.html">Podatkovni tipi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../skripta/c++/funkcije.html">Funkcije</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../skripta/c++/objekti.html">Objekti</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sql.html">SQL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../skripta/sql/osnove.html">Osnove SQL</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../git.html">Git</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../skripta/git/uvod.html">Uvod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../skripta/git/namestitev.html">Namestitev</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../skripta/git/osnove.html">Osnove</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../opengl.html">OpenGL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../skripta/opengl/osnove.html">Osnove</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../razbijanje.html">Razbijanje šifer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../skripta/sifre/hack.html">Hacking</a></li>
+</ul>
+</li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Dokumentacija</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="tutorialsPythonBasic.html">tutorialsPythonBasic package</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../lov-na-zaklad.html">Lov na zaklad</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../skripta/lov-na-zaklad/2015.html">Lov na zaklad 2015</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../skripta/lov-na-zaklad/2016.html">Lov na zaklad 2016</a></li>
+</ul>
+</li>
+</ul>
+
+        
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">Programerski krožek na Gimnaziji Vič</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="modules.html">tutorialsPythonBasic</a> &raquo;</li>
+      
+          <li><a href="tutorialsPythonBasic.html">tutorialsPythonBasic package</a> &raquo;</li>
+      
+          <li><a href="tutorialsPythonBasic.basic.html">tutorialsPythonBasic.basic package</a> &raquo;</li>
+      
+          <li><a href="tutorialsPythonBasic.basic.sorting.html">tutorialsPythonBasic.basic.sorting package</a> &raquo;</li>
+      
+    <li>tutorialsPythonBasic.basic.sorting.selectionsort module</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          <a href="../_sources/autodoc/tutorialsPythonBasic.basic.sorting.selectionsort.txt" rel="nofollow"> View page source</a>
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            
+  <div class="section" id="module-tutorialsPythonBasic.basic.sorting.selectionsort">
+<span id="tutorialspythonbasic-basic-sorting-selectionsort-module"></span><h1>tutorialsPythonBasic.basic.sorting.selectionsort module<a class="headerlink" href="#module-tutorialsPythonBasic.basic.sorting.selectionsort" title="Permalink to this headline">¶</a></h1>
+<dl class="docutils">
+<dt>A simple Selection sort implementation:</dt>
+<dd><a class="reference external" href="http://en.wikipedia.org/wiki/Selection_sort">http://en.wikipedia.org/wiki/Selection_sort</a></dd>
+</dl>
+<dl class="function">
+<dt id="tutorialsPythonBasic.basic.sorting.selectionsort.selectionSort">
+<tt class="descclassname">tutorialsPythonBasic.basic.sorting.selectionsort.</tt><tt class="descname">selectionSort</tt><big>(</big><em>li</em><big>)</big><a class="reference internal" href="../_modules/tutorialsPythonBasic/basic/sorting/selectionsort.html#selectionSort"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#tutorialsPythonBasic.basic.sorting.selectionsort.selectionSort" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the smallest element and put it in the first position, then find
+the second smallest and put it in the second position and repeat until you
+get to the last position.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">selectionSort</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="go">[1, 2, 3, 4, 5]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">selectionSort</span><span class="p">([</span><span class="mi">5</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="go">[1, 2, 3, 4, 5]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">selectionSort</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mf">2.3</span><span class="p">])</span>
+<span class="go">[-2, 1, 1, 1, 2, 2, 2.3, 3, 3, 4, 5, 6, 6]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="tutorialsPythonBasic.medium.html" class="btn btn-neutral float-right" title="tutorialsPythonBasic.medium package"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="tutorialsPythonBasic.basic.sorting.quicksort.html" class="btn btn-neutral" title="tutorialsPythonBasic.basic.sorting.quicksort module"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014, Natan Žabkar, Jure Slak, Maks Kolman.
+    </p>
+  </div>
+
+  <a href="https://github.com/snide/sphinx_rtd_theme">Sphinx theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+      <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

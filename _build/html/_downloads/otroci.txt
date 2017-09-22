@@ -1,0 +1,293 @@
+Sean, Skrbi za osebno higieno, Začenja vojne
+April, Ne poje zelenjave
+Laura, Začenja vojne, Ne pospravja sobe
+Irene, Ima dobre ocene v šoli
+Aaron, Skrbi za osebno higieno, Enkrat na teden reši svet, Ima dobre ocene v šoli
+Phillip, Začenja vojne, Hrani golobe
+Christina, Pomaga staršem, Skrbi za osebno higieno
+Barbara, Pomaga staršem, Ne pospravja sobe
+Jimmy, Ne poje zelenjave
+Todd, Ima dobre ocene v šoli, Skrbi za osebno higieno, Pomaga staršem
+Lawrence, Ne poje zelenjave, Pomaga staršem, Ne pospravja sobe, Hrani golobe
+Nicole, Hrani golobe, Skrbi za osebno higieno
+Crystal, Pomaga staršem, Ne poje zelenjave
+Mary, Ne poje zelenjave, Hrani golobe
+Jack, Skrbi za osebno higieno
+Scott, Enkrat na teden reši svet, Skrbi za osebno higieno, Ne pospravja sobe
+Megan, Ima dobre ocene v šoli, Ne poje zelenjave, Ne pospravja sobe
+Harry, Skrbi za osebno higieno, Ne poje zelenjave, Ne pospravja sobe
+Lisa, Ne poje zelenjave
+Roger, Ima dobre ocene v šoli, Ne pospravja sobe, Ne poje zelenjave
+Alicia, Skrbi za osebno higieno, Začenja vojne, Ne poje zelenjave
+Antonio, Ima dobre ocene v šoli, Ne poje zelenjave
+Janet, Ne poje zelenjave, Ima dobre ocene v šoli
+Christine, Hrani golobe
+Denise, Pomaga staršem, Hrani golobe
+Jeff, Ima dobre ocene v šoli, Začenja vojne
+Chris, Začenja vojne, Ima dobre ocene v šoli, Enkrat na teden reši svet
+Gregory, Začenja vojne
+Anne, Ima dobre ocene v šoli, Pomaga staršem, Enkrat na teden reši svet
+Wanda, Pomaga staršem, Ima dobre ocene v šoli, Začenja vojne, Skrbi za osebno higieno
+Steve, Hrani golobe, Enkrat na teden reši svet
+Josephine, Hrani golobe, Ne poje zelenjave
+Florence, Pomaga staršem, Ne poje zelenjave
+Tina, Ne poje zelenjave, Ima dobre ocene v šoli, Hrani golobe, Ne pospravja sobe
+Alice, Enkrat na teden reši svet
+Shawn, Ima dobre ocene v šoli, Začenja vojne, Ne pospravja sobe, Hrani golobe
+Louise, Skrbi za osebno higieno, Ne poje zelenjave, Ne pospravja sobe
+Judith, Začenja vojne, Hrani golobe, Enkrat na teden reši svet, Pomaga staršem
+Jamie, Skrbi za osebno higieno, Enkrat na teden reši svet
+Bobby, Hrani golobe, Pomaga staršem
+Lois, Enkrat na teden reši svet, Ima dobre ocene v šoli, Ne poje zelenjave, Ne pospravja sobe
+Harold, Ne pospravja sobe, Pomaga staršem
+Anna, Skrbi za osebno higieno, Ima dobre ocene v šoli, Enkrat na teden reši svet, Ne poje zelenjave
+Karen, Ima dobre ocene v šoli
+Jacob, Pomaga staršem
+Joan, Enkrat na teden reši svet, Hrani golobe, Začenja vojne
+Julia, Ne pospravja sobe
+Willie, Enkrat na teden reši svet
+Frank, Ne poje zelenjave
+Walter, Pomaga staršem, Hrani golobe, Ima dobre ocene v šoli, Skrbi za osebno higieno
+Kathryn, Pomaga staršem
+Betty, Skrbi za osebno higieno, Ima dobre ocene v šoli, Ne poje zelenjave, Enkrat na teden reši svet
+Paula, Ne pospravja sobe
+Carolyn, Ne pospravja sobe, Ima dobre ocene v šoli
+Mildred, Ne poje zelenjave
+Heather, Ne poje zelenjave, Skrbi za osebno higieno
+Dennis, Hrani golobe, Začenja vojne
+Ralph, Skrbi za osebno higieno
+Albert, Hrani golobe, Enkrat na teden reši svet, Ima dobre ocene v šoli, Ne pospravja sobe
+William, Pomaga staršem
+Sherry, Pomaga staršem, Začenja vojne
+Jerry, Pomaga staršem, Enkrat na teden reši svet, Hrani golobe, Začenja vojne
+Melissa, Ne pospravja sobe, Skrbi za osebno higieno, Začenja vojne, Ne poje zelenjave
+George, Ima dobre ocene v šoli, Začenja vojne, Hrani golobe, Skrbi za osebno higieno
+Leonard, Skrbi za osebno higieno, Ne pospravja sobe
+Connie, Enkrat na teden reši svet, Skrbi za osebno higieno, Ne pospravja sobe, Pomaga staršem
+Jose, Hrani golobe, Pomaga staršem, Ne pospravja sobe
+Richard, Pomaga staršem
+Rachel, Pomaga staršem, Skrbi za osebno higieno, Začenja vojne, Hrani golobe
+Juanita, Začenja vojne
+Douglas, Pomaga staršem
+Pamela, Ima dobre ocene v šoli, Ne poje zelenjave, Pomaga staršem
+Joel, Začenja vojne, Ne pospravja sobe, Hrani golobe
+Debra, Hrani golobe, Skrbi za osebno higieno, Pomaga staršem, Ima dobre ocene v šoli
+Christopher, Enkrat na teden reši svet, Pomaga staršem, Ne poje zelenjave, Začenja vojne
+Virginia, Začenja vojne
+Julie, Skrbi za osebno higieno, Pomaga staršem
+Jeffrey, Hrani golobe, Enkrat na teden reši svet, Ne pospravja sobe
+Elizabeth, Ima dobre ocene v šoli, Ne pospravja sobe, Pomaga staršem
+Peggy, Hrani golobe
+Cynthia, Ima dobre ocene v šoli
+Ray, Pomaga staršem, Hrani golobe, Ne poje zelenjave
+Joe, Ima dobre ocene v šoli, Skrbi za osebno higieno
+Stanley, Enkrat na teden reši svet, Ima dobre ocene v šoli, Hrani golobe, Začenja vojne
+Katherine, Hrani golobe, Skrbi za osebno higieno
+Rodney, Skrbi za osebno higieno
+Gladys, Enkrat na teden reši svet
+Chad, Ima dobre ocene v šoli, Hrani golobe, Ne pospravja sobe, Pomaga staršem
+Bryan, Ne poje zelenjave, Začenja vojne, Skrbi za osebno higieno, Enkrat na teden reši svet
+Kyle, Ne poje zelenjave, Enkrat na teden reši svet, Hrani golobe, Pomaga staršem
+Maria, Hrani golobe, Skrbi za osebno higieno
+Johnny, Hrani golobe, Ne pospravja sobe, Skrbi za osebno higieno, Začenja vojne
+Donna, Hrani golobe
+Andrea, Pomaga staršem, Ne poje zelenjave
+Charlotte, Skrbi za osebno higieno
+Elaine, Hrani golobe, Enkrat na teden reši svet, Ne poje zelenjave
+Luis, Enkrat na teden reši svet, Ne pospravja sobe, Pomaga staršem
+Marion, Ne pospravja sobe, Enkrat na teden reši svet, Skrbi za osebno higieno
+Tony, Ne poje zelenjave
+Wayne, Skrbi za osebno higieno, Začenja vojne, Ne pospravja sobe
+Sylvia, Ne pospravja sobe, Skrbi za osebno higieno, Ima dobre ocene v šoli
+Frederick, Začenja vojne, Enkrat na teden reši svet
+Jason, Ne poje zelenjave, Začenja vojne, Enkrat na teden reši svet, Skrbi za osebno higieno
+Roy, Ne poje zelenjave
+Michelle, Enkrat na teden reši svet
+Alfred, Skrbi za osebno higieno, Ne pospravja sobe, Hrani golobe
+Gloria, Ima dobre ocene v šoli, Skrbi za osebno higieno
+Diane, Začenja vojne, Pomaga staršem
+Kenneth, Začenja vojne, Skrbi za osebno higieno, Ne poje zelenjave, Ima dobre ocene v šoli
+Ernest, Ne poje zelenjave, Enkrat na teden reši svet, Skrbi za osebno higieno
+Beverly, Ima dobre ocene v šoli, Hrani golobe, Enkrat na teden reši svet, Skrbi za osebno higieno
+Martin, Enkrat na teden reši svet
+Victoria, Ne poje zelenjave, Pomaga staršem, Ima dobre ocene v šoli, Hrani golobe
+Nancy, Skrbi za osebno higieno, Ne pospravja sobe
+Nathan, Enkrat na teden reši svet
+Henry, Ne poje zelenjave, Pomaga staršem, Enkrat na teden reši svet, Začenja vojne
+Dale, Ne poje zelenjave
+Stephanie, Enkrat na teden reši svet
+Carmen, Ne pospravja sobe, Ne poje zelenjave, Hrani golobe
+Donald, Hrani golobe, Enkrat na teden reši svet, Ne poje zelenjave
+Travis, Začenja vojne, Enkrat na teden reši svet, Ima dobre ocene v šoli, Pomaga staršem
+Benjamin, Ima dobre ocene v šoli
+Edna, Začenja vojne, Skrbi za osebno higieno, Ne poje zelenjave, Enkrat na teden reši svet
+Ruby, Začenja vojne, Pomaga staršem
+Billy, Skrbi za osebno higieno, Hrani golobe, Ima dobre ocene v šoli, Enkrat na teden reši svet
+Rosa, Enkrat na teden reši svet
+Deborah, Hrani golobe, Začenja vojne
+Mike, Hrani golobe, Ne poje zelenjave, Začenja vojne, Enkrat na teden reši svet
+Marvin, Ne pospravja sobe, Ne poje zelenjave
+Brian, Ne poje zelenjave, Hrani golobe
+Jeffery, Hrani golobe
+Bruce, Skrbi za osebno higieno, Ima dobre ocene v šoli
+Kathleen, Skrbi za osebno higieno
+Danielle, Skrbi za osebno higieno, Začenja vojne
+Louis, Ne pospravja sobe, Ima dobre ocene v šoli, Hrani golobe
+Kathy, Skrbi za osebno higieno, Ne poje zelenjave, Pomaga staršem, Ima dobre ocene v šoli
+David, Hrani golobe, Ne pospravja sobe, Začenja vojne
+Allen, Ima dobre ocene v šoli, Skrbi za osebno higieno, Ne pospravja sobe
+Clara, Ne pospravja sobe, Ne poje zelenjave, Začenja vojne
+Valerie, Začenja vojne, Ne pospravja sobe, Pomaga staršem, Ne poje zelenjave
+Ann, Ne poje zelenjave, Pomaga staršem, Ne pospravja sobe
+Rita, Pomaga staršem, Enkrat na teden reši svet, Začenja vojne, Ne pospravja sobe
+Victor, Pomaga staršem, Ne pospravja sobe, Skrbi za osebno higieno
+Edwin, Začenja vojne, Pomaga staršem
+Edith, Enkrat na teden reši svet, Začenja vojne, Ima dobre ocene v šoli, Ne poje zelenjave
+Russell, Pomaga staršem
+Bonnie, Ima dobre ocene v šoli
+Jesse, Enkrat na teden reši svet, Začenja vojne, Pomaga staršem
+Robin, Enkrat na teden reši svet, Ne poje zelenjave
+Jennifer, Pomaga staršem, Hrani golobe, Ima dobre ocene v šoli, Ne pospravja sobe
+Amanda, Začenja vojne, Hrani golobe, Skrbi za osebno higieno
+Emma, Skrbi za osebno higieno, Začenja vojne
+Jesus, Ne poje zelenjave, Skrbi za osebno higieno, Začenja vojne
+Hazel, Ne poje zelenjave, Pomaga staršem
+Herbert, Ne poje zelenjave, Pomaga staršem, Hrani golobe
+Ryan, Ne pospravja sobe, Ima dobre ocene v šoli, Ne poje zelenjave
+Michael, Začenja vojne
+Ethel, Pomaga staršem, Hrani golobe
+Timothy, Ne pospravja sobe, Enkrat na teden reši svet
+Danny, Pomaga staršem, Ne pospravja sobe, Enkrat na teden reši svet
+Kelly, Hrani golobe
+Charles, Pomaga staršem, Ne poje zelenjave, Začenja vojne
+Bradley, Ima dobre ocene v šoli, Ne poje zelenjave
+Ellen, Ima dobre ocene v šoli, Ne pospravja sobe, Ne poje zelenjave, Začenja vojne
+Norma, Skrbi za osebno higieno, Začenja vojne, Ima dobre ocene v šoli, Hrani golobe
+Martha, Začenja vojne, Pomaga staršem, Skrbi za osebno higieno, Ne poje zelenjave
+Rose, Ne pospravja sobe, Začenja vojne, Skrbi za osebno higieno
+Thelma, Začenja vojne, Enkrat na teden reši svet, Ima dobre ocene v šoli, Ne poje zelenjave
+Jessica, Pomaga staršem, Ne poje zelenjave, Enkrat na teden reši svet
+Daniel, Pomaga staršem
+Robert, Skrbi za osebno higieno, Ima dobre ocene v šoli
+Norman, Skrbi za osebno higieno, Ima dobre ocene v šoli, Pomaga staršem
+Curtis, Pomaga staršem, Hrani golobe, Ne pospravja sobe, Ne poje zelenjave
+Marie, Pomaga staršem, Skrbi za osebno higieno, Ne poje zelenjave
+Eugene, Ima dobre ocene v šoli
+Angela, Pomaga staršem
+Stephen, Ne poje zelenjave, Enkrat na teden reši svet
+Diana, Ima dobre ocene v šoli, Enkrat na teden reši svet, Začenja vojne, Ne pospravja sobe
+Rebecca, Skrbi za osebno higieno, Začenja vojne
+Amy, Skrbi za osebno higieno
+Lillian, Ne pospravja sobe
+Earl, Ne poje zelenjave, Hrani golobe, Skrbi za osebno higieno
+Anita, Ne poje zelenjave, Enkrat na teden reši svet, Hrani golobe
+Joseph, Enkrat na teden reši svet, Ne pospravja sobe, Začenja vojne
+Kim, Ne poje zelenjave
+Kevin, Začenja vojne, Hrani golobe, Enkrat na teden reši svet, Ne poje zelenjave
+Ashley, Ne pospravja sobe, Ne poje zelenjave, Skrbi za osebno higieno
+Carol, Enkrat na teden reši svet, Ne poje zelenjave, Skrbi za osebno higieno, Začenja vojne
+Sandra, Ne poje zelenjave, Pomaga staršem
+Justin, Pomaga staršem
+Jonathan, Ne poje zelenjave, Pomaga staršem, Skrbi za osebno higieno
+Thomas, Začenja vojne
+Teresa, Začenja vojne, Ne pospravja sobe
+Susan, Enkrat na teden reši svet
+Ronald, Ima dobre ocene v šoli, Ne poje zelenjave
+Craig, Ne pospravja sobe
+Arthur, Začenja vojne, Ima dobre ocene v šoli, Hrani golobe, Pomaga staršem
+Monica, Ne pospravja sobe, Enkrat na teden reši svet
+Annie, Enkrat na teden reši svet, Pomaga staršem, Ne pospravja sobe, Ima dobre ocene v šoli
+Brandon, Ne poje zelenjave, Enkrat na teden reši svet, Skrbi za osebno higieno, Hrani golobe
+Fred, Ne poje zelenjave, Pomaga staršem, Skrbi za osebno higieno, Ima dobre ocene v šoli
+Anthony, Ne poje zelenjave, Enkrat na teden reši svet
+Carl, Ima dobre ocene v šoli
+Theresa, Ne pospravja sobe
+Grace, Ima dobre ocene v šoli, Ne poje zelenjave, Enkrat na teden reši svet
+Dawn, Ne poje zelenjave, Ne pospravja sobe, Skrbi za osebno higieno, Začenja vojne
+Adam, Hrani golobe
+Patricia, Hrani golobe, Pomaga staršem
+Phyllis, Skrbi za osebno higieno
+Larry, Enkrat na teden reši svet, Ne poje zelenjave
+Jacqueline, Enkrat na teden reši svet, Hrani golobe
+Jane, Skrbi za osebno higieno, Hrani golobe, Pomaga staršem
+Kimberly, Enkrat na teden reši svet, Ne poje zelenjave, Hrani golobe, Skrbi za osebno higieno
+Sheila, Enkrat na teden reši svet, Začenja vojne
+Juan, Ne pospravja sobe, Začenja vojne, Skrbi za osebno higieno, Hrani golobe
+Terry, Začenja vojne, Hrani golobe, Ne poje zelenjave
+Rhonda, Ne poje zelenjave, Začenja vojne, Ima dobre ocene v šoli, Pomaga staršem
+Philip, Ne pospravja sobe
+Lynn, Ne pospravja sobe, Ne poje zelenjave, Enkrat na teden reši svet, Pomaga staršem
+Tammy, Pomaga staršem, Skrbi za osebno higieno, Ima dobre ocene v šoli, Hrani golobe
+Leslie, Pomaga staršem
+Lori, Enkrat na teden reši svet, Ne poje zelenjave, Pomaga staršem, Začenja vojne
+Wendy, Ne pospravja sobe, Pomaga staršem, Ne poje zelenjave, Enkrat na teden reši svet
+Margaret, Skrbi za osebno higieno
+Sharon, Ima dobre ocene v šoli, Hrani golobe, Ne poje zelenjave, Začenja vojne
+Paul, Začenja vojne, Hrani golobe
+Shannon, Začenja vojne
+Vincent, Začenja vojne, Enkrat na teden reši svet, Skrbi za osebno higieno
+Mark, Skrbi za osebno higieno, Ne pospravja sobe, Začenja vojne
+Helen, Ne pospravja sobe, Skrbi za osebno higieno
+Carlos, Ima dobre ocene v šoli, Začenja vojne, Ne pospravja sobe
+Edward, Skrbi za osebno higieno, Hrani golobe, Enkrat na teden reši svet, Pomaga staršem
+Clarence, Ima dobre ocene v šoli, Pomaga staršem, Začenja vojne
+Amber, Enkrat na teden reši svet, Ne pospravja sobe
+Francis, Pomaga staršem, Skrbi za osebno higieno, Začenja vojne
+Lucille, Enkrat na teden reši svet
+John, Ne poje zelenjave, Enkrat na teden reši svet
+Gary, Enkrat na teden reši svet, Skrbi za osebno higieno, Hrani golobe
+Dana, Ima dobre ocene v šoli, Ne pospravja sobe, Enkrat na teden reši svet
+Jean, Hrani golobe, Pomaga staršem
+Steven, Hrani golobe, Enkrat na teden reši svet
+Judy, Enkrat na teden reši svet
+Jessie, Začenja vojne, Enkrat na teden reši svet
+Raymond, Hrani golobe, Ne pospravja sobe
+Keith, Enkrat na teden reši svet
+Joyce, Enkrat na teden reši svet, Pomaga staršem, Ne pospravja sobe
+Alan, Skrbi za osebno higieno
+Doris, Skrbi za osebno higieno, Ima dobre ocene v šoli, Hrani golobe, Začenja vojne
+Cheryl, Začenja vojne, Ne poje zelenjave, Enkrat na teden reši svet, Ima dobre ocene v šoli
+Sara, Enkrat na teden reši svet
+Matthew, Ima dobre ocene v šoli
+Manuel, Ne poje zelenjave, Skrbi za osebno higieno
+Samuel, Pomaga staršem, Ima dobre ocene v šoli
+Esther, Ne pospravja sobe
+Nicholas, Enkrat na teden reši svet, Hrani golobe
+Howard, Enkrat na teden reši svet, Začenja vojne
+Eric, Hrani golobe, Skrbi za osebno higieno, Pomaga staršem, Ne poje zelenjave
+Linda, Hrani golobe
+Lee, Ne poje zelenjave
+Marilyn, Začenja vojne, Ima dobre ocene v šoli, Ne poje zelenjave
+Carrie, Hrani golobe, Ima dobre ocene v šoli, Ne poje zelenjave
+Jeremy, Enkrat na teden reši svet, Skrbi za osebno higieno
+Debbie, Ne poje zelenjave, Hrani golobe, Enkrat na teden reši svet, Ima dobre ocene v šoli
+Frances, Ima dobre ocene v šoli, Začenja vojne
+Joshua, Skrbi za osebno higieno, Začenja vojne
+Gail, Pomaga staršem
+Sarah, Začenja vojne, Ne poje zelenjave, Skrbi za osebno higieno, Pomaga staršem
+Peter, Enkrat na teden reši svet, Skrbi za osebno higieno
+Glenn, Hrani golobe, Začenja vojne, Ne pospravja sobe
+Ruth, Enkrat na teden reši svet, Začenja vojne
+Shirley, Enkrat na teden reši svet, Skrbi za osebno higieno, Začenja vojne, Ima dobre ocene v šoli
+Dorothy, Pomaga staršem, Začenja vojne, Ima dobre ocene v šoli
+Patrick, Pomaga staršem, Ima dobre ocene v šoli
+Marjorie, Ne poje zelenjave
+Randy, Ima dobre ocene v šoli, Enkrat na teden reši svet, Začenja vojne, Skrbi za osebno higieno
+Brenda, Ne pospravja sobe, Ima dobre ocene v šoli
+Joanne, Začenja vojne, Pomaga staršem, Ne poje zelenjave
+Erin, Enkrat na teden reši svet, Pomaga staršem, Hrani golobe
+Eleanor, Skrbi za osebno higieno, Ne poje zelenjave
+James, Skrbi za osebno higieno
+Cindy, Ne pospravja sobe, Enkrat na teden reši svet, Pomaga staršem
+Evelyn, Hrani golobe
+Tiffany, Začenja vojne
+Pauline, Ima dobre ocene v šoli, Ne pospravja sobe, Enkrat na teden reši svet
+Catherine, Pomaga staršem, Enkrat na teden reši svet
+Eva, Hrani golobe, Ima dobre ocene v šoli
+Janice, Ima dobre ocene v šoli
+Gerald, Hrani golobe
+Eddie, Ima dobre ocene v šoli, Začenja vojne, Enkrat na teden reši svet
+Melvin, Ne pospravja sobe, Hrani golobe, Skrbi za osebno higieno
+Emily, Ima dobre ocene v šoli
+Tracy, Pomaga staršem, Ima dobre ocene v šoli
+Andrew, Hrani golobe, Začenja vojne, Pomaga staršem

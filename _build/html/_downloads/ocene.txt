@@ -1,0 +1,8 @@
+Začenja vojne, -100
+Ne pospravja sobe, -3
+Ne poje zelenjave, -1
+Hrani golobe, 1
+Skrbi za osebno higieno, 1
+Ima dobre ocene v šoli, 2
+Pomaga staršem, 5
+Enkrat na teden reši svet, 100
