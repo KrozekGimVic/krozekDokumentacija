@@ -11,8 +11,9 @@ Programerski krožek na Gimnaziji Vič
 Krožek vodita Maks Kolman <`kolman.maks@gmail.com <kolman.maks@gmail.com>`_> in
 Jure Slak <`jure.slak@gmail.com <jure.slak@gmail.com>`_>.
 
-Uvodni sestanek za šolsko leto 2017/18 bo med glavnim odmorom v četrtek 28.9.2017
-v učilnici 37.
+Krožek bo v šolskem letu 2017/18 potekal vsak torek od 14:00 do 16:15.
+Prvič se dobimo 3.10.2017 v veliki in mali računalniški učilnici v tretjem
+nadstropju.
 
 Učimo se programiranja v Pythonu in C++-u, izdelovanja spletnih strani,
 izdelovanja računalniških igric, priprave na tekmovanja v Sloveniji in po
