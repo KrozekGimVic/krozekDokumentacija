@@ -1,6 +1,9 @@
 Python vaje
 ===========
 
+Nekaj interaktivnih vaj lahko najdete tudi na strani
+`Tomo <https://www.projekt-tomo.si/course/19/>`_
+
 Vsebina:
 
 .. toctree::
