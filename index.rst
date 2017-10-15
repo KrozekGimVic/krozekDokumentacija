@@ -8,10 +8,14 @@
 Programerski krožek na Gimnaziji Vič
 ====================================
 
-Krožek vodita Maks Kolman <`kolman.maks@gmail.com <kolman.maks@gmail.com>`_> in
-Jure Slak <`jure.slak@gmail.com <jure.slak@gmail.com>`_>.
+Krožek vodiva Maks Kolman <`kolman.maks@gmail.com <kolman.maks@gmail.com>`_> in
+Jure Slak <`jure.slak@gmail.com <jure.slak@gmail.com>`_> in programirati sva se
+naučila ravno na tem krožku. Imava veliko izkušenj iz programerskih tekmovanj
+kjer sva večkrat osvojila prva mesta, prav tako pa tudi iz resničnega
+programiranja pri podjetjih kot so Bitstamp in Google. Oba sodelujeva tudi z
+Inštitutom "Jožef Stefan".
 
-Krožek bo v šolskem letu 2017/18 potekal vsak torek od 14:00 do 16:15.
+Krožek v šolskem letu 2017/18 poteka vsak torek od 14:00 do 16:15.
 Prvič se dobimo 3.10.2017 v veliki in mali računalniški učilnici v tretjem
 nadstropju.
 

@@ -4,7 +4,7 @@ Podatkovni tipi
 V tem poglavju bomo predstavili podatkovne tipe, kaj so in zakaj so pomembni,
 kako jih uporabljamo in kateri obstajajo. Nekatere si bomo tudi podrobneje
 ogledali. Bolj obsežno (in pravilno) dokumentacijo najdete `tukaj
-<https://docs.python.org/3.4/library/stdtypes.html>`_.
+<https://docs.python.org/3.4/library/stdtypes.html>`__.
 
 Uvod
 ----
@@ -254,6 +254,7 @@ Niz pa lahko ustvarimo tudi iz kateregakoli drugega tipa s klicanjem funkcije
   stevilka_ampak_spet_ne_cisto = '134'
 
 .. py:function:: str(objekt)
+  :noindex:
 
   Pretvori objekt v niz znakov. Ta funkcija se tudi implicitno kliče pri
   klicanju funkcije ``print``.

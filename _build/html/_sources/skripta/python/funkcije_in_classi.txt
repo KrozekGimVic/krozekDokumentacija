@@ -216,7 +216,7 @@ Zaključek: stvari, ki jih počenemo v funkciji ne spreminjajo zunanjega sveta,
 kot se od funkcij tudi pričakuje.
 
 Za zelo podrobno razlago scopinga v Pythonu kliknite
-`tukaj <http://nbviewer.ipython.org/github/rasbt/python_reference/blob/master/tutorials/scope_resolution_legb_rule.ipynb>`_.
+`tukaj <http://nbviewer.ipython.org/github/rasbt/python_reference/blob/master/tutorials/scope_resolution_legb_rule.ipynb>`__.
 
 Razredi
 -------
@@ -277,7 +277,7 @@ Konstruktorji in destruktorji
 
 Objekt ustvarimo tako, da napišemo ime razreda in podamo vse potrebne argumente.
 V tem primeru Python pokliče *konstruktor* objekta, ki objekt zgradi.
-Konstruktor objekta je metoda ``__init__``, ki jo napišemo v definicijo
+Konstruktor objekta je metoda ``___init__``, ki jo napišemo v definicijo
 razreda. Metoda kot prvi argument sprejme ``self``, to je objekt na katerem
 trenutno delamo, torej na novo narejen, prazen objekt našega tipa. Metoda ima
 lahko še dodatne parametre, ki jih je potrebno podati ob klicu konstruktorja.
@@ -316,7 +316,7 @@ Destruktor je funkcija, ki se pokliče, ko objekt izbrišemo. Objekt se
 avtomatsko izbriše, ko na se na primer zaključi funkcija, ali pa če ga
 eksplicitno izbrišemo z ``del``. Destuktorja ponavadi ni potrebno posebej
 spreminjati, če pa to kdaj potrebujete, se naredi z definicijo metode
-``__del__``.
+``___del__``.
 
 Metode
 ~~~~~~
@@ -358,10 +358,10 @@ Operatorji
 ~~~~~~~~~~
 Lepo je pisati na primer ``3 + 4``, namesto ``add(3, 4)``. Enako funkcionalnost
 lahko dodamo tudi svojim tipom, z definicijo novih operatorjev. Nove operatorje
-definiramo tako, da definiramo metode s posebnimi imeni, npr. ``__add__`` za
-seštevanje ali ``__mul__`` za množenje. Seznam vseh takih metod najdete, če
+definiramo tako, da definiramo metode s posebnimi imeni, npr. ``___add__`` za
+seštevanje ali ``___mul__`` za množenje. Seznam vseh takih metod najdete, če
 napišete npr. ``dir(int)``, še bolj popoln seznam pa najdete `tukaj
-<https://docs.python.org/3.4/reference/datamodel.html>`_.
+<https://docs.python.org/3.4/reference/datamodel.html>`__.
 Definiranje svojega obnašanja operatorjev imenujemo *operator overloading*.
 Overloadati se da vse, kar obstaja. Za primer naredimo razred ``Vector``,
 ki predstavlja vektor v :math:`\mathbb{R}^3`, ki ga lahko množimo s skalarjem, skalarno
@@ -398,7 +398,7 @@ objektov. Te metode sicer lahko kličemo tudi direktno (tudi na Pythonovih tipih
 recimo ``"asdf".__add__("ghjk")``), ampak tega noben priseben človek ne počne.
 Pravzaprav je vsaka spremenljivka, ki jo naredite v Pythonu objekt, ki ni
 popolnoma nič drugačen od takega, ki bi ga definirali mi. Ko na primer naredite
-``int("1243")`` kličete konstruktor (metodo ``__init__``) razreda ``int``.
+``int("1243")`` kličete konstruktor (metodo ``___init__``) razreda ``int``.
 
 Pri množenju smo uporabili funkcijo ``isinstance``, ki se jo uporablja za
 preverjanje tipov.

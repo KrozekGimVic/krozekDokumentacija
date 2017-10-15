@@ -52,10 +52,10 @@ long double  80 bit          :math:`\pm 1.1 \cdot 10^{\pm 4932}`, 18 decimalk
   pomeni  64 ali 32 biten, zopet odvisno od računalnika. V tablei so naštete
   najbolj pogoste velikosi. ``unsigned`` verzije imajo enak razpon, samo da je
   cel na pozitivnem delu osi. Več `tukaj
-  <http://en.cppreference.com/w/cpp/language/types#Properties>`_.
+  <http://en.cppreference.com/w/cpp/language/types#Properties>`__.
 
 Mnogo bolj podrobno in pravilno tabelo najdete `tukaj
-<http://en.cppreference.com/w/cpp/language/types#Range_of_values>`_.
+<http://en.cppreference.com/w/cpp/language/types#Range_of_values>`__.
 
 Naj vas to ne prestraši, pametno je poznati omejitve, a mi bomo ponavadi za
 cela števila uporabljali kar ``int`` in za decimalna ``double``. (Float je
@@ -331,7 +331,7 @@ vrstico, uporabimo funkcijo getline.
     Vrne podniz od ``pos1`` do ``pos2``.
 
 String ima res veliko metod, popolno dokumentacijo najdete `tukaj
-<http://www.cplusplus.com/reference/string/string/>`_.
+<http://www.cplusplus.com/reference/string/string/>`__.
 
 Primer:
 

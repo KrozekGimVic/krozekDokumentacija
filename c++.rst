@@ -2,8 +2,8 @@ C++
 ===
 
 Bolj natančna in popolna ter verjetno tudi pravilnejša dokumentacija je na
-voljo `tukaj <http://www.cplusplus.com/reference/>`_ ali `tukaj
-<http://en.cppreference.com>`_.
+voljo `tukaj <http://www.cplusplus.com/reference/>`__ ali `tukaj
+<http://en.cppreference.com>`__.
 
 Vsebina:
 

@@ -416,7 +416,7 @@ tega objekta pa <em>atributi</em>. Primer ustvarjanja objekta in klicanja metod:
 <span id="konstruktorji"></span><h3>Konstruktorji in destruktorji<a class="headerlink" href="#konstruktorji-in-destruktorji" title="Permalink to this headline">¶</a></h3>
 <p>Objekt ustvarimo tako, da napišemo ime razreda in podamo vse potrebne argumente.
 V tem primeru Python pokliče <em>konstruktor</em> objekta, ki objekt zgradi.
-Konstruktor objekta je metoda <tt class="docutils literal"><span class="pre">__init__</span></tt>, ki jo napišemo v definicijo
+Konstruktor objekta je metoda <tt class="docutils literal"><span class="pre">___init__</span></tt>, ki jo napišemo v definicijo
 razreda. Metoda kot prvi argument sprejme <tt class="docutils literal"><span class="pre">self</span></tt>, to je objekt na katerem
 trenutno delamo, torej na novo narejen, prazen objekt našega tipa. Metoda ima
 lahko še dodatne parametre, ki jih je potrebno podati ob klicu konstruktorja.</p>
@@ -452,7 +452,7 @@ Primer:</p>
 avtomatsko izbriše, ko na se na primer zaključi funkcija, ali pa če ga
 eksplicitno izbrišemo z <tt class="docutils literal"><span class="pre">del</span></tt>. Destuktorja ponavadi ni potrebno posebej
 spreminjati, če pa to kdaj potrebujete, se naredi z definicijo metode
-<tt class="docutils literal"><span class="pre">__del__</span></tt>.</p>
+<tt class="docutils literal"><span class="pre">___del__</span></tt>.</p>
 </div>
 <div class="section" id="metode">
 <h3>Metode<a class="headerlink" href="#metode" title="Permalink to this headline">¶</a></h3>
@@ -491,8 +491,8 @@ ki preveri, ali mora avto na servis.</p>
 <h3>Operatorji<a class="headerlink" href="#operatorji" title="Permalink to this headline">¶</a></h3>
 <p>Lepo je pisati na primer <tt class="docutils literal"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">4</span></tt>, namesto <tt class="docutils literal"><span class="pre">add(3,</span> <span class="pre">4)</span></tt>. Enako funkcionalnost
 lahko dodamo tudi svojim tipom, z definicijo novih operatorjev. Nove operatorje
-definiramo tako, da definiramo metode s posebnimi imeni, npr. <tt class="docutils literal"><span class="pre">__add__</span></tt> za
-seštevanje ali <tt class="docutils literal"><span class="pre">__mul__</span></tt> za množenje. Seznam vseh takih metod najdete, če
+definiramo tako, da definiramo metode s posebnimi imeni, npr. <tt class="docutils literal"><span class="pre">___add__</span></tt> za
+seštevanje ali <tt class="docutils literal"><span class="pre">___mul__</span></tt> za množenje. Seznam vseh takih metod najdete, če
 napišete npr. <tt class="docutils literal"><span class="pre">dir(int)</span></tt>, še bolj popoln seznam pa najdete <a class="reference external" href="https://docs.python.org/3.4/reference/datamodel.html">tukaj</a>.
 Definiranje svojega obnašanja operatorjev imenujemo <em>operator overloading</em>.
 Overloadati se da vse, kar obstaja. Za primer naredimo razred <tt class="docutils literal"><span class="pre">Vector</span></tt>,
@@ -528,7 +528,7 @@ objektov. Te metode sicer lahko kličemo tudi direktno (tudi na Pythonovih tipih
 recimo <tt class="docutils literal"><span class="pre">&quot;asdf&quot;.__add__(&quot;ghjk&quot;)</span></tt>), ampak tega noben priseben človek ne počne.
 Pravzaprav je vsaka spremenljivka, ki jo naredite v Pythonu objekt, ki ni
 popolnoma nič drugačen od takega, ki bi ga definirali mi. Ko na primer naredite
-<tt class="docutils literal"><span class="pre">int(&quot;1243&quot;)</span></tt> kličete konstruktor (metodo <tt class="docutils literal"><span class="pre">__init__</span></tt>) razreda <tt class="docutils literal"><span class="pre">int</span></tt>.</p>
+<tt class="docutils literal"><span class="pre">int(&quot;1243&quot;)</span></tt> kličete konstruktor (metodo <tt class="docutils literal"><span class="pre">___init__</span></tt>) razreda <tt class="docutils literal"><span class="pre">int</span></tt>.</p>
 <p>Pri množenju smo uporabili funkcijo <tt class="docutils literal"><span class="pre">isinstance</span></tt>, ki se jo uporablja za
 preverjanje tipov.</p>
 <dl class="function">
