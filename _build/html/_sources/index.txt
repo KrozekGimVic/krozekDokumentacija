@@ -1,10 +1,3 @@
-
-
-.. Programerski krožek na Gimnaziji Vič documentation master file, created by
-   sphinx-quickstart on Mon Sep 15 21:40:10 2014.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
-
 Programerski krožek na Gimnaziji Vič
 ====================================
 
@@ -15,9 +8,8 @@ kjer sva večkrat osvojila prva mesta, prav tako pa tudi iz resničnega
 programiranja pri podjetjih kot so Bitstamp in Google. Oba sodelujeva tudi z
 Inštitutom "Jožef Stefan".
 
-Krožek v šolskem letu 2017/18 poteka vsak torek od 14:00 do 16:15.
-Prvič se dobimo 3.10.2017 v veliki in mali računalniški učilnici v tretjem
-nadstropju.
+Krožek v šolskem letu 2017/18 poteka vsak torek od 14:00 do 16:15 v veliki in
+mali računalniški učilnici v tretjem nadstropju.
 
 Učimo se programiranja v Pythonu in C++-u, izdelovanja spletnih strani,
 izdelovanja računalniških igric, priprave na tekmovanja v Sloveniji in po

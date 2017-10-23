@@ -15,5 +15,6 @@ Vsebina:
   skripta/c++/podatkovni_tipi
   skripta/c++/funkcije
   skripta/c++/objekti
+  skripta/c++/templates
 
 .. vim: spell spelllang=sl
