@@ -56,11 +56,11 @@ Virtualno okolje zapustimo z ukazom::
   deactivate
 
 
-Zaganjanje Python 3 v Sublime Text
+Python 3 programi v Sublime Text
 ==================================
 
-V ``/home/kirito/.config/sublime-text-3/Packages/User`` si naredite novo datoteko
-z imenom ``Python3.sublime-build`` in vsebino::
+V ``/home/kirito/.config/sublime-text-3/Packages/User`` si naredite novo
+datoteko z imenom ``Python3.sublime-build`` in vsebino::
 
 
   {
