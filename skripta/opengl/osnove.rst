@@ -1,7 +1,7 @@
 Osnove
 ========
 
-`OpenGL <https://www.opengl.org/>`_ je knjižnica za risanje 2D in 3D vektorske
+`OpenGL <https://www.opengl.org/>`__ je knjižnica za risanje 2D in 3D vektorske
 grafike. Opengl je trenutno na verziji 4.5, mi pa se bomoučili verzijo 3.x, ki
 je že dovolj stara, da jo podpira večina računalnikov, hkrati pa je dovolj
 nova, da je že potreben noveji pristop, z razliko od OpenGL 2.
@@ -16,7 +16,7 @@ implementacija OpenGL na Linux-u je Mesa, nVidia pa ima na primer svojo
 implementacijo.
 
 Proces si lahko natančneje prebere `tukaj
-<http://duriansoftware.com/joe/An-intro-to-modern-OpenGL.-Chapter-1:-The-Graphics-Pipeline.html>`_,
+<http://duriansoftware.com/joe/An-intro-to-modern-OpenGL.-Chapter-1:-The-Graphics-Pipeline.html>`__,
 za nas pa naj bo dovolj naslednjih 7 korakov, ki opisujejo, kako poteka pot
 ptrevarjanja podatkov v risbo.
 
@@ -34,7 +34,7 @@ Instalacija
 -----------
 Potrebovali bomo ``g++``, ``cmake`` in knjižnice za ``opengl``, ``glut`` in
 ``glew``. Sledili bomo gradivu na `opengl-tutorial.org
-<http://www.opengl-tutorial.org/>`_, kodo pa lahko dobite z
+<http://www.opengl-tutorial.org/>`__, kodo pa lahko dobite z
 
 .. code-block:: bash
 

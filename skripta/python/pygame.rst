@@ -80,9 +80,9 @@ Sedaj pa lahko preizkusiš pygame z njihovimi primeri
     import pygame.examples.aliens
     pygame.examples.aliens.main()
 
-Namesto aliens lahko pogledaš tudi `druge primere <http://www.pygame.org/docs/ref/examples.html>`_.
+Namesto aliens lahko pogledaš tudi `druge primere <http://www.pygame.org/docs/ref/examples.html>`__.
 
 Koda 2017
 -------------
 Koda do igre, ki smo jo naredili v letu 2017 je dostopna na
-`GitHubu <https://github.com/MKolman/pygame-test>`_.
+`GitHubu <https://github.com/MKolman/pygame-test>`__.

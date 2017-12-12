@@ -1,9 +1,11 @@
+.. _funkcije-cpp:
+
 Funkcije
 --------
 
 Zakaj potrebujemo funkcije si preberite v :ref:`funkcijepython` za python.
 
-Pri c++ moramo za vsako funkcijo vedeti,katere tipe sprejme in kakšen tip vrne.
+Pri C++ moramo za vsako funkcijo vedeti, katere tipe sprejme in kakšen tip vrne.
 Pravzaprav smo vedno morali napisati definicijo funkcije ``main`` in za ostale
 funkcije je sintaska enaka.
 
@@ -48,7 +50,7 @@ Klicanje funkcij
 
 Ko izvedemo program, ki vsebuje samo definicije funkcij, se ne zgodi nič.
 Funkcijo je treba namreč še poklicati. Naše funkcije kličemo popolnoma enako kot
-že vdelane funkcije (npr. sin(), sort()).
+že vgrajene funkcije (npr. sin(), sort()).
 
 .. code-block:: cpp
 

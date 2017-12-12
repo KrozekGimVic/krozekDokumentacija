@@ -23,7 +23,7 @@ vrže izjemo. Odpiranje samo pripravi datoteko za operacije na njej in ne naredi
   ``načina``, ki je ``r`` za branje, ``w`` za pisanje, ``+`` za branje in
   pisanje ter ``a`` za dodajanje. Kratice pomenijo *read*, *write* in *append*.
   Bolj natančno dokumentacijo najdete `tukaj
-  <https://docs.python.org/3.4/library/functions.html#open>`_. Na windowsih
+  <https://docs.python.org/3.4/library/functions.html#open>`__. Na windowsih
   moramo za netekstovne datoteke dodati še ``b``, ki pomeni *binary*. Če način
   ni podan, je enak ``r``.  Pod do datoteke je podana kot zaporedje map ločenih
   s ``/``, kjer ``..`` označuje *en mapo višje*. Npr. ``../slike/solata.jpg``
@@ -134,6 +134,7 @@ Vsebina datoteke ``besedilo.txt`` je seveda::
   metodo ``strip`` na stringih.
 
   .. py:class:: str
+    :noindex:
 
     .. py:method:: strip([znaki])
 

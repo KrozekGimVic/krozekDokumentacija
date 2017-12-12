@@ -7,10 +7,10 @@ Python
 ======
 
 Bolj natančna in popolna ter verjetno tudi pravilnejša dokumentacija je na
-voljo `tukaj <http://docs.python.org/3/>`_.
+voljo `tukaj <http://docs.python.org/3/>`__.
 
 Snov si lahko ogledate tudi v interaktivnem učbeniku za srednje šole, ki je
-dostopen `tukaj <https://lusy.fri.uni-lj.si/ucbenik/book/1201/index.html>`_.
+dostopen `tukaj <https://lusy.fri.uni-lj.si/ucbenik/book/1201/index.html>`__.
 
 .. toctree::
   :maxdepth: 3

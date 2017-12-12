@@ -4,8 +4,9 @@ Zakodiran pogovor
 
 Naredili bomo program, ki zapisuje in bere zakodirana sporočila v lokalne
 datoteke. Zakodiral jih bo z zamikom posameznih znakov npr.
-    * zamik za 1 pomeni 'a'->'b', 'b'->'c',..., 'z'->'{'
-    * zamik za 500 pomeni 'a'->'ɕ', 'b'->'ɖ',..., 'z'->'ɮ'
+
+* zamik za 1 pomeni 'a'->'b', 'b'->'c',..., 'z'->'{'
+* zamik za 500 pomeni 'a'->'ɕ', 'b'->'ɖ',..., 'z'->'ɮ'
 
 Delovanje programa
 -------------------------

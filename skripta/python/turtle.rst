@@ -55,7 +55,7 @@ Na voljo imamo veliko ukazov:
   ``pu`` ali ``up``.
 
 Več metod za delo dobite `tukaj
-<https://docs.python.org/3.4/library/turtle.html#turtle-methods>`_.
+<https://docs.python.org/3.4/library/turtle.html#turtle-methods>`__.
 
 Za delo z želvjo grafiko je potrebno dobiti funkcije iz modula ``turtle``, kar
 naredimo tako, da na začetek programa napišemo ``import turtle``, nato pa
