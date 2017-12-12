@@ -54,3 +54,20 @@ virtualnem okolju in nikjer drugje. Za namestitev pa ne rabimo pisati ukaza
 Virtualno okolje zapustimo z ukazom::
 
   deactivate
+
+
+Zaganjanje Python 3 v Sublime Text
+==================================
+
+V ``/home/kirito/.config/sublime-text-3/Packages/User`` si naredite novo datoteko
+z imenom ``Python3.sublime-build`` in vsebino::
+
+
+  {
+      "cmd": ["/usr/bin/python3", "-u", "$file"],
+      "file_regex": "^[ ]*File \"(…*?)\", line ([0-9]*)",
+      "selector": "source.python"
+  }
+
+Vse Python 3 programe lahko zaženete z uporabo bližnjice ``Ctrl+Shift+B`` in
+izberete Python3.
