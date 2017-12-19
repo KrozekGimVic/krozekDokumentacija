@@ -9,3 +9,4 @@ v katerem so naloge, s katerimi ponovimo snov celotnega leta.
 
   skripta/lov-na-zaklad/2015
   skripta/lov-na-zaklad/2016
+  skripta/lov-na-zaklad/2017
