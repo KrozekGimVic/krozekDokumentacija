@@ -1,0 +1,6 @@
+Lov na zaklad 2017
+------------------
+
+Je na voljo na GitHubu_.
+
+.. _Githubu: https://github.com/KrozekGimVic/2018-lov-na-zaklad
