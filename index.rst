@@ -16,8 +16,6 @@ izdelovanja računalniških igric, priprave na tekmovanja v Sloveniji in po
 svetu, razbijanja in pisanja šifer in zanimive in čudne matematike. Če je le
 mogoče, ustreževa tudi vašim željam.
 
-Svoje želje lahko izrazite z `anketo <https://goo.gl/forms/sgq3rVN8wgyLEomC2>`_.
-
 Vsebina:
 
 .. toctree::
