@@ -25,7 +25,7 @@ SUBMODULE_DOCS  = autodoc
 .PHONY: install cleaninstall autodoc help clean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf text man changes linkcheck doctest gettext
 
 install:
-	virtualenv --python=$(PYTHON_VER) .
+	python -m venv .
 	bin/pip install -r requirements.txt
 
 cleaninstall:

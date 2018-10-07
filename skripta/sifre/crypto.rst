@@ -1,8 +1,8 @@
 .. |nbsp| unicode:: 0xA0
    :trim:
 
-Hacking
-========
+Možni napadi
+============
 
 Napad surove moči
 -----------------

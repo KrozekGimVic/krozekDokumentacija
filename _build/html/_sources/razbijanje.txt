@@ -1,8 +1,8 @@
-Razbijanje šifer
-================
+Kriptografija
+=============
 
-Tukaj si bomo ogledali nekaj osnovnih načinov razbijanja šifer in ugibanja
-gesel.
+Tukaj si bomo ogledali nekaj osnovnih šifer
+in kako se zavarovati pred razlišnimi napadi.
 
 
 Vsebina:
@@ -10,4 +10,4 @@ Vsebina:
 .. toctree::
   :maxdepth: 3
 
-  skripta/sifre/hack
+  skripta/sifre/crypto
