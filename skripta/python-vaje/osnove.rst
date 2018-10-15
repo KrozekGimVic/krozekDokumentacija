@@ -4,9 +4,28 @@
 Osnovne vaje
 ============
 
+Popolni kvadrat
+---------------
+Napiši program, ki prebere število in vrne njegov koren, če je ta celo število.
+Primer::
+
+  Uporabnik vnese 25.
+
+Program izpiše::
+  
+  5
+
+V nasprotnem primeru program izpiše `Število ni popolni kvadrat.`
+::  
+  Uporabnik vnese 37.
+
+Program izpiše::
+  
+  Število ni popolni kvadrat.
+  
 Štetje limon
 ------------
-Napiši program, ki prebere število in v pravilni slovenšini izpiše, koliko ima limon. Pozor pri številih kot so na primer 101 ipd.
+Napiši program, ki prebere število in v pravilni slovenščini izpiše, koliko ima limon. Pozor pri številih, kot so na primer 101 ipd.
 Primer::
 
   Uporabnik vnese 2.
@@ -14,6 +33,35 @@ Primer::
 Program izpiše::
 
   Imam 2 limoni.
+
+Kombiniranje števil
+-------------------
+Napiši program, ki od uporabnika po vrsti prebere tri števila :math:`x`, :math:`y`,
+:math:`z`. Program naj preveri, če se da tretje število (:math:`z`) napisati kot
+kombinacijo prvih dveh z eno od osnovnih operacij ``(+, -, *, /)``. Če je možno,
+naj to izpiše, drugače pa naj izpiše, da se tega ne da narediti.
+Primer::
+
+  Uporabnik vpiše 2, 3 in 5.
+
+Program izpiše::
+
+  2 + 3 = 5
+  
+Trikotniška neenakost
+---------------------
+Sestavi program, ki bo prebral tri realna števila, nato pa preveril, ali obstaja trikotnik s takimi dolžinami
+stranic. Če obstaja, naj program izračuna njegovo ploščino in obseg.
+  
+Balls are touching
+------------------
+Sestavi program, ki bo prebral središči in polmera dveh krogov ter preveril, ali
+sta kroga ločena, se dotikata, ali pa imata skupno več kot eno točko.
+
+Statistika
+----------
+Napiši program, ki od uporabnika bere števila, dokler uporabnik ne vpiše števila 0. Program naj sproti izpisuje
+največje, najmanjše in povprečje števil, vpisanih do sedaj.
 
 Smrečice
 --------
@@ -46,25 +94,6 @@ Isto, le da je smrekica "na oba konca"::
    *******
   *********
 
-Kombiniranje števil
--------------------
-Napiši program, ki od uporabnika po vrsti prebere tri števila :math:`x`, :math:`y`,
-:math:`z`. Program naj preveri, če se da tretje število (:math:`z`) napisati kot
-kombinacijo prvih dveh z eno od osnovnih operacij ``(+, -, *, /)``. Če je možno,
-naj to izpiše, drugače pa naj izpiše, da se tega ne da narediti.
-Primer::
-
-  Uporabnik vpiše 2, 3 in 5.
-
-Program izpiše::
-
-  2 + 3 = 5
-
-Balls are touching
-------------------
-Sestavi program, ki bo prebral središči in polmera dveh krogov ter preveril, ali
-sta kroga ločena, se dotikata, ali pa imata skupno več kot eno točko.
-
 Kvadrati
 --------
 Napiši program, ki od uporabnika prebere število :math:`n`, nato pa izpiše po vrsti vse
@@ -84,7 +113,7 @@ naravnih števil do vključno :math:`n`, ter produkt vseh naravnih števil do vk
 
 Primer::
 
-  Uporabnik vpiše 100.
+  Uporabnik vpiše 50.
 
 Program izpiše::
 
@@ -94,11 +123,6 @@ Program izpiše::
 Delitelji
 ---------
 Sestavi program, ki dobi število n in izpiše vse njegove delitelje, vsakega samo enkrat, urejene po velikosti.
-
-Trikotnišna neenakost
----------------------
-Sestavi program, ki bo prebral tri realna števila, nato pa preveril, ali obstaja trikotnik s takimi dolžinami
-stranic. Če obstaja, naj program izračuna njegovo ploščino in obseg.
 
 Šahovnica
 ---------
@@ -118,7 +142,7 @@ Program izpiše::
 
 Števke
 ------
-Sestavi program, ki prebere naravno število in sešteje njegove števkein si to zapomni. Nato sešteje števke
+Sestavi program, ki prebere naravno število in sešteje njegove števke in si to zapomni. Nato sešteje števke
 tega števila, in tako naprej, dokler ne pridemo do enomestnega števila. Program naj izpisuje vse vmesne rezultate.
 Primer::
 
@@ -149,18 +173,13 @@ Program izpiše::
 
   Skupen čas: 4 ur 12 minut in 44 sekund.
 
-Statistika
-----------
-Napiši program, ki od uporabnika bere števila, dokler uporabnik ne vpiše števila 0. Program naj sproti izpisuje
-največje, najmanjše in povprečje števil, vpisanih do sedaj.
-
 Fibonacci
 ---------
 Sestavi program, ki izpiše prvih n členov Fibonaccijevega zaporedja.
 To je zaporedje, podano s predpisom :math:`f_1 = 1, f_2 = 1, f_n = f_{n-1} + f_{n-2}`.
 
 Primer::
-  Vnesi število šlenov: 10
+  Vnesi število členov: 10
 
 Program izpiše::
 

@@ -123,8 +123,8 @@
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../razbijanje.html">Razbijanje šifer</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../sifre/hack.html">Hacking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../razbijanje.html">Kriptografija</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../sifre/crypto.html">Možni napadi</a></li>
 </ul>
 </li>
 </ul>
@@ -179,9 +179,29 @@
             
   <div class="section" id="osnovne-vaje">
 <h1>Osnovne vaje<a class="headerlink" href="#osnovne-vaje" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="popolni-kvadrat">
+<h2>Popolni kvadrat<a class="headerlink" href="#popolni-kvadrat" title="Permalink to this headline">¶</a></h2>
+<p>Napiši program, ki prebere število in vrne njegov koren, če je ta celo število.
+Primer:</p>
+<div class="highlight-python"><div class="highlight"><pre>Uporabnik vnese 25.
+</pre></div>
+</div>
+<p>Program izpiše:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="mi">5</span>
+</pre></div>
+</div>
+<p>V nasprotnem primeru program izpiše <cite>Število ni popolni kvadrat.</cite></p>
+<div class="highlight-python"><div class="highlight"><pre>Uporabnik vnese 37.
+</pre></div>
+</div>
+<p>Program izpiše:</p>
+<div class="highlight-python"><div class="highlight"><pre>Število ni popolni kvadrat.
+</pre></div>
+</div>
+</div>
 <div class="section" id="stetje-limon">
 <h2>Štetje limon<a class="headerlink" href="#stetje-limon" title="Permalink to this headline">¶</a></h2>
-<p>Napiši program, ki prebere število in v pravilni slovenšini izpiše, koliko ima limon. Pozor pri številih kot so na primer 101 ipd.
+<p>Napiši program, ki prebere število in v pravilni slovenščini izpiše, koliko ima limon. Pozor pri številih, kot so na primer 101 ipd.
 Primer:</p>
 <div class="highlight-python"><div class="highlight"><pre>Uporabnik vnese 2.
 </pre></div>
@@ -190,6 +210,36 @@ Primer:</p>
 <div class="highlight-python"><div class="highlight"><pre>Imam 2 limoni.
 </pre></div>
 </div>
+</div>
+<div class="section" id="kombiniranje-stevil">
+<h2>Kombiniranje števil<a class="headerlink" href="#kombiniranje-stevil" title="Permalink to this headline">¶</a></h2>
+<p>Napiši program, ki od uporabnika po vrsti prebere tri števila <span class="math">\(x\)</span>, <span class="math">\(y\)</span>,
+<span class="math">\(z\)</span>. Program naj preveri, če se da tretje število (<span class="math">\(z\)</span>) napisati kot
+kombinacijo prvih dveh z eno od osnovnih operacij <tt class="docutils literal"><span class="pre">(+,</span> <span class="pre">-,</span> <span class="pre">*,</span> <span class="pre">/)</span></tt>. Če je možno,
+naj to izpiše, drugače pa naj izpiše, da se tega ne da narediti.
+Primer:</p>
+<div class="highlight-python"><div class="highlight"><pre>Uporabnik vpiše 2, 3 in 5.
+</pre></div>
+</div>
+<p>Program izpiše:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">=</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="trikotniska-neenakost">
+<h2>Trikotniška neenakost<a class="headerlink" href="#trikotniska-neenakost" title="Permalink to this headline">¶</a></h2>
+<p>Sestavi program, ki bo prebral tri realna števila, nato pa preveril, ali obstaja trikotnik s takimi dolžinami
+stranic. Če obstaja, naj program izračuna njegovo ploščino in obseg.</p>
+</div>
+<div class="section" id="balls-are-touching">
+<h2>Balls are touching<a class="headerlink" href="#balls-are-touching" title="Permalink to this headline">¶</a></h2>
+<p>Sestavi program, ki bo prebral središči in polmera dveh krogov ter preveril, ali
+sta kroga ločena, se dotikata, ali pa imata skupno več kot eno točko.</p>
+</div>
+<div class="section" id="statistika">
+<h2>Statistika<a class="headerlink" href="#statistika" title="Permalink to this headline">¶</a></h2>
+<p>Napiši program, ki od uporabnika bere števila, dokler uporabnik ne vpiše števila 0. Program naj sproti izpisuje
+največje, najmanjše in povprečje števil, vpisanih do sedaj.</p>
 </div>
 <div class="section" id="smrecice">
 <h2>Smrečice<a class="headerlink" href="#smrecice" title="Permalink to this headline">¶</a></h2>
@@ -223,26 +273,6 @@ Primer:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="kombiniranje-stevil">
-<h2>Kombiniranje števil<a class="headerlink" href="#kombiniranje-stevil" title="Permalink to this headline">¶</a></h2>
-<p>Napiši program, ki od uporabnika po vrsti prebere tri števila <span class="math">\(x\)</span>, <span class="math">\(y\)</span>,
-<span class="math">\(z\)</span>. Program naj preveri, če se da tretje število (<span class="math">\(z\)</span>) napisati kot
-kombinacijo prvih dveh z eno od osnovnih operacij <tt class="docutils literal"><span class="pre">(+,</span> <span class="pre">-,</span> <span class="pre">*,</span> <span class="pre">/)</span></tt>. Če je možno,
-naj to izpiše, drugače pa naj izpiše, da se tega ne da narediti.
-Primer:</p>
-<div class="highlight-python"><div class="highlight"><pre>Uporabnik vpiše 2, 3 in 5.
-</pre></div>
-</div>
-<p>Program izpiše:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">=</span> <span class="mi">5</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="balls-are-touching">
-<h2>Balls are touching<a class="headerlink" href="#balls-are-touching" title="Permalink to this headline">¶</a></h2>
-<p>Sestavi program, ki bo prebral središči in polmera dveh krogov ter preveril, ali
-sta kroga ločena, se dotikata, ali pa imata skupno več kot eno točko.</p>
-</div>
 <div class="section" id="kvadrati">
 <h2>Kvadrati<a class="headerlink" href="#kvadrati" title="Permalink to this headline">¶</a></h2>
 <p>Napiši program, ki od uporabnika prebere število <span class="math">\(n\)</span>, nato pa izpiše po vrsti vse
@@ -261,7 +291,7 @@ kvadrate naravnih števil do (vključno z) <span class="math">\(n\)</span>.  Pri
 naravnih števil do vključno <span class="math">\(n\)</span>, ter produkt vseh naravnih števil do vključno
 <span class="math">\(n\)</span>.</p>
 <p>Primer:</p>
-<div class="highlight-python"><div class="highlight"><pre>Uporabnik vpiše 100.
+<div class="highlight-python"><div class="highlight"><pre>Uporabnik vpiše 50.
 </pre></div>
 </div>
 <p>Program izpiše:</p>
@@ -273,11 +303,6 @@ naravnih števil do vključno <span class="math">\(n\)</span>, ter produkt vseh 
 <div class="section" id="delitelji">
 <h2>Delitelji<a class="headerlink" href="#delitelji" title="Permalink to this headline">¶</a></h2>
 <p>Sestavi program, ki dobi število n in izpiše vse njegove delitelje, vsakega samo enkrat, urejene po velikosti.</p>
-</div>
-<div class="section" id="trikotnisna-neenakost">
-<h2>Trikotnišna neenakost<a class="headerlink" href="#trikotnisna-neenakost" title="Permalink to this headline">¶</a></h2>
-<p>Sestavi program, ki bo prebral tri realna števila, nato pa preveril, ali obstaja trikotnik s takimi dolžinami
-stranic. Če obstaja, naj program izračuna njegovo ploščino in obseg.</p>
 </div>
 <div class="section" id="sahovnica">
 <h2>Šahovnica<a class="headerlink" href="#sahovnica" title="Permalink to this headline">¶</a></h2>
@@ -298,7 +323,7 @@ Primer:</p>
 </div>
 <div class="section" id="stevke">
 <h2>Števke<a class="headerlink" href="#stevke" title="Permalink to this headline">¶</a></h2>
-<p>Sestavi program, ki prebere naravno število in sešteje njegove števkein si to zapomni. Nato sešteje števke
+<p>Sestavi program, ki prebere naravno število in sešteje njegove števke in si to zapomni. Nato sešteje števke
 tega števila, in tako naprej, dokler ne pridemo do enomestnega števila. Program naj izpisuje vse vmesne rezultate.
 Primer:</p>
 <div class="highlight-python"><div class="highlight"><pre>Uporabnik vnese število 1234567891234567891234567891.
@@ -331,18 +356,13 @@ Primer:</p>
 </pre></div>
 </div>
 </div>
-<div class="section" id="statistika">
-<h2>Statistika<a class="headerlink" href="#statistika" title="Permalink to this headline">¶</a></h2>
-<p>Napiši program, ki od uporabnika bere števila, dokler uporabnik ne vpiše števila 0. Program naj sproti izpisuje
-največje, najmanjše in povprečje števil, vpisanih do sedaj.</p>
-</div>
 <div class="section" id="fibonacci">
 <h2>Fibonacci<a class="headerlink" href="#fibonacci" title="Permalink to this headline">¶</a></h2>
 <p>Sestavi program, ki izpiše prvih n členov Fibonaccijevega zaporedja.
 To je zaporedje, podano s predpisom <span class="math">\(f_1 = 1, f_2 = 1, f_n = f_{n-1} + f_{n-2}\)</span>.</p>
 <dl class="docutils">
 <dt>Primer::</dt>
-<dd>Vnesi število šlenov: 10</dd>
+<dd>Vnesi število členov: 10</dd>
 </dl>
 <p>Program izpiše:</p>
 <div class="highlight-python"><div class="highlight"><pre>Členi zaporedja so: 1 1 2 3 5 8 13 21 34 55
