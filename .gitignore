@@ -8,3 +8,4 @@ lib64/
 *python-3.7*
 /lib64
 /pyvenv.cfg
+tunel_large.txt
