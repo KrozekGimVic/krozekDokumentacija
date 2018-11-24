@@ -4,12 +4,12 @@
 Procesiranje podatkov
 =====================
 
-Dano imaš datoteko :download:`tunel.zip<datoteke/tunel.tar.bz2>`, ki vsebuje (izmišljene) podatke iz kamer (velik in
+Dano imaš datoteko :download:`tunel.tar.bz2<datoteke/tunel.tar.bz2>`, ki vsebuje (izmišljene) podatke iz kamer (velik in
 majhen primer),
 ki snemajo promet na obeh koncih tunela.
 Za vsak avto, ki gre v tunel ali iz tunela, se zabeleži
 njegova registrska tablica, tip avtomobila, časovna značka (milisekunde od 1. 1.
-1970) in ID kamere ki je naredila vnos.
+1970) in ID kamere, ki je naredila vnos.
 
 Tunel je dolg 3.2 kilometra, omejitev pa je 100 km/h za osebna vozila in motorje
 ter 80 km/h za tovornjake in avtobuse. Drugih tipov vozil ne podpiramo.  Kamere
