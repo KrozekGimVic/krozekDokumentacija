@@ -1,0 +1,8 @@
+Miha,Novak,zgodovina,4,pisno
+Miha,Novak,kemija,4,pisno
+Miha,Novak,kemija,5,ustno
+Miha,Novak,geografija,1,ustno
+Miha,Novak,zgodovina,5,ustno
+Miha,Novak,zgodovina,5,ustno
+Janez,Kos,matematika,2,pisno
+Janez,Kos,geografija,1,ustno

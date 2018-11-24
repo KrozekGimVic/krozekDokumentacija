@@ -36,6 +36,11 @@ Vsebina:
 .. toctree::
   :maxdepth: 2
 
+  c++-vaje
+
+.. toctree::
+  :maxdepth: 2
+
   sql
 
 .. toctree::

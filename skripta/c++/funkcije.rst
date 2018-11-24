@@ -1,7 +1,7 @@
-.. _funkcije-cpp:
+.. _funkcijecpp:
 
 Funkcije
---------
+========
 
 Zakaj potrebujemo funkcije si preberite v :ref:`funkcijepython` za python.
 

@@ -13,6 +13,7 @@ Vsebina:
   skripta/c++/uvod
   skripta/c++/osnove
   skripta/c++/podatkovni_tipi
+  skripta/c++/enum
   skripta/c++/funkcije
   skripta/c++/objekti
   skripta/c++/templates
