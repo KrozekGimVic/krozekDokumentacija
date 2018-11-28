@@ -36,7 +36,7 @@ for i in range(N):
     if i % 1223 == 0: continue
 
     if random() < 0.05 and seen:
-        vt, tab = choice(seenl)
+        tab, vt = choice(seenl)
     else:
         vt = choices(tip, weight)[0]
         tab = tablica()
@@ -50,8 +50,8 @@ for i in range(N):
     DT *= 3600*1000
 
 
-    data = [2*i, timestamp + T, vt, tab, choice(cf)]
-    data2 = [2*i+1, timestamp + T+DT, vt, tab, choice(cs)]
+    data = [2*i, int(timestamp + T), vt, tab, choice(cf)]
+    data2 = [2*i+1, int(timestamp + T+DT), vt, tab, choice(cs)]
 
     rows.append(",".join(map(str, data)))
     rows.append(",".join(map(str, data2)))
