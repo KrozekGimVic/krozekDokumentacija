@@ -17,5 +17,6 @@ Vsebina:
   skripta/c++/funkcije
   skripta/c++/objekti
   skripta/c++/templates
+  skripta/c++/dedovanje
 
 .. vim: spell spelllang=sl
