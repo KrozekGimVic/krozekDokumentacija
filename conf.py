@@ -58,7 +58,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = 'Programerski krožek na Gimnaziji Vič'
-copyright = '2014–2018, Natan Žabkar, Jure Slak, Maks Kolman, Ines Meršak'
+copyright = '2014–2019, Natan Žabkar, Jure Slak, Maks Kolman, Ines Meršak'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -278,7 +278,7 @@ texinfo_documents = [
 epub_title = 'Programerski krožek na Gimnaziji Vič'
 epub_author = 'Natan Žabkar, Jure Slak, Maks Kolman, Ines Meršak'
 epub_publisher = 'Natan Žabkar, Jure Slak, Maks Kolman, Ines Meršak'
-epub_copyright = '2014--2018, Natan Žabkar, Jure Slak, Maks Kolman, Ines Meršak'
+epub_copyright = '2014--2019, Natan Žabkar, Jure Slak, Maks Kolman, Ines Meršak'
 
 # The basename for the epub file. It defaults to the project name.
 #epub_basename = 'Programerski krožek na Gimnaziji Vič'

@@ -67,6 +67,8 @@ Funkcijo je treba namreč še poklicati. Naše funkcije kličemo popolnoma enako
       return 0;
   }
 
+.. _overloading:
+
 Overloading
 ~~~~~~~~~~~
 
@@ -117,6 +119,8 @@ Zgornji program dvakrat izpiše ``4.5``, saj je ``x`` v funkciji drugi kot v
 takole: ``spremeni(5.6)``. Kaj bi se sedaj zgodilo, če bi funkcija vrednost res
 spremenila? Bi 5.6 postalo 3.5? Jasno je, da mora funkcija sprejeti *kopijo*
 parametra.
+
+.. _referenceuvod:
 
 Reference in konstantne reference
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

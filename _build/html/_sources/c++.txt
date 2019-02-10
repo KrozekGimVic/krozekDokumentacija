@@ -15,8 +15,9 @@ Vsebina:
   skripta/c++/podatkovni_tipi
   skripta/c++/enum
   skripta/c++/funkcije
+  skripta/c++/pointers
   skripta/c++/objekti
-  skripta/c++/templates
   skripta/c++/dedovanje
+  skripta/c++/templates
 
 .. vim: spell spelllang=sl

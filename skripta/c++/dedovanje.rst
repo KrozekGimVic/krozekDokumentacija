@@ -3,7 +3,7 @@ Dedovanje
 
 Dedovanje je način, da novi tipi obdržijo (podedujejo) atribute in metode
 drugih tipov. Poleg tega lahko dodajo novo obnašanje, ali spremenijo starega.
-Slednji koncept se imenuje *overriding*.
+Slednji koncept se imenuje *overriding*, ki ga ne mešati z :ref:`overloading`.
 
 Osnove dedovanja
 ~~~~~~~~~~~~~~~~
@@ -31,13 +31,16 @@ torta ima svečke, kjer relacija "ima" označuje da so svečke njen atribut (in 
 npr. da bi ``RojstnodnevnaTorta`` dedovala od svečke).
 
 Sintaksa oblike  ``class B : public A`` označuje dedovanje, pri čemer ``B``
-dobi vse atribute in metode, ki jih ima ``A``. Beseda pubic označuje, da
+dobi vse atribute in metode, ki jih ima ``A``. Beseda ``public`` označuje, da
 atributi ohranijo enak nivo dostopa (npr. ``public``, ``private`` ali
-``protected``), kot so ga imeli v ``A``. Poleg tega lahko ``B`` doda
-novo obnašanje in nove podatke, tako kot smo do zgoraj naredili za rojstnodnevno
-torto.
+``protected``), kot so ga imeli v ``A``.
 
-Sedaj lahko uporabljamo v podrazredu tudi podedovane metode osnovnega razreda.
+Pri dedovanju lahko ``B`` doda
+novo obnašanje in nove podatke, tako kot smo do zgoraj naredili za rojstnodnevno
+torto. Pravimo, da je ``A`` *podrazred* razreda ``B``, ``B`` pa *nadrazred*
+razreda ``A``.
+
+Sedaj lahko uporabljamo v podrazredu tudi podedovane metode nadrazreda.
 
 .. code-block:: cpp
 
@@ -49,7 +52,7 @@ Sedaj lahko uporabljamo v podrazredu tudi podedovane metode osnovnega razreda.
 
 
 Konstruktorji in destruktorji
-~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Dodajmo v naše razrede še konstruktorje. Razred ``Torta`` naj ima maso, razred ``RojstnodnevnaTorta``
 pa še ime slavljenca. Oglejmo si definiciji:
@@ -126,7 +129,7 @@ Poglejmo si to še na primeru:
 Makro ``__func__`` je poseben ukaz v C++, ki se tekom prevajanja razširi v ime funkcije, kjer
 smo ga uporabili. Če poženemo zgornji program, se izpiše
 
-.. code-block::
+.. code-block:: none
 
   test konstruktorjev in destruktorjev:
   A
@@ -141,6 +144,8 @@ smo ga uporabili. Če poženemo zgornji program, se izpiše
 kar se sklada z zgornjo razlago. Prav tako vidimo, da so vsi klici
 konstruktorjev ali destruktorjev staršev avtomatski
 in jih prevajalnik sam zgenerira namesto nas.
+
+.. _slicing:
 
 Slicing
 ~~~~~~~
@@ -163,6 +168,8 @@ ki jih osnovni objekt nima. To je z vidika alokacije prostora smiselno, za
 spremenljivko tipa ``Torta`` imamo rezrvirano toliko prostora, kot ga
 potrebujemo zanjo in dodatne informacije morajo preč.
 
+.. _hiding:
+
 Hiding
 ~~~~~~
 
@@ -179,9 +186,9 @@ tako da ostranimo dodatne konstruktorje in dodamo lastno metodo ``peci``.
       void peci() { cout << "Pecem rojstnodnevno torto." << endl; }
   };
 
-in sedaj poglejmo, kaj se zgodi, ko pokličemo
+Sedaj poglejmo, kaj se zgodi, ko pokličemo
 
-  .. code-block:: cpp
+.. code-block:: cpp
 
   RojstnodnevnaTorta rt;
   Torta t = rt;
@@ -198,7 +205,7 @@ Z zgornjim primerom smo dosegli le, da na objketu ``rt`` ne moremo več direktno
 metode ``peci`` iz razreda ``Torta``, saj jo je skrila enako imenovana metoda
 ``peci`` iz razreda ``RojstnodnevnaTorta``.
 Temu procesu se v angleščini reče *hiding*, saj metoda iz podrazreda
-prepreči dedovanje (skrije) metode iz osnovnega razreda, ki imajo enako ime.
+prepreči dedovanje (skrije) metode iz nadrazreda, ki imajo enako ime.
 To bi se zgodilo tudi, če metoda
 ``peci`` ne bi imela poponoma enakih parametrov, kot metoda ``peci`` iz razreda
 ``Torta``. Primer:
@@ -217,7 +224,7 @@ Tudi v tem primeru prek objekta ``rt`` ne bi morali poklicati ``rt.peci()`` brez
 parametrov, saj se to sklicuje na skrito (in zato ne podedovano) metodo ``peci``
 iz razreda ``Torta``.  Dobimo napako:
 
-.. code-block::
+.. code-block:: none
 
   torta.cpp: In function ‘int main()’:
   torta.cpp:21:13: error: no matching function for call to ‘RojstnodnevnaTorta::peci()’
@@ -231,7 +238,7 @@ iz razreda ``Torta``.  Dobimo napako:
 ki pove le, da smo metodo ``peci`` poklicali narobe. Prevjalnik ``clang++`` je
 tukaj bolj uporabniku prijazen:
 
-.. code-block::
+.. code-block:: none
 
   torta.cpp:21:8: error: too few arguments to function call, expected 1, have 0; did you mean 'Torta::peci'?
       rt.peci();
@@ -242,7 +249,7 @@ tukaj bolj uporabniku prijazen:
            ^
   1 error generated.
 
-in namigne, da smo morda želeli poklicati metodo iz osnovnega razreda.
+in namigne, da smo morda želeli poklicati metodo iz nadrazreda.
 Če želimo poleg metod v podrazredu tudi metode z enakim
 imenom iz osnovnega razreda, moramo njihovo dedovanje eksplicitno zahtevati.
 To lahko storimo z ukazom ``using``, kot v primeru spodaj.
@@ -261,16 +268,284 @@ To lahko storimo z ukazom ``using``, kot v primeru spodaj.
 Sedaj imamo na voljo tako ``rt.peci()`` (eksplicitno podedovano iz razreda ``Torta``) in ``rt.peci(7)``
 iz razreda ``RojstnodnevnaTorta``.
 Če bi imeli obe metodi isto ime, ki morali (pa tudi sedaj lahko) metodo iz
-osnovnega razreda klicati z polno kvalificiranim imenom kot ``rt.Torta::peci()``.
+nadrazreda klicati z polno kvalificiranim imenom kot ``rt.Torta::peci()``.
 Zanekrat sicer še ne vemo, kaj so virtualne
 metode, toda princip skrivanja je zanje enak kot za običajne metode (kadar ne
 pride v igro overriding).
 
-Polimorfizem
-~~~~~~~~~~~~
+Polimorfizem in virtualne funkcije
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Pred branjem morate biti seznanjeni s snovjo v poglavju :ref:`pointers`.
+Zaradi enostavnosti bomo v tem pogavju uporabljali navadne pointerje,
+vendar vse deluje enako tudi s pametnimi pointerji.
+
+Polimorfizem (angl. *polymorphism*) pomeni "imeti več oblik" in se v kontekstu
+dedovanja nanaša na to, imamo lahko več podrazredov istega nadrazreda, ki
+se obnašajo vsak na svoj način, medtem ko še vedno imajo iste metode,
+predpisane s strani nadrazreda.
+
+Denimo da imamo spodnjo situacijo:
+
+.. code-block:: cpp
+
+  struct Animal {
+      string oglasanje() const { return ""; }
+  };
+
+  struct Dog : public Animal {
+      string oglasanje() const { return "Hov"; }
+  };
+
+  struct Cat : public Animal {
+      string oglasanje() const { return "Nyaa"; }
+  };
+
+  int main() {
+      Cat c;
+      Dog d;
+      vector<Animal> v;
+      v.push_back(c);
+      v.push_back(d);
+      for (const Animal& a : v) {
+          cout << a.oglasanje() << endl;
+      }
+      return 0;
+  }
+
+Ko poženemo zgornji program, ki radi, da se izpiše ``Nyaa`` in ``Hov``,
+saj smo v ``v`` shranili mačko in psa. Toda, kot smo se naučili v razdelku
+:ref:`slicing` se objekta ``Cat`` in ``Dog`` pretvorita v ``Animal`` in
+vse dodatne informacije izginejo. Izpiše se torej dvakrat prazen niz.
+Toda, če uporabimo pointerje, problem z
+različnimi velikostmi objektov, ko nadrazredu priredimo podrazred, izgine.
+Oba objekta sta kazalca enake velikosti (kakršna pač je na tem sistemu)
+in lahko kažeta na različno velika objekta. toda, to da še ni ovir, ne pomeni da
+je obnašanje tako. Koda spodaj
+
+.. code-block:: cpp
+
+      Cat* c = new Cat();
+      Dog* d = new Dog();
+      vector<Animal*> v;
+      v.push_back(c);
+      v.push_back(d);
+      for (const Animal* a : v) {
+          cout << a->oglasanje() << endl;
+      }
+      return 0;
+
+še vedno izpiše dva prazna niza: oba objekta sta kazalca na tip ``Animal``
+in enako kot prej se pokliče metoda ``oglasanje`` na tipu ``Animal``.
+
+To, da bi se metoda ``oglasanje`` obnasala drugače, glede na to ali je vrednost, na katero kaže pointer,
+v resnici tipa ``Cat``, stane nekaj operacij. Pri drugih jezikih (npr. Java) se
+to vedno preveri in uporabnik za vsak klic plača te operacije, filozofija C++ pa
+je, da uporabnik ne plača, za stvari, ki jih ni zahteval in moramo
+polimorfično obnašanje posebej zahtevati.
+
+To storimo z besedo ``virtual`` pred neko metodo. Ta označuje, da pri tej metodi
+podpiramo polimorfično obnašanje in dovolimo, da jo podrazredi predefinirajo
+(overridajo). Virtualne funkcije niso virtualne v smislu da ne obstajajo (te
+bomo spoznali kasneje), ampak so virtualne zgolj v smislu, da deklaracija ni
+direktno povezana z implementacijo. Kot bomo videli, so to funkcije, za katere
+je implementirano dinamično razvrščanje (angl. *dynamic dispatch*).
+
+Spemenimo definicijo ``Animal`` v sledečo.
+
+.. code-block:: cpp
+
+  struct Animal {
+      virtual string oglasanje() const { return ""; }
+  };
+
+Vse kar smo dodali, je beseda ``virtual``, ki označuje, da naj se
+pri klicu funkcije ``oglasanje`` uporabi polimorfizem: med izvajanjem programa
+(in ne pri prevajanju, kot ponavadi), se glede na trenuten tip kazalca na
+objekt izbere, katera implementacija virtualne funkcije ``oglasanje`` bo
+poklicana. Izbere se tisto, ki pripada objektu, ki je dejansko shranjen
+na mestu, kamor kaže kazalec. S spremenjeno definicijo, bi zadnji primer izpisal
+``Nyaa`` in ``Hov``, saj je prvi objekt (čeprav shranjen kot ``Animal*``) v
+resnici tipa ``Cat*`` in bi se poklicala njegova metoda ``ogasanje`` (ki
+je predefinirala tisto iz ``Animal``). Enako se zgodi za drugi element.
+Temu objašajnu pravimo poimorfizem in dinamičnemu klicanju glede na tip objekta
+med izvajanjem *dynamic dispatch*. Enako obnašanje dobimo, če kličemo metode
+prek referenc na objekte.
+
+.. code-block:: cpp
+
+  void oglasaj(const Animal& a) {
+      cout << a.oglasanje() << endl;
+  }
+
+  int main() {
+      oglasaj(Cat());
+      oglasaj(Dog());
+      return 0;
+  }
+
+Izpiše se ``Nyaa`` in ``Hov``, saj je klic prek reference polimorfičen.
+
+Predefinicije virtualnih funkcij so avtomatsko virtualne, tako da ni potrebno
+ponovno pred njih pisati besede ``virtual``. Da pa se izognemo morebitnim
+napakam, je dobro uporabiti besedo ``override`` s katero prevajalniku (in
+programerju) nakažemo, da je mišljeno, da ta funkcija predefinira neko virtualno
+funkcijo iz nadrazreda. Primer, ko nam to pomaga, sledi. Denimo, da definiramo
+podrazred ``Dog`` tako, pri čemer si mislimo, da smo predefinirali
+``oglasanje``.
+
+.. code-block:: cpp
+
+  struct Dog : public Animal {
+      string oglasanje() { return "Hov"; }
+  };
+
+Toda, Če bi pognali ``Animal* a = new Dog(); cout << a->oglasanje() << endl;``
+bi bili najprej prijetno presenečeni, ker prevajalnik nebi javil napak,
+in nato neprijetno presenečeni, ker bi se izpisal prazen niz.
+To je zato, ker smo pozabili ``const`` pri zgornji metodi in je prevajalnik
+to smatral kot drugo metodo, ki je samo skrila (v smislu razdelka :ref:`hiding`)
+metodo ``oglasanje`` iz nadrazreda. Če pa uporabimo ``override``
+
+
+.. code-block:: cpp
+
+  struct Dog : public Animal {
+      string oglasanje() override { return "Hov"; }
+  };
+
+pa nas prevajalnik posvari:
+
+.. code-block:: none
+
+  program.cpp:9:12: error: ‘std::__cxx11::string Dog::oglasanje()’ marked ‘override’, but does not override
+       string oglasanje() override { return "Hov"; }
+              ^~~~~~~~~
+
+Prevajalnik Clang, nam celo predlaga, da smo morda mislili predefinirati metodo, ki
+smo jo ponesreču skrili in celo pove, v čem se razlikujeta:
+
+.. code-block:: none
+
+  program.cpp:9:24: error: non-virtual member function marked 'override' hides virtual member function
+      string oglasanje() override { return "Hov"; }
+                         ^
+  programprogram.cpp:5:20: note: hidden overloaded virtual function 'Animal::oglasanje' declared here: different qualifiers (const vs none)
+      virtual string oglasanje() const { return "";}
+                     ^
+
+Podobno se zgodi, če smo ponesreči pozabili metodo v nadrazredu označiti kot
+virtualno, čeprav smo popolnoma pravilno predefinirali metodo spodaj. V tem
+primeru se brez ``override`` prevajalnik prav tako ne pritoži in program samo ne
+deluje po naših željah, medtem ko z ``override`` dobimo jasno napako
+
+.. code-block:: none
+
+  program.cpp:9:30: error: only virtual member functions can be marked 'override'
+      string oglasanje() const override { return "Hov"; }
+                               ^~~~~~~~~
+
+Uporaba ``override`` je tako zelo priporočena in pri prevajalnikih obstajajo
+celo zastavice, ki opozorijo, da smo to besedo pozabili.
+
+.. warning::
+
+  Polimorfično obnašanje dobimo samo, če imamo oboje: **virtualno funkcijo**, ki smo
+  jo klicali prek **kazalca** ali **reference**, ki je tipa našega nadrazreda.
+
+  To pomeni, da tudi če je metoda virtualna, pa jo kličemo direktno na
+  objektu nadrazreda, se bo klicala metoda nadrazreda, in ne od potencialnega
+  otroka (zaradi slicinga). Prav tako, tudi če kličemo metodo prek kazalca,
+  ki je z enakim imenom definirana v podrazredu, pa je nismo označili kot
+  virtualne, se bo zopet poklicala metoda nadrazreda. To pokaže naslednji
+  primer:
+
+  .. code-block:: cpp
+
+    struct A {
+        void f() { cout << "A::f" << endl; }
+        virtual void g() { cout << "A::g" << endl; }
+    };
+
+    struct B : public A {
+        void f() { cout << "B::f" << endl; }
+        void g() override { cout << "B::g" << endl; }
+    };
+
+    int main() {
+        A a;
+        B b;
+        A ab = B();
+        a.f(); a.g();
+        b.f(); b.g();
+        ab.f(); ab.g();
+
+        cout << "------------" << endl;
+
+        A* pa = &a;
+        B* pb = &b;
+        A* pab = &b;
+        pa->f(); pa->g();
+        pb->f(); pb->g();
+        pab->f(); pab->g();
+
+        cout << "------------" << endl;
+
+        A& ra = a;
+        B& rb = b;
+        A& rab = b;
+        ra.f(); ra.g();
+        rb.f(); rb.g();
+        rab.f(); rab.g();
+    }
+
+  Pri prvem sklopu se vedno kličejo metode (ne glede na virtualnost)
+  pripadajoče tipu objekta, saj kličemo direktno prek objekta.
+  Pri drugem in tretjem sklopu pa se metoda ``g`` pri klicu
+  prek kazalca ali reference kliče polimorfično in tudi v zadnji vrstici dobimo
+  izpis ``B::g``.
+
+  .. code-block:: none
+
+    A::f
+    A::g
+    B::f
+    B::g
+    A::f
+    A::g
+    ------------
+    A::f
+    A::g
+    B::f
+    B::g
+    A::f
+    B::g
+    ------------
+    A::f
+    A::g
+    B::f
+    B::g
+    A::f
+    B::g
+
+
+Stvari postanejo komplicirane, če imamo na kupu več funckij z enakim imenom in
+različnimi parametri, nekatere so virtualne, nekatere niso in lahko z
+predefiniranjem neke metode uvedemo skrivanje neke druge...
+
+Virtualni destruktorji
+~~~~~~~~~~~~~~~~~~~~~~
+
 TODO
 
+Čiste virtualne funkcije in abstraktni razredi
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+TODO
+
+
 Primer:
+
 .. code-block:: cpp
 
   #include <string>
@@ -281,110 +556,116 @@ Primer:
   using namespace std;
 
   struct Being {
-    virtual string zadnje_besede() const = 0;
-    void die() {
-      cout << zadnje_besede() << endl;
-    }
-    virtual ostream& print(ostream& os) const {
-      return os << "bitje";
-    }
-    virtual ~Being() {}
+      virtual string zadnje_besede() const = 0;
+      void die() {
+          cout << zadnje_besede() << endl;
+      }
+      virtual ostream& print(ostream& os) const {
+          return os << "bitje";
+      }
+      virtual ~Being() {}
   };
   ostream& operator<<(ostream& os, const Being& b) {
-    return b.print(os);
+      return b.print(os);
   }
 
   struct Plant : public Being {
-    string zadnje_besede() const override {
-        return "Screw vegans.";
-    }
+      string zadnje_besede() const override {
+              return "Screw vegans.";
+      }
   };
 
   struct Animal : public Being {
-    virtual string oglasanje() const = 0;
-    string zadnje_besede() const override {
-      return "Ouch.";
-    }
-    ostream& print(ostream& os) const override {
-      Being::print(os);
-      return os << " animal:";
-    }
+      virtual string oglasanje() const = 0;
+      string zadnje_besede() const override {
+          return "Ouch.";
+      }
+      ostream& print(ostream& os) const override {
+          Being::print(os);
+          return os << " animal:";
+      }
   };
 
   struct Dog : public Animal {
-    string name;
-    Dog(string name) : name(name) {}
-    string oglasanje() const override {
-      return "Hov " + name;
-    }
-    string zadnje_besede() const override {
-      return "Wasn't I a good boy?";
-    }
-    ostream& print(ostream& os) const override {
-      Animal::print(os);
-      return os << " Dog: " << name;
-    }
+      string name;
+      Dog(string name) : name(name) {}
+      string oglasanje() const override {
+          return "Hov " + name;
+      }
+      string zadnje_besede() const override {
+          return "Wasn't I a good boy?";
+      }
+      ostream& print(ostream& os) const override {
+          Animal::print(os);
+          return os << " Dog: " << name;
+      }
   };
 
   struct Cat : public Animal {
-    string oglasanje() const override {
-      return "Nyaa";
-    }
+      string oglasanje() const override {
+          return "Nyaa";
+      }
   };
 
   struct Duck : public Animal {
-    string oglasanje() const override {
-      return "Quack";
-    }
+      string oglasanje() const override {
+          return "Quack";
+      }
   };
 
   int main() {
-    // Animal a;
+      // Animal a;
 
-    vector<unique_ptr<Animal>> v;
-    v.push_back(make_unique<Dog>("Piki"));
-    v.push_back(make_unique<Cat>());
-    v.push_back(make_unique<Dog>("Fido"));
-    v.push_back(make_unique<Duck>());
-    v.push_back(make_unique<Dog>("Jakob"));
-    v.push_back(make_unique<Cat>());
+      vector<unique_ptr<Animal>> v;
+      v.push_back(make_unique<Dog>("Piki"));
+      v.push_back(make_unique<Cat>());
+      v.push_back(make_unique<Dog>("Fido"));
+      v.push_back(make_unique<Duck>());
+      v.push_back(make_unique<Dog>("Jakob"));
+      v.push_back(make_unique<Cat>());
 
-    /*
-    for (const auto& p : v) {
-      cout << p->oglasanje() << endl;
-    }*/
+      /*
+      for (const auto& p : v) {
+          cout << p->oglasanje() << endl;
+      }*/
 
-    vector<unique_ptr<Being>> b;
-    b.push_back(make_unique<Dog>("Piki"));
-    b.push_back(make_unique<Cat>());
-    b.push_back(make_unique<Duck>());
-    b.push_back(make_unique<Plant>());
-    for (const auto& p : b) {
-      p->die();
-      try {
-        // cout << typeid(p.get()).name() << endl;
-        Animal* a = dynamic_cast<Animal*>(p.get());
-        if (a == nullptr) {
-          cout << "a is null" << endl;
-        } else {
-          // cout << "here" << endl;
-          cout << a->oglasanje() << endl;
-          // cout << "here" << endl;
-        }
+      vector<unique_ptr<Being>> b;
+      b.push_back(make_unique<Dog>("Piki"));
+      b.push_back(make_unique<Cat>());
+      b.push_back(make_unique<Duck>());
+      b.push_back(make_unique<Plant>());
+      for (const auto& p : b) {
+          p->die();
+          try {
+              // cout << typeid(p.get()).name() << endl;
+              Animal* a = dynamic_cast<Animal*>(p.get());
+              if (a == nullptr) {
+                  cout << "a is null" << endl;
+              } else {
+                  // cout << "here" << endl;
+                  cout << a->oglasanje() << endl;
+                  // cout << "here" << endl;
+              }
 
-      } catch (std::bad_cast& bc) {
-        cout << "to ni Animal" << endl;
+          } catch (std::bad_cast& bc) {
+              cout << "to ni Animal" << endl;
+          }
       }
-    }
 
-    cout << "------------------" << endl;
-    for (const auto& p : b) {
-      cout << *p << endl;
-    }
+      cout << "------------------" << endl;
+      for (const auto& p : b) {
+          cout << *p << endl;
+      }
 
 
-    Dog d("Fifi");
-    cout << d << endl;
+      Dog d("Fifi");
+      cout << d << endl;
 
-    return 0;
+      return 0;
   }
+
+
+Daljši primer uporabe - risanje oblik
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+TODO

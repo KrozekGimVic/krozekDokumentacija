@@ -98,7 +98,9 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="">Podatkovni tipi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="enum.html">Enum</a></li>
 <li class="toctree-l2"><a class="reference internal" href="funkcije.html">Funkcije</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pointers.html">Kazalci in reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="objekti.html">Objekti</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dedovanje.html">Dedovanje</a></li>
 <li class="toctree-l2"><a class="reference internal" href="templates.html">Predloge (templates)</a></li>
 </ul>
 </li>
@@ -185,7 +187,7 @@
           <div role="main">
             
   <div class="section" id="podatkovni-tipi">
-<h1>Podatkovni tipi<a class="headerlink" href="#podatkovni-tipi" title="Permalink to this headline">¶</a></h1>
+<span id="podatkovnitipi"></span><h1>Podatkovni tipi<a class="headerlink" href="#podatkovni-tipi" title="Permalink to this headline">¶</a></h1>
 <p>Podatkovni tipi so zelo pomemben koncept v C++-u. Vsaka spremenljivka ima svoj
 tip in ena najpogostejših napak pri compilanju je, da se tipi ne ujemajo. Morda
 je potrebno nekaj truda, da se na tipe navadimo, ampak pri velikih projektih
@@ -264,8 +266,8 @@ Primer:</p>
 <table class="docutils footnote" frame="void" id="f1" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
-<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Velikost je odvisna od operaicjskega sistema in računalnika. Native
-pomeni  64 ali 32 biten, zopet odvisno od računalnika. V tablei so naštete
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Velikost je odvisna od operacijskega sistema in računalnika. Native
+pomeni ponavadi 64 ali 32 biten, zopet odvisno od računalnika. V tabeli so naštete
 najbolj pogoste velikosi. <tt class="docutils literal"><span class="pre">unsigned</span></tt> verzije imajo enak razpon, samo da je
 cel na pozitivnem delu osi. Več <a class="reference external" href="http://en.cppreference.com/w/cpp/language/types#Properties">tukaj</a>.</td></tr>
 </tbody>
@@ -373,7 +375,7 @@ koliko ste šli čez in v kateri vrstici kode.</p>
 </div>
 </div>
 <div class="section" id="iteratorji">
-<h3>Iteratorji<a class="headerlink" href="#iteratorji" title="Permalink to this headline">¶</a></h3>
+<span id="iteratorjiuvod"></span><h3>Iteratorji<a class="headerlink" href="#iteratorji" title="Permalink to this headline">¶</a></h3>
 <p>Iterator je objekt, ki vsebuje podatek o svoji poziciji v neki zbirki. Na nek
 način je podoben indeksu. Iteratorji so mnogo bolj uporabni kot vrednosti v
 zbirki same. Poglejmo si to na primeru indeksov. V seznamu najdemo vrednost 5.
@@ -721,7 +723,7 @@ nobenem primeru ni optimalna, če vrednosti ne želimo spreminjati, napišemo</p
 <p>kar prepreči kopiranje <tt class="docutils literal"><span class="pre">x</span></tt>, saj je <tt class="docutils literal"><span class="pre">x</span></tt> dejanski objekt iz <tt class="docutils literal"><span class="pre">v</span></tt>. Če
 <tt class="docutils literal"><span class="pre">const</span></tt> izpustimo, lahko <tt class="docutils literal"><span class="pre">x</span></tt> tudi spreminjamo, kar bo spremenilo tudi
 elemente <tt class="docutils literal"><span class="pre">v</span></tt>. Več o referencah (to so tisti &amp; znaki) v poglavju
-<em class="xref std std-ref">funkcije-cpp</em>. Tip <tt class="docutils literal"><span class="pre">int</span></tt> lahko nadomestimo tudi z <tt class="docutils literal"><span class="pre">auto</span></tt>, da nam ni
+<a class="reference internal" href="funkcije.html#funkcijecpp"><em>Funkcije</em></a>. Tip <tt class="docutils literal"><span class="pre">int</span></tt> lahko nadomestimo tudi z <tt class="docutils literal"><span class="pre">auto</span></tt>, da nam ni
 potrebno pisati zelo dolgih tipov, pri čemer še vedno popolnoma veljavno
 uporabljamo npr. <tt class="docutils literal"><span class="pre">auto&amp;</span> <span class="pre">x</span></tt> z enakim pomenom kot prej.</p>
 </div>
@@ -746,7 +748,7 @@ uporabljamo npr. <tt class="docutils literal"><span class="pre">auto&amp;</span>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2014–2018, Natan Žabkar, Jure Slak, Maks Kolman, Ines Meršak.
+        &copy; Copyright 2014–2019, Natan Žabkar, Jure Slak, Maks Kolman, Ines Meršak.
     </p>
   </div>
 

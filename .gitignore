@@ -9,3 +9,6 @@ lib64/
 /lib64
 /pyvenv.cfg
 tunel_large.txt
+
+_build/html/autodoc/*
+_build/html/_modules/tutorialsPythonBasic*

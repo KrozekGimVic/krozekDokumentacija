@@ -4,9 +4,6 @@ Objekti
 Razrede v C++ uporabljamo enako kot v Pythonu. Z njimi definiramo nove
 podatkovne tipe, ki ustrezajo našim potrebam. Najprej terminologija:
 
-Definicija
-~~~~~~~~~~
-
 *Razred* je definicija našega novega tipa.  Spremenljivka tega tipa, ki jo
 naredimo, se imenuje *objekt* tega razreda ali *instanca* tega razreda. *Tip* in
 *razred* se nanašata na abstraktno definicijo, *objekt* ali *instanca* pa na
@@ -28,7 +25,7 @@ Definicija novega razreda gre v C++ tako:
       tip4 member4;
   };
 
-.. danger::
+.. warning::
 
   Na koncu definicije razreda mora biti podpičje. Če ga pozabite, lahko pride
   do zelo neprijetnih in težko razumljivih napak.

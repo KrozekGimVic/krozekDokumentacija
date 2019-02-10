@@ -1,3 +1,5 @@
+.. _podatkovnitipi:
+
 Podatkovni tipi
 ===============
 
@@ -48,8 +50,8 @@ double       64 bit          :math:`\pm 3.4 \cdot 10^{\pm 308}`, 15 decimalk
 long double  80 bit          :math:`\pm 1.1 \cdot 10^{\pm 4932}`, 18 decimalk
 ============ =============== ============================
 
-.. [#f1] Velikost je odvisna od operaicjskega sistema in računalnika. Native
-  pomeni  64 ali 32 biten, zopet odvisno od računalnika. V tablei so naštete
+.. [#f1] Velikost je odvisna od operacijskega sistema in računalnika. Native
+  pomeni ponavadi 64 ali 32 biten, zopet odvisno od računalnika. V tabeli so naštete
   najbolj pogoste velikosi. ``unsigned`` verzije imajo enak razpon, samo da je
   cel na pozitivnem delu osi. Več `tukaj
   <http://en.cppreference.com/w/cpp/language/types#Properties>`__.
@@ -167,6 +169,8 @@ določenem indeksu:
   sli dostopate izven njega in poskuša to pač naresti, če posegate v spomin, ki
   ni njegov, pa sistem ubije vaš program, zato recimo ne dobite podatka o tem,
   koliko ste šli čez in v kateri vrstici kode.
+
+.. _iteratorjiuvod:
 
 Iteratorji
 ~~~~~~~~~~
@@ -516,7 +520,7 @@ nobenem primeru ni optimalna, če vrednosti ne želimo spreminjati, napišemo
 kar prepreči kopiranje ``x``, saj je ``x`` dejanski objekt iz ``v``. Če
 ``const`` izpustimo, lahko ``x`` tudi spreminjamo, kar bo spremenilo tudi
 elemente ``v``. Več o referencah (to so tisti & znaki) v poglavju
-:ref:`funkcije-cpp`. Tip ``int`` lahko nadomestimo tudi z ``auto``, da nam ni
+:ref:`funkcijecpp`. Tip ``int`` lahko nadomestimo tudi z ``auto``, da nam ni
 potrebno pisati zelo dolgih tipov, pri čemer še vedno popolnoma veljavno
 uporabljamo npr. ``auto& x`` z enakim pomenom kot prej.
 

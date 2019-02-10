@@ -32,8 +32,8 @@
   
     <link rel="top" title="Programerski krožek na Gimnaziji Vič 0.1 documentation" href="../../index.html"/>
         <link rel="up" title="C++" href="../../c++.html"/>
-        <link rel="next" title="C++ vaje" href="../../c++-vaje.html"/>
-        <link rel="prev" title="Predloge (templates)" href="templates.html"/> 
+        <link rel="next" title="Predloge (templates)" href="templates.html"/>
+        <link rel="prev" title="Objekti" href="objekti.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -98,9 +98,10 @@
 <li class="toctree-l2"><a class="reference internal" href="podatkovni_tipi.html">Podatkovni tipi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="enum.html">Enum</a></li>
 <li class="toctree-l2"><a class="reference internal" href="funkcije.html">Funkcije</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pointers.html">Kazalci in reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="objekti.html">Objekti</a></li>
-<li class="toctree-l2"><a class="reference internal" href="templates.html">Predloge (templates)</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Dedovanje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="templates.html">Predloge (templates)</a></li>
 </ul>
 </li>
 </ul>
@@ -189,11 +190,13 @@
 <h1>Dedovanje<a class="headerlink" href="#dedovanje" title="Permalink to this headline">¶</a></h1>
 <p>Dedovanje je način, da novi tipi obdržijo (podedujejo) atribute in metode
 drugih tipov. Poleg tega lahko dodajo novo obnašanje, ali spremenijo starega.
-Slednji koncept se imenuje <em>overriding</em>.</p>
+Slednji koncept se imenuje <em>overriding</em>, ki ga ne mešati z <a class="reference internal" href="funkcije.html#overloading"><em>Overloading</em></a>.</p>
+<div class="section" id="osnove-dedovanja">
+<h2>Osnove dedovanja<a class="headerlink" href="#osnove-dedovanja" title="Permalink to this headline">¶</a></h2>
 <p>Začnimo s preprostim primerom:</p>
 <div class="highlight-cpp"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Torta</span> <span class="p">{</span>
   <span class="nl">public:</span>
-    <span class="kt">void</span> <span class="n">peci</span><span class="p">()</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Torta se peče&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kt">void</span> <span class="n">peci</span><span class="p">()</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Torta se pece.&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
 <span class="p">};</span>
 
 <span class="k">class</span> <span class="nc">RojstnodnevnaTorta</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Torta</span> <span class="p">{</span>
@@ -209,13 +212,15 @@ saj je rojstnostnodnevna torta posebna vrsta torte - relacija &#8220;je&#8221;
 nakazuje, da je uporaba podrazreda primerna. Po drugi strani, rojstnodnevna
 torta ima svečke, kjer relacija &#8220;ima&#8221; označuje da so svečke njen atribut (in ne
 npr. da bi <tt class="docutils literal"><span class="pre">RojstnodnevnaTorta</span></tt> dedovala od svečke).</p>
-<p>Sintaksa oblike  <tt class="docutils literal"><span class="pre">class</span> <span class="pre">B</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">A</span></tt> označuje dedovanje, pri čemer <tt class="docutils literal"><span class="pre">A</span></tt>
-dobi vse atribute in metode, ki jih ima <tt class="docutils literal"><span class="pre">A</span></tt>. Beseda pubic označuje, da
+<p>Sintaksa oblike  <tt class="docutils literal"><span class="pre">class</span> <span class="pre">B</span> <span class="pre">:</span> <span class="pre">public</span> <span class="pre">A</span></tt> označuje dedovanje, pri čemer <tt class="docutils literal"><span class="pre">B</span></tt>
+dobi vse atribute in metode, ki jih ima <tt class="docutils literal"><span class="pre">A</span></tt>. Beseda <tt class="docutils literal"><span class="pre">public</span></tt> označuje, da
 atributi ohranijo enak nivo dostopa (npr. <tt class="docutils literal"><span class="pre">public</span></tt>, <tt class="docutils literal"><span class="pre">private</span></tt> ali
-<tt class="docutils literal"><span class="pre">protected</span></tt>), kot so ga imeli v <tt class="docutils literal"><span class="pre">A</span></tt>. Poleg tega lahko <tt class="docutils literal"><span class="pre">B</span></tt> doda
+<tt class="docutils literal"><span class="pre">protected</span></tt>), kot so ga imeli v <tt class="docutils literal"><span class="pre">A</span></tt>.</p>
+<p>Pri dedovanju lahko <tt class="docutils literal"><span class="pre">B</span></tt> doda
 novo obnašanje in nove podatke, tako kot smo do zgoraj naredili za rojstnodnevno
-torto.</p>
-<p>Sedaj lahko uporabimo podrazred tako kot bi uporabjali osnovnega:</p>
+torto. Pravimo, da je <tt class="docutils literal"><span class="pre">A</span></tt> <em>podrazred</em> razreda <tt class="docutils literal"><span class="pre">B</span></tt>, <tt class="docutils literal"><span class="pre">B</span></tt> pa <em>nadrazred</em>
+razreda <tt class="docutils literal"><span class="pre">A</span></tt>.</p>
+<p>Sedaj lahko uporabljamo v podrazredu tudi podedovane metode nadrazreda.</p>
 <div class="highlight-cpp"><div class="highlight"><pre><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
     <span class="n">RojstnodnevnaTorta</span> <span class="n">torta</span><span class="p">;</span>
     <span class="n">torta</span><span class="p">.</span><span class="n">peci</span><span class="p">();</span>  <span class="c1">// podedovano od torte</span>
@@ -223,7 +228,436 @@ torto.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>TODO: sicing, hiding, virtual functions, dynamic_cast</p>
+</div>
+<div class="section" id="konstruktorji-in-destruktorji">
+<h2>Konstruktorji in destruktorji<a class="headerlink" href="#konstruktorji-in-destruktorji" title="Permalink to this headline">¶</a></h2>
+<p>Dodajmo v naše razrede še konstruktorje. Razred <tt class="docutils literal"><span class="pre">Torta</span></tt> naj ima maso, razred <tt class="docutils literal"><span class="pre">RojstnodnevnaTorta</span></tt>
+pa še ime slavljenca. Oglejmo si definiciji:</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="k">class</span> <span class="nc">Torta</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">masa_</span><span class="p">;</span>
+  <span class="nl">public:</span>
+    <span class="n">Torta</span><span class="p">(</span><span class="kt">double</span> <span class="n">masa</span><span class="p">)</span> <span class="o">:</span> <span class="n">masa_</span><span class="p">(</span><span class="n">masa</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="kt">void</span> <span class="n">peci</span><span class="p">()</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Torta se pece.&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">RojstnodnevnaTorta</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Torta</span> <span class="p">{</span>
+  <span class="nl">public:</span>
+    <span class="n">string</span> <span class="n">slavljenec_</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">st_sveck</span><span class="p">;</span>
+    <span class="n">RojstnodnevnaTorta</span><span class="p">(</span><span class="k">const</span> <span class="n">string</span> <span class="n">slavljenec</span><span class="p">,</span> <span class="kt">double</span> <span class="n">masa</span><span class="p">)</span> <span class="o">:</span>
+        <span class="n">Torta</span><span class="p">(</span><span class="n">masa</span><span class="p">),</span> <span class="n">slavljenec_</span><span class="p">(</span><span class="n">slavljenec</span><span class="p">),</span> <span class="n">st_sveck</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="kt">void</span> <span class="n">dodaj_svecke</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span> <span class="n">st_sveck</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>Razred <tt class="docutils literal"><span class="pre">Torta</span></tt> ima običajen konstruktor, razred <tt class="docutils literal"><span class="pre">RojstnodnevnaTorta</span></tt>
+pa mora v konstruktorju kot prvo stvar poklicati nek konstruktor razreda
+<tt class="docutils literal"><span class="pre">Torta</span></tt>, ki mu v zgornjem primeru poda maso. To se je zgodilo tudi v prejšnjem
+primeru, le da ni bilo eksplicitno napisano. Razred <tt class="docutils literal"><span class="pre">Torta</span></tt> je namreč imel
+default konstruktor, ki ne sprejeme parametrov in se je samodejno poklical
+pred klicem konstruktorja <tt class="docutils literal"><span class="pre">RojstnodnevnaTorta</span></tt>. Če imamo verigo dedovanja
+<tt class="docutils literal"><span class="pre">D</span> <span class="pre">:</span> <span class="pre">C</span> <span class="pre">:</span> <span class="pre">B</span> <span class="pre">:</span> <span class="pre">A</span></tt> se ob konstruiranje objekta <tt class="docutils literal"><span class="pre">D</span></tt> začne s klicem izbranega
+konstruktorja <tt class="docutils literal"><span class="pre">A</span></tt>, nadaljuje z <tt class="docutils literal"><span class="pre">B</span></tt>, <tt class="docutils literal"><span class="pre">C</span></tt>, konstruktor <tt class="docutils literal"><span class="pre">D</span></tt> pa se pokliče
+zadnji, ko so vsi starši že narejeni. Med drgim to pomeni, da so podedovani deli
+objekta že konstruirani in lahko npr. kličemo podedovane metode ali uporabljamo
+podedovane atribute. V drugih jezikih se tak klic pogosto naredi z uporabo
+<tt class="docutils literal"><span class="pre">super</span></tt> (npr. Python, Java).</p>
+<p>Pri destruktorjih je zgodba podobna, a obrnjena okrog. Če na razredu tipa <tt class="docutils literal"><span class="pre">D</span></tt>
+pokličemo destruktor, se po koncu avtoamtsko pokličejo tudi konstruktorji
+staršev, tako da so podedovani atributi od <tt class="docutils literal"><span class="pre">A</span></tt> uničeni zadnji.</p>
+<p>Poglejmo si to še na primeru:</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="k">class</span> <span class="nc">A</span> <span class="p">{</span>
+  <span class="nl">public:</span>
+    <span class="n">A</span><span class="p">()</span>  <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">__func__</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+    <span class="o">~</span><span class="n">A</span><span class="p">()</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">__func__</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">B</span> <span class="o">:</span> <span class="k">public</span> <span class="n">A</span> <span class="p">{</span>
+  <span class="nl">public:</span>
+    <span class="n">B</span><span class="p">()</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">__func__</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+    <span class="o">~</span><span class="n">B</span><span class="p">()</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">__func__</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">C</span> <span class="o">:</span> <span class="k">public</span> <span class="n">B</span> <span class="p">{</span>
+  <span class="nl">public:</span>
+    <span class="n">C</span><span class="p">()</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">__func__</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+    <span class="o">~</span><span class="n">C</span><span class="p">()</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">__func__</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">class</span> <span class="nc">D</span> <span class="o">:</span> <span class="k">public</span> <span class="n">C</span> <span class="p">{</span>
+  <span class="nl">public:</span>
+    <span class="n">D</span><span class="p">()</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">__func__</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+    <span class="o">~</span><span class="n">D</span><span class="p">()</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">__func__</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;test konstruktorjev in destruktorjev:&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">{</span> <span class="n">D</span> <span class="n">d</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Makro <tt class="docutils literal"><span class="pre">__func__</span></tt> je poseben ukaz v C++, ki se tekom prevajanja razširi v ime funkcije, kjer
+smo ga uporabili. Če poženemo zgornji program, se izpiše</p>
+<div class="highlight-none"><div class="highlight"><pre>test konstruktorjev in destruktorjev:
+A
+B
+C
+D
+~D
+~C
+~B
+~A
+</pre></div>
+</div>
+<p>kar se sklada z zgornjo razlago. Prav tako vidimo, da so vsi klici
+konstruktorjev ali destruktorjev staršev avtomatski
+in jih prevajalnik sam zgenerira namesto nas.</p>
+</div>
+<div class="section" id="slicing">
+<span id="id1"></span><h2>Slicing<a class="headerlink" href="#slicing" title="Permalink to this headline">¶</a></h2>
+<p>Eno izmed osnovnih načel dedovanja je, da lahko spremenljivko bolj specifičnega
+tipa shranimo kot manj speficičen tip. Z našim primerom od prej gre sklep tako:
+ker je <tt class="docutils literal"><span class="pre">RojstnodnevnaTorta</span></tt> tudi <tt class="docutils literal"><span class="pre">Torta</span></tt>, lahko spremenljivko tipa
+<tt class="docutils literal"><span class="pre">RojstnodnevnaTorta</span></tt> shranimo v spremenljivko tipa <tt class="docutils literal"><span class="pre">Torta</span></tt>.</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="n">RojstnodnevnaTorta</span> <span class="nf">rt</span><span class="p">(</span><span class="s">&quot;Janez&quot;</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">);</span>
+<span class="n">Torta</span> <span class="n">t</span> <span class="o">=</span> <span class="n">rt</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Pri tem zgubimo vse informacije o tem, da je <tt class="docutils literal"><span class="pre">t</span></tt> kdaj bila
+<tt class="docutils literal"><span class="pre">RojstnodnevnaTorta</span></tt> in na spremenljivki <tt class="docutils literal"><span class="pre">t</span></tt> lahko kličemo le metode in
+dostopamo do atributov, ki jih ima <tt class="docutils literal"><span class="pre">Torta</span></tt>. Ta proces se imenuje <em>slicing</em>
+ali <em>object slicing</em>, saj od podobjekta odrežemo stran vse metode in atribute,
+ki jih osnovni objekt nima. To je z vidika alokacije prostora smiselno, za
+spremenljivko tipa <tt class="docutils literal"><span class="pre">Torta</span></tt> imamo rezrvirano toliko prostora, kot ga
+potrebujemo zanjo in dodatne informacije morajo preč.</p>
+</div>
+<div class="section" id="hiding">
+<span id="id2"></span><h2>Hiding<a class="headerlink" href="#hiding" title="Permalink to this headline">¶</a></h2>
+<p>Recimo, da sedaj spremenimo definicijo razreda <tt class="docutils literal"><span class="pre">RojstnodnevnaTorta</span></tt>,
+tako da ostranimo dodatne konstruktorje in dodamo lastno metodo <tt class="docutils literal"><span class="pre">peci</span></tt>.</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="k">class</span> <span class="nc">RojstnodnevnaTorta</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Torta</span> <span class="p">{</span>
+  <span class="nl">public:</span>
+    <span class="kt">int</span> <span class="n">st_sveck</span><span class="p">;</span>
+    <span class="n">RojstnodnevnaTorta</span><span class="p">()</span> <span class="o">:</span> <span class="n">Torta</span><span class="p">(</span><span class="mf">1.0</span><span class="p">),</span> <span class="n">st_sveck</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="kt">void</span> <span class="n">dodaj_svecke</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span> <span class="n">st_sveck</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kt">void</span> <span class="n">peci</span><span class="p">()</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Pecem rojstnodnevno torto.&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>Sedaj poglejmo, kaj se zgodi, ko pokličemo</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="n">RojstnodnevnaTorta</span> <span class="n">rt</span><span class="p">;</span>
+<span class="n">Torta</span> <span class="n">t</span> <span class="o">=</span> <span class="n">rt</span><span class="p">;</span>
+<span class="n">rt</span><span class="p">.</span><span class="n">peci</span><span class="p">();</span>
+<span class="n">t</span><span class="p">.</span><span class="n">peci</span><span class="p">();</span>
+</pre></div>
+</div>
+<p>Izpiše se <tt class="docutils literal"><span class="pre">Pecem</span> <span class="pre">rojstnodnevno</span> <span class="pre">torto.</span></tt>, čemur sledi še <tt class="docutils literal"><span class="pre">Torta</span> <span class="pre">se</span> <span class="pre">pece.</span></tt>.
+To je zato, ker je <tt class="docutils literal"><span class="pre">t</span></tt> tipa <tt class="docutils literal"><span class="pre">Torta</span></tt>, <tt class="docutils literal"><span class="pre">rt</span></tt> pa tipa <tt class="docutils literal"><span class="pre">RojstnodnevnaTorta</span></tt>
+in metoda <tt class="docutils literal"><span class="pre">peci</span></tt> se na teh dveh razredih obnaša različno. v veliko programskih
+jezikih, npr. v Javi, bi se obakrat izpisalo <tt class="docutils literal"><span class="pre">Pecem</span> <span class="pre">rojstnodnevno</span> <span class="pre">torto.</span></tt>,
+saj bi jezik se vedno vedel, da se, kljub temu, da je <tt class="docutils literal"><span class="pre">t</span></tt> tipa <tt class="docutils literal"><span class="pre">Torta</span></tt>, v
+njem skriva <tt class="docutils literal"><span class="pre">RojstnodnevnaTorta</span></tt>. V C++ zaradi slicing-a temu ni tako.
+Z zgornjim primerom smo dosegli le, da na objketu <tt class="docutils literal"><span class="pre">rt</span></tt> ne moremo več direktno
+metode <tt class="docutils literal"><span class="pre">peci</span></tt> iz razreda <tt class="docutils literal"><span class="pre">Torta</span></tt>, saj jo je skrila enako imenovana metoda
+<tt class="docutils literal"><span class="pre">peci</span></tt> iz razreda <tt class="docutils literal"><span class="pre">RojstnodnevnaTorta</span></tt>.
+Temu procesu se v angleščini reče <em>hiding</em>, saj metoda iz podrazreda
+prepreči dedovanje (skrije) metode iz nadrazreda, ki imajo enako ime.
+To bi se zgodilo tudi, če metoda
+<tt class="docutils literal"><span class="pre">peci</span></tt> ne bi imela poponoma enakih parametrov, kot metoda <tt class="docutils literal"><span class="pre">peci</span></tt> iz razreda
+<tt class="docutils literal"><span class="pre">Torta</span></tt>. Primer:</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="k">class</span> <span class="nc">RojstnodnevnaTorta</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Torta</span> <span class="p">{</span>
+  <span class="nl">public:</span>
+    <span class="kt">int</span> <span class="n">st_sveck</span><span class="p">;</span>
+    <span class="n">RojstnodnevnaTorta</span><span class="p">()</span> <span class="o">:</span> <span class="n">Torta</span><span class="p">(</span><span class="mf">1.0</span><span class="p">),</span> <span class="n">st_sveck</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="kt">void</span> <span class="n">dodaj_svecke</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span> <span class="n">st_sveck</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kt">void</span> <span class="n">peci</span><span class="p">(</span><span class="kt">int</span> <span class="n">m</span><span class="p">)</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Pecem rojstnodnevno torto za &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">m</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;minut.&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>Tudi v tem primeru prek objekta <tt class="docutils literal"><span class="pre">rt</span></tt> ne bi morali poklicati <tt class="docutils literal"><span class="pre">rt.peci()</span></tt> brez
+parametrov, saj se to sklicuje na skrito (in zato ne podedovano) metodo <tt class="docutils literal"><span class="pre">peci</span></tt>
+iz razreda <tt class="docutils literal"><span class="pre">Torta</span></tt>.  Dobimo napako:</p>
+<div class="highlight-none"><div class="highlight"><pre>torta.cpp: In function ‘int main()’:
+torta.cpp:21:13: error: no matching function for call to ‘RojstnodnevnaTorta::peci()’
+     rt.peci();
+             ^
+torta.cpp:15:10: note: candidate: ‘void RojstnodnevnaTorta::peci(int)’
+     void peci(int m) { cout &lt;&lt; &quot;Pecem rojstnodnevno torto za &quot; &lt;&lt; m &lt;&lt; &quot;minut.&quot; &lt;&lt; endl; }
+          ^~~~
+torta.cpp:15:10: note:   candidate expects 1 argument, 0 provided
+</pre></div>
+</div>
+<p>ki pove le, da smo metodo <tt class="docutils literal"><span class="pre">peci</span></tt> poklicali narobe. Prevjalnik <tt class="docutils literal"><span class="pre">clang++</span></tt> je
+tukaj bolj uporabniku prijazen:</p>
+<div class="highlight-none"><div class="highlight"><pre>torta.cpp:21:8: error: too few arguments to function call, expected 1, have 0; did you mean &#39;Torta::peci&#39;?
+    rt.peci();
+       ^~~~
+       Torta::peci
+torta.cpp:6:10: note: &#39;Torta::peci&#39; declared here
+    void peci() { cout &lt;&lt; &quot;Torta se pece.&quot; &lt;&lt; endl; }
+         ^
+1 error generated.
+</pre></div>
+</div>
+<p>in namigne, da smo morda želeli poklicati metodo iz nadrazreda.
+Če želimo poleg metod v podrazredu tudi metode z enakim
+imenom iz osnovnega razreda, moramo njihovo dedovanje eksplicitno zahtevati.
+To lahko storimo z ukazom <tt class="docutils literal"><span class="pre">using</span></tt>, kot v primeru spodaj.</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="k">class</span> <span class="nc">RojstnodnevnaTorta</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Torta</span> <span class="p">{</span>
+  <span class="nl">public:</span>
+    <span class="kt">int</span> <span class="n">st_sveck</span><span class="p">;</span>
+    <span class="n">RojstnodnevnaTorta</span><span class="p">()</span> <span class="o">:</span> <span class="n">Torta</span><span class="p">(</span><span class="mf">1.0</span><span class="p">),</span> <span class="n">st_sveck</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="kt">void</span> <span class="n">dodaj_svecke</span><span class="p">(</span><span class="kt">int</span> <span class="n">n</span><span class="p">)</span> <span class="p">{</span> <span class="n">st_sveck</span> <span class="o">=</span> <span class="n">n</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">using</span> <span class="n">Torta</span><span class="o">::</span><span class="n">peci</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="nf">peci</span><span class="p">(</span><span class="kt">int</span> <span class="n">m</span><span class="p">)</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;Pecem rojstnodnevno torto za &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">m</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;minut.&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>Sedaj imamo na voljo tako <tt class="docutils literal"><span class="pre">rt.peci()</span></tt> (eksplicitno podedovano iz razreda <tt class="docutils literal"><span class="pre">Torta</span></tt>) in <tt class="docutils literal"><span class="pre">rt.peci(7)</span></tt>
+iz razreda <tt class="docutils literal"><span class="pre">RojstnodnevnaTorta</span></tt>.
+Če bi imeli obe metodi isto ime, ki morali (pa tudi sedaj lahko) metodo iz
+nadrazreda klicati z polno kvalificiranim imenom kot <tt class="docutils literal"><span class="pre">rt.Torta::peci()</span></tt>.
+Zanekrat sicer še ne vemo, kaj so virtualne
+metode, toda princip skrivanja je zanje enak kot za običajne metode (kadar ne
+pride v igro overriding).</p>
+</div>
+<div class="section" id="polimorfizem-in-virtualne-funkcije">
+<h2>Polimorfizem in virtualne funkcije<a class="headerlink" href="#polimorfizem-in-virtualne-funkcije" title="Permalink to this headline">¶</a></h2>
+<p>Pred branjem morate biti seznanjeni s snovjo v poglavju <a class="reference internal" href="pointers.html#pointers"><em>Kazalci in reference</em></a>.
+Zaradi enostavnosti bomo v tem pogavju uporabljali navadne pointerje,
+vendar vse deluje enako tudi s pametnimi pointerji.</p>
+<p>Polimorfizem (angl. <em>polymorphism</em>) pomeni &#8220;imeti več oblik&#8221; in se v kontekstu
+dedovanja nanaša na to, imamo lahko več podrazredov istega nadrazreda, ki
+se obnašajo vsak na svoj način, medtem ko še vedno imajo iste metode,
+predpisane s strani nadrazreda.</p>
+<p>Denimo da imamo spodnjo situacijo:</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="k">struct</span> <span class="n">Animal</span> <span class="p">{</span>
+    <span class="n">string</span> <span class="n">oglasanje</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="s">&quot;&quot;</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">struct</span> <span class="n">Dog</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Animal</span> <span class="p">{</span>
+    <span class="n">string</span> <span class="n">oglasanje</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="s">&quot;Hov&quot;</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">struct</span> <span class="n">Cat</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Animal</span> <span class="p">{</span>
+    <span class="n">string</span> <span class="n">oglasanje</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="s">&quot;Nyaa&quot;</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">Cat</span> <span class="n">c</span><span class="p">;</span>
+    <span class="n">Dog</span> <span class="n">d</span><span class="p">;</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">Animal</span><span class="o">&gt;</span> <span class="n">v</span><span class="p">;</span>
+    <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+    <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">d</span><span class="p">);</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="n">Animal</span><span class="o">&amp;</span> <span class="n">a</span> <span class="o">:</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span><span class="p">.</span><span class="n">oglasanje</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Ko poženemo zgornji program, ki radi, da se izpiše <tt class="docutils literal"><span class="pre">Nyaa</span></tt> in <tt class="docutils literal"><span class="pre">Hov</span></tt>,
+saj smo v <tt class="docutils literal"><span class="pre">v</span></tt> shranili mačko in psa. Toda, kot smo se naučili v razdelku
+<a class="reference internal" href="#slicing"><em>Slicing</em></a> se objekta <tt class="docutils literal"><span class="pre">Cat</span></tt> in <tt class="docutils literal"><span class="pre">Dog</span></tt> pretvorita v <tt class="docutils literal"><span class="pre">Animal</span></tt> in
+vse dodatne informacije izginejo. Izpiše se torej dvakrat prazen niz.
+Toda, če uporabimo pointerje, problem z
+različnimi velikostmi objektov, ko nadrazredu priredimo podrazred, izgine.
+Oba objekta sta kazalca enake velikosti (kakršna pač je na tem sistemu)
+in lahko kažeta na različno velika objekta. toda, to da še ni ovir, ne pomeni da
+je obnašanje tako. Koda spodaj</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="n">Cat</span><span class="o">*</span> <span class="n">c</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Cat</span><span class="p">();</span>
+<span class="n">Dog</span><span class="o">*</span> <span class="n">d</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Dog</span><span class="p">();</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="n">Animal</span><span class="o">*&gt;</span> <span class="n">v</span><span class="p">;</span>
+<span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">c</span><span class="p">);</span>
+<span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">d</span><span class="p">);</span>
+<span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="n">Animal</span><span class="o">*</span> <span class="n">a</span> <span class="o">:</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span><span class="o">-&gt;</span><span class="n">oglasanje</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>še vedno izpiše dva prazna niza: oba objekta sta kazalca na tip <tt class="docutils literal"><span class="pre">Animal</span></tt>
+in enako kot prej se pokliče metoda <tt class="docutils literal"><span class="pre">oglasanje</span></tt> na tipu <tt class="docutils literal"><span class="pre">Animal</span></tt>.</p>
+<p>To, da bi se metoda <tt class="docutils literal"><span class="pre">oglasanje</span></tt> obnasala drugače, glede na to ali je vrednost, na katero kaže pointer,
+v resnici tipa <tt class="docutils literal"><span class="pre">Cat</span></tt>, stane nekaj operacij. Pri drugih jezikih (npr. Java) se
+to vedno preveri in uporabnik za vsak klic plača te operacije, filozofija C++ pa
+je, da uporabnik ne plača, za stvari, ki jih ni zahteval in moramo
+polimorfično obnašanje posebej zahtevati.</p>
+<p>To storimo z besedo <tt class="docutils literal"><span class="pre">virtual</span></tt> pred neko metodo. Ta označuje, da pri tej metodi
+podpiramo polimorfično obnašanje in dovolimo, da jo podrazredi predefinirajo
+(overridajo). Virtualne funkcije niso virtualne v smislu da ne obstajajo (te
+bomo spoznali kasneje), ampak so virtualne zgolj v smislu, da deklaracija ni
+direktno povezana z implementacijo. Kot bomo videli, so to funkcije, za katere
+je implementirano dinamično razvrščanje (angl. <em>dynamic dispatch</em>).</p>
+<p>Spemenimo definicijo <tt class="docutils literal"><span class="pre">Animal</span></tt> v sledečo.</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="k">struct</span> <span class="n">Animal</span> <span class="p">{</span>
+    <span class="k">virtual</span> <span class="n">string</span> <span class="n">oglasanje</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="s">&quot;&quot;</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>Vse kar smo dodali, je beseda <tt class="docutils literal"><span class="pre">virtual</span></tt>, ki označuje, da naj se
+pri klicu funkcije <tt class="docutils literal"><span class="pre">oglasanje</span></tt> uporabi polimorfizem: med izvajanjem programa
+(in ne pri prevajanju, kot ponavadi), se glede na trenuten tip kazalca na
+objekt izbere, katera implementacija virtualne funkcije <tt class="docutils literal"><span class="pre">oglasanje</span></tt> bo
+poklicana. Izbere se tisto, ki pripada objektu, ki je dejansko shranjen
+na mestu, kamor kaže kazalec. S spremenjeno definicijo, bi zadnji primer izpisal
+<tt class="docutils literal"><span class="pre">Nyaa</span></tt> in <tt class="docutils literal"><span class="pre">Hov</span></tt>, saj je prvi objekt (čeprav shranjen kot <tt class="docutils literal"><span class="pre">Animal*</span></tt>) v
+resnici tipa <tt class="docutils literal"><span class="pre">Cat*</span></tt> in bi se poklicala njegova metoda <tt class="docutils literal"><span class="pre">ogasanje</span></tt> (ki
+je predefinirala tisto iz <tt class="docutils literal"><span class="pre">Animal</span></tt>). Enako se zgodi za drugi element.
+Temu objašajnu pravimo poimorfizem in dinamičnemu klicanju glede na tip objekta
+med izvajanjem <em>dynamic dispatch</em>. Enako obnašanje dobimo, če kličemo metode
+prek referenc na objekte.</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="kt">void</span> <span class="nf">oglasaj</span><span class="p">(</span><span class="k">const</span> <span class="n">Animal</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span><span class="p">.</span><span class="n">oglasanje</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">oglasaj</span><span class="p">(</span><span class="n">Cat</span><span class="p">());</span>
+    <span class="n">oglasaj</span><span class="p">(</span><span class="n">Dog</span><span class="p">());</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Izpiše se <tt class="docutils literal"><span class="pre">Nyaa</span></tt> in <tt class="docutils literal"><span class="pre">Hov</span></tt>, saj je klic prek reference polimorfičen.</p>
+<p>Predefinicije virtualnih funkcij so avtomatsko virtualne, tako da ni potrebno
+ponovno pred njih pisati besede <tt class="docutils literal"><span class="pre">virtual</span></tt>. Da pa se izognemo morebitnim
+napakam, je dobro uporabiti besedo <tt class="docutils literal"><span class="pre">override</span></tt> s katero prevajalniku (in
+programerju) nakažemo, da je mišljeno, da ta funkcija predefinira neko virtualno
+funkcijo iz nadrazreda. Primer, ko nam to pomaga, sledi. Denimo, da definiramo
+podrazred <tt class="docutils literal"><span class="pre">Dog</span></tt> tako, pri čemer si mislimo, da smo predefinirali
+<tt class="docutils literal"><span class="pre">oglasanje</span></tt>.</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="k">struct</span> <span class="n">Dog</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Animal</span> <span class="p">{</span>
+    <span class="n">string</span> <span class="n">oglasanje</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="s">&quot;Hov&quot;</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>Toda, Če bi pognali <tt class="docutils literal"><span class="pre">Animal*</span> <span class="pre">a</span> <span class="pre">=</span> <span class="pre">new</span> <span class="pre">Dog();</span> <span class="pre">cout</span> <span class="pre">&lt;&lt;</span> <span class="pre">a-&gt;oglasanje()</span> <span class="pre">&lt;&lt;</span> <span class="pre">endl;</span></tt>
+bi bili najprej prijetno presenečeni, ker prevajalnik nebi javil napak,
+in nato neprijetno presenečeni, ker bi se izpisal prazen niz.
+To je zato, ker smo pozabili <tt class="docutils literal"><span class="pre">const</span></tt> pri zgornji metodi in je prevajalnik
+to smatral kot drugo metodo, ki je samo skrila (v smislu razdelka <a class="reference internal" href="#hiding"><em>Hiding</em></a>)
+metodo <tt class="docutils literal"><span class="pre">oglasanje</span></tt> iz nadrazreda. Če pa uporabimo <tt class="docutils literal"><span class="pre">override</span></tt></p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="k">struct</span> <span class="n">Dog</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Animal</span> <span class="p">{</span>
+    <span class="n">string</span> <span class="n">oglasanje</span><span class="p">()</span> <span class="n">override</span> <span class="p">{</span> <span class="k">return</span> <span class="s">&quot;Hov&quot;</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>pa nas prevajalnik posvari:</p>
+<div class="highlight-none"><div class="highlight"><pre>program.cpp:9:12: error: ‘std::__cxx11::string Dog::oglasanje()’ marked ‘override’, but does not override
+     string oglasanje() override { return &quot;Hov&quot;; }
+            ^~~~~~~~~
+</pre></div>
+</div>
+<p>Prevajalnik Clang, nam celo predlaga, da smo morda mislili predefinirati metodo, ki
+smo jo ponesreču skrili in celo pove, v čem se razlikujeta:</p>
+<div class="highlight-none"><div class="highlight"><pre>program.cpp:9:24: error: non-virtual member function marked &#39;override&#39; hides virtual member function
+    string oglasanje() override { return &quot;Hov&quot;; }
+                       ^
+programprogram.cpp:5:20: note: hidden overloaded virtual function &#39;Animal::oglasanje&#39; declared here: different qualifiers (const vs none)
+    virtual string oglasanje() const { return &quot;&quot;;}
+                   ^
+</pre></div>
+</div>
+<p>Podobno se zgodi, če smo ponesreči pozabili metodo v nadrazredu označiti kot
+virtualno, čeprav smo popolnoma pravilno predefinirali metodo spodaj. V tem
+primeru se brez <tt class="docutils literal"><span class="pre">override</span></tt> prevajalnik prav tako ne pritoži in program samo ne
+deluje po naših željah, medtem ko z <tt class="docutils literal"><span class="pre">override</span></tt> dobimo jasno napako</p>
+<div class="highlight-none"><div class="highlight"><pre>program.cpp:9:30: error: only virtual member functions can be marked &#39;override&#39;
+    string oglasanje() const override { return &quot;Hov&quot;; }
+                             ^~~~~~~~~
+</pre></div>
+</div>
+<p>Uporaba <tt class="docutils literal"><span class="pre">override</span></tt> je tako zelo priporočena in pri prevajalnikih obstajajo
+celo zastavice, ki opozorijo, da smo to besedo pozabili.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p>Polimorfično obnašanje dobimo samo, če imamo oboje: <strong>virtualno funkcijo</strong>, ki smo
+jo klicali prek <strong>kazalca</strong> ali <strong>reference</strong>, ki je tipa našega nadrazreda.</p>
+<p>To pomeni, da tudi če je metoda virtualna, pa jo kličemo direktno na
+objektu nadrazreda, se bo klicala metoda nadrazreda, in ne od potencialnega
+otroka (zaradi slicinga). Prav tako, tudi če kličemo metodo prek kazalca,
+ki je z enakim imenom definirana v podrazredu, pa je nismo označili kot
+virtualne, se bo zopet poklicala metoda nadrazreda. To pokaže naslednji
+primer:</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="k">struct</span> <span class="n">A</span> <span class="p">{</span>
+    <span class="kt">void</span> <span class="n">f</span><span class="p">()</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;A::f&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">virtual</span> <span class="kt">void</span> <span class="n">g</span><span class="p">()</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;A::g&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">struct</span> <span class="n">B</span> <span class="o">:</span> <span class="k">public</span> <span class="n">A</span> <span class="p">{</span>
+    <span class="kt">void</span> <span class="n">f</span><span class="p">()</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;B::f&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+    <span class="kt">void</span> <span class="n">g</span><span class="p">()</span> <span class="n">override</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;B::g&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">A</span> <span class="n">a</span><span class="p">;</span>
+    <span class="n">B</span> <span class="n">b</span><span class="p">;</span>
+    <span class="n">A</span> <span class="n">ab</span> <span class="o">=</span> <span class="n">B</span><span class="p">();</span>
+    <span class="n">a</span><span class="p">.</span><span class="n">f</span><span class="p">();</span> <span class="n">a</span><span class="p">.</span><span class="n">g</span><span class="p">();</span>
+    <span class="n">b</span><span class="p">.</span><span class="n">f</span><span class="p">();</span> <span class="n">b</span><span class="p">.</span><span class="n">g</span><span class="p">();</span>
+    <span class="n">ab</span><span class="p">.</span><span class="n">f</span><span class="p">();</span> <span class="n">ab</span><span class="p">.</span><span class="n">g</span><span class="p">();</span>
+
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;------------&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="n">A</span><span class="o">*</span> <span class="n">pa</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">;</span>
+    <span class="n">B</span><span class="o">*</span> <span class="n">pb</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">;</span>
+    <span class="n">A</span><span class="o">*</span> <span class="n">pab</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">;</span>
+    <span class="n">pa</span><span class="o">-&gt;</span><span class="n">f</span><span class="p">();</span> <span class="n">pa</span><span class="o">-&gt;</span><span class="n">g</span><span class="p">();</span>
+    <span class="n">pb</span><span class="o">-&gt;</span><span class="n">f</span><span class="p">();</span> <span class="n">pb</span><span class="o">-&gt;</span><span class="n">g</span><span class="p">();</span>
+    <span class="n">pab</span><span class="o">-&gt;</span><span class="n">f</span><span class="p">();</span> <span class="n">pab</span><span class="o">-&gt;</span><span class="n">g</span><span class="p">();</span>
+
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;------------&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+
+    <span class="n">A</span><span class="o">&amp;</span> <span class="n">ra</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+    <span class="n">B</span><span class="o">&amp;</span> <span class="n">rb</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+    <span class="n">A</span><span class="o">&amp;</span> <span class="n">rab</span> <span class="o">=</span> <span class="n">b</span><span class="p">;</span>
+    <span class="n">ra</span><span class="p">.</span><span class="n">f</span><span class="p">();</span> <span class="n">ra</span><span class="p">.</span><span class="n">g</span><span class="p">();</span>
+    <span class="n">rb</span><span class="p">.</span><span class="n">f</span><span class="p">();</span> <span class="n">rb</span><span class="p">.</span><span class="n">g</span><span class="p">();</span>
+    <span class="n">rab</span><span class="p">.</span><span class="n">f</span><span class="p">();</span> <span class="n">rab</span><span class="p">.</span><span class="n">g</span><span class="p">();</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Pri prvem sklopu se vedno kličejo metode (ne glede na virtualnost)
+pripadajoče tipu objekta, saj kličemo direktno prek objekta.
+Pri drugem in tretjem sklopu pa se metoda <tt class="docutils literal"><span class="pre">g</span></tt> pri klicu
+prek kazalca ali reference kliče polimorfično in tudi v zadnji vrstici dobimo
+izpis <tt class="docutils literal"><span class="pre">B::g</span></tt>.</p>
+<div class="last highlight-none"><div class="highlight"><pre>A::f
+A::g
+B::f
+B::g
+A::f
+A::g
+------------
+A::f
+A::g
+B::f
+B::g
+A::f
+B::g
+------------
+A::f
+A::g
+B::f
+B::g
+A::f
+B::g
+</pre></div>
+</div>
+</div>
+<p>Stvari postanejo komplicirane, če imamo na kupu več funckij z enakim imenom in
+različnimi parametri, nekatere so virtualne, nekatere niso in lahko z
+predefiniranjem neke metode uvedemo skrivanje neke druge...</p>
+</div>
+<div class="section" id="virtualni-destruktorji">
+<h2>Virtualni destruktorji<a class="headerlink" href="#virtualni-destruktorji" title="Permalink to this headline">¶</a></h2>
+<p>TODO</p>
+</div>
+<div class="section" id="ciste-virtualne-funkcije-in-abstraktni-razredi">
+<h2>Čiste virtualne funkcije in abstraktni razredi<a class="headerlink" href="#ciste-virtualne-funkcije-in-abstraktni-razredi" title="Permalink to this headline">¶</a></h2>
+<p>TODO</p>
+<p>Primer:</p>
 <div class="highlight-cpp"><div class="highlight"><pre><span class="cp">#include &lt;string&gt;</span>
 <span class="cp">#include &lt;iostream&gt;</span>
 <span class="cp">#include &lt;vector&gt;</span>
@@ -232,114 +666,119 @@ torto.</p>
 <span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
 
 <span class="k">struct</span> <span class="n">Being</span> <span class="p">{</span>
-  <span class="k">virtual</span> <span class="n">string</span> <span class="n">zadnje_besede</span><span class="p">()</span> <span class="k">const</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="kt">void</span> <span class="nf">die</span><span class="p">()</span> <span class="p">{</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">zadnje_besede</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="k">virtual</span> <span class="n">ostream</span><span class="o">&amp;</span> <span class="n">print</span><span class="p">(</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">os</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;bitje&quot;</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="k">virtual</span> <span class="o">~</span><span class="n">Being</span><span class="p">()</span> <span class="p">{}</span>
+    <span class="k">virtual</span> <span class="n">string</span> <span class="n">zadnje_besede</span><span class="p">()</span> <span class="k">const</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="kt">void</span> <span class="nf">die</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">zadnje_besede</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">virtual</span> <span class="n">ostream</span><span class="o">&amp;</span> <span class="n">print</span><span class="p">(</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">os</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;bitje&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">virtual</span> <span class="o">~</span><span class="n">Being</span><span class="p">()</span> <span class="p">{}</span>
 <span class="p">};</span>
 <span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">Being</span><span class="o">&amp;</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
-  <span class="k">return</span> <span class="n">b</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">os</span><span class="p">);</span>
+    <span class="k">return</span> <span class="n">b</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">os</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="k">struct</span> <span class="n">Plant</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Being</span> <span class="p">{</span>
-  <span class="n">string</span> <span class="n">zadnje_besede</span><span class="p">()</span> <span class="k">const</span> <span class="n">override</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="s">&quot;Screw vegans.&quot;</span><span class="p">;</span>
-  <span class="p">}</span>
+    <span class="n">string</span> <span class="n">zadnje_besede</span><span class="p">()</span> <span class="k">const</span> <span class="n">override</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="s">&quot;Screw vegans.&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
 <span class="p">};</span>
 
 <span class="k">struct</span> <span class="n">Animal</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Being</span> <span class="p">{</span>
-  <span class="k">virtual</span> <span class="n">string</span> <span class="n">oglasanje</span><span class="p">()</span> <span class="k">const</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="n">string</span> <span class="n">zadnje_besede</span><span class="p">()</span> <span class="k">const</span> <span class="n">override</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="s">&quot;Ouch.&quot;</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="n">ostream</span><span class="o">&amp;</span> <span class="n">print</span><span class="p">(</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">os</span><span class="p">)</span> <span class="k">const</span> <span class="n">override</span> <span class="p">{</span>
-    <span class="n">Being</span><span class="o">::</span><span class="n">print</span><span class="p">(</span><span class="n">os</span><span class="p">);</span>
-    <span class="k">return</span> <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; animal:&quot;</span><span class="p">;</span>
-  <span class="p">}</span>
+    <span class="k">virtual</span> <span class="n">string</span> <span class="n">oglasanje</span><span class="p">()</span> <span class="k">const</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">string</span> <span class="n">zadnje_besede</span><span class="p">()</span> <span class="k">const</span> <span class="n">override</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">&quot;Ouch.&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">ostream</span><span class="o">&amp;</span> <span class="n">print</span><span class="p">(</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">os</span><span class="p">)</span> <span class="k">const</span> <span class="n">override</span> <span class="p">{</span>
+        <span class="n">Being</span><span class="o">::</span><span class="n">print</span><span class="p">(</span><span class="n">os</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; animal:&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
 <span class="p">};</span>
 
 <span class="k">struct</span> <span class="n">Dog</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Animal</span> <span class="p">{</span>
-  <span class="n">string</span> <span class="n">name</span><span class="p">;</span>
-  <span class="n">Dog</span><span class="p">(</span><span class="n">string</span> <span class="n">name</span><span class="p">)</span> <span class="o">:</span> <span class="n">name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="p">{}</span>
-  <span class="n">string</span> <span class="n">oglasanje</span><span class="p">()</span> <span class="k">const</span> <span class="n">override</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="s">&quot;Hov &quot;</span> <span class="o">+</span> <span class="n">name</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="n">string</span> <span class="n">zadnje_besede</span><span class="p">()</span> <span class="k">const</span> <span class="n">override</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="s">&quot;Wasn&#39;t I a good boy?&quot;</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="n">ostream</span><span class="o">&amp;</span> <span class="n">print</span><span class="p">(</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">os</span><span class="p">)</span> <span class="k">const</span> <span class="n">override</span> <span class="p">{</span>
-    <span class="n">Animal</span><span class="o">::</span><span class="n">print</span><span class="p">(</span><span class="n">os</span><span class="p">);</span>
-    <span class="k">return</span> <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; Dog: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">name</span><span class="p">;</span>
-  <span class="p">}</span>
+    <span class="n">string</span> <span class="n">name</span><span class="p">;</span>
+    <span class="n">Dog</span><span class="p">(</span><span class="n">string</span> <span class="n">name</span><span class="p">)</span> <span class="o">:</span> <span class="n">name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="p">{}</span>
+    <span class="n">string</span> <span class="n">oglasanje</span><span class="p">()</span> <span class="k">const</span> <span class="n">override</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">&quot;Hov &quot;</span> <span class="o">+</span> <span class="n">name</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">string</span> <span class="n">zadnje_besede</span><span class="p">()</span> <span class="k">const</span> <span class="n">override</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">&quot;Wasn&#39;t I a good boy?&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">ostream</span><span class="o">&amp;</span> <span class="n">print</span><span class="p">(</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">os</span><span class="p">)</span> <span class="k">const</span> <span class="n">override</span> <span class="p">{</span>
+        <span class="n">Animal</span><span class="o">::</span><span class="n">print</span><span class="p">(</span><span class="n">os</span><span class="p">);</span>
+        <span class="k">return</span> <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; Dog: &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">name</span><span class="p">;</span>
+    <span class="p">}</span>
 <span class="p">};</span>
 
 <span class="k">struct</span> <span class="n">Cat</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Animal</span> <span class="p">{</span>
-  <span class="n">string</span> <span class="n">oglasanje</span><span class="p">()</span> <span class="k">const</span> <span class="n">override</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="s">&quot;Nyaa&quot;</span><span class="p">;</span>
-  <span class="p">}</span>
+    <span class="n">string</span> <span class="n">oglasanje</span><span class="p">()</span> <span class="k">const</span> <span class="n">override</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">&quot;Nyaa&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
 <span class="p">};</span>
 
 <span class="k">struct</span> <span class="n">Duck</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Animal</span> <span class="p">{</span>
-  <span class="n">string</span> <span class="n">oglasanje</span><span class="p">()</span> <span class="k">const</span> <span class="n">override</span> <span class="p">{</span>
-    <span class="k">return</span> <span class="s">&quot;Quack&quot;</span><span class="p">;</span>
-  <span class="p">}</span>
+    <span class="n">string</span> <span class="n">oglasanje</span><span class="p">()</span> <span class="k">const</span> <span class="n">override</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="s">&quot;Quack&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
 <span class="p">};</span>
 
 <span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-  <span class="c1">// Animal a;</span>
+    <span class="c1">// Animal a;</span>
 
-  <span class="n">vector</span><span class="o">&lt;</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Animal</span><span class="o">&gt;&gt;</span> <span class="n">v</span><span class="p">;</span>
-  <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;Piki&quot;</span><span class="p">));</span>
-  <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span><span class="p">());</span>
-  <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;Fido&quot;</span><span class="p">));</span>
-  <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Duck</span><span class="o">&gt;</span><span class="p">());</span>
-  <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;Jakob&quot;</span><span class="p">));</span>
-  <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span><span class="p">());</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Animal</span><span class="o">&gt;&gt;</span> <span class="n">v</span><span class="p">;</span>
+    <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;Piki&quot;</span><span class="p">));</span>
+    <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span><span class="p">());</span>
+    <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;Fido&quot;</span><span class="p">));</span>
+    <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Duck</span><span class="o">&gt;</span><span class="p">());</span>
+    <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;Jakob&quot;</span><span class="p">));</span>
+    <span class="n">v</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span><span class="p">());</span>
 
-  <span class="cm">/*</span>
-<span class="cm">  for (const auto&amp; p : v) {</span>
-<span class="cm">    cout &lt;&lt; p-&gt;oglasanje() &lt;&lt; endl;</span>
-<span class="cm">  }*/</span>
+    <span class="cm">/*</span>
+<span class="cm">    for (const auto&amp; p : v) {</span>
+<span class="cm">        cout &lt;&lt; p-&gt;oglasanje() &lt;&lt; endl;</span>
+<span class="cm">    }*/</span>
 
-  <span class="n">vector</span><span class="o">&lt;</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Being</span><span class="o">&gt;&gt;</span> <span class="n">b</span><span class="p">;</span>
-  <span class="n">b</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;Piki&quot;</span><span class="p">));</span>
-  <span class="n">b</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span><span class="p">());</span>
-  <span class="n">b</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Duck</span><span class="o">&gt;</span><span class="p">());</span>
-  <span class="n">b</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Plant</span><span class="o">&gt;</span><span class="p">());</span>
-  <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">p</span> <span class="o">:</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">p</span><span class="o">-&gt;</span><span class="n">die</span><span class="p">();</span>
-    <span class="n">try</span> <span class="p">{</span>
-      <span class="c1">// cout &lt;&lt; typeid(p.get()).name() &lt;&lt; endl;</span>
-      <span class="n">Animal</span><span class="o">*</span> <span class="n">a</span> <span class="o">=</span> <span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">Animal</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">nullptr</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;a is null&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="c1">// cout &lt;&lt; &quot;here&quot; &lt;&lt; endl;</span>
-        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span><span class="o">-&gt;</span><span class="n">oglasanje</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-        <span class="c1">// cout &lt;&lt; &quot;here&quot; &lt;&lt; endl;</span>
-      <span class="p">}</span>
+    <span class="n">vector</span><span class="o">&lt;</span><span class="n">unique_ptr</span><span class="o">&lt;</span><span class="n">Being</span><span class="o">&gt;&gt;</span> <span class="n">b</span><span class="p">;</span>
+    <span class="n">b</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Dog</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;Piki&quot;</span><span class="p">));</span>
+    <span class="n">b</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Cat</span><span class="o">&gt;</span><span class="p">());</span>
+    <span class="n">b</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Duck</span><span class="o">&gt;</span><span class="p">());</span>
+    <span class="n">b</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">make_unique</span><span class="o">&lt;</span><span class="n">Plant</span><span class="o">&gt;</span><span class="p">());</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">p</span> <span class="o">:</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">p</span><span class="o">-&gt;</span><span class="n">die</span><span class="p">();</span>
+        <span class="n">try</span> <span class="p">{</span>
+            <span class="c1">// cout &lt;&lt; typeid(p.get()).name() &lt;&lt; endl;</span>
+            <span class="n">Animal</span><span class="o">*</span> <span class="n">a</span> <span class="o">=</span> <span class="k">dynamic_cast</span><span class="o">&lt;</span><span class="n">Animal</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">nullptr</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;a is null&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="c1">// cout &lt;&lt; &quot;here&quot; &lt;&lt; endl;</span>
+                <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span><span class="o">-&gt;</span><span class="n">oglasanje</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+                <span class="c1">// cout &lt;&lt; &quot;here&quot; &lt;&lt; endl;</span>
+            <span class="p">}</span>
 
-    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">bad_cast</span><span class="o">&amp;</span> <span class="n">bc</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;to ni Animal&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">bad_cast</span><span class="o">&amp;</span> <span class="n">bc</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;to ni Animal&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+        <span class="p">}</span>
     <span class="p">}</span>
-  <span class="p">}</span>
 
-  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;------------------&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-  <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">p</span> <span class="o">:</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">p</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
-  <span class="p">}</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;------------------&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span><span class="o">&amp;</span> <span class="n">p</span> <span class="o">:</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">p</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
 
 
-  <span class="n">Dog</span> <span class="n">d</span><span class="p">(</span><span class="s">&quot;Fifi&quot;</span><span class="p">);</span>
-  <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">d</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="n">Dog</span> <span class="n">d</span><span class="p">(</span><span class="s">&quot;Fifi&quot;</span><span class="p">);</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">d</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
 
-  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
+</div>
+</div>
+<div class="section" id="daljsi-primer-uporabe-risanje-oblik">
+<h2>Daljši primer uporabe - risanje oblik<a class="headerlink" href="#daljsi-primer-uporabe-risanje-oblik" title="Permalink to this headline">¶</a></h2>
+<p>TODO</p>
 </div>
 </div>
 
@@ -349,10 +788,10 @@ torto.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../../c++-vaje.html" class="btn btn-neutral float-right" title="C++ vaje"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="templates.html" class="btn btn-neutral float-right" title="Predloge (templates)"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="templates.html" class="btn btn-neutral" title="Predloge (templates)"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="objekti.html" class="btn btn-neutral" title="Objekti"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -361,7 +800,7 @@ torto.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2014–2018, Natan Žabkar, Jure Slak, Maks Kolman, Ines Meršak.
+        &copy; Copyright 2014–2019, Natan Žabkar, Jure Slak, Maks Kolman, Ines Meršak.
     </p>
   </div>
 

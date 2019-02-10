@@ -32,8 +32,8 @@
   
     <link rel="top" title="Programerski krožek na Gimnaziji Vič 0.1 documentation" href="../../index.html"/>
         <link rel="up" title="C++" href="../../c++.html"/>
-        <link rel="next" title="Predloge (templates)" href="templates.html"/>
-        <link rel="prev" title="Funkcije" href="funkcije.html"/> 
+        <link rel="next" title="Dedovanje" href="dedovanje.html"/>
+        <link rel="prev" title="Kazalci in reference" href="pointers.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -98,9 +98,10 @@
 <li class="toctree-l2"><a class="reference internal" href="podatkovni_tipi.html">Podatkovni tipi</a></li>
 <li class="toctree-l2"><a class="reference internal" href="enum.html">Enum</a></li>
 <li class="toctree-l2"><a class="reference internal" href="funkcije.html">Funkcije</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pointers.html">Kazalci in reference</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Objekti</a></li>
-<li class="toctree-l2"><a class="reference internal" href="templates.html">Predloge (templates)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dedovanje.html">Dedovanje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="templates.html">Predloge (templates)</a></li>
 </ul>
 </li>
 </ul>
@@ -189,8 +190,6 @@
 <h1>Objekti<a class="headerlink" href="#objekti" title="Permalink to this headline">¶</a></h1>
 <p>Razrede v C++ uporabljamo enako kot v Pythonu. Z njimi definiramo nove
 podatkovne tipe, ki ustrezajo našim potrebam. Najprej terminologija:</p>
-<div class="section" id="definicija">
-<h2>Definicija<a class="headerlink" href="#definicija" title="Permalink to this headline">¶</a></h2>
 <p><em>Razred</em> je definicija našega novega tipa.  Spremenljivka tega tipa, ki jo
 naredimo, se imenuje <em>objekt</em> tega razreda ali <em>instanca</em> tega razreda. <em>Tip</em> in
 <em>razred</em> se nanašata na abstraktno definicijo, <em>objekt</em> ali <em>instanca</em> pa na
@@ -208,8 +207,8 @@ z <em>PascalCase</em> začetnicami.</p>
 <span class="p">};</span>
 </pre></div>
 </div>
-<div class="admonition danger">
-<p class="first admonition-title">Danger</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
 <p class="last">Na koncu definicije razreda mora biti podpičje. Če ga pozabite, lahko pride
 do zelo neprijetnih in težko razumljivih napak.</p>
 </div>
@@ -229,7 +228,6 @@ atributov in metod dostopamo s piko <tt class="docutils literal"><span class="pr
     <span class="n">p</span><span class="p">.</span><span class="n">b</span> <span class="o">=</span> <span class="mf">1.2</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
-</div>
 </div>
 <div class="section" id="metode">
 <h2>Metode<a class="headerlink" href="#metode" title="Permalink to this headline">¶</a></h2>
@@ -538,10 +536,10 @@ kasneje.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="templates.html" class="btn btn-neutral float-right" title="Predloge (templates)"/>Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="dedovanje.html" class="btn btn-neutral float-right" title="Dedovanje"/>Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="funkcije.html" class="btn btn-neutral" title="Funkcije"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pointers.html" class="btn btn-neutral" title="Kazalci in reference"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -550,7 +548,7 @@ kasneje.</p>
 
   <div role="contentinfo">
     <p>
-        &copy; Copyright 2014–2018, Natan Žabkar, Jure Slak, Maks Kolman, Ines Meršak.
+        &copy; Copyright 2014–2019, Natan Žabkar, Jure Slak, Maks Kolman, Ines Meršak.
     </p>
   </div>
 
