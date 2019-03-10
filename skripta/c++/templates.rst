@@ -69,3 +69,5 @@ predlogi oba tipa enaka (oba sta ``T``).
 
 
 TODO: Funckije s poljubno argumenti, templated classes.
+
+.. vim: spell spelllang=sl

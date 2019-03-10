@@ -424,7 +424,7 @@ elementov v paru. Do elementov dostopamo z atributoma ``.first`` in
 
 .. code-block:: cpp
 
-  pair<int, string> par = make_pair(12, "asdfasdf");
+  pair<int, string> par = make_pair(12, "asdfasdf");  // lahko tudi = {12, "asdfasdf"}
   cout << "(" << par.first << ", " << par.second << ")\n";
 
 Uporaba asociativnih seznamov
@@ -452,12 +452,12 @@ Primer uporabe:
 
 .. code-block:: cpp
 
-  map<string, int> counter;
+  map<char, int> counter;
   string znaki = "abeceda";
   for (int i = 0; i < znaki.length(); ++i) {
       counter[znaki[i]]++;    // pri danem znaku povečamo count
   }
-  for (map<string, int>::iterator it = counter.begin(); it != counter.end(); ++it) {
+  for (map<char, int>::iterator it = counter.begin(); it != counter.end(); ++it) {
     cout << it->first << " => " << it->second  << endl;
   }
   // Izpis:
@@ -523,6 +523,5 @@ elemente ``v``. Več o referencah (to so tisti & znaki) v poglavju
 :ref:`funkcijecpp`. Tip ``int`` lahko nadomestimo tudi z ``auto``, da nam ni
 potrebno pisati zelo dolgih tipov, pri čemer še vedno popolnoma veljavno
 uporabljamo npr. ``auto& x`` z enakim pomenom kot prej.
-
 
 .. vim: spell spelllang=sl

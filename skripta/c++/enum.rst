@@ -67,3 +67,4 @@ implementacijski tip, starejši pa se lahko.
   int c = RED;  // ok
   char b = Color::RED;  //  error: cannot convert ‘Color’ to ‘char’ in initialization
 
+.. vim: spell spelllang=sl

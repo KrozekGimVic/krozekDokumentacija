@@ -25,7 +25,7 @@ Začnimo s preprostim primerom:
   };
 
 Tukaj razred ``RojstnodnevnaTorta`` deduje od razreda ``Torta``,
-saj je rojstnostnodnevna torta posebna vrsta torte - relacija "je"
+saj je rojstnodnevna torta posebna vrsta torte - relacija "je"
 nakazuje, da je uporaba podrazreda primerna. Po drugi strani, rojstnodnevna
 torta ima svečke, kjer relacija "ima" označuje da so svečke njen atribut (in ne
 npr. da bi ``RojstnodnevnaTorta`` dedovala od svečke).
@@ -83,13 +83,13 @@ default konstruktor, ki ne sprejeme parametrov in se je samodejno poklical
 pred klicem konstruktorja ``RojstnodnevnaTorta``. Če imamo verigo dedovanja
 ``D : C : B : A`` se ob konstruiranje objekta ``D`` začne s klicem izbranega
 konstruktorja ``A``, nadaljuje z ``B``, ``C``, konstruktor ``D`` pa se pokliče
-zadnji, ko so vsi starši že narejeni. Med drgim to pomeni, da so podedovani deli
+zadnji, ko so vsi starši že narejeni. Med drugim to pomeni, da so podedovani deli
 objekta že konstruirani in lahko npr. kličemo podedovane metode ali uporabljamo
 podedovane atribute. V drugih jezikih se tak klic pogosto naredi z uporabo
 ``super`` (npr. Python, Java).
 
 Pri destruktorjih je zgodba podobna, a obrnjena okrog. Če na razredu tipa ``D``
-pokličemo destruktor, se po koncu avtoamtsko pokličejo tudi konstruktorji
+pokličemo destruktor, se po koncu avtomatsko pokličejo tudi konstruktorji
 staršev, tako da so podedovani atributi od ``A`` uničeni zadnji.
 
 Poglejmo si to še na primeru:
@@ -151,7 +151,7 @@ Slicing
 ~~~~~~~
 
 Eno izmed osnovnih načel dedovanja je, da lahko spremenljivko bolj specifičnega
-tipa shranimo kot manj speficičen tip. Z našim primerom od prej gre sklep tako:
+tipa shranimo kot manj specifičen tip. Z našim primerom od prej gre sklep tako:
 ker je ``RojstnodnevnaTorta`` tudi ``Torta``, lahko spremenljivko tipa
 ``RojstnodnevnaTorta`` shranimo v spremenljivko tipa ``Torta``.
 
@@ -165,7 +165,7 @@ Pri tem zgubimo vse informacije o tem, da je ``t`` kdaj bila
 dostopamo do atributov, ki jih ima ``Torta``. Ta proces se imenuje *slicing*
 ali *object slicing*, saj od podobjekta odrežemo stran vse metode in atribute,
 ki jih osnovni objekt nima. To je z vidika alokacije prostora smiselno, za
-spremenljivko tipa ``Torta`` imamo rezrvirano toliko prostora, kot ga
+spremenljivko tipa ``Torta`` imamo rezervirano toliko prostora, kot ga
 potrebujemo zanjo in dodatne informacije morajo preč.
 
 .. _hiding:
@@ -174,7 +174,7 @@ Hiding
 ~~~~~~
 
 Recimo, da sedaj spremenimo definicijo razreda ``RojstnodnevnaTorta``,
-tako da ostranimo dodatne konstruktorje in dodamo lastno metodo ``peci``.
+tako da odstranimo dodatne konstruktorje in dodamo lastno metodo ``peci``.
 
 .. code-block:: cpp
 
@@ -201,13 +201,13 @@ in metoda ``peci`` se na teh dveh razredih obnaša različno. v veliko programsk
 jezikih, npr. v Javi, bi se obakrat izpisalo ``Pecem rojstnodnevno torto.``,
 saj bi jezik se vedno vedel, da se, kljub temu, da je ``t`` tipa ``Torta``, v
 njem skriva ``RojstnodnevnaTorta``. V C++ zaradi slicing-a temu ni tako.
-Z zgornjim primerom smo dosegli le, da na objketu ``rt`` ne moremo več direktno
+Z zgornjim primerom smo dosegli le, da na objektu ``rt`` ne moremo več direktno
 metode ``peci`` iz razreda ``Torta``, saj jo je skrila enako imenovana metoda
 ``peci`` iz razreda ``RojstnodnevnaTorta``.
 Temu procesu se v angleščini reče *hiding*, saj metoda iz podrazreda
 prepreči dedovanje (skrije) metode iz nadrazreda, ki imajo enako ime.
 To bi se zgodilo tudi, če metoda
-``peci`` ne bi imela poponoma enakih parametrov, kot metoda ``peci`` iz razreda
+``peci`` ne bi imela popolnoma enakih parametrov, kot metoda ``peci`` iz razreda
 ``Torta``. Primer:
 
 .. code-block:: cpp
@@ -235,7 +235,7 @@ iz razreda ``Torta``.  Dobimo napako:
             ^~~~
   torta.cpp:15:10: note:   candidate expects 1 argument, 0 provided
 
-ki pove le, da smo metodo ``peci`` poklicali narobe. Prevjalnik ``clang++`` je
+ki pove le, da smo metodo ``peci`` poklicali narobe. Prevajalnik ``clang++`` je
 tukaj bolj uporabniku prijazen:
 
 .. code-block:: none
@@ -269,7 +269,7 @@ Sedaj imamo na voljo tako ``rt.peci()`` (eksplicitno podedovano iz razreda ``Tor
 iz razreda ``RojstnodnevnaTorta``.
 Če bi imeli obe metodi isto ime, ki morali (pa tudi sedaj lahko) metodo iz
 nadrazreda klicati z polno kvalificiranim imenom kot ``rt.Torta::peci()``.
-Zanekrat sicer še ne vemo, kaj so virtualne
+Zaenkrat sicer še ne vemo, kaj so virtualne
 metode, toda princip skrivanja je zanje enak kot za običajne metode (kadar ne
 pride v igro overriding).
 
@@ -277,8 +277,8 @@ Polimorfizem in virtualne funkcije
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Pred branjem morate biti seznanjeni s snovjo v poglavju :ref:`pointers`.
-Zaradi enostavnosti bomo v tem pogavju uporabljali navadne pointerje,
-vendar vse deluje enako tudi s pametnimi pointerji.
+Zaradi enostavnosti bomo v tem poglavju uporabljali navadne kazalce,
+vendar vse deluje enako tudi s pametnimi kazalci.
 
 Polimorfizem (angl. *polymorphism*) pomeni "imeti več oblik" in se v kontekstu
 dedovanja nanaša na to, imamo lahko več podrazredov istega nadrazreda, ki
@@ -317,7 +317,7 @@ Ko poženemo zgornji program, ki radi, da se izpiše ``Nyaa`` in ``Hov``,
 saj smo v ``v`` shranili mačko in psa. Toda, kot smo se naučili v razdelku
 :ref:`slicing` se objekta ``Cat`` in ``Dog`` pretvorita v ``Animal`` in
 vse dodatne informacije izginejo. Izpiše se torej dvakrat prazen niz.
-Toda, če uporabimo pointerje, problem z
+Toda, če uporabimo kazalce, problem z
 različnimi velikostmi objektov, ko nadrazredu priredimo podrazred, izgine.
 Oba objekta sta kazalca enake velikosti (kakršna pač je na tem sistemu)
 in lahko kažeta na različno velika objekta. toda, to da še ni ovir, ne pomeni da
@@ -338,11 +338,11 @@ je obnašanje tako. Koda spodaj
 še vedno izpiše dva prazna niza: oba objekta sta kazalca na tip ``Animal``
 in enako kot prej se pokliče metoda ``oglasanje`` na tipu ``Animal``.
 
-To, da bi se metoda ``oglasanje`` obnasala drugače, glede na to ali je vrednost, na katero kaže pointer,
-v resnici tipa ``Cat``, stane nekaj operacij. Pri drugih jezikih (npr. Java) se
-to vedno preveri in uporabnik za vsak klic plača te operacije, filozofija C++ pa
-je, da uporabnik ne plača, za stvari, ki jih ni zahteval in moramo
-polimorfično obnašanje posebej zahtevati.
+To, da bi se metoda ``oglasanje`` obnašala drugače, glede na to ali je vrednost,
+na katero kaže kazalec, v resnici tipa ``Cat``, stane nekaj operacij. Pri drugih
+jezikih (npr. Java) se to vedno preveri in uporabnik za vsak klic plača te
+operacije, filozofija C++ pa je, da uporabnik ne plača, za stvari, ki jih ni
+zahteval in moramo polimorfično obnašanje posebej zahtevati.
 
 To storimo z besedo ``virtual`` pred neko metodo. Ta označuje, da pri tej metodi
 podpiramo polimorfično obnašanje in dovolimo, da jo podrazredi predefinirajo
@@ -351,7 +351,7 @@ bomo spoznali kasneje), ampak so virtualne zgolj v smislu, da deklaracija ni
 direktno povezana z implementacijo. Kot bomo videli, so to funkcije, za katere
 je implementirano dinamično razvrščanje (angl. *dynamic dispatch*).
 
-Spemenimo definicijo ``Animal`` v sledečo.
+Spremenimo definicijo ``Animal`` v sledečo.
 
 .. code-block:: cpp
 
@@ -368,7 +368,7 @@ na mestu, kamor kaže kazalec. S spremenjeno definicijo, bi zadnji primer izpisa
 ``Nyaa`` in ``Hov``, saj je prvi objekt (čeprav shranjen kot ``Animal*``) v
 resnici tipa ``Cat*`` in bi se poklicala njegova metoda ``ogasanje`` (ki
 je predefinirala tisto iz ``Animal``). Enako se zgodi za drugi element.
-Temu objašajnu pravimo poimorfizem in dinamičnemu klicanju glede na tip objekta
+Temu obnašanju pravimo polimorfizem in dinamičnemu klicanju glede na tip objekta
 med izvajanjem *dynamic dispatch*. Enako obnašanje dobimo, če kličemo metode
 prek referenc na objekte.
 
@@ -423,7 +423,7 @@ pa nas prevajalnik posvari:
               ^~~~~~~~~
 
 Prevajalnik Clang, nam celo predlaga, da smo morda mislili predefinirati metodo, ki
-smo jo ponesreču skrili in celo pove, v čem se razlikujeta:
+smo jo ponesreči skrili in celo pove, v čem se razlikujeta:
 
 .. code-block:: none
 
@@ -529,7 +529,7 @@ celo zastavice, ki opozorijo, da smo to besedo pozabili.
     B::g
 
 
-Stvari postanejo komplicirane, če imamo na kupu več funckij z enakim imenom in
+Stvari postanejo komplicirane, če imamo na kupu več funkcij z enakim imenom in
 različnimi parametri, nekatere so virtualne, nekatere niso in lahko z
 predefiniranjem neke metode uvedemo skrivanje neke druge...
 
@@ -669,3 +669,5 @@ Daljši primer uporabe - risanje oblik
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 TODO
+
+.. vim: spell spelllang=sl

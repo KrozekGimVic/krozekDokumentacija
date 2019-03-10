@@ -212,3 +212,5 @@ to ni težava, saj je ne moremo spreminjati.
 
 Ena izmed težav referenc je, da ob klicu funkcije ``f(a)`` ne vemo, ali bo ta
 funkcija  ``a`` spremenila ali ne -- pogledati moramo v definicijo.
+
+.. vim: spell spelllang=sl
