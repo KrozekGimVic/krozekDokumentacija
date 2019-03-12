@@ -188,20 +188,19 @@
             
   <div class="section" id="funkcije">
 <span id="funkcijecpp"></span><h1>Funkcije<a class="headerlink" href="#funkcije" title="Permalink to this headline">¶</a></h1>
-<p>Zakaj potrebujemo funkcije si preberite v <a class="reference internal" href="../python/funkcije_in_classi.html#funkcijepython"><em>Funkcije in razredi</em></a> za python.</p>
 <p>Pri C++ moramo za vsako funkcijo vedeti, katere tipe sprejme in kakšen tip vrne.
 Pravzaprav smo vedno morali napisati definicijo funkcije <tt class="docutils literal"><span class="pre">main</span></tt> in za ostale
-funkcije je sintaska enaka.</p>
+funkcije je sintaksa enaka.</p>
 <div class="section" id="sintaksa">
 <h2>Sintaksa<a class="headerlink" href="#sintaksa" title="Permalink to this headline">¶</a></h2>
-<p>Definicija funkcije v C++ ima nastednjo sintakso (posplošimo na poljubno število
+<p>Definicija funkcije v C++ ima naslednjo sintakso (posplošimo na poljubno število
 parametrov):</p>
 <div class="highlight-cpp"><div class="highlight"><pre><span class="n">return_type</span> <span class="nf">ime_funkcije</span><span class="p">(</span><span class="n">tip1</span> <span class="n">parameter1</span><span class="p">,</span> <span class="n">tip2</span> <span class="n">parameter2</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// koda</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Funkcija, ki nič ne vrne, ima return_type <tt class="docutils literal"><span class="pre">void</span></tt>. Funkcijo moramo vedno
+<p>Funkcija, ki nič ne vrne, ima <tt class="docutils literal"><span class="pre">return_type</span></tt> enak <tt class="docutils literal"><span class="pre">void</span></tt>. Funkcijo moramo vedno
 definirati preden jo uporabimo, to je ponavadi nad funkcijo <tt class="docutils literal"><span class="pre">main</span></tt>.</p>
 </div>
 <div class="section" id="vracanje-rezultatov">
@@ -289,7 +288,7 @@ parametra.</p>
 <div class="section" id="reference-in-konstantne-reference">
 <span id="referenceuvod"></span><h2>Reference in konstantne reference<a class="headerlink" href="#reference-in-konstantne-reference" title="Permalink to this headline">¶</a></h2>
 <p>Seveda je uporabno imeti tudi funkcije, ki spreminjajo parametre, na primer
-funkcij swap, ki zamenja vrednosti dveh spremenljivk.</p>
+funkcij <tt class="docutils literal"><span class="pre">swap</span></tt>, ki zamenja vrednosti dveh spremenljivk.</p>
 <p>Tej funkciji namesto običajnih tipov podamo reference &#8211; to pomeni da je
 spremenljivka znotraj funkcije enaka kot zunaj. Referenco označimo tako, da na
 konec tipa dodamo znak <tt class="docutils literal"><span class="pre">&amp;</span></tt>.</p>
@@ -321,7 +320,7 @@ spremeni tudi <tt class="docutils literal"><span class="pre">c</span></tt> in ob
 <p>Zgornjo funkcijo pokličemo kot <tt class="docutils literal"><span class="pre">swap(a,</span> <span class="pre">b)</span></tt>, kjer sta <tt class="docutils literal"><span class="pre">a</span></tt> in <tt class="docutils literal"><span class="pre">b</span></tt>
 spremenljivki, funkcija pa bo njuni vrednosti zamenjala. Kaj pa se sedaj zgodi
 če funkcijo pokličemo s konstantami? Ali <tt class="docutils literal"><span class="pre">swap(1,</span> <span class="pre">3)</span></tt> zamenja vrednosti 1 in
-3? Seveda ne, tak klic je neveljaven in dobimo compiler error:</p>
+3? Seveda ne, tak klic je neveljaven in dobimo compile error:</p>
 <div class="highlight-python"><div class="highlight"><pre>program.cpp:14:14: error: invalid initialization of non-const reference of type
                                             ‘int&amp;’ from an rvalue of type ‘int’
     swap(1, 3);
@@ -331,7 +330,7 @@ spremenljivki, funkcija pa bo njuni vrednosti zamenjala. Kaj pa se sedaj zgodi
 <p>Res, če nekaj podamo kot referenco, mora to biti tudi dejanska spremenljivka, ki
 ji lahko spremenimo vrednost.</p>
 <p>Kaj pa če objekta nimamo namena spreminjati, vendar njegove vrednosti ne bi
-radi kopirali, saj je velik (npr. vector)?</p>
+radi kopirali, saj je velik (npr. <tt class="docutils literal"><span class="pre">vector</span></tt>)?</p>
 <p>Ena možnost je, da podamo referenco in objekta ne spreminjamo, vendar to ni
 najbolj higienično, pa še omejitve ima, saj ne moramo funkcije klicati s
 konstantami. Druga možnost je, da funkcija sprejme konstantno referenco &#8211;
@@ -339,7 +338,7 @@ torej dejansko isto spremenljivko kot jo podamo, a njene vrednosti nam ni
 dovoljeno spreminjati. Konstantna referenca je pravzaprav neke vrste readonly
 kopija naše spremenljivke. Za velike tipe je to privzet način sprejemanja
 parametrov. Oglejmo si razliko na primeru funkcije <tt class="docutils literal"><span class="pre">append</span></tt> za vektorje, ki
-bo en vektor dodala na konec drugega in funkcije join, ki združi dva vektorja.</p>
+bo en vektor dodala na konec drugega in funkcije <tt class="docutils literal"><span class="pre">join</span></tt>, ki združi dva vektorja.</p>
 <div class="highlight-cpp"><div class="highlight"><pre><span class="kt">void</span> <span class="nf">append</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">a</span><span class="p">,</span> <span class="k">const</span> <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">x</span> <span class="o">:</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
         <span class="n">a</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>

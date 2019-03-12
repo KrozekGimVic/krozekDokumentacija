@@ -3,16 +3,16 @@
 Funkcije
 ========
 
-Zakaj potrebujemo funkcije si preberite v :ref:`funkcijepython` za python.
+.. Zakaj potrebujemo funkcije si preberite v :ref:`funkcijepython` za python.
 
 Pri C++ moramo za vsako funkcijo vedeti, katere tipe sprejme in kakšen tip vrne.
 Pravzaprav smo vedno morali napisati definicijo funkcije ``main`` in za ostale
-funkcije je sintaska enaka.
+funkcije je sintaksa enaka.
 
 Sintaksa
 ~~~~~~~~
 
-Definicija funkcije v C++ ima nastednjo sintakso (posplošimo na poljubno število
+Definicija funkcije v C++ ima naslednjo sintakso (posplošimo na poljubno število
 parametrov):
 
 .. code-block:: cpp
@@ -21,7 +21,7 @@ parametrov):
       // koda
   }
 
-Funkcija, ki nič ne vrne, ima return_type ``void``. Funkcijo moramo vedno
+Funkcija, ki nič ne vrne, ima ``return_type`` enak ``void``. Funkcijo moramo vedno
 definirati preden jo uporabimo, to je ponavadi nad funkcijo ``main``.
 
 Vračanje rezultatov
@@ -126,7 +126,7 @@ Reference in konstantne reference
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Seveda je uporabno imeti tudi funkcije, ki spreminjajo parametre, na primer
-funkcij swap, ki zamenja vrednosti dveh spremenljivk.
+funkcij ``swap``, ki zamenja vrednosti dveh spremenljivk.
 
 Tej funkciji namesto običajnih tipov podamo reference -- to pomeni da je
 spremenljivka znotraj funkcije enaka kot zunaj. Referenco označimo tako, da na
@@ -165,7 +165,7 @@ Podobno naredimo tudi v funkcijah.
 Zgornjo funkcijo pokličemo kot ``swap(a, b)``, kjer sta ``a`` in ``b``
 spremenljivki, funkcija pa bo njuni vrednosti zamenjala. Kaj pa se sedaj zgodi
 če funkcijo pokličemo s konstantami? Ali ``swap(1, 3)`` zamenja vrednosti 1 in
-3? Seveda ne, tak klic je neveljaven in dobimo compiler error:
+3? Seveda ne, tak klic je neveljaven in dobimo compile error:
 
 
 ::
@@ -179,7 +179,7 @@ Res, če nekaj podamo kot referenco, mora to biti tudi dejanska spremenljivka, k
 ji lahko spremenimo vrednost.
 
 Kaj pa če objekta nimamo namena spreminjati, vendar njegove vrednosti ne bi
-radi kopirali, saj je velik (npr. vector)?
+radi kopirali, saj je velik (npr. ``vector``)?
 
 Ena možnost je, da podamo referenco in objekta ne spreminjamo, vendar to ni
 najbolj higienično, pa še omejitve ima, saj ne moramo funkcije klicati s
@@ -188,7 +188,7 @@ torej dejansko isto spremenljivko kot jo podamo, a njene vrednosti nam ni
 dovoljeno spreminjati. Konstantna referenca je pravzaprav neke vrste readonly
 kopija naše spremenljivke. Za velike tipe je to privzet način sprejemanja
 parametrov. Oglejmo si razliko na primeru funkcije ``append`` za vektorje, ki
-bo en vektor dodala na konec drugega in funkcije join, ki združi dva vektorja.
+bo en vektor dodala na konec drugega in funkcije ``join``, ki združi dva vektorja.
 
 .. code-block:: cpp
 

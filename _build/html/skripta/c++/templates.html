@@ -232,7 +232,7 @@ ter dobi funkcijo, kot smo jo napisali prej.</p>
 <p>Če pa bi npr. želeli funkcijo poklicati kot <tt class="docutils literal"><span class="pre">max(3,</span> <span class="pre">1.2)</span></tt>, torej s
 parametroma <tt class="docutils literal"><span class="pre">int</span></tt> in <tt class="docutils literal"><span class="pre">double</span></tt>, pa se koda ne bi prevedla, saj morata biti v
 predlogi oba tipa enaka (oba sta <tt class="docutils literal"><span class="pre">T</span></tt>).</p>
-<div class="highlight-cpp"><div class="highlight"><pre>a.cpp:16:23: error: no matching function for call to ‘max(int, double)’
+<div class="highlight-none"><div class="highlight"><pre>a.cpp:16:23: error: no matching function for call to ‘max(int, double)’
      cout &lt;&lt; max(3, 1.2) &lt;&lt; endl;
                        ^
 a.cpp:7:3: note: candidate: template&lt;class T&gt; T max(T, T)

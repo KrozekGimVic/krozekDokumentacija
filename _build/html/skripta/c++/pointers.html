@@ -191,7 +191,353 @@
 <p>Kazalci so malo podobni iteratorjem,
 ki smo jih srečali že v poglavju <a class="reference internal" href="podatkovni_tipi.html#podatkovnitipi"><em>Podatkovni tipi</em></a> / <a class="reference internal" href="podatkovni_tipi.html#iteratorjiuvod"><em>Iteratorji</em></a>,
 reference pa smo že srečali v poglavju <a class="reference internal" href="funkcije.html#funkcijecpp"><em>Funkcije</em></a> / <a class="reference internal" href="funkcije.html#referenceuvod"><em>Reference in konstantne reference</em></a>.</p>
-<p>TODO</p>
+<div class="section" id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Permalink to this headline">¶</a></h2>
+<p>Reference so spremenljivke, ki predstavljajo drugo ime za isto spremenljivko.
+Če imamo spremenljivko tipa <tt class="docutils literal"><span class="pre">T</span></tt>, ima referenca nanjo tip <tt class="docutils literal"><span class="pre">T&amp;</span></tt>.</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+<span class="kt">int</span><span class="o">&amp;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">b</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">9</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">b</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>V zgornjem primeru je <tt class="docutils literal"><span class="pre">b</span></tt> referenca na <tt class="docutils literal"><span class="pre">a</span></tt>, tako da ko spremenimo <tt class="docutils literal"><span class="pre">a</span></tt>, se
+spremeni tudi <tt class="docutils literal"><span class="pre">b</span></tt> in obratno. Tako se izpiše <tt class="docutils literal"><span class="pre">8</span> <span class="pre">8</span></tt> in <tt class="docutils literal"><span class="pre">9</span> <span class="pre">9</span></tt>.</p>
+<p>Lahko imamo tudi konstantne reference, to so reference, ki dovolijo spreminjanja
+svoje vrednosti. Če imamo konstantno spremenljivko, lahko nanjo naredimo le
+konstantno referenco, lahko pa konstantno referenco naredimo tudi na običajno
+spremenljivko. O taki referenci razmišljamo kot o <em>pogledu</em> na spremenljivko,
+saj lahko prek nje samo opazujemo, kaj se dogaja, ničesar pa ne moremo
+spreminjati.</p>
+<p>Referenca ne more biti prazna in vedno kaže na neko spremenljivko. Še vedno pa ne
+na programerju, da pazi, da referenca kaže na veljavno spremenljivko, ki še ni
+bila uničena. Tako npr. ne smemo iz funkcije vračati referenc na lokalne
+spremenljivke. Primer reference na neveljavno spremenljivko:</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+<span class="kt">int</span><span class="o">&amp;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">a</span><span class="p">;</span>
+<span class="p">{</span> <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">c</span><span class="p">;</span> <span class="p">}</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">b</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Spremenljivka <tt class="docutils literal"><span class="pre">b</span></tt> je referenca na <tt class="docutils literal"><span class="pre">c</span></tt>, ki je že izbrisana. Program sicer v
+veliko primerih pravilno izpiše 8, toda to ni zagotovljeno, se  splošnem ne
+zgodi in se na tako obnašanje ne moremo zanašati. Zgornji program je preprosto
+neveljaven, četudi občasno deluje.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Če definiramo več referenc na isti vrstici, moramo znak <tt class="docutils literal"><span class="pre">&amp;</span></tt> ponoviti.</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="kt">int</span><span class="o">&amp;</span> <span class="n">r1</span> <span class="o">=</span> <span class="n">v1</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">r2</span> <span class="o">=</span> <span class="n">v2</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">r3</span> <span class="o">=</span> <span class="n">v3</span><span class="p">;</span>
+</pre></div>
+</div>
+<p class="last">Zgornja koda ustvari tri reference <tt class="docutils literal"><span class="pre">r1,</span> <span class="pre">r2,</span> <span class="pre">r3</span></tt> na spremenljivke <tt class="docutils literal"><span class="pre">v1,</span> <span class="pre">v2,</span>
+<span class="pre">v3</span></tt>.</p>
+</div>
+</div>
+<div class="section" id="naslovi-spremenljivk">
+<h2>Naslovi spremenljivk<a class="headerlink" href="#naslovi-spremenljivk" title="Permalink to this headline">¶</a></h2>
+<p>C++ programerju omogoča, da pogleda, na katerem naslovu v spominu je shranjena
+določena spremenljivka. O strukturi spomina bomo govorili kasneje, sedaj povejmo
+le, da si program predstavlja, kot da je spomnim dolga enodimenzionalna
+tabela, razdeljena na celice po 1 bajt. Vrednost spremenljivke <tt class="docutils literal"><span class="pre">int</span> <span class="pre">a</span></tt> je
+shranjena nekje v tej tabeli; ker je <tt class="docutils literal"><span class="pre">int</span></tt> ponavadi velik 4 bajte zavzema 4
+bajte. S pomočjo <em>operatorja</em> <tt class="docutils literal"><span class="pre">&amp;</span></tt>, ki se mu reče operator &#8220;naslov od&#8221;
+(<em>address of</em>) lahko dobimo naslov spremenljivke. Če spremenljivka zavzema več
+kot eno celico, dobimo naslov prve celice, ki jo zavzema. Primer:</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">&amp;</span><span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Zgornja koda izpiše naslov spremenljivke, nekaj podobnega <tt class="docutils literal"><span class="pre">0x7ffe78a6f354</span></tt>,
+kar je zaporedna številka (v šestnajstiškem sistemu) celice, kjer se <tt class="docutils literal"><span class="pre">a</span></tt> nahaja.
+Naslov je vedno številka znane velikosti, praviloma 32 bitov na 32 bitnih
+računalnikih in 64 bitov na 64 bitnih.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Za ustvarjenje referenc uporabljamo enak znak <tt class="docutils literal"><span class="pre">&amp;</span></tt> kot za pridobivanje
+naslovov spremeljivk, toda enkrat je ta sestavni del tipa spremenljivke,
+drugič pa nastopa kot operator, tako da je vedno možno iz konteksta ugotoviti,
+za katerega gre.</p>
+</div>
+</div>
+<div class="section" id="kazalci">
+<h2>Kazalci<a class="headerlink" href="#kazalci" title="Permalink to this headline">¶</a></h2>
+<p>Kazalci (<em>pointers</em>) izvirajo iz jezika C, predhodnika C++, in so v C-ju edini način, da
+spremenimo vrednost parametra znotraj funkcije.
+Kazalec na spremenljivko <tt class="docutils literal"><span class="pre">a</span></tt> tipa <tt class="docutils literal"><span class="pre">T</span></tt> je spremenljivka, katere tip se označi z
+<tt class="docutils literal"><span class="pre">T*</span></tt> in njena vrednost pa je naslov spremenljivke <tt class="docutils literal"><span class="pre">a</span></tt>.
+Primer definicije:</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">7</span><span class="p">;</span>
+<span class="kt">int</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">p</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Zgornja koda izpiše nekaj podobnega  <tt class="docutils literal"><span class="pre">0x7ffe78a6f354</span></tt>, saj je vrednost
+spremenljivke <tt class="docutils literal"><span class="pre">p</span></tt> naslov spremenljivke <tt class="docutils literal"><span class="pre">a</span></tt>. Pravimo, da je spremenljivka <tt class="docutils literal"><span class="pre">p</span></tt>
+kazalec na <tt class="docutils literal"><span class="pre">a</span></tt>. Tip <tt class="docutils literal"><span class="pre">int*</span></tt> pomeni, da je vrednost, ki je na naslovu, ki je
+shranjen v <tt class="docutils literal"><span class="pre">p</span></tt>, v spominu shranjeno celo število. Ta tip nima direktne
+povezave s tem, da je naslov sam po sebi tudi celo število, to je tako ali tako
+vedno.</p>
+<p>Najosnovnejša operacija na kazalcih je operacija, ki dobi vrednost na nekem naslovu.
+Operacija se imenuje <em>value of</em> oz. dereferenca in se ga označi z <tt class="docutils literal"><span class="pre">*</span></tt>.
+Z njegovo pomočjo dobimo ali nastavimo vrednost na nekem mestu v spominu.
+Primer:</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="kt">double</span> <span class="n">a</span> <span class="o">=</span> <span class="mf">7.5</span><span class="p">;</span>
+<span class="kt">double</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">;</span>  <span class="c1">// npr. 0x7ffe78a6f354</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="o">*</span><span class="n">p</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+<span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="mf">8.5</span><span class="p">;</span>
+<span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Zgornji primer izpiše  <tt class="docutils literal"><span class="pre">7.5</span></tt> in <tt class="docutils literal"><span class="pre">8.5</span></tt>, saj izraz <tt class="docutils literal"><span class="pre">*p</span> <span class="pre">=</span> <span class="pre">8.5</span></tt> na mesto
+<tt class="docutils literal"><span class="pre">0x7ffe78a6f354</span></tt> (kjer je spremenljivka <tt class="docutils literal"><span class="pre">a</span></tt>) shrani vrednosti <tt class="docutils literal"><span class="pre">8.5</span></tt>.
+Tukaj tudi vidimo, zakaj je dobro vedeti tip, na katerega kazalec kaže. Sama
+vrednost <tt class="docutils literal"><span class="pre">0x7ffe78a6f354</span></tt> se namreč nanaša na prvi bajt spomina in
+zaradi tipa <tt class="docutils literal"><span class="pre">double</span></tt> vemo, da moramo prebrati še naslednjih 7 in jih
+interpretirati kot decimalno število.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Če definiramo več kazalcev na isti vrstici, moramo podobno kot pri referencah znak <tt class="docutils literal"><span class="pre">*</span></tt> ponoviti.</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="kt">int</span><span class="o">*</span> <span class="n">p1</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">v1</span><span class="p">,</span> <span class="o">*</span><span class="n">r2</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">v2</span><span class="p">,</span> <span class="o">*</span><span class="n">r3</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">v3</span><span class="p">;</span>
+</pre></div>
+</div>
+<p class="last">Zgornja koda ustvari tri reference <tt class="docutils literal"><span class="pre">r1,</span> <span class="pre">r2,</span> <span class="pre">r3</span></tt> na spremenljivke <tt class="docutils literal"><span class="pre">v1,</span> <span class="pre">v2,</span>
+<span class="pre">v3</span></tt>.</p>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Za ustvarjenje kazalcev uporabljamo enak znak <tt class="docutils literal"><span class="pre">*</span></tt> kot za dobivanje vrednosti
+na danem naslovu. Toda podobno kot pri referencah je enkrat <tt class="docutils literal"><span class="pre">*</span></tt> sestavni del
+tipa spremenljivke, drugič pa nastopa kot operator, tako da je vedno možno iz
+konteksta ugotoviti, za katerega gre.</p>
+</div>
+<p>vrednosti kazalcev so vedno naslovi, ki smo jih dobili iz obstoječe
+spremenljivke ali sistema. Ne moremo npr. narediti kar</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="kt">char</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="mi">20</span><span class="p">;</span>
+<span class="o">*</span><span class="n">p</span> <span class="o">=</span> <span class="sc">&#39;h&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>da bi na mesto <cite>20`</cite> v spominu napisali znak <tt class="docutils literal"><span class="pre">h</span></tt>. Že preajalnik se bo
+pritožil</p>
+<div class="highlight-none"><div class="highlight"><pre>a.cpp:2:15: error: invalid conversion from ‘int’ to ‘char*’ [-fpermissive]
+   char* p = 20;
+             ^~
+</pre></div>
+</div>
+<p>Če pa z eksplicitno pretvorbo to vseeno nastavimo, se program sesuje, saj
+najverjetneje do celice 20 nimamo dostopa in dobimo napako <tt class="docutils literal"><span class="pre">[1]</span>&nbsp;&nbsp;&nbsp; <span class="pre">24346</span>
+<span class="pre">segmentation</span> <span class="pre">fault</span> <span class="pre">(core</span> <span class="pre">dumped)</span></tt>.</p>
+<div class="section" id="null-pointer">
+<h3>Null pointer<a class="headerlink" href="#null-pointer" title="Permalink to this headline">¶</a></h3>
+<p>Z razliko od referenc kazalci lahko ne kažejo nikamor. To povemo tako, da jim
+damo vrednost 0, ki predstavlja naslov <tt class="docutils literal"><span class="pre">0x000000000</span></tt>, za kar imamo direktno
+besedo <tt class="docutils literal"><span class="pre">nullptr</span></tt>. Tako lahko naredimo</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="kt">int</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="n">nullptr</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Če je <tt class="docutils literal"><span class="pre">p</span></tt> ničelni kazalec, je neveljavno pogledati rednost na tem mestu &#8211;
+zagotovljeno je, da to vedno povzroči napako.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Nastaviti <tt class="docutils literal"><span class="pre">p</span></tt> na <tt class="docutils literal"><span class="pre">nullptr</span></tt> je drugače, kot pustiti nenastavljenega; v tem
+primeru bi bila njegova vrednost nenastavljena in bi bila karkoli je ostalo v
+spominu, kjer je bil <tt class="docutils literal"><span class="pre">p</span></tt> ustvarjen.</p>
+</div>
+</div>
+</div>
+<div class="section" id="delo-s-spominom">
+<h2>Delo s spominom<a class="headerlink" href="#delo-s-spominom" title="Permalink to this headline">¶</a></h2>
+<p>Spomin za spremenljivke v programih lahko dobimo na več načinov: pravimo da so
+spremenljivke lahko na skladu (<em>stack</em>), ali pa na kopici (<em>heap</em>).
+Obstajajo tudi drugi predeli, za npr. statične ali globalne spremenljivke, konstantne
+podatke, itd..., s katerimi se zdaj ne bomo ukvarjali. Tako sklad kot
+kopica sta dela RAMa, kjer lahko naredimo spremenljivke. Za običajne lokalne
+spremenljivke je prostor rezerviran na skladu že med prevajanjem programa
+in dostop do njih je ponavadi hitrejši. Če kličemo funkcijo, ki kliče funkcijo,
+ki imajo vsaka svoje lokalne spremenljivke, se te nalagajo v spomin po vrsti
+ko gremo globlje v klicih in sprostijo, ki se z njih vračajo. velikost sklada je
+tudi omejena, na Linuxu jo lahko dobimo z ukazom <tt class="docutils literal"><span class="pre">ulimit</span> <span class="pre">-a</span></tt>.</p>
+<p>Z razliko od sklada se alokacija na kopici dogaja med tekom programa,
+spremenljivke na kopici so nepovezane med seboj, dostop do nje je ponavadi
+počasnejši, ima pa mnogo več prostora, ki je omejen le z velikostjo virtualnega
+spomina, ki je na voljo programu (beri: z velikostjo RAMa).
+Spomin na kopici lahko zahtevamo od operacijskega sistema, ga poljubno
+uporabljamo in lepo je, da ga na koncu tudi vrnemo.
+V C-ju imamo za alokacijo in dealokacijo para funkcij <tt class="docutils literal"><span class="pre">malloc</span></tt> (<em>memory
+allocation</em>) in <tt class="docutils literal"><span class="pre">free</span></tt>, v C++-u pa sta nadomeščeni z operatorji
+<tt class="docutils literal"><span class="pre">new</span></tt>, <tt class="docutils literal"><span class="pre">new[]</span></tt>, <tt class="docutils literal"><span class="pre">delete</span></tt> in <tt class="docutils literal"><span class="pre">delete[]</span></tt>.
+Verziji z <tt class="docutils literal"><span class="pre">[]</span></tt> sta namenjeni alokaciji tabel in se bomo z njimi ukvarjali
+pozneje. Alokaciji spomina na kopici se pogosto reče tudi <em>dinamična alokacija</em>.</p>
+<p>Alokacija spomina vrne kazalec na mesto v RAMu, kjer nam je bi dodeljen prostor
+za spremenljivko. Če je bila alokacija neuspešna (npr. zmanjkalo nam je
+spomina), C++ vrže izjemo tipa <tt class="docutils literal"><span class="pre">std::bad_alloc</span></tt>. Obstaja več verzij operatorja
+<tt class="docutils literal"><span class="pre">new</span></tt>, ki spomin alocirajo na različne načine, npr. brez metanja izjem,
+na že določeno mesto, ali pa brez konstrukcije alociranega objekta, toda tudi v
+to se ne bomo spuščali.</p>
+<p>Primer običaje alokacije decimalnega števila:</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">double</span><span class="o">*</span> <span class="n">p</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span><span class="p">(</span><span class="mf">2.3</span><span class="p">);</span>  <span class="c1">// p ima vrednost 2.3</span>
+    <span class="kt">double</span><span class="o">*</span> <span class="n">q</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span><span class="p">();</span>     <span class="c1">// q ima vrednost 0.0</span>
+    <span class="kt">double</span><span class="o">*</span> <span class="n">r</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span><span class="p">;</span>       <span class="c1">// r ima nedefinirano vrednost</span>
+    <span class="c1">// uporabljamo p, q, r</span>
+    <span class="k">delete</span> <span class="n">p</span><span class="p">;</span>  <span class="c1">// vrnemo spomin sistemu</span>
+    <span class="k">delete</span> <span class="n">q</span><span class="p">;</span>
+    <span class="k">delete</span> <span class="n">r</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="section" id="tabele">
+<h3>Tabele<a class="headerlink" href="#tabele" title="Permalink to this headline">¶</a></h3>
+<p>TODO <tt class="docutils literal"><span class="pre">new</span> <span class="pre">[]</span></tt> in <tt class="docutils literal"><span class="pre">delete</span> <span class="pre">[]</span></tt>.</p>
+</div>
+<div class="section" id="kako-naredimo-dinamicno-tabelo">
+<h3>Kako naredimo dinamično tabelo<a class="headerlink" href="#kako-naredimo-dinamicno-tabelo" title="Permalink to this headline">¶</a></h3>
+<p>TODO opis.</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="cp">#include &lt;iostream&gt;</span>
+<span class="cp">#include &lt;vector&gt;</span>
+<span class="cp">#include &lt;string&gt;</span>
+
+<span class="c1">// Dve strategiji povečevanja</span>
+<span class="k">struct</span> <span class="n">MultiplyByConstantAllocationStrategy</span> <span class="p">{</span>
+    <span class="k">static</span> <span class="kt">int</span> <span class="n">init_capacity</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">10</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">static</span> <span class="kt">int</span> <span class="n">change_capacity</span><span class="p">(</span><span class="kt">int</span> <span class="n">capacity</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">capacity</span> <span class="o">*</span> <span class="mf">1.2</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">struct</span> <span class="n">AddConstantAllocationStrategy</span> <span class="p">{</span>
+    <span class="k">static</span> <span class="kt">int</span> <span class="n">init_capacity</span><span class="p">()</span> <span class="p">{</span> <span class="k">return</span> <span class="mi">10</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">static</span> <span class="kt">int</span> <span class="n">change_capacity</span><span class="p">(</span><span class="kt">int</span> <span class="n">capacity</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="n">capacity</span> <span class="o">+</span> <span class="mi">100000</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Lastna tabela</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="p">,</span> <span class="k">typename</span> <span class="n">AllocationStrategy</span><span class="o">=</span><span class="n">MultiplyByConstantAllocationStrategy</span><span class="o">&gt;</span>
+<span class="k">class</span> <span class="nc">Tabela</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">size_</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">capacity_</span><span class="p">;</span>
+    <span class="n">T</span><span class="o">*</span> <span class="n">t</span><span class="p">;</span>
+  <span class="nl">public:</span>
+    <span class="n">Tabela</span><span class="p">()</span> <span class="o">:</span> <span class="n">size_</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span> <span class="n">capacity_</span><span class="p">(</span><span class="n">AllocationStrategy</span><span class="o">::</span><span class="n">init_capacity</span><span class="p">()),</span>
+           <span class="n">t</span><span class="p">(</span><span class="k">new</span> <span class="n">T</span><span class="p">[</span><span class="n">capacity_</span><span class="p">])</span> <span class="p">{}</span>
+    <span class="c1">// copy constructor (za kopiranje tabele)</span>
+    <span class="n">Tabela</span><span class="p">(</span><span class="k">const</span> <span class="n">Tabela</span><span class="o">&amp;</span> <span class="n">v</span><span class="p">)</span> <span class="o">:</span> <span class="n">size_</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">size_</span><span class="p">),</span> <span class="n">capacity_</span><span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">capacity_</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="k">new</span> <span class="n">T</span><span class="p">[</span><span class="n">capacity_</span><span class="p">];</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size_</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="c1">// copy assignment (za kopiranje tabele)</span>
+    <span class="n">Tabela</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">=</span><span class="p">(</span><span class="k">const</span> <span class="n">Tabela</span><span class="o">&amp;</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">size_</span> <span class="o">=</span> <span class="n">v</span><span class="p">.</span><span class="n">size_</span><span class="p">;</span>
+        <span class="n">capacity_</span> <span class="o">=</span> <span class="n">v</span><span class="p">.</span><span class="n">capacity_</span><span class="p">;</span>
+        <span class="k">delete</span><span class="p">[]</span> <span class="n">t</span><span class="p">;</span>
+        <span class="n">t</span> <span class="o">=</span> <span class="k">new</span> <span class="n">T</span><span class="p">[</span><span class="n">capacity_</span><span class="p">];</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size_</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+        <span class="p">}</span>
+        <span class="k">return</span> <span class="o">*</span><span class="k">this</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="o">~</span><span class="n">Tabela</span><span class="p">()</span> <span class="p">{</span> <span class="k">delete</span><span class="p">[]</span> <span class="n">t</span><span class="p">;</span> <span class="p">}</span>
+    <span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="k">operator</span><span class="p">[](</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">];</span> <span class="p">}</span>
+    <span class="n">T</span><span class="o">&amp;</span> <span class="k">operator</span><span class="p">[](</span><span class="kt">int</span> <span class="n">i</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">];</span> <span class="p">}</span>
+    <span class="kt">void</span> <span class="n">push_back</span><span class="p">(</span><span class="k">const</span> <span class="n">T</span><span class="o">&amp;</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="n">size_</span> <span class="o">==</span> <span class="n">capacity_</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">capacity_</span> <span class="o">=</span> <span class="n">AllocationStrategy</span><span class="o">::</span><span class="n">change_capacity</span><span class="p">(</span><span class="n">capacity_</span><span class="p">);</span>
+            <span class="n">T</span><span class="o">*</span> <span class="n">nt</span> <span class="o">=</span> <span class="k">new</span> <span class="n">T</span><span class="p">[</span><span class="n">capacity_</span><span class="p">];</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">size_</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">nt</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>  <span class="c1">// skopiramo elemente</span>
+            <span class="p">}</span>
+            <span class="k">delete</span><span class="p">[]</span> <span class="n">t</span><span class="p">;</span>
+            <span class="n">t</span> <span class="o">=</span> <span class="n">nt</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">t</span><span class="p">[</span><span class="n">size_</span><span class="o">++</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="kt">int</span> <span class="n">size</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">size_</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="c1">// Dodamo možnost printanja tabele.</span>
+<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="n">T</span><span class="o">&gt;</span>
+<span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="o">&amp;</span> <span class="n">os</span><span class="p">,</span> <span class="k">const</span> <span class="n">Tabela</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;&amp;</span> <span class="n">v</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">v</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;[]&quot;</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;[&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">v</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">v</span><span class="p">.</span><span class="n">size</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;, &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">v</span><span class="p">[</span><span class="n">i</span><span class="p">];</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">os</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;]&quot;</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">using</span> <span class="k">namespace</span> <span class="n">std</span><span class="p">;</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="cm">/* test tabele */</span>
+    <span class="n">Tabela</span><span class="o">&lt;</span><span class="n">Tabela</span><span class="o">&lt;</span><span class="kt">char</span><span class="o">&gt;&gt;</span> <span class="n">a</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">s</span> <span class="o">=</span> <span class="mi">30</span><span class="p">;</span>
+    <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">s</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">a</span><span class="p">.</span><span class="n">push_back</span><span class="p">({});</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">s</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+            <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">push_back</span><span class="p">(</span><span class="sc">&#39;a&#39;</span><span class="o">+</span><span class="p">(</span><span class="n">i</span><span class="o">*</span><span class="n">j</span> <span class="o">%</span> <span class="mi">26</span><span class="p">));</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+
+    <span class="c1">// cout &lt;&lt; a &lt;&lt; endl;</span>
+
+    <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">n</span> <span class="o">=</span> <span class="mi">10000</span><span class="p">;</span>
+
+    <span class="p">{</span>
+        <span class="n">Tabela</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">MultiplyByConstantAllocationStrategy</span><span class="o">&gt;</span> <span class="n">t</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">clock_t</span> <span class="n">begin</span> <span class="o">=</span> <span class="n">clock</span><span class="p">();</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">t</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="kt">clock_t</span> <span class="n">end</span> <span class="o">=</span> <span class="n">clock</span><span class="p">();</span>
+            <span class="kt">double</span> <span class="n">elapsed_secs</span> <span class="o">=</span> <span class="kt">double</span><span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">begin</span><span class="p">)</span> <span class="o">/</span> <span class="n">CLOCKS_PER_SEC</span><span class="p">;</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">elapsed_secs</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="p">{</span>
+        <span class="n">Tabela</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">AddConstantAllocationStrategy</span><span class="o">&gt;</span> <span class="n">t</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">clock_t</span> <span class="n">begin</span> <span class="o">=</span> <span class="n">clock</span><span class="p">();</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">t</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="kt">clock_t</span> <span class="n">end</span> <span class="o">=</span> <span class="n">clock</span><span class="p">();</span>
+            <span class="kt">double</span> <span class="n">elapsed_secs</span> <span class="o">=</span> <span class="kt">double</span><span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">begin</span><span class="p">)</span> <span class="o">/</span> <span class="n">CLOCKS_PER_SEC</span><span class="p">;</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">elapsed_secs</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="p">{</span>
+        <span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span> <span class="n">t</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+            <span class="kt">clock_t</span> <span class="n">begin</span> <span class="o">=</span> <span class="n">clock</span><span class="p">();</span>
+            <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="n">n</span><span class="p">;</span> <span class="o">++</span><span class="n">j</span><span class="p">)</span> <span class="p">{</span>
+                <span class="n">t</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">i</span><span class="p">);</span>
+            <span class="p">}</span>
+            <span class="kt">clock_t</span> <span class="n">end</span> <span class="o">=</span> <span class="n">clock</span><span class="p">();</span>
+            <span class="kt">double</span> <span class="n">elapsed_secs</span> <span class="o">=</span> <span class="kt">double</span><span class="p">(</span><span class="n">end</span> <span class="o">-</span> <span class="n">begin</span><span class="p">)</span> <span class="o">/</span> <span class="n">CLOCKS_PER_SEC</span><span class="p">;</span>
+            <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">elapsed_secs</span> <span class="o">&lt;&lt;</span> <span class="sc">&#39; &#39;</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="p">}</span>
+
+
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 
 

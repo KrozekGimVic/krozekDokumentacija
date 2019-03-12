@@ -208,7 +208,7 @@ Slednji koncept se imenuje <em>overriding</em>, ki ga ne mešati z <a class="ref
 </pre></div>
 </div>
 <p>Tukaj razred <tt class="docutils literal"><span class="pre">RojstnodnevnaTorta</span></tt> deduje od razreda <tt class="docutils literal"><span class="pre">Torta</span></tt>,
-saj je rojstnostnodnevna torta posebna vrsta torte - relacija &#8220;je&#8221;
+saj je rojstnodnevna torta posebna vrsta torte - relacija &#8220;je&#8221;
 nakazuje, da je uporaba podrazreda primerna. Po drugi strani, rojstnodnevna
 torta ima svečke, kjer relacija &#8220;ima&#8221; označuje da so svečke njen atribut (in ne
 npr. da bi <tt class="docutils literal"><span class="pre">RojstnodnevnaTorta</span></tt> dedovala od svečke).</p>
@@ -258,12 +258,12 @@ default konstruktor, ki ne sprejeme parametrov in se je samodejno poklical
 pred klicem konstruktorja <tt class="docutils literal"><span class="pre">RojstnodnevnaTorta</span></tt>. Če imamo verigo dedovanja
 <tt class="docutils literal"><span class="pre">D</span> <span class="pre">:</span> <span class="pre">C</span> <span class="pre">:</span> <span class="pre">B</span> <span class="pre">:</span> <span class="pre">A</span></tt> se ob konstruiranje objekta <tt class="docutils literal"><span class="pre">D</span></tt> začne s klicem izbranega
 konstruktorja <tt class="docutils literal"><span class="pre">A</span></tt>, nadaljuje z <tt class="docutils literal"><span class="pre">B</span></tt>, <tt class="docutils literal"><span class="pre">C</span></tt>, konstruktor <tt class="docutils literal"><span class="pre">D</span></tt> pa se pokliče
-zadnji, ko so vsi starši že narejeni. Med drgim to pomeni, da so podedovani deli
+zadnji, ko so vsi starši že narejeni. Med drugim to pomeni, da so podedovani deli
 objekta že konstruirani in lahko npr. kličemo podedovane metode ali uporabljamo
 podedovane atribute. V drugih jezikih se tak klic pogosto naredi z uporabo
 <tt class="docutils literal"><span class="pre">super</span></tt> (npr. Python, Java).</p>
 <p>Pri destruktorjih je zgodba podobna, a obrnjena okrog. Če na razredu tipa <tt class="docutils literal"><span class="pre">D</span></tt>
-pokličemo destruktor, se po koncu avtoamtsko pokličejo tudi konstruktorji
+pokličemo destruktor, se po koncu avtomatsko pokličejo tudi konstruktorji
 staršev, tako da so podedovani atributi od <tt class="docutils literal"><span class="pre">A</span></tt> uničeni zadnji.</p>
 <p>Poglejmo si to še na primeru:</p>
 <div class="highlight-cpp"><div class="highlight"><pre><span class="k">class</span> <span class="nc">A</span> <span class="p">{</span>
@@ -299,7 +299,7 @@ staršev, tako da so podedovani atributi od <tt class="docutils literal"><span c
 </div>
 <p>Makro <tt class="docutils literal"><span class="pre">__func__</span></tt> je poseben ukaz v C++, ki se tekom prevajanja razširi v ime funkcije, kjer
 smo ga uporabili. Če poženemo zgornji program, se izpiše</p>
-<div class="highlight-none"><div class="highlight"><pre>test konstruktorjev in destruktorjev:
+<div class="highlight-python"><div class="highlight"><pre>test konstruktorjev in destruktorjev:
 A
 B
 C
@@ -317,7 +317,7 @@ in jih prevajalnik sam zgenerira namesto nas.</p>
 <div class="section" id="slicing">
 <span id="id1"></span><h2>Slicing<a class="headerlink" href="#slicing" title="Permalink to this headline">¶</a></h2>
 <p>Eno izmed osnovnih načel dedovanja je, da lahko spremenljivko bolj specifičnega
-tipa shranimo kot manj speficičen tip. Z našim primerom od prej gre sklep tako:
+tipa shranimo kot manj specifičen tip. Z našim primerom od prej gre sklep tako:
 ker je <tt class="docutils literal"><span class="pre">RojstnodnevnaTorta</span></tt> tudi <tt class="docutils literal"><span class="pre">Torta</span></tt>, lahko spremenljivko tipa
 <tt class="docutils literal"><span class="pre">RojstnodnevnaTorta</span></tt> shranimo v spremenljivko tipa <tt class="docutils literal"><span class="pre">Torta</span></tt>.</p>
 <div class="highlight-cpp"><div class="highlight"><pre><span class="n">RojstnodnevnaTorta</span> <span class="nf">rt</span><span class="p">(</span><span class="s">&quot;Janez&quot;</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">);</span>
@@ -329,13 +329,13 @@ ker je <tt class="docutils literal"><span class="pre">RojstnodnevnaTorta</span><
 dostopamo do atributov, ki jih ima <tt class="docutils literal"><span class="pre">Torta</span></tt>. Ta proces se imenuje <em>slicing</em>
 ali <em>object slicing</em>, saj od podobjekta odrežemo stran vse metode in atribute,
 ki jih osnovni objekt nima. To je z vidika alokacije prostora smiselno, za
-spremenljivko tipa <tt class="docutils literal"><span class="pre">Torta</span></tt> imamo rezrvirano toliko prostora, kot ga
+spremenljivko tipa <tt class="docutils literal"><span class="pre">Torta</span></tt> imamo rezervirano toliko prostora, kot ga
 potrebujemo zanjo in dodatne informacije morajo preč.</p>
 </div>
 <div class="section" id="hiding">
 <span id="id2"></span><h2>Hiding<a class="headerlink" href="#hiding" title="Permalink to this headline">¶</a></h2>
 <p>Recimo, da sedaj spremenimo definicijo razreda <tt class="docutils literal"><span class="pre">RojstnodnevnaTorta</span></tt>,
-tako da ostranimo dodatne konstruktorje in dodamo lastno metodo <tt class="docutils literal"><span class="pre">peci</span></tt>.</p>
+tako da odstranimo dodatne konstruktorje in dodamo lastno metodo <tt class="docutils literal"><span class="pre">peci</span></tt>.</p>
 <div class="highlight-cpp"><div class="highlight"><pre><span class="k">class</span> <span class="nc">RojstnodnevnaTorta</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Torta</span> <span class="p">{</span>
   <span class="nl">public:</span>
     <span class="kt">int</span> <span class="n">st_sveck</span><span class="p">;</span>
@@ -358,13 +358,13 @@ in metoda <tt class="docutils literal"><span class="pre">peci</span></tt> se na 
 jezikih, npr. v Javi, bi se obakrat izpisalo <tt class="docutils literal"><span class="pre">Pecem</span> <span class="pre">rojstnodnevno</span> <span class="pre">torto.</span></tt>,
 saj bi jezik se vedno vedel, da se, kljub temu, da je <tt class="docutils literal"><span class="pre">t</span></tt> tipa <tt class="docutils literal"><span class="pre">Torta</span></tt>, v
 njem skriva <tt class="docutils literal"><span class="pre">RojstnodnevnaTorta</span></tt>. V C++ zaradi slicing-a temu ni tako.
-Z zgornjim primerom smo dosegli le, da na objketu <tt class="docutils literal"><span class="pre">rt</span></tt> ne moremo več direktno
+Z zgornjim primerom smo dosegli le, da na objektu <tt class="docutils literal"><span class="pre">rt</span></tt> ne moremo več direktno
 metode <tt class="docutils literal"><span class="pre">peci</span></tt> iz razreda <tt class="docutils literal"><span class="pre">Torta</span></tt>, saj jo je skrila enako imenovana metoda
 <tt class="docutils literal"><span class="pre">peci</span></tt> iz razreda <tt class="docutils literal"><span class="pre">RojstnodnevnaTorta</span></tt>.
 Temu procesu se v angleščini reče <em>hiding</em>, saj metoda iz podrazreda
 prepreči dedovanje (skrije) metode iz nadrazreda, ki imajo enako ime.
 To bi se zgodilo tudi, če metoda
-<tt class="docutils literal"><span class="pre">peci</span></tt> ne bi imela poponoma enakih parametrov, kot metoda <tt class="docutils literal"><span class="pre">peci</span></tt> iz razreda
+<tt class="docutils literal"><span class="pre">peci</span></tt> ne bi imela popolnoma enakih parametrov, kot metoda <tt class="docutils literal"><span class="pre">peci</span></tt> iz razreda
 <tt class="docutils literal"><span class="pre">Torta</span></tt>. Primer:</p>
 <div class="highlight-cpp"><div class="highlight"><pre><span class="k">class</span> <span class="nc">RojstnodnevnaTorta</span> <span class="o">:</span> <span class="k">public</span> <span class="n">Torta</span> <span class="p">{</span>
   <span class="nl">public:</span>
@@ -378,7 +378,7 @@ To bi se zgodilo tudi, če metoda
 <p>Tudi v tem primeru prek objekta <tt class="docutils literal"><span class="pre">rt</span></tt> ne bi morali poklicati <tt class="docutils literal"><span class="pre">rt.peci()</span></tt> brez
 parametrov, saj se to sklicuje na skrito (in zato ne podedovano) metodo <tt class="docutils literal"><span class="pre">peci</span></tt>
 iz razreda <tt class="docutils literal"><span class="pre">Torta</span></tt>.  Dobimo napako:</p>
-<div class="highlight-none"><div class="highlight"><pre>torta.cpp: In function ‘int main()’:
+<div class="highlight-python"><div class="highlight"><pre>torta.cpp: In function ‘int main()’:
 torta.cpp:21:13: error: no matching function for call to ‘RojstnodnevnaTorta::peci()’
      rt.peci();
              ^
@@ -388,9 +388,9 @@ torta.cpp:15:10: note: candidate: ‘void RojstnodnevnaTorta::peci(int)’
 torta.cpp:15:10: note:   candidate expects 1 argument, 0 provided
 </pre></div>
 </div>
-<p>ki pove le, da smo metodo <tt class="docutils literal"><span class="pre">peci</span></tt> poklicali narobe. Prevjalnik <tt class="docutils literal"><span class="pre">clang++</span></tt> je
+<p>ki pove le, da smo metodo <tt class="docutils literal"><span class="pre">peci</span></tt> poklicali narobe. Prevajalnik <tt class="docutils literal"><span class="pre">clang++</span></tt> je
 tukaj bolj uporabniku prijazen:</p>
-<div class="highlight-none"><div class="highlight"><pre>torta.cpp:21:8: error: too few arguments to function call, expected 1, have 0; did you mean &#39;Torta::peci&#39;?
+<div class="highlight-python"><div class="highlight"><pre>torta.cpp:21:8: error: too few arguments to function call, expected 1, have 0; did you mean &#39;Torta::peci&#39;?
     rt.peci();
        ^~~~
        Torta::peci
@@ -418,15 +418,15 @@ To lahko storimo z ukazom <tt class="docutils literal"><span class="pre">using</
 iz razreda <tt class="docutils literal"><span class="pre">RojstnodnevnaTorta</span></tt>.
 Če bi imeli obe metodi isto ime, ki morali (pa tudi sedaj lahko) metodo iz
 nadrazreda klicati z polno kvalificiranim imenom kot <tt class="docutils literal"><span class="pre">rt.Torta::peci()</span></tt>.
-Zanekrat sicer še ne vemo, kaj so virtualne
+Zaenkrat sicer še ne vemo, kaj so virtualne
 metode, toda princip skrivanja je zanje enak kot za običajne metode (kadar ne
 pride v igro overriding).</p>
 </div>
 <div class="section" id="polimorfizem-in-virtualne-funkcije">
 <h2>Polimorfizem in virtualne funkcije<a class="headerlink" href="#polimorfizem-in-virtualne-funkcije" title="Permalink to this headline">¶</a></h2>
 <p>Pred branjem morate biti seznanjeni s snovjo v poglavju <a class="reference internal" href="pointers.html#pointers"><em>Kazalci in reference</em></a>.
-Zaradi enostavnosti bomo v tem pogavju uporabljali navadne pointerje,
-vendar vse deluje enako tudi s pametnimi pointerji.</p>
+Zaradi enostavnosti bomo v tem poglavju uporabljali navadne kazalce,
+vendar vse deluje enako tudi s pametnimi kazalci.</p>
 <p>Polimorfizem (angl. <em>polymorphism</em>) pomeni &#8220;imeti več oblik&#8221; in se v kontekstu
 dedovanja nanaša na to, imamo lahko več podrazredov istega nadrazreda, ki
 se obnašajo vsak na svoj način, medtem ko še vedno imajo iste metode,
@@ -461,7 +461,7 @@ predpisane s strani nadrazreda.</p>
 saj smo v <tt class="docutils literal"><span class="pre">v</span></tt> shranili mačko in psa. Toda, kot smo se naučili v razdelku
 <a class="reference internal" href="#slicing"><em>Slicing</em></a> se objekta <tt class="docutils literal"><span class="pre">Cat</span></tt> in <tt class="docutils literal"><span class="pre">Dog</span></tt> pretvorita v <tt class="docutils literal"><span class="pre">Animal</span></tt> in
 vse dodatne informacije izginejo. Izpiše se torej dvakrat prazen niz.
-Toda, če uporabimo pointerje, problem z
+Toda, če uporabimo kazalce, problem z
 različnimi velikostmi objektov, ko nadrazredu priredimo podrazred, izgine.
 Oba objekta sta kazalca enake velikosti (kakršna pač je na tem sistemu)
 in lahko kažeta na različno velika objekta. toda, to da še ni ovir, ne pomeni da
@@ -479,18 +479,18 @@ je obnašanje tako. Koda spodaj</p>
 </div>
 <p>še vedno izpiše dva prazna niza: oba objekta sta kazalca na tip <tt class="docutils literal"><span class="pre">Animal</span></tt>
 in enako kot prej se pokliče metoda <tt class="docutils literal"><span class="pre">oglasanje</span></tt> na tipu <tt class="docutils literal"><span class="pre">Animal</span></tt>.</p>
-<p>To, da bi se metoda <tt class="docutils literal"><span class="pre">oglasanje</span></tt> obnasala drugače, glede na to ali je vrednost, na katero kaže pointer,
-v resnici tipa <tt class="docutils literal"><span class="pre">Cat</span></tt>, stane nekaj operacij. Pri drugih jezikih (npr. Java) se
-to vedno preveri in uporabnik za vsak klic plača te operacije, filozofija C++ pa
-je, da uporabnik ne plača, za stvari, ki jih ni zahteval in moramo
-polimorfično obnašanje posebej zahtevati.</p>
+<p>To, da bi se metoda <tt class="docutils literal"><span class="pre">oglasanje</span></tt> obnašala drugače, glede na to ali je vrednost,
+na katero kaže kazalec, v resnici tipa <tt class="docutils literal"><span class="pre">Cat</span></tt>, stane nekaj operacij. Pri drugih
+jezikih (npr. Java) se to vedno preveri in uporabnik za vsak klic plača te
+operacije, filozofija C++ pa je, da uporabnik ne plača, za stvari, ki jih ni
+zahteval in moramo polimorfično obnašanje posebej zahtevati.</p>
 <p>To storimo z besedo <tt class="docutils literal"><span class="pre">virtual</span></tt> pred neko metodo. Ta označuje, da pri tej metodi
 podpiramo polimorfično obnašanje in dovolimo, da jo podrazredi predefinirajo
 (overridajo). Virtualne funkcije niso virtualne v smislu da ne obstajajo (te
 bomo spoznali kasneje), ampak so virtualne zgolj v smislu, da deklaracija ni
 direktno povezana z implementacijo. Kot bomo videli, so to funkcije, za katere
 je implementirano dinamično razvrščanje (angl. <em>dynamic dispatch</em>).</p>
-<p>Spemenimo definicijo <tt class="docutils literal"><span class="pre">Animal</span></tt> v sledečo.</p>
+<p>Spremenimo definicijo <tt class="docutils literal"><span class="pre">Animal</span></tt> v sledečo.</p>
 <div class="highlight-cpp"><div class="highlight"><pre><span class="k">struct</span> <span class="n">Animal</span> <span class="p">{</span>
     <span class="k">virtual</span> <span class="n">string</span> <span class="n">oglasanje</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="s">&quot;&quot;</span><span class="p">;</span> <span class="p">}</span>
 <span class="p">};</span>
@@ -505,7 +505,7 @@ na mestu, kamor kaže kazalec. S spremenjeno definicijo, bi zadnji primer izpisa
 <tt class="docutils literal"><span class="pre">Nyaa</span></tt> in <tt class="docutils literal"><span class="pre">Hov</span></tt>, saj je prvi objekt (čeprav shranjen kot <tt class="docutils literal"><span class="pre">Animal*</span></tt>) v
 resnici tipa <tt class="docutils literal"><span class="pre">Cat*</span></tt> in bi se poklicala njegova metoda <tt class="docutils literal"><span class="pre">ogasanje</span></tt> (ki
 je predefinirala tisto iz <tt class="docutils literal"><span class="pre">Animal</span></tt>). Enako se zgodi za drugi element.
-Temu objašajnu pravimo poimorfizem in dinamičnemu klicanju glede na tip objekta
+Temu obnašanju pravimo polimorfizem in dinamičnemu klicanju glede na tip objekta
 med izvajanjem <em>dynamic dispatch</em>. Enako obnašanje dobimo, če kličemo metode
 prek referenc na objekte.</p>
 <div class="highlight-cpp"><div class="highlight"><pre><span class="kt">void</span> <span class="nf">oglasaj</span><span class="p">(</span><span class="k">const</span> <span class="n">Animal</span><span class="o">&amp;</span> <span class="n">a</span><span class="p">)</span> <span class="p">{</span>
@@ -550,7 +550,7 @@ metodo <tt class="docutils literal"><span class="pre">oglasanje</span></tt> iz n
 </pre></div>
 </div>
 <p>Prevajalnik Clang, nam celo predlaga, da smo morda mislili predefinirati metodo, ki
-smo jo ponesreču skrili in celo pove, v čem se razlikujeta:</p>
+smo jo ponesreči skrili in celo pove, v čem se razlikujeta:</p>
 <div class="highlight-none"><div class="highlight"><pre>program.cpp:9:24: error: non-virtual member function marked &#39;override&#39; hides virtual member function
     string oglasanje() override { return &quot;Hov&quot;; }
                        ^
@@ -646,7 +646,7 @@ B::g
 </pre></div>
 </div>
 </div>
-<p>Stvari postanejo komplicirane, če imamo na kupu več funckij z enakim imenom in
+<p>Stvari postanejo komplicirane, če imamo na kupu več funkcij z enakim imenom in
 različnimi parametri, nekatere so virtualne, nekatere niso in lahko z
 predefiniranjem neke metode uvedemo skrivanje neke druge...</p>
 </div>

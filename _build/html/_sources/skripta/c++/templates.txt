@@ -54,7 +54,7 @@ ter dobi funkcijo, kot smo jo napisali prej.
 parametroma ``int`` in ``double``, pa se koda ne bi prevedla, saj morata biti v
 predlogi oba tipa enaka (oba sta ``T``).
 
-.. code-block:: cpp
+.. code-block:: none
 
   a.cpp:16:23: error: no matching function for call to ‘max(int, double)’
        cout << max(3, 1.2) << endl;
@@ -69,3 +69,5 @@ predlogi oba tipa enaka (oba sta ``T``).
 
 
 TODO: Funckije s poljubno argumenti, templated classes.
+
+.. vim: spell spelllang=sl

@@ -61,9 +61,10 @@ Mnogo bolj podrobno in pravilno tabelo najdete `tukaj
 
 Naj vas to ne prestraši, pametno je poznati omejitve, a mi bomo ponavadi za
 cela števila uporabljali kar ``int`` in za decimalna ``double``. (Float je
-precej nenatančen, kar je na tekmovanjih, v resnici pa še toliko bolj, lahko
-problematično. Ali kot je dejal nekoč moj kolega "Kdor uporablja floate je pa
-res čevl." Pred celoštevilske tipe lahko vtaknemo tudi ``unsigned``, ki razpon
+precej nenatančen, kar je na tekmovanjih, ali pa za kakšne resne izračune
+problematično. Je pa lahko npr. uporabno v računalniški grafiki, kjer je
+na koncu pomembna le natančnost na en piksel.
+Pred celoštevilske tipe lahko vtaknemo tudi ``unsigned``, ki razpon
 števila premakne na pozitivno os. Če število povečamo čez razsežnost tipa, se
 ne zgodi na videz nič, številka se samo navije okrog spodnje meje. Torej, če
 rečemo ``char a = 130;`` bo ``a`` v resnici enak ``-126``.
@@ -81,7 +82,7 @@ ostalih programskih jezikih.
 
 Pretvorbe
 ~~~~~~~~~
-Med tipi lahko med pretvarjamo, poznami implicitne in eksplicitne pretvorbe.
+Med tipi lahko med pretvarjamo, poznamo implicitne in eksplicitne pretvorbe.
 Compiler bo avtomatsko naredil pretvorbe, ki ne škodujejo "kvaliteti" tipa, pri
 pretvorbi iz npr. ``double`` v ``int`` pa bo posvaril vsaj z opozorilom. Tako
 pretvorbo lahko sami naredimo na več načinov (ki so glede na rezultat ekvivalentni):
@@ -92,9 +93,8 @@ pretvorbo lahko sami naredimo na več načinov (ki so glede na rezultat ekvivale
   int b = int(12.34);
   int c = (int) 12.34;
 
-Če uporabimo ``static_cast``, to compilerju da informacijo in lahko s tem
-naprej bolje analizira kodo, medtem ko ostali tega ne naredijo, zato je
-priporočen.
+Če uporabimo ``static_cast``, to dovoljuje prevajalniku, da preveri, da ne
+počnemo česa preveč nepravilnega. Ostale pretvorbe te varnosti nimajo.
 
 Logične vrednosti
 -----------------
@@ -182,7 +182,7 @@ Kaj na ta vrednost pove? Nič prav dosti, ali vemo katera je naslednja, katera
 je prejšnja, ali smo na začetku? Če pa poznamo *indeks* vrednosti, recimo
 vrednost 5 je na mestu 2, potem na vprašanja lažje odgovorimo. Iteratorji so
 torej neke vrste objekti, ki hranijo pozicijo v zbirki in lahko dostopajo do
-vrednosti na tem mestu, grejo na naslednje mesto, preverjo ali smo na koncu ...
+vrednosti na tem mestu, gredo na naslednje mesto, preverijo ali smo na koncu ...
 Poleg tega so po tipu različni od števil, kar omogoča manj napak, saj nas
 compiler na morebitno neujemanje tipov vedno opozori.
 
@@ -209,7 +209,7 @@ vrednosti iz iteratorja se reče *dereferenciranje*.
 Iteratorjev ali seznamov samih se ne da izpisati, seznam lahko izpišete s for
 zanko, iterator pa lahko izpišete kot številski indeks tako, da izpišete ``it -
 a.begin()``.
-Napaka, ki jo compiler javi pri tem je podobna temu:
+Napaka, ki jo prevajalnik javi pri tem je podobna temu:
 
 ::
 
@@ -224,7 +224,7 @@ Napaka, ki jo compiler javi pri tem je podobna temu:
       ^
 
 To se je potrebno malo naučiti brati. Prvi vrstici povesta napako: v ``ostream``
-(= output stream = cout) ste poskusili zatlačiti vector<int>, kar se ne da.
+(= output stream = ``cout``) ste poskusili zatlačiti ``vector<int>``, kar se ne da.
 Ostalih 80 ``info`` napak vam pove kaj pa se v ``ostream`` da zatlačiti, npr.
 ``int``.
 
@@ -236,7 +236,7 @@ tip, ki ga vrača, pišejo pa tudi tipi parametrov. Funkcije so poenostavljene z
 lažje razumevanje. ``T`` pomeni katerikoli tip se pač odločimo, da bo naš
 vektor vseboval. ``void`` pomeni, da funkcija ne vrača ničesar.
 
-.. cpp:class:: vector<T>
+.. cpp:class:: template <typename T> vector
 
   .. cpp:function:: iterator begin()
 
@@ -307,9 +307,9 @@ interpretirajo kot stari C stringi, a se implicitno pretvorijo v C++ stringe.
 Stringi so lahko sestavljeni samo iz ASCII znakov, posebne znake kot vedno
 vnašamo z ``\``, npr. ``\n`` ali ``\\``.
 
-Stringe se lahko izpiše s coutom in
-preber s cin-om. Cin prebere vse do prvega whitespacea. Če želimo prebrati celo
-vrstico, uporabimo funkcijo getline.
+Stringe se lahko izpiše s ``cout`` in
+preber s ``cin``. Cin prebere vse do prvega whitespacea. Če želimo prebrati celo
+vrstico, uporabimo funkcijo ``getline``.
 
 .. cpp:function:: istream& geline(istream& is, string& str)
 
@@ -362,7 +362,7 @@ Množice so definirane v headerju ``set``, tako da je treba za delo z množicami
 na začetek datoteke dodati ``#include <set>``. Kot pri vektorju je tip množice
 ``set<T>``, kjer je ``T`` izbrani tip, ki definira operator ``<``.
 
-.. cpp:class:: set<T>
+.. cpp:class:: template <typename T> set
 
   .. cpp:function:: int size()
 
@@ -405,9 +405,9 @@ metodami, ki se imenuje ``unordered_set``.
 Asociativni seznami
 -------------------
 
-To je struktura podobna Pythonovim slovarjem (ubistvu še bolj ``deafultdict``),
+To je struktura podobna Pythonovim slovarjem (v bistvu še bolj ``deafultdict``),
 a je kot vse ostale podatkovne strukture homogena. Podatke, vrednosti, ki so
-enega tipa, imamo shranjene pol ključi, ki so nekega drugega tipa. Ta dva tipa
+enega tipa, imamo shranjene pod ključi, ki so nekega drugega tipa. Ta dva tipa
 bomo klicali ``K`` in ``V``.  Asociativni seznami (mapi), so definirani v
 headerju ``map`` in za njihovo uporabo moramo na začetek napisati ``#include
 <map>``. Ključi so enolični, vrednosti se pri novem ključu ustvarijo
@@ -424,7 +424,7 @@ elementov v paru. Do elementov dostopamo z atributoma ``.first`` in
 
 .. code-block:: cpp
 
-  pair<int, string> par = make_pair(12, "asdfasdf");
+  pair<int, string> par = make_pair(12, "asdfasdf");  // lahko tudi = {12, "asdfasdf"}
   cout << "(" << par.first << ", " << par.second << ")\n";
 
 Uporaba asociativnih seznamov
@@ -433,7 +433,7 @@ Uporaba asociativnih seznamov
 Mapi podpirajo dodajanje in dostopanje do elementov z uporabo operatorja
 ``[]``.
 
-.. cpp:class:: map<K, V>
+.. cpp:class:: template <typename K, typename V> map
 
   .. cpp:function:: int size()
 
@@ -452,12 +452,12 @@ Primer uporabe:
 
 .. code-block:: cpp
 
-  map<string, int> counter;
+  map<char, int> counter;
   string znaki = "abeceda";
   for (int i = 0; i < znaki.length(); ++i) {
       counter[znaki[i]]++;    // pri danem znaku povečamo count
   }
-  for (map<string, int>::iterator it = counter.begin(); it != counter.end(); ++it) {
+  for (map<char, int>::iterator it = counter.begin(); it != counter.end(); ++it) {
     cout << it->first << " => " << it->second  << endl;
   }
   // Izpis:
@@ -523,6 +523,5 @@ elemente ``v``. Več o referencah (to so tisti & znaki) v poglavju
 :ref:`funkcijecpp`. Tip ``int`` lahko nadomestimo tudi z ``auto``, da nam ni
 potrebno pisati zelo dolgih tipov, pri čemer še vedno popolnoma veljavno
 uporabljamo npr. ``auto& x`` z enakim pomenom kot prej.
-
 
 .. vim: spell spelllang=sl

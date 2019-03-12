@@ -275,9 +275,10 @@ cel na pozitivnem delu osi. Več <a class="reference external" href="http://en.c
 <p>Mnogo bolj podrobno in pravilno tabelo najdete <a class="reference external" href="http://en.cppreference.com/w/cpp/language/types#Range_of_values">tukaj</a>.</p>
 <p>Naj vas to ne prestraši, pametno je poznati omejitve, a mi bomo ponavadi za
 cela števila uporabljali kar <tt class="docutils literal"><span class="pre">int</span></tt> in za decimalna <tt class="docutils literal"><span class="pre">double</span></tt>. (Float je
-precej nenatančen, kar je na tekmovanjih, v resnici pa še toliko bolj, lahko
-problematično. Ali kot je dejal nekoč moj kolega &#8220;Kdor uporablja floate je pa
-res čevl.&#8221; Pred celoštevilske tipe lahko vtaknemo tudi <tt class="docutils literal"><span class="pre">unsigned</span></tt>, ki razpon
+precej nenatančen, kar je na tekmovanjih, ali pa za kakšne resne izračune
+problematično. Je pa lahko npr. uporabno v računalniški grafiki, kjer je
+na koncu pomembna le natančnost na en piksel.
+Pred celoštevilske tipe lahko vtaknemo tudi <tt class="docutils literal"><span class="pre">unsigned</span></tt>, ki razpon
 števila premakne na pozitivno os. Če število povečamo čez razsežnost tipa, se
 ne zgodi na videz nič, številka se samo navije okrog spodnje meje. Torej, če
 rečemo <tt class="docutils literal"><span class="pre">char</span> <span class="pre">a</span> <span class="pre">=</span> <span class="pre">130;</span></tt> bo <tt class="docutils literal"><span class="pre">a</span></tt> v resnici enak <tt class="docutils literal"><span class="pre">-126</span></tt>.</p>
@@ -294,7 +295,7 @@ ostalih programskih jezikih.</p>
 </div>
 <div class="section" id="pretvorbe">
 <h3>Pretvorbe<a class="headerlink" href="#pretvorbe" title="Permalink to this headline">¶</a></h3>
-<p>Med tipi lahko med pretvarjamo, poznami implicitne in eksplicitne pretvorbe.
+<p>Med tipi lahko med pretvarjamo, poznamo implicitne in eksplicitne pretvorbe.
 Compiler bo avtomatsko naredil pretvorbe, ki ne škodujejo &#8220;kvaliteti&#8221; tipa, pri
 pretvorbi iz npr. <tt class="docutils literal"><span class="pre">double</span></tt> v <tt class="docutils literal"><span class="pre">int</span></tt> pa bo posvaril vsaj z opozorilom. Tako
 pretvorbo lahko sami naredimo na več načinov (ki so glede na rezultat ekvivalentni):</p>
@@ -303,9 +304,8 @@ pretvorbo lahko sami naredimo na več načinov (ki so glede na rezultat ekvivale
 <span class="kt">int</span> <span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="kt">int</span><span class="p">)</span> <span class="mf">12.34</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Če uporabimo <tt class="docutils literal"><span class="pre">static_cast</span></tt>, to compilerju da informacijo in lahko s tem
-naprej bolje analizira kodo, medtem ko ostali tega ne naredijo, zato je
-priporočen.</p>
+<p>Če uporabimo <tt class="docutils literal"><span class="pre">static_cast</span></tt>, to dovoljuje prevajalniku, da preveri, da ne
+počnemo česa preveč nepravilnega. Ostale pretvorbe te varnosti nimajo.</p>
 </div>
 </div>
 <div class="section" id="logicne-vrednosti">
@@ -383,7 +383,7 @@ Kaj na ta vrednost pove? Nič prav dosti, ali vemo katera je naslednja, katera
 je prejšnja, ali smo na začetku? Če pa poznamo <em>indeks</em> vrednosti, recimo
 vrednost 5 je na mestu 2, potem na vprašanja lažje odgovorimo. Iteratorji so
 torej neke vrste objekti, ki hranijo pozicijo v zbirki in lahko dostopajo do
-vrednosti na tem mestu, grejo na naslednje mesto, preverjo ali smo na koncu ...
+vrednosti na tem mestu, gredo na naslednje mesto, preverijo ali smo na koncu ...
 Poleg tega so po tipu različni od števil, kar omogoča manj napak, saj nas
 compiler na morebitno neujemanje tipov vedno opozori.</p>
 <p>Pomembne operacije ki jih lahko počnemo z iteratorji (ne vsemi, nekateri ne
@@ -406,7 +406,7 @@ vrednosti iz iteratorja se reče <em>dereferenciranje</em>.</p>
 <p>Iteratorjev ali seznamov samih se ne da izpisati, seznam lahko izpišete s for
 zanko, iterator pa lahko izpišete kot številski indeks tako, da izpišete <tt class="docutils literal"><span class="pre">it</span> <span class="pre">-</span>
 <span class="pre">a.begin()</span></tt>.
-Napaka, ki jo compiler javi pri tem je podobna temu:</p>
+Napaka, ki jo prevajalnik javi pri tem je podobna temu:</p>
 <div class="highlight-python"><div class="highlight"><pre>a.cpp:8:10: error: invalid operands to binary expression
         (&#39;ostream&#39; (aka &#39;basic_ostream&lt;char&gt;&#39;) and &#39;vector&lt;int&gt;&#39;)
     cout &lt;&lt; a &lt;&lt; endl;
@@ -419,7 +419,7 @@ note: candidate function not viable: no known conversion from
 </pre></div>
 </div>
 <p>To se je potrebno malo naučiti brati. Prvi vrstici povesta napako: v <tt class="docutils literal"><span class="pre">ostream</span></tt>
-(= output stream = cout) ste poskusili zatlačiti vector&lt;int&gt;, kar se ne da.
+(= output stream = <tt class="docutils literal"><span class="pre">cout</span></tt>) ste poskusili zatlačiti <tt class="docutils literal"><span class="pre">vector&lt;int&gt;</span></tt>, kar se ne da.
 Ostalih 80 <tt class="docutils literal"><span class="pre">info</span></tt> napak vam pove kaj pa se v <tt class="docutils literal"><span class="pre">ostream</span></tt> da zatlačiti, npr.
 <tt class="docutils literal"><span class="pre">int</span></tt>.</p>
 </div>
@@ -430,51 +430,51 @@ tip, ki ga vrača, pišejo pa tudi tipi parametrov. Funkcije so poenostavljene z
 lažje razumevanje. <tt class="docutils literal"><span class="pre">T</span></tt> pomeni katerikoli tip se pač odločimo, da bo naš
 vektor vseboval. <tt class="docutils literal"><span class="pre">void</span></tt> pomeni, da funkcija ne vrača ničesar.</p>
 <dl class="class">
-<dt id="vector:T:">
-<em class="property">class </em><tt class="descname">vector&lt;T&gt;</tt><a class="headerlink" href="#vector:T:" title="Permalink to this definition">¶</a></dt>
+<dt>
+<tt class="descname">template &lt;typename T&gt; vector</tt></dt>
 <dd><dl class="function">
-<dt id="vector:T:::begin">
-iterator <tt class="descname">begin</tt><big>(</big><big>)</big><a class="headerlink" href="#vector:T:::begin" title="Permalink to this definition">¶</a></dt>
+<dt id="begin">
+iterator <tt class="descname">begin</tt><big>(</big><big>)</big><a class="headerlink" href="#begin" title="Permalink to this definition">¶</a></dt>
 <dd><p>Vrne iterator, ki kaže na prvi element vektorja.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="vector:T:::end">
-iterator <tt class="descname">end</tt><big>(</big><big>)</big><a class="headerlink" href="#vector:T:::end" title="Permalink to this definition">¶</a></dt>
+<dt id="end">
+iterator <tt class="descname">end</tt><big>(</big><big>)</big><a class="headerlink" href="#end" title="Permalink to this definition">¶</a></dt>
 <dd><p>Vrne iterator, ki kaže čez zadnji element vektorja.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="vector:T:::size">
-int <tt class="descname">size</tt><big>(</big><big>)</big><a class="headerlink" href="#vector:T:::size" title="Permalink to this definition">¶</a></dt>
+<dt id="size">
+int <tt class="descname">size</tt><big>(</big><big>)</big><a class="headerlink" href="#size" title="Permalink to this definition">¶</a></dt>
 <dd><p>Vrne velikost (dolžino) vektorja.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="vector:T:::insert__iterator.T">
-iterator <tt class="descname">insert</tt><big>(</big>iterator <em>pos</em>, T <em>vrednost</em><big>)</big><a class="headerlink" href="#vector:T:::insert__iterator.T" title="Permalink to this definition">¶</a></dt>
+<dt id="insert__iterator.T">
+iterator <tt class="descname">insert</tt><big>(</big>iterator <em>pos</em>, T <em>vrednost</em><big>)</big><a class="headerlink" href="#insert__iterator.T" title="Permalink to this definition">¶</a></dt>
 <dd><p>Vstavi element na mesto pred iterator <tt class="docutils literal"><span class="pre">pos</span></tt> in vrne iterator na
 novo vstavljeni element. Vsi elementi za tem se premaknejo za eno mesto
 nazaj, tako da ta operacija lahko traja dolgo.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="vector:T:::erase__iterator">
-iterator <tt class="descname">erase</tt><big>(</big>iterator <em>pos</em><big>)</big><a class="headerlink" href="#vector:T:::erase__iterator" title="Permalink to this definition">¶</a></dt>
+<dt id="erase__iterator">
+iterator <tt class="descname">erase</tt><big>(</big>iterator <em>pos</em><big>)</big><a class="headerlink" href="#erase__iterator" title="Permalink to this definition">¶</a></dt>
 <dd><p>Izbriše element, na katerega kaže <tt class="docutils literal"><span class="pre">pos</span></tt>. Vektor je za en element krajši,
 vsi elementi za izbrisanim se premaknejo eno mesto naprej, tako da ta
 operacija lahko traja dolgo.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="vector:T:::push_back__T">
-void <tt class="descname">push_back</tt><big>(</big>T <em>vrednost</em><big>)</big><a class="headerlink" href="#vector:T:::push_back__T" title="Permalink to this definition">¶</a></dt>
+<dt id="push_back__T">
+void <tt class="descname">push_back</tt><big>(</big>T <em>vrednost</em><big>)</big><a class="headerlink" href="#push_back__T" title="Permalink to this definition">¶</a></dt>
 <dd><p>Doda <tt class="docutils literal"><span class="pre">vrednost</span></tt> na konec vektorja.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="vector:T:::pop_back">
-void <tt class="descname">pop_back</tt><big>(</big><big>)</big><a class="headerlink" href="#vector:T:::pop_back" title="Permalink to this definition">¶</a></dt>
+<dt id="pop_back">
+void <tt class="descname">pop_back</tt><big>(</big><big>)</big><a class="headerlink" href="#pop_back" title="Permalink to this definition">¶</a></dt>
 <dd><p>Zbriše zadnji element iz vektorja.</p>
 </dd></dl>
 
@@ -512,9 +512,9 @@ ASCII tabeli.</p>
 </div>
 <p>Stringi so lahko sestavljeni samo iz ASCII znakov, posebne znake kot vedno
 vnašamo z <tt class="docutils literal"><span class="pre">\</span></tt>, npr. <tt class="docutils literal"><span class="pre">\n</span></tt> ali <tt class="docutils literal"><span class="pre">\\</span></tt>.</p>
-<p>Stringe se lahko izpiše s coutom in
-preber s cin-om. Cin prebere vse do prvega whitespacea. Če želimo prebrati celo
-vrstico, uporabimo funkcijo getline.</p>
+<p>Stringe se lahko izpiše s <tt class="docutils literal"><span class="pre">cout</span></tt> in
+preber s <tt class="docutils literal"><span class="pre">cin</span></tt>. Cin prebere vse do prvega whitespacea. Če želimo prebrati celo
+vrstico, uporabimo funkcijo <tt class="docutils literal"><span class="pre">getline</span></tt>.</p>
 <dl class="function">
 <dt id="geline__istreamR.stringR">
 istream&amp; <tt class="descname">geline</tt><big>(</big>istream&amp; <em>is</em>, string&amp; <em>str</em><big>)</big><a class="headerlink" href="#geline__istreamR.stringR" title="Permalink to this definition">¶</a></dt>
@@ -574,24 +574,24 @@ seznami iterabilne (seveda z iteratorji, saj ne moremo narediti <tt class="docut
 na začetek datoteke dodati <tt class="docutils literal"><span class="pre">#include</span> <span class="pre">&lt;set&gt;</span></tt>. Kot pri vektorju je tip množice
 <tt class="docutils literal"><span class="pre">set&lt;T&gt;</span></tt>, kjer je <tt class="docutils literal"><span class="pre">T</span></tt> izbrani tip, ki definira operator <tt class="docutils literal"><span class="pre">&lt;</span></tt>.</p>
 <dl class="class">
-<dt id="set:T:">
-<em class="property">class </em><tt class="descname">set&lt;T&gt;</tt><a class="headerlink" href="#set:T:" title="Permalink to this definition">¶</a></dt>
+<dt>
+<tt class="descname">template &lt;typename T&gt; set</tt></dt>
 <dd><dl class="function">
-<dt id="set:T:::size">
-int <tt class="descname">size</tt><big>(</big><big>)</big><a class="headerlink" href="#set:T:::size" title="Permalink to this definition">¶</a></dt>
+<dt>
+int <tt class="descname">size</tt><big>(</big><big>)</big></dt>
 <dd><p>Vrne velikost množice.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="set:T:::insert__T">
-iterator <tt class="descname">insert</tt><big>(</big>T <em>vrednost</em><big>)</big><a class="headerlink" href="#set:T:::insert__T" title="Permalink to this definition">¶</a></dt>
+<dt id="insert__T">
+iterator <tt class="descname">insert</tt><big>(</big>T <em>vrednost</em><big>)</big><a class="headerlink" href="#insert__T" title="Permalink to this definition">¶</a></dt>
 <dd><p>Vstavi vrednost <tt class="docutils literal"><span class="pre">vrednost</span></tt> v množico, če ta še ne obstaja. Vrne iterator
 na vstavljeno vrednost.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="set:T:::erase__T">
-int <tt class="descname">erase</tt><big>(</big>T <em>vrednost</em><big>)</big><a class="headerlink" href="#set:T:::erase__T" title="Permalink to this definition">¶</a></dt>
+<dt id="erase__T">
+int <tt class="descname">erase</tt><big>(</big>T <em>vrednost</em><big>)</big><a class="headerlink" href="#erase__T" title="Permalink to this definition">¶</a></dt>
 <dd><p>Odstrani vrednost <tt class="docutils literal"><span class="pre">vrednost</span></tt> iz množice. Če vrednost ne obstaja v
 množici, se ne zgodi nič. Vrne število izbrisanih vrednosti, torej 0 ali 1.</p>
 </dd></dl>
@@ -617,9 +617,9 @@ metodami, ki se imenuje <tt class="docutils literal"><span class="pre">unordered
 </div>
 <div class="section" id="asociativni-seznami">
 <h2>Asociativni seznami<a class="headerlink" href="#asociativni-seznami" title="Permalink to this headline">¶</a></h2>
-<p>To je struktura podobna Pythonovim slovarjem (ubistvu še bolj <tt class="docutils literal"><span class="pre">deafultdict</span></tt>),
+<p>To je struktura podobna Pythonovim slovarjem (v bistvu še bolj <tt class="docutils literal"><span class="pre">deafultdict</span></tt>),
 a je kot vse ostale podatkovne strukture homogena. Podatke, vrednosti, ki so
-enega tipa, imamo shranjene pol ključi, ki so nekega drugega tipa. Ta dva tipa
+enega tipa, imamo shranjene pod ključi, ki so nekega drugega tipa. Ta dva tipa
 bomo klicali <tt class="docutils literal"><span class="pre">K</span></tt> in <tt class="docutils literal"><span class="pre">V</span></tt>.  Asociativni seznami (mapi), so definirani v
 headerju <tt class="docutils literal"><span class="pre">map</span></tt> in za njihovo uporabo moramo na začetek napisati <tt class="docutils literal"><span class="pre">#include</span>
 <span class="pre">&lt;map&gt;</span></tt>. Ključi so enolični, vrednosti se pri novem ključu ustvarijo
@@ -631,7 +631,7 @@ ključev in vrednosti dostopamo kot do prvega in do drugega elementa para.</p>
 Definira se jih s kot <tt class="docutils literal"><span class="pre">pair&lt;A,</span> <span class="pre">B&gt;</span> <span class="pre">par;</span></tt>, kjer sta <tt class="docutils literal"><span class="pre">A</span></tt> in <tt class="docutils literal"><span class="pre">B</span></tt> tipa
 elementov v paru. Do elementov dostopamo z atributoma <tt class="docutils literal"><span class="pre">.first</span></tt> in
 <tt class="docutils literal"><span class="pre">.second</span></tt>. Par lahko tudi naredimo s funkcijo <tt class="docutils literal"><span class="pre">make_pair</span></tt>.</p>
-<div class="highlight-cpp"><div class="highlight"><pre><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">string</span><span class="o">&gt;</span> <span class="n">par</span> <span class="o">=</span> <span class="n">make_pair</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="s">&quot;asdfasdf&quot;</span><span class="p">);</span>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span> <span class="n">string</span><span class="o">&gt;</span> <span class="n">par</span> <span class="o">=</span> <span class="n">make_pair</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="s">&quot;asdfasdf&quot;</span><span class="p">);</span>  <span class="c1">// lahko tudi = {12, &quot;asdfasdf&quot;}</span>
 <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;(&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">par</span><span class="p">.</span><span class="n">first</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;, &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">par</span><span class="p">.</span><span class="n">second</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -641,36 +641,36 @@ elementov v paru. Do elementov dostopamo z atributoma <tt class="docutils litera
 <p>Mapi podpirajo dodajanje in dostopanje do elementov z uporabo operatorja
 <tt class="docutils literal"><span class="pre">[]</span></tt>.</p>
 <dl class="class">
-<dt id="map:K.V:">
-<em class="property">class </em><tt class="descname">map&lt;K, V&gt;</tt><a class="headerlink" href="#map:K.V:" title="Permalink to this definition">¶</a></dt>
+<dt>
+<tt class="descname">template &lt;typename K, typename V&gt; map</tt></dt>
 <dd><dl class="function">
-<dt id="map:K.V:::size">
-int <tt class="descname">size</tt><big>(</big><big>)</big><a class="headerlink" href="#map:K.V:::size" title="Permalink to this definition">¶</a></dt>
+<dt>
+int <tt class="descname">size</tt><big>(</big><big>)</big></dt>
 <dd><p>Vrne število elementov v mapu.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="map:K.V:::erase__K">
-int <tt class="descname">erase</tt><big>(</big>K <em>kljuc</em><big>)</big><a class="headerlink" href="#map:K.V:::erase__K" title="Permalink to this definition">¶</a></dt>
+<dt id="erase__K">
+int <tt class="descname">erase</tt><big>(</big>K <em>kljuc</em><big>)</big><a class="headerlink" href="#erase__K" title="Permalink to this definition">¶</a></dt>
 <dd><p>Zbriše element s ključem <tt class="docutils literal"><span class="pre">ključ</span></tt>, če obstaja in vrne število izbrisanih
 argumentov.</p>
 </dd></dl>
 
 <dl class="function">
-<dt id="map:K.V:::find__K">
-int <tt class="descname">find</tt><big>(</big>K <em>kljuc</em><big>)</big><a class="headerlink" href="#map:K.V:::find__K" title="Permalink to this definition">¶</a></dt>
+<dt id="find__K">
+int <tt class="descname">find</tt><big>(</big>K <em>kljuc</em><big>)</big><a class="headerlink" href="#find__K" title="Permalink to this definition">¶</a></dt>
 <dd><p>Vrne število elementov s ključem <tt class="docutils literal"><span class="pre">kljuc</span></tt>, torej 0 ali 1.</p>
 </dd></dl>
 
 </dd></dl>
 
 <p>Primer uporabe:</p>
-<div class="highlight-cpp"><div class="highlight"><pre><span class="n">map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">counter</span><span class="p">;</span>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="n">map</span><span class="o">&lt;</span><span class="kt">char</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;</span> <span class="n">counter</span><span class="p">;</span>
 <span class="n">string</span> <span class="n">znaki</span> <span class="o">=</span> <span class="s">&quot;abeceda&quot;</span><span class="p">;</span>
 <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">znaki</span><span class="p">.</span><span class="n">length</span><span class="p">();</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">counter</span><span class="p">[</span><span class="n">znaki</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">++</span><span class="p">;</span>    <span class="c1">// pri danem znaku povečamo count</span>
 <span class="p">}</span>
-<span class="k">for</span> <span class="p">(</span><span class="n">map</span><span class="o">&lt;</span><span class="n">string</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">it</span> <span class="o">=</span> <span class="n">counter</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">counter</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">it</span><span class="p">)</span> <span class="p">{</span>
+<span class="k">for</span> <span class="p">(</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">char</span><span class="p">,</span> <span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span> <span class="n">it</span> <span class="o">=</span> <span class="n">counter</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span> <span class="n">it</span> <span class="o">!=</span> <span class="n">counter</span><span class="p">.</span><span class="n">end</span><span class="p">();</span> <span class="o">++</span><span class="n">it</span><span class="p">)</span> <span class="p">{</span>
   <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">first</span> <span class="o">&lt;&lt;</span> <span class="s">&quot; =&gt; &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span>  <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="c1">// Izpis:</span>

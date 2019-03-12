@@ -129,7 +129,7 @@ Poglejmo si to še na primeru:
 Makro ``__func__`` je poseben ukaz v C++, ki se tekom prevajanja razširi v ime funkcije, kjer
 smo ga uporabili. Če poženemo zgornji program, se izpiše
 
-.. code-block:: none
+::
 
   test konstruktorjev in destruktorjev:
   A
@@ -224,7 +224,7 @@ Tudi v tem primeru prek objekta ``rt`` ne bi morali poklicati ``rt.peci()`` brez
 parametrov, saj se to sklicuje na skrito (in zato ne podedovano) metodo ``peci``
 iz razreda ``Torta``.  Dobimo napako:
 
-.. code-block:: none
+::
 
   torta.cpp: In function ‘int main()’:
   torta.cpp:21:13: error: no matching function for call to ‘RojstnodnevnaTorta::peci()’
@@ -238,7 +238,7 @@ iz razreda ``Torta``.  Dobimo napako:
 ki pove le, da smo metodo ``peci`` poklicali narobe. Prevajalnik ``clang++`` je
 tukaj bolj uporabniku prijazen:
 
-.. code-block:: none
+::
 
   torta.cpp:21:8: error: too few arguments to function call, expected 1, have 0; did you mean 'Torta::peci'?
       rt.peci();

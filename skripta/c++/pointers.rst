@@ -239,6 +239,158 @@ Primer običaje alokacije decimalnega števila:
       delete r;
   }
 
+Tabele
+~~~~~~
+
+TODO ``new []`` in ``delete []``.
+
+Kako naredimo dinamično tabelo
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TODO opis.
+
+.. code-block:: cpp
+
+  #include <iostream>
+  #include <vector>
+  #include <string>
+
+  // Dve strategiji povečevanja
+  struct MultiplyByConstantAllocationStrategy {
+      static int init_capacity() { return 10; }
+      static int change_capacity(int capacity) {
+          return static_cast<int>(capacity * 1.2);
+      }
+  };
+
+  struct AddConstantAllocationStrategy {
+      static int init_capacity() { return 10; }
+      static int change_capacity(int capacity) {
+          return static_cast<int>(capacity + 100000);
+      }
+  };
+
+  // Lastna tabela
+  template <typename T, typename AllocationStrategy=MultiplyByConstantAllocationStrategy>
+  class Tabela {
+      int size_;
+      int capacity_;
+      T* t;
+    public:
+      Tabela() : size_(0), capacity_(AllocationStrategy::init_capacity()),
+             t(new T[capacity_]) {}
+      // copy constructor (za kopiranje tabele)
+      Tabela(const Tabela& v) : size_(v.size_), capacity_(v.capacity_) {
+          t = new T[capacity_];
+          for (int i = 0; i < size_; ++i) {
+              t[i] = v[i];
+          }
+      }
+      // copy assignment (za kopiranje tabele)
+      Tabela& operator=(const Tabela& v) {
+          size_ = v.size_;
+          capacity_ = v.capacity_;
+          delete[] t;
+          t = new T[capacity_];
+          for (int i = 0; i < size_; ++i) {
+              t[i] = v[i];
+          }
+          return *this;
+      }
+      ~Tabela() { delete[] t; }
+      const T& operator[](int i) const { return t[i]; }
+      T& operator[](int i) { return t[i]; }
+      void push_back(const T& v) {
+          if (size_ == capacity_) {
+              capacity_ = AllocationStrategy::change_capacity(capacity_);
+              T* nt = new T[capacity_];
+              for (int i = 0; i < size_; ++i) {
+                  nt[i] = t[i];  // skopiramo elemente
+              }
+              delete[] t;
+              t = nt;
+          }
+          t[size_++] = v;
+      }
+      int size() const { return size_; }
+  };
+
+  // Dodamo možnost printanja tabele.
+  template <typename T>
+  std::ostream& operator<<(std::ostream& os, const Tabela<T>& v) {
+      if (v.size() == 0) {
+          return os << "[]";
+      }
+      os << "[" << v[0];
+      for (int i = 1; i < v.size(); ++i) {
+          os << ", " << v[i];
+      }
+      return os << "]";
+  }
+
+  using namespace std;
+
+  int main() {
+      /* test tabele */
+      Tabela<Tabela<char>> a;
+      int s = 30;
+      for (int i = 0; i < s; ++i) {
+          a.push_back({});
+          for (int j = 0; j < s; ++j) {
+              a[i].push_back('a'+(i*j % 26));
+          }
+      }
+
+      // cout << a << endl;
+
+      int N = 10000;
+      int n = 10000;
+
+      {
+          Tabela<int, MultiplyByConstantAllocationStrategy> t;
+          for (int i = 0; i < N; ++i) {
+              clock_t begin = clock();
+              for (int j = 0; j < n; ++j) {
+                  t.push_back(i);
+              }
+              clock_t end = clock();
+              double elapsed_secs = double(end - begin) / CLOCKS_PER_SEC;
+              cout << elapsed_secs << ' ';
+          }
+          cout << endl;
+      }
+
+      {
+          Tabela<int, AddConstantAllocationStrategy> t;
+          for (int i = 0; i < N; ++i) {
+              clock_t begin = clock();
+              for (int j = 0; j < n; ++j) {
+                  t.push_back(i);
+              }
+              clock_t end = clock();
+              double elapsed_secs = double(end - begin) / CLOCKS_PER_SEC;
+              cout << elapsed_secs << ' ';
+          }
+          cout << endl;
+      }
+
+      {
+          vector<int> t;
+          for (int i = 0; i < N; ++i) {
+              clock_t begin = clock();
+              for (int j = 0; j < n; ++j) {
+                  t.push_back(i);
+              }
+              clock_t end = clock();
+              double elapsed_secs = double(end - begin) / CLOCKS_PER_SEC;
+              cout << elapsed_secs << ' ';
+          }
+          cout << endl;
+      }
+
+
+      return 0;
+  }
+
 
 
 .. vim: spell spelllang=sl
