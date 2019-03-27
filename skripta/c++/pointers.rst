@@ -203,8 +203,7 @@ kopica sta dela RAMa, kjer lahko naredimo spremenljivke. Za običajne lokalne
 spremenljivke je prostor rezerviran na skladu že med prevajanjem programa
 in dostop do njih je ponavadi hitrejši. Če kličemo funkcijo, ki kliče funkcijo,
 ki imajo vsaka svoje lokalne spremenljivke, se te nalagajo v spomin po vrsti
-ko gremo globlje v klicih in sprostijo, ki se z njih vračajo. velikost sklada je
-tudi omejena, na Linuxu jo lahko dobimo z ukazom ``ulimit -a``.
+ko gremo globlje v klicih in sprostijo, ki se z njih vračajo.
 
 Z razliko od sklada se alokacija na kopici dogaja med tekom programa,
 spremenljivke na kopici so nepovezane med seboj, dostop do nje je ponavadi
@@ -212,8 +211,8 @@ počasnejši, ima pa mnogo več prostora, ki je omejen le z velikostjo virtualne
 spomina, ki je na voljo programu (beri: z velikostjo RAMa).
 Spomin na kopici lahko zahtevamo od operacijskega sistema, ga poljubno
 uporabljamo in lepo je, da ga na koncu tudi vrnemo.
-V C-ju imamo za alokacijo in dealokacijo para funkcij ``malloc`` (*memory
-allocation*) in ``free``, v C++-u pa sta nadomeščeni z operatorji
+V C-ju imamo za alokacijo in dealokacijo na voljo para funkcij ``malloc`` (*memory
+allocation*) in ``free`` (in še nekaj drugih), v C++-u pa sta nadomeščeni z operatorji
 ``new``, ``new[]``, ``delete`` in ``delete[]``.
 Verziji z ``[]`` sta namenjeni alokaciji tabel in se bomo z njimi ukvarjali
 pozneje. Alokaciji spomina na kopici se pogosto reče tudi *dinamična alokacija*.
@@ -239,13 +238,133 @@ Primer običaje alokacije decimalnega števila:
       delete r;
   }
 
+Vsaki alokaciji mora, ko spomin nehamo uporabljati, slediti dealokacija spomina,
+ki jo sprožimo z ``delete``. Tukaj se držimo enostavnega pravila: vsak
+poklicani ``new`` mora imeni natanko en pripadajoči ``delete``, ki izbriše
+spomin, dobljen s tem klicem ``new``.
+Čeprav morda sintaksa ``delete p`` izgleda, kot da bi izbrisali spremenljivko
+``p``, izbrišemo samo *spomin* na katerega ``p`` kaže, ``p`` pa ostane veljavna
+in ji lahko damo neko novo vrednost (vanjo shranimo nek drug naslov). Ko
+govorimo, pa se pogosto reče, da smo zbrisali ``p`` in se razume, da v resnimi
+mislimo spomin na naslovu, shranjenem v ``p``.
+
+Preden ga izbrišemo, lahko ``p``, ``q`` ali ``r`` uporabljamo kot vsak drug kazalec,
+npr. nastavimo ``*p = 4.2``. Tako na roko kot zgoraj v C++ redko alociramo
+spremenljivke, saj ponavadi uporabimo mehanizme, ki to počnejo namesto nas in
+pri katerih se ne more zgoditi, da bi po nesreči pozabili poklicati ``delete``.
+Prav tako pa ne smemo ``delete`` poklicati dvakrat. Primer, ko se nam to lahko
+zgodi:
+
+.. code-block:: cpp
+
+  class A {
+    public:
+      int a;
+  };
+
+  int main() {
+      A* a = new A();
+      A* b = a;
+      delete a;
+      delete b;
+
+      return 0;
+  }
+
+Pri klicu ``delete a`` se izbriše objekt na naslovu, shranjenemu v ``a``.
+Toda spremenljivka ``b`` kaže na enak naslov, in ko pokličemo ``delete b``
+sistem zopet poskuša izbrisati že izbrisan objekt na istem naslovu.
+Kaj se ob tem zgodi ni definirano (*undefined behviour*), kar pomeni, da se ne
+moremo zanašati na kakršnokoli deterministično obnašanje programa.
+Lahko ni narobe nič, lahko se šele kasneje pokaže, da je šlo s spominom nekaj
+narobe, lahko se program takoj sesuje. Najpogostejša napaka zgleda podobno
+
+.. code-block:: none
+
+  [1]    26815 segmentation fault (core dumped)  ./a
+
+ali pa malo bolj informativno
+
+.. code-block:: none
+
+  *** glibc detected *** ./a: double free or corruption (fasttop): 0x01600008 ***
+  ======= Backtrace: =========
+  /lib/libc.so.6[0xb162e2d4]
+  /lib/libc.so.6(cfree+0x9c)[0xb162287c]
+  ./a[0x01600004]
+  ./a[0x01600008]
+  ======= Memory map: ========
+  ...
+
+Memory leak
+~~~~~~~~~~~
+Ena izmed pogostejših napak pri programiranju v C-ju in C++-u je
+memory leak, kar se lahko prevede kot puščanje spomina. Ideja je, da programu
+uhaja spomin, podobno kot iz slabo zategnjene vodovodne cevi pušča voda.
+To se zgodi, če nekaj spomina od sistema zahtevamo, nanj pozabimo in ga nikoli
+ne vrnemo. Če tak program teče dlje časa, porablja in zahteva čedalje več spomina,
+in ga nič ne vrača, kar pomeni da ga nam nekoč zmanjka, računalnik začne
+delovati zelo počasi in morda operacijski sistem naš program ubije, ali pa
+postane tako neodziven, da je potrebno računalnik ponovno zagnati.
+Memory leake je pogosto težko zaznati, saj nič zares ne deluje narobe,
+samo program se počasi zažira v RAM.
+
+Za preprečitev memory leakov je potrebno zagotoviti, da vsak alociran spomin,
+natanko enkrat izbrišemo, oz. povedano na kratko "vsak ``new`` ima svoj
+``delete``. To ne pomeni, da moramo v kodi imeti enako število besedic ``new``
+in ``delete`` ampak da morajo biti poparčkani pomensko.
+
+C++ ima nekaj mehanizmov, da se memory leakom izognemo v širokem loku: najlažje
+tako, da sploh ne uporabljamo dinamičnih alokacij direktno, ampak pustimo
+standardni knjižnici, v katere pravilnost zaupamo, da to počne namesto nas.
+
+Enostaven primer memory leaka je, da preprosto ne pokličemo ``delete`` v kakšnem
+od zgodnjih primerov. Poglejmo si zanimivejši primer:
+
+.. code-block:: cpp
+
+  int main() {
+      double* d = new double(3.4);
+      // uporabljamo d
+      d = new double(2.7);
+      // uporabljamo d
+      delete d;
+
+      return 0;
+  }
+
+Čeprav smo uporabljali samo ``d`` in ga na koncu tudi zbrisali je spomin,
+pridobljen s prvim klicem ``new`` izgubljen, saj smo njegov naslov, ki je bil
+shranjen v ``p`` povozili z drugo vrednostjo. Po tem tudi če bi želeli, ne
+moremo več sprostiti tega spomina, saj nimamo nobenega načina, da do njega
+pridemo.
+
 Tabele
 ~~~~~~
 
+V tem razdelku si bomo ogledali ročno alociranje tabel, ki se v modernem
+C++ uporablja redko, toda spodobi se, da to pozna vsak C++ programer.
+Če potrebujemo tabelo uporabimo ``vector`` in C++ poskrbi za nas.
+
+Podobno kot lahko od sistema zahtevamo spomin za eno samo spremenljivko, lahko
+zahtevamo od sistema tudi spomin za cel seznam teh spremenljivk.
+Za to imamo na voljo operator, ki se imenuje ``new[]``, uporabimo pa ga kot
+
+.. code-block:: cpp
+
+  double* t = new double[25];
+
+kar naredi tabelo 25 decimalnih števil in vrne naslov prvega elementa.
+Če alokacija ne uspe (ker nam je npr. zmanjkalo spomina),
+``new[]``, enako kot pri verziji brez ``[]`` vrže izjemo.
+
+
 TODO ``new []`` in ``delete []``.
 
-Kako naredimo dinamično tabelo
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TODO indeksiranje, pointer arithemetics
+
+Kako naredimo tabelo, ki se sama povečuje
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 TODO opis.
 
 .. code-block:: cpp
