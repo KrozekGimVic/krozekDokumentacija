@@ -311,7 +311,7 @@ samo program se počasi zažira v RAM.
 
 Za preprečitev memory leakov je potrebno zagotoviti, da vsak alociran spomin,
 natanko enkrat izbrišemo, oz. povedano na kratko "vsak ``new`` ima svoj
-``delete``. To ne pomeni, da moramo v kodi imeti enako število besedic ``new``
+``delete``". To ne pomeni, da moramo v kodi imeti enako število besedic ``new``
 in ``delete`` ampak da morajo biti poparčkani pomensko.
 
 C++ ima nekaj mehanizmov, da se memory leakom izognemo v širokem loku: najlažje
@@ -337,7 +337,11 @@ od zgodnjih primerov. Poglejmo si zanimivejši primer:
 pridobljen s prvim klicem ``new`` izgubljen, saj smo njegov naslov, ki je bil
 shranjen v ``p`` povozili z drugo vrednostjo. Po tem tudi če bi želeli, ne
 moremo več sprostiti tega spomina, saj nimamo nobenega načina, da do njega
-pridemo.
+pridemo. Zaradi tega se je v C programiranju razvil koncept "lastništva
+pointerja", kjer se razmišlja o tem kdo je lastnik nekega pointerja, tj., kdo je
+odgovoren za njegov izbris, kar postane pomembno predvsem v bolj kompliciranih
+programih, kjer pointerje hranimo dlje časa in jih podajamo več funkcijam.
+
 
 Tabele
 ~~~~~~
@@ -357,6 +361,7 @@ Za to imamo na voljo operator, ki se imenuje ``new[]``, uporabimo pa ga kot
 kar naredi tabelo 25 decimalnih števil in vrne naslov prvega elementa.
 Če alokacija ne uspe (ker nam je npr. zmanjkalo spomina),
 ``new[]``, enako kot pri verziji brez ``[]`` vrže izjemo.
+
 
 
 TODO ``new []`` in ``delete []``.
