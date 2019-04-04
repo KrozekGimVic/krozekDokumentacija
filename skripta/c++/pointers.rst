@@ -344,7 +344,7 @@ programih, kjer pointerje hranimo dlje časa in jih podajamo več funkcijam.
 
 
 Tabele
-~~~~~~
+------
 
 V tem razdelku si bomo ogledali ročno alociranje tabel, ki se v modernem
 C++ uporablja redko, toda spodobi se, da to pozna vsak C++ programer.
@@ -358,15 +358,59 @@ Za to imamo na voljo operator, ki se imenuje ``new[]``, uporabimo pa ga kot
 
   double* t = new double[25];
 
-kar naredi tabelo 25 decimalnih števil in vrne naslov prvega elementa.
+kar alocira prostor za 25 decimalnih števil in vrne naslov prvega elementa.
 Če alokacija ne uspe (ker nam je npr. zmanjkalo spomina),
 ``new[]``, enako kot pri verziji brez ``[]`` vrže izjemo.
 
+Prostor za 25 števil lahko gledamo kot tabelo. Ker ``t`` kaže na prvi element
+ga lahko nastavimo z ``*t = 3.14``. Sedaj se seveda porodi naravno vprašanje,
+kako nastavimo ostale elemente. Izkaže se, da lahko s pointerji računamo, podobno
+kot z navadnimi števili. Naj bosta ``p`` in ``q`` neka kazalca enakega tipa in
+``a`` celo število. Izračunamo lahko ``p+a``, ``p-a``, ``q-p``, poleg tega pa
+lahko tudi primerjamo ``p < q`` (in ostale relacije). Naredimo lahko tudi
+``++p`` in ``--p`` (in postfiksni verziji) in tudi ``p += a`` ipd.
+
+Izraz oblike ``p+a`` poveča ``p`` za ``a`` mest. Če ``p`` kaže na naslov ``1654``
+potem ``p+3`` ne kaže nujno na naslov ``1657``, ampak je to odvisno od tipa, na
+katerega ``p`` kaže. Če je ``p`` tipa ``double*``, potem se ``p`` poveča za
+``3*sizeof(double)``, tako da preskočimo za 3 cela decimalna števila naprej,
+kar ima več smisla, kot da bi skočili za 3 bajte in končali na sredini nekega
+števila. Odštevanje števila deluje podobno, razlika med dvema kazalcema pa
+pove, koliko sta narazen, merjeno v velikosti tipa na katerega kažeta.
+Velja seveda ``(p+a) - p == a``.
+
+Seštevanje in odštevanje kazalcev je zelo uporabno pri delu s tabelami. Če
+``t`` kot zgoraj kaže na začetek tabele, potem ``t+1`` kaže na naslednji
+element, ``t+2`` na tretjega in v splošnem ``t+i`` na element na indeksu ``i``.
+Če želimo na ``i``-to mesto nekaj napisati, to storimo tako, da izvedemo
+``*(t+i) = -2.34``. Ker se izrazi oblike ``*(t+i)`` v C++ tako pogosto
+pojavljajo, so zanje naredili poseben operator: znani operator ``[]``
+za indeksiranje tabel. Po definiciji velja ``t[i] == *(t+i)``.
+Ta operator nam omogoča da s tabelo ``t`` delamo kot ponavadi:
+
+.. code-block:: cpp
+
+  for (int i = 0; i < 25; ++i) {
+      t[i] = i*i;
+  }
+
+Pri tem moramo paziti da ne gremo prek začetka ali konca tabele. C++ sam se
+glede tega ne bo nič pritožil, pa tudi pri izvajanju ne pride nujno do napake --
+če gremo preveč preko konca se bo program najbrž sesul s ``segmentation fault``,
+toda če gremo samo malo čez tabelo, pa ne. Toda, po standardu je dostop do
+elementov, ki niso del tabele *nedefinirano obnašanje* (undefined behaviour),
+kar pomeni, da nimate nobene garancije kaj se bo zgodilo in se na tako obnašanje
+ne morete zanašati: program se lahko sesuje, lahko dobite vrednost 0, lahko
+dobite neko navidez naključno številko, lahko se pokvari nek drug del
+programa...
+
+Po koncu uporabe moramo tabelo tudi izbrisati z
+
+.. code-block:: cpp
+
+  delete[] t;
 
 
-TODO ``new []`` in ``delete []``.
-
-TODO indeksiranje, pointer arithemetics
 
 Kako naredimo tabelo, ki se sama povečuje
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -514,6 +558,12 @@ TODO opis.
 
       return 0;
   }
+
+Pametni kazalci in reference
+----------------------------
+
+C++ ima od verzije 11 v knjižnici memory
+
 
 
 
