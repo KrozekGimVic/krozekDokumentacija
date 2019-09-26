@@ -102,6 +102,7 @@
 <li class="toctree-l2"><a class="reference internal" href="objekti.html">Objekti</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dedovanje.html">Dedovanje</a></li>
 <li class="toctree-l2"><a class="reference internal" href="templates.html">Predloge (templates)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="organizacija.html">Organizacija kode in prevajanje večjih projektov</a></li>
 </ul>
 </li>
 </ul>
@@ -359,6 +360,89 @@ Funkcijo smo klicali z dvema &#8220;temporary objektoma&#8221; in smo vzeli refe
 to ni težava, saj je ne moremo spreminjati.</p>
 <p>Ena izmed težav referenc je, da ob klicu funkcije <tt class="docutils literal"><span class="pre">f(a)</span></tt> ne vemo, ali bo ta
 funkcija  <tt class="docutils literal"><span class="pre">a</span></tt> spremenila ali ne &#8211; pogledati moramo v definicijo.</p>
+</div>
+<div class="section" id="kazalci-kot-parametri-funkcij-in-vracanje-prek-parametra">
+<h2>Kazalci kot parametri funkcij in &#8220;vračanje&#8221; prek parametra<a class="headerlink" href="#kazalci-kot-parametri-funkcij-in-vracanje-prek-parametra" title="Permalink to this headline">¶</a></h2>
+<p>Pred branjem tega razdelka, morate biti seznanjeni s kazalci na splošno,
+ki so opisani v razdelku <a class="reference internal" href="pointers.html#pointers"><em>Kazalci in reference</em></a>.</p>
+<p>Kazalce lahko podamo funkcijam kot vsak drug parameter. V C-ju, kjer ni
+referenc in se vsi parametri podajo tako, da se vrednost kopira, so kazalci
+edini način, da lahko funkcija &#8220;spreminja parameter, ki ga dobi&#8221;. Tehnično to
+seveda ne drži, saj vrednosti kazalca ne spreminja, toda ko funkciji podamo
+kazalec na neko spremenljivko o tem razmišljamo kot o tem, da smo ji podali
+kar spremenljivko samo, ne le kazalca. Primer funkcije <tt class="docutils literal"><span class="pre">swap</span></tt></p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="kt">void</span> <span class="nf">swap</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span><span class="o">*</span> <span class="n">b</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">t</span> <span class="o">=</span> <span class="o">*</span><span class="n">a</span><span class="p">;</span>
+    <span class="o">*</span><span class="n">a</span> <span class="o">=</span> <span class="o">*</span><span class="n">b</span><span class="p">;</span>
+    <span class="o">*</span><span class="n">b</span> <span class="o">=</span> <span class="n">t</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">int</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="kt">int</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">8</span><span class="p">;</span>
+    <span class="n">swap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">b</span><span class="p">);</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Vidimo, da moramo funkcijo poklicati z naslovoma dveh spremenljivk,
+ta pa zamenja vrednosti na teh naslovih. Z razliko od C++ verzije tokrat vidimo,
+da bomo spremenljivki spreminjali, saj smo funkciji podali naslove, s čimer
+omogočimo, da funkcija na ta naslov napiše kar želi.</p>
+<p>To se je pogosto uporabljalo, da so funkcije lahko &#8220;vrnile&#8221; več kot eno
+vrednost, in še danes veliko knjižnic uporablja ta pristop. Definicija funkcije,
+ki vrne eno ali več vrednosti prek parametra ni nič drugačnega od definicije
+navadne funkcije, dogovor je le, da po nekaj
+običajnih (vhodnih) parametrih sledi še nekaj izhodnih parametrov, kjer od
+uporabnika zahtevamo, da poda naslove spremenljivk, kamor naj rezultat napišemo.</p>
+<p>Oglejmo si primer funkcije, ki točko s koordinatama <tt class="docutils literal"><span class="pre">x</span></tt> in <tt class="docutils literal"><span class="pre">y</span></tt> pretvori
+v polarni zapis in vrne njeno razdaljo od izhodišča ter kot, ki ga oklepa z
+absciso. V C++ bi funkcijo lahko napisali tako</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="n">pair</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span> <span class="kt">double</span><span class="o">&gt;</span> <span class="n">polar</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">r</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span><span class="p">);</span>
+    <span class="kt">double</span> <span class="n">phi</span> <span class="o">=</span> <span class="n">atan2</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
+    <span class="k">return</span> <span class="p">{</span><span class="n">r</span><span class="p">,</span> <span class="n">phi</span><span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">auto</span> <span class="n">p</span> <span class="o">=</span> <span class="n">polar</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">);</span>
+    <span class="c1">// rezultata dobimo kot p.first in p.second</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Če pa bi se odločili, da bomo <tt class="docutils literal"><span class="pre">r</span></tt> in <tt class="docutils literal"><span class="pre">phi</span></tt> vrnili prek parametra,
+napišemo tako</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="kt">void</span> <span class="nf">polar</span><span class="p">(</span><span class="kt">double</span> <span class="n">x</span><span class="p">,</span> <span class="kt">double</span> <span class="n">y</span><span class="p">,</span> <span class="kt">double</span><span class="o">*</span> <span class="n">r</span><span class="p">,</span> <span class="kt">double</span><span class="o">*</span> <span class="n">phi</span><span class="p">)</span> <span class="p">{</span>
+    <span class="o">*</span><span class="n">r</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="o">*</span><span class="n">y</span><span class="p">);</span>
+    <span class="o">*</span><span class="n">phi</span> <span class="o">=</span> <span class="n">atan2</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">x</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kt">double</span> <span class="n">r</span><span class="p">,</span> <span class="n">phi</span><span class="p">;</span>
+    <span class="n">polar</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">r</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">phi</span><span class="p">);</span>
+    <span class="c1">// v r in phi sta sedaj shranjena rezultata</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Vseskozi je beseda &#8220;vrača&#8221; v narekovajih, ker druga verzija funkcije <tt class="docutils literal"><span class="pre">polar</span></tt>
+dejansko ne vrne ničesar, vendar o njej razmišljamo, kot da vrne dve števili,
+saj to shrani na podana naslova dveh spremenljivk. Če pa bi želeli, ki lahko
+tudi še kaj dejansko vrnila, kot to naredi npr. funkcija <tt class="docutils literal"><span class="pre">scanf</span></tt> iz standardne
+knjižnice. Če želimo imeti funkcijo, ki vrne več kot eno stvar, je tudi danes
+tehnika vračanja prek parametra pogosto v uporabi. V C++ lahko namesto kazalcev
+za izhodne parametre uporabimo tudi nekonstante reference. to lahko sicer
+nekoliko zmanjša berljivost kode, saj iz klica oblike <tt class="docutils literal"><span class="pre">f(p,</span> <span class="pre">q,</span> <span class="pre">r,</span> <span class="pre">&amp;a,</span> <span class="pre">&amp;b)</span></tt>
+hitro vidimo, da so <tt class="docutils literal"><span class="pre">p</span></tt>, <tt class="docutils literal"><span class="pre">q</span></tt>, <tt class="docutils literal"><span class="pre">r</span></tt> najverjetneje vhodni parametri,
+<tt class="docutils literal"><span class="pre">a</span></tt> in <tt class="docutils literal"><span class="pre">b</span></tt> pa izhodna (ni pa to nujno). Pri klicu z referencami
+pa vemo samo <tt class="docutils literal"><span class="pre">f(p,</span> <span class="pre">q,</span> <span class="pre">r,</span> <span class="pre">a,</span> <span class="pre">b)</span></tt> in moramo gledati v definicijo funkcije,
+da izvemo, kateri parametri so &#8220;izhodni&#8221;.</p>
+<p>Alternativno lahko za vračanje več stvari hkrati namesto izhodnih parametrov
+vrnemo tudi <tt class="docutils literal"><span class="pre">tuple</span></tt> več stvari, kar je postalo lepše v C++17,
+kjer lahko odpakiramo <tt class="docutils literal"><span class="pre">tuple</span></tt> in <tt class="docutils literal"><span class="pre">pair</span></tt> v dve novo definirani
+spremenljivki kar v eni vrstici kot</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="k">auto</span> <span class="p">[</span><span class="n">r</span><span class="p">,</span> <span class="n">phi</span><span class="p">]</span> <span class="o">=</span> <span class="n">polar</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">);</span>
+</pre></div>
+</div>
 </div>
 </div>
 

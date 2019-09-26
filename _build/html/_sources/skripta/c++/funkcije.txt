@@ -213,4 +213,99 @@ to ni težava, saj je ne moremo spreminjati.
 Ena izmed težav referenc je, da ob klicu funkcije ``f(a)`` ne vemo, ali bo ta
 funkcija  ``a`` spremenila ali ne -- pogledati moramo v definicijo.
 
+Kazalci kot parametri funkcij in "vračanje" prek parametra
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Pred branjem tega razdelka, morate biti seznanjeni s kazalci na splošno,
+ki so opisani v razdelku :ref:`pointers`.
+
+Kazalce lahko podamo funkcijam kot vsak drug parameter. V C-ju, kjer ni
+referenc in se vsi parametri podajo tako, da se vrednost kopira, so kazalci
+edini način, da lahko funkcija "spreminja parameter, ki ga dobi". Tehnično to
+seveda ne drži, saj vrednosti kazalca ne spreminja, toda ko funkciji podamo
+kazalec na neko spremenljivko o tem razmišljamo kot o tem, da smo ji podali
+kar spremenljivko samo, ne le kazalca. Primer funkcije ``swap``
+
+.. code-block:: cpp
+
+  void swap(int* a, int* b) {
+      int t = *a;
+      *a = *b;
+      *b = t;
+  }
+
+  int main() {
+      int a = 5;
+      int b = 8;
+      swap(&a, &b);
+      return 0;
+  }
+
+Vidimo, da moramo funkcijo poklicati z naslovoma dveh spremenljivk,
+ta pa zamenja vrednosti na teh naslovih. Z razliko od C++ verzije tokrat vidimo,
+da bomo spremenljivki spreminjali, saj smo funkciji podali naslove, s čimer
+omogočimo, da funkcija na ta naslov napiše kar želi.
+
+To se je pogosto uporabljalo, da so funkcije lahko "vrnile" več kot eno
+vrednost, in še danes veliko knjižnic uporablja ta pristop. Definicija funkcije,
+ki vrne eno ali več vrednosti prek parametra ni nič drugačnega od definicije
+navadne funkcije, dogovor je le, da po nekaj
+običajnih (vhodnih) parametrih sledi še nekaj izhodnih parametrov, kjer od
+uporabnika zahtevamo, da poda naslove spremenljivk, kamor naj rezultat napišemo.
+
+Oglejmo si primer funkcije, ki točko s koordinatama ``x`` in ``y`` pretvori
+v polarni zapis in vrne njeno razdaljo od izhodišča ter kot, ki ga oklepa z
+absciso. V C++ bi funkcijo lahko napisali tako
+
+.. code-block:: cpp
+
+  pair<double, double> polar(double x, double y) {
+      double r = sqrt(x*x + y*y);
+      double phi = atan2(y, x);
+      return {r, phi};
+  }
+
+  int main() {
+      auto p = polar(0.5, 0.5);
+      // rezultata dobimo kot p.first in p.second
+  }
+
+Če pa bi se odločili, da bomo ``r`` in ``phi`` vrnili prek parametra,
+napišemo tako
+
+.. code-block:: cpp
+
+  void polar(double x, double y, double* r, double* phi) {
+      *r = sqrt(x*x + y*y);
+      *phi = atan2(y, x);
+  }
+
+  int main() {
+      double r, phi;
+      polar(0.5, 0.5, &r, &phi);
+      // v r in phi sta sedaj shranjena rezultata
+  }
+
+Vseskozi je beseda "vrača" v narekovajih, ker druga verzija funkcije ``polar``
+dejansko ne vrne ničesar, vendar o njej razmišljamo, kot da vrne dve števili,
+saj to shrani na podana naslova dveh spremenljivk. Če pa bi želeli, ki lahko
+tudi še kaj dejansko vrnila, kot to naredi npr. funkcija ``scanf`` iz standardne
+knjižnice. Če želimo imeti funkcijo, ki vrne več kot eno stvar, je tudi danes
+tehnika vračanja prek parametra pogosto v uporabi. V C++ lahko namesto kazalcev
+za izhodne parametre uporabimo tudi nekonstante reference. to lahko sicer
+nekoliko zmanjša berljivost kode, saj iz klica oblike ``f(p, q, r, &a, &b)``
+hitro vidimo, da so ``p``, ``q``, ``r`` najverjetneje vhodni parametri,
+``a`` in ``b`` pa izhodna (ni pa to nujno). Pri klicu z referencami
+pa vemo samo ``f(p, q, r, a, b)`` in moramo gledati v definicijo funkcije,
+da izvemo, kateri parametri so "izhodni".
+
+Alternativno lahko za vračanje več stvari hkrati namesto izhodnih parametrov
+vrnemo tudi ``tuple`` več stvari, kar je postalo lepše v C++17,
+kjer lahko odpakiramo ``tuple`` in ``pair`` v dve novo definirani
+spremenljivki kar v eni vrstici kot
+
+.. code-block:: cpp
+
+  auto [r, phi] = polar(0.5, 0.5);
+
+
 .. vim: spell spelllang=sl

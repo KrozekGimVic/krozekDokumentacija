@@ -102,6 +102,8 @@
 <li class="toctree-l2"><a class="reference internal" href="objekti.html">Objekti</a></li>
 <li class="toctree-l2"><a class="reference internal" href="dedovanje.html">Dedovanje</a></li>
 <li class="toctree-l2"><a class="reference internal" href="templates.html">Predloge (templates)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="organizacija.html">Organizacija kode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="izjeme.html">Izjeme (exceptions)</a></li>
 </ul>
 </li>
 </ul>
@@ -451,7 +453,7 @@ Memory leake je pogosto težko zaznati, saj nič zares ne deluje narobe,
 samo program se počasi zažira v RAM.</p>
 <p>Za preprečitev memory leakov je potrebno zagotoviti, da vsak alociran spomin,
 natanko enkrat izbrišemo, oz. povedano na kratko &#8220;vsak <tt class="docutils literal"><span class="pre">new</span></tt> ima svoj
-<tt class="docutils literal"><span class="pre">delete</span></tt>. To ne pomeni, da moramo v kodi imeti enako število besedic <tt class="docutils literal"><span class="pre">new</span></tt>
+<tt class="docutils literal"><span class="pre">delete</span></tt>&#8221;. To ne pomeni, da moramo v kodi imeti enako število besedic <tt class="docutils literal"><span class="pre">new</span></tt>
 in <tt class="docutils literal"><span class="pre">delete</span></tt> ampak da morajo biti poparčkani pomensko.</p>
 <p>C++ ima nekaj mehanizmov, da se memory leakom izognemo v širokem loku: najlažje
 tako, da sploh ne uporabljamo dinamičnih alokacij direktno, ampak pustimo
@@ -473,10 +475,14 @@ od zgodnjih primerov. Poglejmo si zanimivejši primer:</p>
 pridobljen s prvim klicem <tt class="docutils literal"><span class="pre">new</span></tt> izgubljen, saj smo njegov naslov, ki je bil
 shranjen v <tt class="docutils literal"><span class="pre">p</span></tt> povozili z drugo vrednostjo. Po tem tudi če bi želeli, ne
 moremo več sprostiti tega spomina, saj nimamo nobenega načina, da do njega
-pridemo.</p>
+pridemo. Zaradi tega se je v C programiranju razvil koncept &#8220;lastništva
+pointerja&#8221;, kjer se razmišlja o tem kdo je lastnik nekega pointerja, tj., kdo je
+odgovoren za njegov izbris, kar postane pomembno predvsem v bolj kompliciranih
+programih, kjer pointerje hranimo dlje časa in jih podajamo več funkcijam.</p>
+</div>
 </div>
 <div class="section" id="tabele">
-<h3>Tabele<a class="headerlink" href="#tabele" title="Permalink to this headline">¶</a></h3>
+<h2>Tabele<a class="headerlink" href="#tabele" title="Permalink to this headline">¶</a></h2>
 <p>V tem razdelku si bomo ogledali ročno alociranje tabel, ki se v modernem
 C++ uporablja redko, toda spodobi se, da to pozna vsak C++ programer.
 Če potrebujemo tabelo uporabimo <tt class="docutils literal"><span class="pre">vector</span></tt> in C++ poskrbi za nas.</p>
@@ -486,11 +492,49 @@ Za to imamo na voljo operator, ki se imenuje <tt class="docutils literal"><span 
 <div class="highlight-cpp"><div class="highlight"><pre><span class="kt">double</span><span class="o">*</span> <span class="n">t</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">double</span><span class="p">[</span><span class="mi">25</span><span class="p">];</span>
 </pre></div>
 </div>
-<p>kar naredi tabelo 25 decimalnih števil in vrne naslov prvega elementa.
+<p>kar alocira prostor za 25 decimalnih števil in vrne naslov prvega elementa.
 Če alokacija ne uspe (ker nam je npr. zmanjkalo spomina),
 <tt class="docutils literal"><span class="pre">new[]</span></tt>, enako kot pri verziji brez <tt class="docutils literal"><span class="pre">[]</span></tt> vrže izjemo.</p>
-<p>TODO <tt class="docutils literal"><span class="pre">new</span> <span class="pre">[]</span></tt> in <tt class="docutils literal"><span class="pre">delete</span> <span class="pre">[]</span></tt>.</p>
-<p>TODO indeksiranje, pointer arithemetics</p>
+<p>Prostor za 25 števil lahko gledamo kot tabelo. Ker <tt class="docutils literal"><span class="pre">t</span></tt> kaže na prvi element
+ga lahko nastavimo z <tt class="docutils literal"><span class="pre">*t</span> <span class="pre">=</span> <span class="pre">3.14</span></tt>. Sedaj se seveda porodi naravno vprašanje,
+kako nastavimo ostale elemente. Izkaže se, da lahko s pointerji računamo, podobno
+kot z navadnimi števili. Naj bosta <tt class="docutils literal"><span class="pre">p</span></tt> in <tt class="docutils literal"><span class="pre">q</span></tt> neka kazalca enakega tipa in
+<tt class="docutils literal"><span class="pre">a</span></tt> celo število. Izračunamo lahko <tt class="docutils literal"><span class="pre">p+a</span></tt>, <tt class="docutils literal"><span class="pre">p-a</span></tt>, <tt class="docutils literal"><span class="pre">q-p</span></tt>, poleg tega pa
+lahko tudi primerjamo <tt class="docutils literal"><span class="pre">p</span> <span class="pre">&lt;</span> <span class="pre">q</span></tt> (in ostale relacije). Naredimo lahko tudi
+<tt class="docutils literal"><span class="pre">++p</span></tt> in <tt class="docutils literal"><span class="pre">--p</span></tt> (in postfiksni verziji) in tudi <tt class="docutils literal"><span class="pre">p</span> <span class="pre">+=</span> <span class="pre">a</span></tt> ipd.</p>
+<p>Izraz oblike <tt class="docutils literal"><span class="pre">p+a</span></tt> poveča <tt class="docutils literal"><span class="pre">p</span></tt> za <tt class="docutils literal"><span class="pre">a</span></tt> mest. Če <tt class="docutils literal"><span class="pre">p</span></tt> kaže na naslov <tt class="docutils literal"><span class="pre">1654</span></tt>
+potem <tt class="docutils literal"><span class="pre">p+3</span></tt> ne kaže nujno na naslov <tt class="docutils literal"><span class="pre">1657</span></tt>, ampak je to odvisno od tipa, na
+katerega <tt class="docutils literal"><span class="pre">p</span></tt> kaže. Če je <tt class="docutils literal"><span class="pre">p</span></tt> tipa <tt class="docutils literal"><span class="pre">double*</span></tt>, potem se <tt class="docutils literal"><span class="pre">p</span></tt> poveča za
+<tt class="docutils literal"><span class="pre">3*sizeof(double)</span></tt>, tako da preskočimo za 3 cela decimalna števila naprej,
+kar ima več smisla, kot da bi skočili za 3 bajte in končali na sredini nekega
+števila. Odštevanje števila deluje podobno, razlika med dvema kazalcema pa
+pove, koliko sta narazen, merjeno v velikosti tipa na katerega kažeta.
+Velja seveda <tt class="docutils literal"><span class="pre">(p+a)</span> <span class="pre">-</span> <span class="pre">p</span> <span class="pre">==</span> <span class="pre">a</span></tt>.</p>
+<p>Seštevanje in odštevanje kazalcev je zelo uporabno pri delu s tabelami. Če
+<tt class="docutils literal"><span class="pre">t</span></tt> kot zgoraj kaže na začetek tabele, potem <tt class="docutils literal"><span class="pre">t+1</span></tt> kaže na naslednji
+element, <tt class="docutils literal"><span class="pre">t+2</span></tt> na tretjega in v splošnem <tt class="docutils literal"><span class="pre">t+i</span></tt> na element na indeksu <tt class="docutils literal"><span class="pre">i</span></tt>.
+Če želimo na <tt class="docutils literal"><span class="pre">i</span></tt>-to mesto nekaj napisati, to storimo tako, da izvedemo
+<tt class="docutils literal"><span class="pre">*(t+i)</span> <span class="pre">=</span> <span class="pre">-2.34</span></tt>. Ker se izrazi oblike <tt class="docutils literal"><span class="pre">*(t+i)</span></tt> v C++ tako pogosto
+pojavljajo, so zanje naredili poseben operator: znani operator <tt class="docutils literal"><span class="pre">[]</span></tt>
+za indeksiranje tabel. Po definiciji velja <tt class="docutils literal"><span class="pre">t[i]</span> <span class="pre">==</span> <span class="pre">*(t+i)</span></tt>.
+Ta operator nam omogoča da s tabelo <tt class="docutils literal"><span class="pre">t</span></tt> delamo kot ponavadi:</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="mi">25</span><span class="p">;</span> <span class="o">++</span><span class="n">i</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">t</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">i</span><span class="o">*</span><span class="n">i</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Pri tem moramo paziti da ne gremo prek začetka ali konca tabele. C++ sam se
+glede tega ne bo nič pritožil, pa tudi pri izvajanju ne pride nujno do napake &#8211;
+če gremo preveč preko konca se bo program najbrž sesul s <tt class="docutils literal"><span class="pre">segmentation</span> <span class="pre">fault</span></tt>,
+toda če gremo samo malo čez tabelo, pa ne. Toda, po standardu je dostop do
+elementov, ki niso del tabele <em>nedefinirano obnašanje</em> (undefined behaviour),
+kar pomeni, da nimate nobene garancije kaj se bo zgodilo in se na tako obnašanje
+ne morete zanašati: program se lahko sesuje, lahko dobite vrednost 0, lahko
+dobite neko navidez naključno številko, lahko se pokvari nek drug del
+programa...</p>
+<p>Po koncu uporabe moramo tabelo tudi izbrisati z</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="k">delete</span><span class="p">[]</span> <span class="n">t</span><span class="p">;</span>
+</pre></div>
 </div>
 <div class="section" id="kako-naredimo-tabelo-ki-se-sama-povecuje">
 <h3>Kako naredimo tabelo, ki se sama povečuje<a class="headerlink" href="#kako-naredimo-tabelo-ki-se-sama-povecuje" title="Permalink to this headline">¶</a></h3>
@@ -638,6 +682,10 @@ Za to imamo na voljo operator, ki se imenuje <tt class="docutils literal"><span 
 </pre></div>
 </div>
 </div>
+</div>
+<div class="section" id="pametni-kazalci-in-reference">
+<h2>Pametni kazalci in reference<a class="headerlink" href="#pametni-kazalci-in-reference" title="Permalink to this headline">¶</a></h2>
+<p>C++ ima od verzije 11 v knjižnici memory</p>
 </div>
 </div>
 

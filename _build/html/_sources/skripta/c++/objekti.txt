@@ -389,4 +389,9 @@ funkcije, ostalo pa bolj po redko. Statične spremenljivke imajo podobno uporabo
 tudi znotraj funkcij (ob dvojni inicilizaciji se ne ponastavijo). A o tem morda
 kasneje.
 
+Copy in move konstruktorji
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+TODO
+
 .. vim: spell spelllang=sl
