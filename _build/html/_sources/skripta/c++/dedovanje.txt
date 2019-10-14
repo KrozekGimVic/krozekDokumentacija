@@ -273,6 +273,8 @@ Zaenkrat sicer še ne vemo, kaj so virtualne
 metode, toda princip skrivanja je zanje enak kot za običajne metode (kadar ne
 pride v igro overriding).
 
+.. _virtual:
+
 Polimorfizem in virtualne funkcije
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -533,10 +535,108 @@ Stvari postanejo komplicirane, če imamo na kupu več funkcij z enakim imenom in
 različnimi parametri, nekatere so virtualne, nekatere niso in lahko z
 predefiniranjem neke metode uvedemo skrivanje neke druge...
 
-Virtualni destruktorji
-~~~~~~~~~~~~~~~~~~~~~~
+Konstruktorji in virtualni destruktorji
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-TODO
+Osnove o konstruktorjev in destruktorjev so razložene v razdelku
+:ref:`constructors`, ta razdelek opisuje njihovo obnašanje pri dedovanju.
+
+Če razred ``B`` deduje od razreda ``A``, potem se vedno ko naredimo objekt tipa
+``B`` najprej pokliče konstruktor starša, nato pa še naš konstruktor. to med
+drugim pomeni, da se v konstruktorju ``B`` lahko zanašamo na obstoj in pravilno
+delovanje vseh metod objekta ``A``. Tak sistem konstruiranja objektov
+zagotavlja, da konstruktor ``A`` skrbi za vse, kar je v povezavi s tipom ``A``,
+konstruktor ``B`` pa za vse kar je v povezavi s tipom ``B``.
+
+Podobno velja tudi pri destruktorjih. Pri
+uničenju objekta tipa ``B`` se najprej pokliče destruktor ``B``, ki kot zadnje
+dejanje pokliče starševski destruktor.
+
+Primer (z napako, razloženo kasneje):
+
+.. code-block:: cpp
+
+  struct A {
+      A() { cout << "A ctor" << endl; }
+      ~A() { cout << "A dtor" << endl; }
+  };
+
+  struct B : public A {
+      B() { cout << "B ctor" << endl; }
+      ~B() { cout << "B dtor" << endl; }
+  };
+
+  int main() {
+      B b;
+      return 0;
+  }
+
+Zgornja koda izpiše
+
+::
+
+  A ctor
+  B ctor
+  B dtor
+  A dtor
+
+
+Poglejmo si še, kaj se zgodi, če kličemo objekte prek pointerjev.
+Funkcijo ``main`` od zgoraj spremenimo v
+
+.. code-block:: cpp
+
+  int main() {
+      A* b = new B();
+      delete b;
+      return 0;
+  }
+
+in ko jo poženemo, dobimo
+
+::
+
+  A ctor
+  B ctor
+  A dtor
+
+Kot vidimo, se destruktor ``B`` ni poklical. To pravzaprav ni nepričakovano, ker
+smo ``b`` naredili kot objekt tipa ``B``, sta te poklicala oba konstruktorja,
+nato smo ga shranili v kazalec tipa ``A``, ko pa smo ga uničili, se je poklical
+le destruktor ``A``, saj je to bil takratni tip objekta. Toda to pomeni, da je
+pol objekta (``B``-jev del) ostalo nepospravljenega. Obnašanje je podobno kot
+pri virtualnih in navadnih funkcijah (glej :ref:`virtual`). Rešitev je, da se
+destruktor ``B`` označi kot virtualen. Če vemo, da objekta ne bomo nikoli
+uničevali prek kazalca na starševski razred, tega ni potrebno storiti, vendar se je
+za vsak slučaj dobro navaditi, da pri vsakem dedovanju označimo destruktor v
+spodnjem razredu kot virtualen, da se izognemo potencialnim težavam v
+prihodnosti.
+
+Ko destruktor ``B`` izgleda kot ``~B() { cout << "B dtor" << endl; }``, dobimo
+pričakovan izhod
+
+::
+
+  A ctor
+  B ctor
+  B dtor
+  A dtor
+
+
+Povedali smo, da prevajalnik za nas pokliče starševske konstruktorje, kar drži,
+če obstaja default konstruktor za starša.
+Če ima starševski konstruktor parametre, ga moramo pri konstruiranju
+poklicati eksplicitno:
+
+.. code-block:: cpp
+
+  struct A {
+      A(int a, int b) {}
+  };
+
+  struct B : public A {
+      B() : A(2, 3) {}  // klic starševega konstruktorja
+  };
 
 Čiste virtualne funkcije in abstraktni razredi
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

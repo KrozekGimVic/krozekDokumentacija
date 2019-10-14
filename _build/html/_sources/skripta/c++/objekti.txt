@@ -143,6 +143,8 @@ nujno res za privatne metode). Primer: za public metode se ponavadi ne spodobi,
 da bi postavljali zahteve v stilu "Če želite poklicati x, morate najprej poklicati y.",
 medtem ko je za privatne to običajno.
 
+.. _constructors:
+
 Konstruktorji in destruktorji
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

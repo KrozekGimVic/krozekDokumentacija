@@ -102,7 +102,8 @@
 <li class="toctree-l2"><a class="reference internal" href="objekti.html">Objekti</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="">Dedovanje</a></li>
 <li class="toctree-l2"><a class="reference internal" href="templates.html">Predloge (templates)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="organizacija.html">Organizacija kode in prevajanje večjih projektov</a></li>
+<li class="toctree-l2"><a class="reference internal" href="organizacija.html">Organizacija kode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="izjeme.html">Izjeme (exceptions)</a></li>
 </ul>
 </li>
 </ul>
@@ -424,7 +425,7 @@ metode, toda princip skrivanja je zanje enak kot za običajne metode (kadar ne
 pride v igro overriding).</p>
 </div>
 <div class="section" id="polimorfizem-in-virtualne-funkcije">
-<h2>Polimorfizem in virtualne funkcije<a class="headerlink" href="#polimorfizem-in-virtualne-funkcije" title="Permalink to this headline">¶</a></h2>
+<span id="virtual"></span><h2>Polimorfizem in virtualne funkcije<a class="headerlink" href="#polimorfizem-in-virtualne-funkcije" title="Permalink to this headline">¶</a></h2>
 <p>Pred branjem morate biti seznanjeni s snovjo v poglavju <a class="reference internal" href="pointers.html#pointers"><em>Kazalci in reference</em></a>.
 Zaradi enostavnosti bomo v tem poglavju uporabljali navadne kazalce,
 vendar vse deluje enako tudi s pametnimi kazalci.</p>
@@ -651,9 +652,90 @@ B::g
 različnimi parametri, nekatere so virtualne, nekatere niso in lahko z
 predefiniranjem neke metode uvedemo skrivanje neke druge...</p>
 </div>
-<div class="section" id="virtualni-destruktorji">
-<h2>Virtualni destruktorji<a class="headerlink" href="#virtualni-destruktorji" title="Permalink to this headline">¶</a></h2>
-<p>TODO</p>
+<div class="section" id="konstruktorji-in-virtualni-destruktorji">
+<h2>Konstruktorji in virtualni destruktorji<a class="headerlink" href="#konstruktorji-in-virtualni-destruktorji" title="Permalink to this headline">¶</a></h2>
+<p>Osnove o konstruktorjev in destruktorjev so razložene v razdelku
+<a class="reference internal" href="objekti.html#constructors"><em>Konstruktorji in destruktorji</em></a>, ta razdelek opisuje njihovo obnašanje pri dedovanju.</p>
+<p>Če razred <tt class="docutils literal"><span class="pre">B</span></tt> deduje od razreda <tt class="docutils literal"><span class="pre">A</span></tt>, potem se vedno ko naredimo objekt tipa
+<tt class="docutils literal"><span class="pre">B</span></tt> najprej pokliče konstruktor starša, nato pa še naš konstruktor. to med
+drugim pomeni, da se v konstruktorju <tt class="docutils literal"><span class="pre">B</span></tt> lahko zanašamo na obstoj in pravilno
+delovanje vseh metod objekta <tt class="docutils literal"><span class="pre">A</span></tt>. Tak sistem konstruiranja objektov
+zagotavlja, da konstruktor <tt class="docutils literal"><span class="pre">A</span></tt> skrbi za vse, kar je v povezavi s tipom <tt class="docutils literal"><span class="pre">A</span></tt>,
+konstruktor <tt class="docutils literal"><span class="pre">B</span></tt> pa za vse kar je v povezavi s tipom <tt class="docutils literal"><span class="pre">B</span></tt>.</p>
+<p>Podobno velja tudi pri destruktorjih. Pri
+uničenju objekta tipa <tt class="docutils literal"><span class="pre">B</span></tt> se najprej pokliče destruktor <tt class="docutils literal"><span class="pre">B</span></tt>, ki kot zadnje
+dejanje pokliče starševski destruktor.</p>
+<p>Primer (z napako, razloženo kasneje):</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="k">struct</span> <span class="n">A</span> <span class="p">{</span>
+    <span class="n">A</span><span class="p">()</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;A ctor&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+    <span class="o">~</span><span class="n">A</span><span class="p">()</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;A dtor&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="k">struct</span> <span class="n">B</span> <span class="o">:</span> <span class="k">public</span> <span class="n">A</span> <span class="p">{</span>
+    <span class="n">B</span><span class="p">()</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;B ctor&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+    <span class="o">~</span><span class="n">B</span><span class="p">()</span> <span class="p">{</span> <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;B dtor&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span> <span class="p">}</span>
+<span class="p">};</span>
+
+<span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">B</span> <span class="n">b</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Zgornja koda izpiše</p>
+<div class="highlight-python"><div class="highlight"><pre>A ctor
+B ctor
+B dtor
+A dtor
+</pre></div>
+</div>
+<p>Poglejmo si še, kaj se zgodi, če kličemo objekte prek pointerjev.
+Funkcijo <tt class="docutils literal"><span class="pre">main</span></tt> od zgoraj spremenimo v</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">A</span><span class="o">*</span> <span class="n">b</span> <span class="o">=</span> <span class="k">new</span> <span class="n">B</span><span class="p">();</span>
+    <span class="k">delete</span> <span class="n">b</span><span class="p">;</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>in ko jo poženemo, dobimo</p>
+<div class="highlight-python"><div class="highlight"><pre>A ctor
+B ctor
+A dtor
+</pre></div>
+</div>
+<p>Kot vidimo, se destruktor <tt class="docutils literal"><span class="pre">B</span></tt> ni poklical. To pravzaprav ni nepričakovano, ker
+smo <tt class="docutils literal"><span class="pre">b</span></tt> naredili kot objekt tipa <tt class="docutils literal"><span class="pre">B</span></tt>, sta te poklicala oba konstruktorja,
+nato smo ga shranili v kazalec tipa <tt class="docutils literal"><span class="pre">A</span></tt>, ko pa smo ga uničili, se je poklical
+le destruktor <tt class="docutils literal"><span class="pre">A</span></tt>, saj je to bil takratni tip objekta. Toda to pomeni, da je
+pol objekta (<tt class="docutils literal"><span class="pre">B</span></tt>-jev del) ostalo nepospravljenega. Obnašanje je podobno kot
+pri virtualnih in navadnih funkcijah (glej <a class="reference internal" href="#virtual"><em>Polimorfizem in virtualne funkcije</em></a>). Rešitev je, da se
+destruktor <tt class="docutils literal"><span class="pre">B</span></tt> označi kot virtualen. Če vemo, da objekta ne bomo nikoli
+uničevali prek kazalca na starševski razred, tega ni potrebno storiti, vendar se je
+za vsak slučaj dobro navaditi, da pri vsakem dedovanju označimo destruktor v
+spodnjem razredu kot virtualen, da se izognemo potencialnim težavam v
+prihodnosti.</p>
+<p>Ko destruktor <tt class="docutils literal"><span class="pre">B</span></tt> izgleda kot <tt class="docutils literal"><span class="pre">~B()</span> <span class="pre">{</span> <span class="pre">cout</span> <span class="pre">&lt;&lt;</span> <span class="pre">&quot;B</span> <span class="pre">dtor&quot;</span> <span class="pre">&lt;&lt;</span> <span class="pre">endl;</span> <span class="pre">}</span></tt>, dobimo
+pričakovan izhod</p>
+<div class="highlight-python"><div class="highlight"><pre>A ctor
+B ctor
+B dtor
+A dtor
+</pre></div>
+</div>
+<p>Povedali smo, da prevajalnik za nas pokliče starševske konstruktorje, kar drži,
+če obstaja default konstruktor za starša.
+Če ima starševski konstruktor parametre, ga moramo pri konstruiranju
+poklicati eksplicitno:</p>
+<div class="highlight-cpp"><div class="highlight"><pre><span class="k">struct</span> <span class="n">A</span> <span class="p">{</span>
+    <span class="n">A</span><span class="p">(</span><span class="kt">int</span> <span class="n">a</span><span class="p">,</span> <span class="kt">int</span> <span class="n">b</span><span class="p">)</span> <span class="p">{}</span>
+<span class="p">};</span>
+
+<span class="k">struct</span> <span class="n">B</span> <span class="o">:</span> <span class="k">public</span> <span class="n">A</span> <span class="p">{</span>
+    <span class="n">B</span><span class="p">()</span> <span class="o">:</span> <span class="n">A</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="p">{}</span>  <span class="c1">// klic starševega konstruktorja</span>
+<span class="p">};</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="ciste-virtualne-funkcije-in-abstraktni-razredi">
 <h2>Čiste virtualne funkcije in abstraktni razredi<a class="headerlink" href="#ciste-virtualne-funkcije-in-abstraktni-razredi" title="Permalink to this headline">¶</a></h2>
