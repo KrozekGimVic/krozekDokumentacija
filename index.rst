@@ -16,6 +16,8 @@ oktobra.
 Začetna skupina:
 `https://fmf-uni-lj-si.zoom.us/j/8485296061
 <https://fmf-uni-lj-si.zoom.us/j/8485296061>`_
+Repozitorij:
+`https://github.com/jO-Osko/Krozek-python<https://github.com/jO-Osko/Krozek-python>`_
 
 Napredna skupina:
 `https://fmf-uni-lj-si.zoom.us/j/97392180365?pwd=OWVrR0pTb0FVRXBVRS9nNUdmc082Zz09
