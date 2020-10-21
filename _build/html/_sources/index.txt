@@ -13,15 +13,11 @@ Krožek v šolskem letu 2020/21 poteka vsak torek tri šolske ure,
 od 16:30 do 18:45, zaenkrat oddaljeno prek sistema Zoom. S krožkom začnemo 6.
 oktobra.
 
-Začetna skupina:
-`https://fmf-uni-lj-si.zoom.us/j/8485296061
-<https://fmf-uni-lj-si.zoom.us/j/8485296061>`_
-Repozitorij:
-`https://github.com/jO-Osko/Krozek-python<https://github.com/jO-Osko/Krozek-python>`_
+Začetna skupina: https://fmf-uni-lj-si.zoom.us/j/8485296061,
+repozitorij: https://github.com/jO-Osko/Krozek-python
 
 Napredna skupina:
-`https://fmf-uni-lj-si.zoom.us/j/97392180365?pwd=OWVrR0pTb0FVRXBVRS9nNUdmc082Zz09
-<https://fmf-uni-lj-si.zoom.us/j/97392180365?pwd=OWVrR0pTb0FVRXBVRS9nNUdmc082Zz09>`_
+https://fmf-uni-lj-si.zoom.us/j/97392180365?pwd=OWVrR0pTb0FVRXBVRS9nNUdmc082Zz09
 (Meeting ID: 973 9218 0365, Passcode: 198865)
 
 Učimo se programiranja v Pythonu, C++-u in drugih jezikih, izdelovanja spletnih strani,
