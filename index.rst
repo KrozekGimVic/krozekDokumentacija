@@ -1,24 +1,25 @@
 Programerski krožek na Gimnaziji Vič
 ====================================
 
-Krožek vodiva Jure Slak (`jure.slak@gmail.com <jure.slak@gmail.com>`_)
-in Filip Koprivec (`koprivec.filip@gmail.com <koprivec.filip@gmail.com>`_)
+Povezava za prijavo `https://forms.gle/BQhL6FfYzvWratJg9 <https://forms.gle/BQhL6FfYzvWratJg9>`_.
+
+Krožek vodiva Filip Koprivec (`koprivec.filip@gmail.com <koprivec.filip@gmail.com>`_) 
+in Jon Mikoš (`mikos.jon@gmail.com <mikos.jon@gmail.com>`_)
 in programirati sva se naučila ravno na tem krožku. Imava veliko izkušenj iz
 programerskih tekmovanj, kjer sva večkrat osvojila prva mesta, prav tako pa tudi
-iz resničnega programiranja pri podjetjih, kot npr. Google. Oba
-sodelujeva tudi z Inštitutom "Jožef Stefan" in sva asistenta na Fakulteti za
+iz resničnega programiranja pri podjetjih, kot npr. Google. Sodelujeva
+tudi z Inštitutom "Jožef Stefan" in študirava ali sva asistenta na Fakulteti za
 matematiko in fiziko.
 
-Krožek v šolskem letu 2020/21 poteka vsak torek tri šolske ure,
+Krožek v šolskem letu 2021/22 poteka vsak torek tri šolske ure,
 od 16:30 do 18:45, zaenkrat oddaljeno prek sistema Zoom. S krožkom začnemo 6.
 oktobra.
 
-Začetna skupina: https://fmf-uni-lj-si.zoom.us/j/8485296061,
-repozitorij: https://github.com/jO-Osko/Krozek-python
+Začetna skupina:
+Bo objavljeno naknadno
 
-Napredna skupina:
-https://fmf-uni-lj-si.zoom.us/j/97392180365?pwd=OWVrR0pTb0FVRXBVRS9nNUdmc082Zz09
-(Meeting ID: 973 9218 0365, Passcode: 198865)
+Napredna skupina: https://fmf-uni-lj-si.zoom.us/j/8485296061,
+repozitorij: https://github.com/jO-Osko/Krozek-python
 
 Učimo se programiranja v Pythonu, C++-u in drugih jezikih, izdelovanja spletnih strani,
 izdelovanja računalniških igric, priprave na tekmovanja v Sloveniji in po
