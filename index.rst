@@ -12,13 +12,12 @@ tudi z Inštitutom "Jožef Stefan" in študirava ali sva asistenta na Fakulteti 
 matematiko in fiziko.
 
 Krožek v šolskem letu 2021/22 poteka vsak torek tri šolske ure,
-od 16:30 do 18:45, zaenkrat oddaljeno prek sistema Zoom. S krožkom začnemo 6.
+od 16:30 do 18:45, zaenkrat oddaljeno prek sistema Zoom. S krožkom začnemo 5.
 oktobra.
 
-Začetna skupina:
-Bo objavljeno naknadno
+Začetna skupina: https://fmf-uni-lj-si.zoom.us/j/8485296061
 
-Napredna skupina: https://fmf-uni-lj-si.zoom.us/j/8485296061,
+Napredna skupina: https://arnes-si.zoom.us/my/koprivec,
 repozitorij: https://github.com/jO-Osko/Krozek-python
 
 Učimo se programiranja v Pythonu, C++-u in drugih jezikih, izdelovanja spletnih strani,
