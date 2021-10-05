@@ -17,7 +17,7 @@ oktobra.
 
 Začetna skupina: https://fmf-uni-lj-si.zoom.us/j/8485296061
 
-Napredna skupina: https://arnes-si.zoom.us/my/koprivec,
+Napredna skupina: https://meet.google.com/iam-neuv-yya, *POZOR POVEZAVA SE JE SPREMENILA*
 repozitorij: https://github.com/jO-Osko/Krozek-python
 
 Učimo se programiranja v Pythonu, C++-u in drugih jezikih, izdelovanja spletnih strani,
