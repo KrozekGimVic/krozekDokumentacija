@@ -18,7 +18,7 @@ oktobra.
 Začetna skupina: https://fmf-uni-lj-si.zoom.us/j/8485296061
 
 Napredna skupina: https://meet.google.com/iam-neuv-yya, *POZOR POVEZAVA SE JE SPREMENILA*
-repozitorij: https://github.com/jO-Osko/Krozek-python
+repozitorij: https://github.com/jO-Osko/Snov-napredna-skupina
 
 Učimo se programiranja v Pythonu, C++-u in drugih jezikih, izdelovanja spletnih strani,
 izdelovanja računalniških igric, priprave na tekmovanja v Sloveniji in po
