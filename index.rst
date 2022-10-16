@@ -3,7 +3,7 @@ Programerski krožek na Gimnaziji Vič
 
 Povezava za prijavo `https://forms.gle/BXNUbDRYKepepLUKA <https://forms.gle/BXNUbDRYKepepLUKA>`_.
 
-Krožek vodiva Filip Koprivec (`koprivec.filip@gmail.com <koprivec.filip@gmail.com>`_) 
+Krožek vodiva Filip Koprivec (`koprivec.filip@gmail.com <koprivec.filip@gmail.com>`_)
 in Jon Mikoš (`mikos.jon@gmail.com <mikos.jon@gmail.com>`_)
 in programirati sva se naučila ravno na tem krožku. Imava veliko izkušenj iz
 programerskih tekmovanj, kjer sva večkrat osvojila prva mesta, prav tako pa tudi
@@ -14,6 +14,8 @@ matematiko in fiziko.
 Krožek v šolskem letu 2022/23 poteka vsak torek tri šolske ure,
 od 14:45 do 16.00, v živo v računalniških učilnicah. S krožkom začnemo 11.
 oktobra.
+
+Povezava do spisanih programov pri zacetni skupini: (`github link <https://github.com/MikosJon/ProgKrozek2022-2023>`_)
 
 Učimo se programiranja v Pythonu, C++-u in drugih jezikih, izdelovanja spletnih strani,
 izdelovanja računalniških igric, priprave na tekmovanja v Sloveniji in po
