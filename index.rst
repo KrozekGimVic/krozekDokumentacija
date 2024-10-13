@@ -1,26 +1,38 @@
 Programerski krožek na Gimnaziji Vič
 ====================================
 
-Povezava za prijavo `https://forms.gle/BXNUbDRYKepepLUKA <https://forms.gle/BXNUbDRYKepepLUKA>`_.
+Povezava za prijavo 2024/25: `anketa <https://docs.google.com/forms/d/e/1FAIpQLSd4Osb1aeaP2zwGMUG9DXydEEQ2ZBiSp-g4oanddJVZs_dqcw/viewform>`_.
 
-Krožek vodiva Filip Koprivec (`koprivec.filip@gmail.com <koprivec.filip@gmail.com>`_)
-in Jon Mikoš (`mikos.jon@gmail.com <mikos.jon@gmail.com>`_)
-in programirati sva se naučila ravno na tem krožku. Imava veliko izkušenj iz
-programerskih tekmovanj, kjer sva večkrat osvojila prva mesta, prav tako pa tudi
-iz resničnega programiranja pri podjetjih, kot npr. Google. Sodelujeva
-tudi z Inštitutom "Jožef Stefan" in študirava ali sva asistenta na Fakulteti za
-matematiko in fiziko.
+Discord strežnik za komunikacijo `link <https://discord.gg/Tcms2gvT>`_.
 
-Krožek v šolskem letu 2022/23 poteka vsak torek tri šolske ure,
-od 14:45 do 16.00, v živo v računalniških učilnicah. S krožkom začnemo 11.
-oktobra.
+Krožek vodiva Jakob Schrader (`jakob.schrader@guest.arnes.si
+<jakob.schrader@guest.arnes.si>`_) in Uroš Jarc (`uros.jarc@gimvic.org
+<uros.jarc@gimvic.org>`_).
 
-Povezava do spisanih programov pri zacetni skupini: (`github link <https://github.com/MikosJon/ProgKrozek2022-2023>`_)
+Jakob sem bivši dijak Gimnazije Vič in sem se
+programirati naučil tudi na tem krožku. V svojih srednješolskih letih sem veliko
+tekmovalno programiral in obiskal vrsto olimpijad. Trenutno študiram na
+Fakulteti za matematiko in fiziko v Ljubljani, programiranje pa sem v takšni ali
+drugačni obliki poučeval že preteklih 6 let.
 
-Učimo se programiranja v Pythonu, C++-u in drugih jezikih, izdelovanja spletnih strani,
-izdelovanja računalniških igric, priprave na tekmovanja v Sloveniji in po
-svetu, osnov kriptografije in zanimive in čudne matematike. Če je le
-mogoče, ustreževa tudi vašim željam.
+Uroš pa sem trenutno profesor informatike na Gimviču in poleg tega delam v
+industriji.
+
+
+Krožek v šolskem letu 2024/25 poteka vsak četrtek, od 14:30 do 17:00 skupina za
+tekmovalno programiranje (z Jakobom), ob 16:30 pa (z Urošem) projektno delo v
+živo v računalniških učilnicah. S krožkom začnemo 17. oktobra. Glede termina za
+drugo skupino smo še v dogovarjanju.
+
+Učimo se programiranja v Pythonu, C++-u in drugih jezikih, izdelovanja spletnih
+strani, izdelovanja računalniških igric, priprave na tekmovanja v Sloveniji in
+po svetu, osnov kriptografije in zanimive in čudne matematike. Če je le mogoče,
+ustreževa tudi vašim željam, kar po uvodnem sestanku indicira, da se bomo letos
+fokusirali predvsem na tekmovalno programiranje in projektno delo na spletnih
+straneh.
+
+Spodaj pa je učbenik, ki so ga spisale bivše vodje krožka in je lahko dober
+pripomoček pri učenju programiranja.
 
 Vsebina:
 
