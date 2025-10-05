@@ -1,35 +1,30 @@
 Programerski krožek na Gimnaziji Vič
 ====================================
 
-Povezava za prijavo 2024/25: `anketa <https://docs.google.com/forms/d/e/1FAIpQLSd4Osb1aeaP2zwGMUG9DXydEEQ2ZBiSp-g4oanddJVZs_dqcw/viewform>`_.
+Povezava za prijavo 2025/26: `anketa <https://forms.gle/LwwfL6XFiPw1agJo6>`_.
 
 Discord strežnik za komunikacijo `link <https://discord.gg/Tcms2gvT>`_.
 
-Krožek vodiva Jakob Schrader (`jakob.schrader@guest.arnes.si
-<jakob.schrader@guest.arnes.si>`_) in Uroš Jarc (`uros.jarc@gimvic.org
-<uros.jarc@gimvic.org>`_).
+Krožek vodim Jakob Schrader (`jakob.schrader@guest.arnes.si
+<jakob.schrader@guest.arnes.si>`_).
 
-Jakob sem bivši dijak Gimnazije Vič in sem se
-programirati naučil tudi na tem krožku. V svojih srednješolskih letih sem veliko
-tekmovalno programiral in obiskal vrsto olimpijad. Trenutno študiram na
-Fakulteti za matematiko in fiziko v Ljubljani, programiranje pa sem v takšni ali
-drugačni obliki poučeval že preteklih 6 let.
+Jakob sem bivši dijak Gimnazije Vič in sem se programirati naučil tudi na tem
+krožku. V svojih srednješolskih letih sem veliko tekmovalno programiral in
+obiskal vrsto olimpijad. Trenutno študiram na Fakulteti za matematiko in fiziko
+v Ljubljani, programiranje pa sem v takšni ali drugačni obliki poučeval že
+preteklih 7 let.
 
-Uroš pa sem trenutno profesor informatike na Gimviču in poleg tega delam v
-industriji.
+Krožek v šolskem letu 2025/26 poteka vsak četrtek, od 14:30 do 17:00. S krožkom
+začnemo 9. oktobra 2025.
 
-
-Krožek v šolskem letu 2024/25 poteka vsak četrtek, od 14:30 do 17:00 skupina za
-tekmovalno programiranje (z Jakobom), ob 16:30 pa (z Urošem) projektno delo v
-živo v računalniških učilnicah. S krožkom začnemo 17. oktobra. Glede termina za
-drugo skupino smo še v dogovarjanju.
+Ker so imeli fazani v sredo, 1. 10., neko obvezno zadevo med glavnim odmorom,
+bomo imeli še en sestanek v torek, 7. 10. 2025, na katerem bo čas za pogovor o
+terminu in o vsebini krožka to leto.
 
 Učimo se programiranja v Pythonu, C++-u in drugih jezikih, izdelovanja spletnih
 strani, izdelovanja računalniških igric, priprave na tekmovanja v Sloveniji in
-po svetu, osnov kriptografije in zanimive in čudne matematike. Če je le mogoče,
-ustreževa tudi vašim željam, kar po uvodnem sestanku indicira, da se bomo letos
-fokusirali predvsem na tekmovalno programiranje in projektno delo na spletnih
-straneh.
+po svetu in zanimive in čudne matematike. Če je le mogoče, bom ustregel tudi
+vašim željam.
 
 Spodaj pa je učbenik, ki so ga spisale bivše vodje krožka in je lahko dober
 pripomoček pri učenju programiranja.
