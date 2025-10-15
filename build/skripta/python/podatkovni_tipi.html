@@ -1,0 +1,677 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Podatkovni tipi &mdash; Programerski krožek na Gimnaziji Vič 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=34b5f6bb" />
+
+  
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Funkcije in razredi" href="funkcije_in_classi.html" />
+    <link rel="prev" title="Želvja grafika" href="turtle.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Programerski krožek na Gimnaziji Vič
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../python.html">Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="osnove.html">Osnove</a></li>
+<li class="toctree-l2"><a class="reference internal" href="turtle.html">Želvja grafika</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Podatkovni tipi</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#uvod">Uvod</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stevila">Števila</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#int"><code class="docutils literal notranslate"><span class="pre">int()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#float"><code class="docutils literal notranslate"><span class="pre">float()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#complex"><code class="docutils literal notranslate"><span class="pre">complex()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#logicne-vrednosti">Logične vrednosti</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#bool"><code class="docutils literal notranslate"><span class="pre">bool()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#none">None</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#seznami">Seznami</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#list"><code class="docutils literal notranslate"><span class="pre">list()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dostopanje-elementov-seznama">Dostopanje elementov seznama</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#dodajanje-in-odvzemanje-elementov-seznama">Dodajanje in odvzemanje elementov seznama</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#nizi-znakov">Nizi znakov</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#brisanje-in-dodajanje-v-niz-znakov">Brisanje in dodajanje v niz znakov</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#spreminjanje-elementov-niza-znakov">Spreminjanje elementov niza znakov</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#slovarji">Slovarji</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dict"><code class="docutils literal notranslate"><span class="pre">dict()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">dict</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#mnozice">Množice</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#set"><code class="docutils literal notranslate"><span class="pre">set()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2"><code class="docutils literal notranslate"><span class="pre">set</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#nabori">Nabori</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#tuple"><code class="docutils literal notranslate"><span class="pre">tuple()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#dodatek-o-vseh-zbikah">Dodatek o vseh zbikah</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="funkcije_in_classi.html">Funkcije in razredi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datoteke.html">Datoteke</a></li>
+<li class="toctree-l2"><a class="reference internal" href="baze_podatkov.html">Podatkovne baze</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tkinter.html">Tkinter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="knjiznice.html">Nameščanje knjižnic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="knjiznice.html#python-3-programi-v-sublime-text">Python 3 programi v Sublime Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pygame.html">Pygame</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../python-vaje.html">Python vaje</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../c%2B%2B.html">C++</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../c%2B%2B-vaje.html">C++ vaje</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../sql.html">SQL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../git.html">Git</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../opengl.html">OpenGL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../razbijanje.html">Kriptografija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../autodoc/modules.html">Dokumentacija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lov-na-zaklad.html">Lov na zaklad</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Programerski krožek na Gimnaziji Vič</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../python.html">Python</a></li>
+      <li class="breadcrumb-item active">Podatkovni tipi</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/skripta/python/podatkovni_tipi.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="podatkovni-tipi">
+<h1>Podatkovni tipi<a class="headerlink" href="#podatkovni-tipi" title="Link to this heading">¶</a></h1>
+<p>V tem poglavju bomo predstavili podatkovne tipe, kaj so in zakaj so pomembni,
+kako jih uporabljamo in kateri obstajajo. Nekatere si bomo tudi podrobneje
+ogledali. Bolj obsežno (in pravilno) dokumentacijo najdete <a class="reference external" href="https://docs.python.org/3.4/library/stdtypes.html">tukaj</a>.</p>
+<section id="uvod">
+<h2>Uvod<a class="headerlink" href="#uvod" title="Link to this heading">¶</a></h2>
+<p>Program za svoje delovanje potrebuje podatke, števila, besede, slike, tabele,
+… Take in drugačne tipe podatkov računalnik hrani v pomnilniku, v programu pa
+imamo podatke na voljo kot spremenljivke. Python ima veliko podatkovnih tipov,
+na kratko smo si že pogledali števila in nize znakov. Različni tipi podpirajo
+različne operacije in so primerni za različne priložnosti, zato jih je potrebno
+poznati, da jih znamo pravilno izbirati.</p>
+</section>
+<section id="stevila">
+<h2>Števila<a class="headerlink" href="#stevila" title="Link to this heading">¶</a></h2>
+<p>Python podpira (na grobo) dve vrsti števil – cela števila (integer, int) in
+decimalna (float, double) števila. Za cela števila ni omejitve na dolžino,
+decimalna števila pa imajo standardne omejitve, a so za naše računanje dovolj
+dobra. Veljavne vrednosti decimalnih števila sta tudi obe neskončnosti in
+<code class="docutils literal notranslate"><span class="pre">nan</span></code>, ki pomeni “Not a number”. Cela števila dobimo iz drugih tipov s
+funkcijo <code class="docutils literal notranslate"><span class="pre">int</span></code>, decimalna pa s funkcijo <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="int">
+<span class="sig-name descname"><span class="pre">int</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objetkt</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">baza</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#int" title="Link to this definition">¶</a></dt>
+<dd><p>Pretvori <code class="docutils literal notranslate"><span class="pre">objekt</span></code> v celo število. Če to ni mogoče, vrže izjemo. Pri
+decimalnem argumentu odreže decimalke. Če je podan
+parameter <code class="docutils literal notranslate"><span class="pre">baza</span></code>, poskuša pretvoriti <code class="docutils literal notranslate"><span class="pre">objekt</span></code>, kot bi bil zapisan v številskem
+sistemu z bazo <code class="docutils literal notranslate"><span class="pre">baza</span></code></p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="float">
+<span class="sig-name descname"><span class="pre">float</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objetkt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#float" title="Link to this definition">¶</a></dt>
+<dd><p>Pretvori <code class="docutils literal notranslate"><span class="pre">objekt</span></code> v decimalno število. Če to ni mogoče, vrže izjemo.</p>
+</dd></dl>
+
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Vse “funkcije”, ki so ime nekega podatkovnega tipa, niso v resnici funkcije,
+temveč kar direktno konstruktorji teh objektov. To za uporabo ni pomembno, če
+pa vas zanima, si lahko več o tem preberete v poglavju <a class="reference internal" href="funkcije_in_classi.html#konstruktorji"><span class="std std-ref">Konstruktorji in destruktorji</span></a>.</p>
+</div>
+<p>Primer:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">238743234</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">123.5324</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>    <span class="c1"># rezultat je decimalno število</span>
+<span class="n">k</span> <span class="o">=</span> <span class="o">-</span><span class="mi">13</span>
+<span class="n">r</span> <span class="o">=</span> <span class="o">-</span><span class="mf">123.3223e12</span>
+<span class="n">z</span> <span class="o">=</span> <span class="mh">0xdead</span>   <span class="c1"># z je sedaj 57005</span>
+<span class="n">inf</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="s1">&#39;inf&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>S števili lahko računamo (duh), tip rezultata je odvisen od tipov operandov. Če
+je eden izmed njiju decimalno število, potem je rezultat decimalen, Rezultat
+operacije dveh celih števil je celo število. Izjema je deljenje, ki vedno vrne
+decimalno število. Če želimo dobiti celoštevilsko deljenje, ki zaokrožuje proti
+0, uporabimo operator <code class="docutils literal notranslate"><span class="pre">//</span></code>.</p>
+<p>Python naravno podpira tudi kompleksna števila s pomočjo tipa <code class="docutils literal notranslate"><span class="pre">complex</span></code> ali
+imaginarne enote <code class="docutils literal notranslate"><span class="pre">j</span></code>, npr. <code class="docutils literal notranslate"><span class="pre">3.4</span> <span class="pre">-</span> <span class="pre">2.8j</span></code>.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="complex">
+<span class="sig-name descname"><span class="pre">complex</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arg1</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">arg2</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#complex" title="Link to this definition">¶</a></dt>
+<dd><p>Če je dan samo en argument, ga poskuša pretvoriti v kompleksno število. Če
+sta podana oba argumenta, potem ju interpretira kot realni in imaginarni del.</p>
+</dd></dl>
+
+</section>
+<section id="logicne-vrednosti">
+<h2>Logične vrednosti<a class="headerlink" href="#logicne-vrednosti" title="Link to this heading">¶</a></h2>
+<p>Logična vrednost (boolean) je spremenljivka, ki ima lahko le dve stanji:
+resnično ali neresnično. V Pythonu se ti dve stanji imenujeta <code class="docutils literal notranslate"><span class="pre">True</span></code> in
+<code class="docutils literal notranslate"><span class="pre">False</span></code> (z veliko začetnico). V resnici sta to objekta tipa <code class="docutils literal notranslate"><span class="pre">bool</span></code>, ki ju
+lahko enačimo s številoma <code class="docutils literal notranslate"><span class="pre">0</span></code> in <code class="docutils literal notranslate"><span class="pre">1</span></code>.  Z logičnimi vrednostmi lahko računamo
+kot v matematiki, z uporabo logičnih veznikov <code class="docutils literal notranslate"><span class="pre">not</span></code>, <code class="docutils literal notranslate"><span class="pre">and</span></code> in <code class="docutils literal notranslate"><span class="pre">or</span></code>,
+pojavijo pa se tudi kot rezultat primerjalnih operacij. Uporabljajo se v <code class="docutils literal notranslate"><span class="pre">if</span></code>
+stavkih in <code class="docutils literal notranslate"><span class="pre">while</span></code> zankah, za preverjanje pogojev, ali pa za na primer za
+shranjevanje stanja stikal … Vsak tip lahko pretvorimo v logično vrednost z
+uporabo funkcije <code class="docutils literal notranslate"><span class="pre">bool</span></code> in skoraj vse se pretvori v <code class="docutils literal notranslate"><span class="pre">True</span></code>, razen “praznih”
+objektov – <code class="docutils literal notranslate"><span class="pre">[]</span></code>, <code class="docutils literal notranslate"><span class="pre">()</span></code>, <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">{}</span></code> se na primer pretvorijo v <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="bool">
+<span class="sig-name descname"><span class="pre">bool</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objekt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bool" title="Link to this definition">¶</a></dt>
+<dd><p>Poskuša pretvoriti objekt v logično vrednost, po pravilih omenjenih zgoraj.
+Funkcija ne meče izjem.</p>
+</dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="mi">7</span> <span class="o">&gt;</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span> <span class="o">==</span> <span class="n">c</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">(</span><span class="n">a</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">b</span> <span class="ow">or</span> <span class="n">c</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>Vrstni red izvajanja operacij je enak kot v matematiki, torej <code class="docutils literal notranslate"><span class="pre">not</span></code>, <code class="docutils literal notranslate"><span class="pre">and</span></code>,
+<code class="docutils literal notranslate"><span class="pre">or</span></code>. Vendar je zaradi nedvoumnosti priporočljivo uporabiti oklepaje.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Princip zastavic je eden izmed klasičnih prijemov v programiranju, s katerim
+si lahko pomagamo v zelo veliko različnih primerih. Ideja je, da neko
+“zastavico” (logično spremenljivko) postavimo na eno izmed vrednosti, potem pa
+jo pod določenimi pogoji spremenimo. Primer bi bilo npr.  preverjanje če je
+neko število praštevilo. Na začetku privzamemo, da število je praštevilo
+(<code class="docutils literal notranslate"><span class="pre">zastavica</span> <span class="pre">=</span> <span class="pre">True</span></code>). Nato gremo preverjati, če kakšno število različno od
+ena slučajno deli našo število. Če ga najdemo, zastavico nastavimo na
+<code class="docutils literal notranslate"><span class="pre">False</span></code>.  Ko se ta del programa izvede, nam stanje zastavice pove, ali je
+število praštevilo ali ne – če smo našli vsaj enega delitelja je zastavica
+<code class="docutils literal notranslate"><span class="pre">False</span></code>, če deliteljev nismo našli pa je <code class="docutils literal notranslate"><span class="pre">True</span></code>. Ta princip je seveda
+mogoče posplošiti na več kot dve vrednosti.</p>
+</div>
+<section id="none">
+<h3>None<a class="headerlink" href="#none" title="Link to this heading">¶</a></h3>
+<p>Vredost <code class="docutils literal notranslate"><span class="pre">None</span></code> je vrednost, ki predstavlja prazno vrednost. Ta vrednost je
+ena sama in vedno enaka. Pri pretvorbi v <code class="docutils literal notranslate"><span class="pre">bool</span></code> se pretvori v <code class="docutils literal notranslate"><span class="pre">False</span></code>.
+Ko preverjamo, ali je neka spremenljivka enaka <code class="docutils literal notranslate"><span class="pre">None</span></code> lahko uporabimo <code class="docutils literal notranslate"><span class="pre">is</span></code>
+operator.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span>  <span class="c1"># vrednost None se v interpreterju ne pokaže</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="ow">is</span> <span class="kc">None</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">==</span> <span class="kc">None</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="seznami">
+<h2>Seznami<a class="headerlink" href="#seznami" title="Link to this heading">¶</a></h2>
+<p>Največji problem enostavnih spremenljivk je v tem, da lahko vsebujejo le en
+podatek. Tako moramo npr.  če hočemo od uporabnika dobiti 10 stvari, za to
+narediti tudi 10 spremenljivk. Kaj pa, če hočemo stvari dobiti 1000? Ali pa
+100.000?</p>
+<p>Tu v poštev pridejo seznami. Sezname prav tako kot spremenljivko spravimo pod
+neko ime, označujejo pa jih oglati oklepaji <code class="docutils literal notranslate"><span class="pre">[</span></code> in <code class="docutils literal notranslate"><span class="pre">]</span></code>. Med oglatimi
+oklepaji lahko navedemo poljubno število spremenljivk, ki bodo vse vsebovane v
+seznamu</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">seznam</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;abc&quot;</span><span class="p">,</span> <span class="mf">66.12</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Kot vidimo, lahko seznam vsebuje mešane tipe spremenljivk - vsebuje lahko nekaj
+celih števil, nekaj decimalnih števil in nekaj nizov znakov. Sezname iz drugih
+tipov dobimo s funkcijo <code class="docutils literal notranslate"><span class="pre">list</span></code>.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="list">
+<span class="sig-name descname"><span class="pre">list</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objekt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#list" title="Link to this definition">¶</a></dt>
+<dd><p>Poskuša pretvoriti objekt v seznam. Objekt mora biti iterabilen, sicer
+funkcija vrže izjemo.</p>
+</dd></dl>
+
+<section id="dostopanje-elementov-seznama">
+<h3>Dostopanje elementov seznama<a class="headerlink" href="#dostopanje-elementov-seznama" title="Link to this heading">¶</a></h3>
+<p>Dostopanje do elementov seznama je malce drugačno kot pri navadnih
+spremenljivkah. Če namreč vpišemo samo ime seznama, bomo seveda dobili vse
+elemente – v seznamu. Če pa hočemo dostopati do elementov, moramo za imenom
+seznama v oglatih oklepajih napisati njegovo mesto. Pozor, računalnik ponovno
+šteje od 0 naprej (torej je prvo mesto označeno z nič, drugo z 1, …). Če
+poskusimo dostopati “prepozen” element (npr. št. 12 v seznamu s štirimi
+elementi) dobimo izjemo. V številko elementa pa lahko vpišemo tudi negativno
+število, kjer -1 pomeni zadnji element, -2 predzadnji itd.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">seznam</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="mf">66.12</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">seznam</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">seznam</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="go">66.12</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">seznam</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;pyshell#6&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt; seznam[12]</span>
+<span class="gr">IndexError</span>: <span class="n">list index out of range</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">seznam</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">66.12</span>
+</pre></div>
+</div>
+</section>
+<section id="dodajanje-in-odvzemanje-elementov-seznama">
+<h3>Dodajanje in odvzemanje elementov seznama<a class="headerlink" href="#dodajanje-in-odvzemanje-elementov-seznama" title="Link to this heading">¶</a></h3>
+<p>V seznam seveda lahko dodajamo in iz njega odvzemamo elemente. Za te (in ostale
+operacije na seznamih) uporabljamo metode. Do metod dostopamo tako, da po imenu
+seznama napišemo <code class="docutils literal notranslate"><span class="pre">.</span></code>, za njo pa ime metode (seznam.metoda()). Najbolj
+uporabljane metode so naslednje:</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="id0">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">list</span></span><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="list.append">
+<span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vrednost</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#list.append" title="Link to this definition">¶</a></dt>
+<dd><p>V seznam na koncu doda element z vrednostjo <code class="docutils literal notranslate"><span class="pre">vrednost</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="list.insert">
+<span class="sig-name descname"><span class="pre">insert</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vrednost</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#list.insert" title="Link to this definition">¶</a></dt>
+<dd><p>V seznam pred <code class="docutils literal notranslate"><span class="pre">index</span></code>-to mesto doda element z vrednostjo <code class="docutils literal notranslate"><span class="pre">vrednost</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="list.pop">
+<span class="sig-name descname"><span class="pre">pop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#list.pop" title="Link to this definition">¶</a></dt>
+<dd><p>Iz seznama pobriše <code class="docutils literal notranslate"><span class="pre">index</span></code>-ti element in vrne njegovo vrednost.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="list.remove">
+<span class="sig-name descname"><span class="pre">remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vrednost</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#list.remove" title="Link to this definition">¶</a></dt>
+<dd><p>Iz seznama pobriše prvi element z vrednostjo <code class="docutils literal notranslate"><span class="pre">vrednost</span></code>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<p>Še primeri uporabe metod</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">seznam</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="mf">66.12</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">seznam</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">16</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">seznam</span>
+<span class="go">[1, 5, &#39;abc&#39;, 66.12, 16]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">seznam</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">seznam</span>
+<span class="go">[1, 5, &#39;Hello World!&#39;, &#39;abc&#39;, 66.12, 16]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">seznam</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">seznam</span>
+<span class="go">[5, &#39;Hello World!&#39;, &#39;abc&#39;, 66.12, 16]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">seznam</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">66.12</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">seznam</span>
+<span class="go">[5, &#39;Hello World!&#39;, &#39;abc&#39;, 16]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">seznam</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">seznam</span>
+<span class="go">[&#39;Hello World!&#39;, &#39;abc&#39;, 16]</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="nizi-znakov">
+<h2>Nizi znakov<a class="headerlink" href="#nizi-znakov" title="Link to this heading">¶</a></h2>
+<p>Niz znakov (string) v Pythonu naredimo tako da, damo besedilo v enojne ali
+dvojne narekovaje. Mogoči so tudi trojni narekovaji, ki segajo čez več vrstic.
+Niz pa lahko ustvarimo tudi iz kateregakoli drugega tipa s klicanjem funkcije
+<code class="docutils literal notranslate"><span class="pre">str</span></code>. Primer:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ime</span> <span class="o">=</span> <span class="s2">&quot;Janez&quot;</span>
+<span class="n">priimek</span> <span class="o">=</span> <span class="s1">&#39;Novak&#39;</span>
+<span class="n">kratek_zivljenjepis</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">  Rodil: 1934</span>
+<span class="s2">  Živel na Primorkem.</span>
+<span class="s2">  Umrl: 2001</span>
+<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">stevilka_ampak_ne_cisto</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">stevilka_ampak_spet_ne_cisto</span> <span class="o">=</span> <span class="s1">&#39;134&#39;</span>
+</pre></div>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objekt</span></span></em><span class="sig-paren">)</span></dt>
+<dd><p>Pretvori objekt v niz znakov. Ta funkcija se tudi implicitno kliče pri
+klicanju funkcije <code class="docutils literal notranslate"><span class="pre">print</span></code>.</p>
+</dd></dl>
+
+<p>Niz znakov <code class="docutils literal notranslate"><span class="pre">&quot;abcd&quot;</span></code> si lahko nekako predstavljamo kot seznam <code class="docutils literal notranslate"><span class="pre">['a',</span> <span class="pre">'b',</span>
+<span class="pre">'c',</span> <span class="pre">'d']</span></code>. Primerjava v Pythonu ni čisto popolna, saj elementov niza znakov
+ne moremo spreminjati, pri branju elementov pa se obnaša popolnoma enako. Tako
+npr. <code class="docutils literal notranslate"><span class="pre">niz[2]</span></code> pomeni tretji element niza znakov (torej tretja črka oz. znak).</p>
+<p>Torej – nize znakov beremo na isti način kot sezname, spreminjati njihovih
+elementov pa ne moremo</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">niz</span> <span class="o">=</span> <span class="s2">&quot;Dober dan!&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">niz</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="go">&#39;b&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">niz</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">&#39;!&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">niz</span><span class="p">[</span><span class="mi">12</span><span class="p">]</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;pyshell#3&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt; niz[12]</span>
+<span class="gr">IndexError</span>: <span class="n">string index out of range</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">niz</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;c&#39;</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;pyshell#4&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt; niz[1] = &#39;c&#39;</span>
+<span class="gr">TypeError</span>: <span class="n">&#39;str&#39; object does not support item assignment</span>
+</pre></div>
+</div>
+<section id="brisanje-in-dodajanje-v-niz-znakov">
+<h3>Brisanje in dodajanje v niz znakov<a class="headerlink" href="#brisanje-in-dodajanje-v-niz-znakov" title="Link to this heading">¶</a></h3>
+<p>Za razliko od seznamov nizi znakov nimajo metod <code class="docutils literal notranslate"><span class="pre">.append</span></code>, <code class="docutils literal notranslate"><span class="pre">.pop</span></code> in
+podobno. Znamo pa nize znakov “seštevati” (znak + dva niza zlepi skupaj). Torej
+lahko dodajanje znakov na konec dobimo s prištevanjem na konec, dodajanje
+znakov na začetek pa s prištevanjem na začetek. Seveda s tem originalnega niza
+v resnici ne spremenimo na mestu, saj moramo vrednost spet dodeliti neki (lahko
+isti) spremenljivki</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">niz</span>
+<span class="go">&#39;Dober dan!&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">niz</span> <span class="o">=</span> <span class="n">niz</span> <span class="o">+</span> <span class="s2">&quot; Kako se imate?&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">niz</span> <span class="s1">&#39;Dober dan! Kako se imate?&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">niz</span> <span class="o">=</span> <span class="s2">&quot;Lep pozdrav in &quot;</span> <span class="o">+</span> <span class="n">niz</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">niz</span>
+<span class="go">&#39;Lep pozdrav in Dober dan! Kako se imate?&#39;</span>
+</pre></div>
+</div>
+</section>
+<section id="spreminjanje-elementov-niza-znakov">
+<h3>Spreminjanje elementov niza znakov<a class="headerlink" href="#spreminjanje-elementov-niza-znakov" title="Link to this heading">¶</a></h3>
+<p>Ker elementov ne moremo spremeniti direktno z ukazom <code class="docutils literal notranslate"><span class="pre">niz[x]</span> <span class="pre">=</span> <span class="pre">'a'</span></code> ali
+podobno, jih spreminjamo tako, da naredimo nov prazen niz, nato pa potujemo po
+starem nizu in prepisujemo črko po črko v nov niz. Vsakič ko srečamo znak, ki
+ga nočemo, ga preprosto ne prepišemo. Če pa srečamo znak, ki bi ga radi
+zamenjali, ga preprosto zamenjamo. Spodaj primer programa, ki v našem nizu vse
+samoglasnike nadomesti z zvezdico.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">niz</span> <span class="o">=</span> <span class="s2">&quot;Lep pozdrav in Dober dan! Kako se imate?&quot;</span>
+<span class="n">nov_niz</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
+<span class="n">samoglasniki</span> <span class="o">=</span> <span class="s2">&quot;aeiou&quot;</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">niz</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">samoglasniki</span><span class="p">:</span>
+        <span class="n">nov_niz</span> <span class="o">=</span> <span class="n">nov_niz</span> <span class="o">+</span> <span class="s2">&quot;*&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">nov_niz</span> <span class="o">=</span> <span class="n">nov_niz</span> <span class="o">+</span> <span class="n">i</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nov_niz</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span>
+<span class="n">L</span><span class="o">*</span><span class="n">p</span> <span class="n">p</span><span class="o">*</span><span class="n">zdr</span><span class="o">*</span><span class="n">v</span> <span class="o">*</span><span class="n">n</span> <span class="n">D</span><span class="o">*</span><span class="n">b</span><span class="o">*</span><span class="n">r</span> <span class="n">d</span><span class="o">*</span><span class="n">n</span><span class="err">!</span> <span class="n">K</span><span class="o">*</span><span class="n">k</span><span class="o">*</span> <span class="n">s</span><span class="o">*</span> <span class="o">*</span><span class="n">m</span><span class="o">*</span><span class="n">t</span><span class="o">*</span><span class="err">?</span>
+</pre></div>
+</div>
+<p>Zadnji dve vrstici sta kopija tega, kar se pojavi, ko program izvedemo.</p>
+</section>
+</section>
+<section id="slovarji">
+<h2>Slovarji<a class="headerlink" href="#slovarji" title="Link to this heading">¶</a></h2>
+<p>Slovarji (asociativne tabele, dictionary, associative array, map) so posplošitev
+seznamov, kjer lahko namesto <code class="docutils literal notranslate"><span class="pre">a[0]</span></code> naredimo na primer <code class="docutils literal notranslate"><span class="pre">a[&quot;Janez&quot;]</span></code>.
+Torej bolj formalno: kot <em>ključ</em> v slovarju lahko uporabimo katerikoli
+<strong>nespremenljiv</strong> objekt, in pod ta ključ lahko spravimo želeno vrednost.
+Slovarje lahko naredimo na veliko načinov.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="dict">
+<span class="sig-name descname"><span class="pre">dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objekt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dict" title="Link to this definition">¶</a></dt>
+<dd><p>Pretvori <code class="docutils literal notranslate"><span class="pre">objekt</span></code> v slovar. Objekt je lahko na primer seznam dvojic, drug
+slovar…</p>
+</dd></dl>
+
+<p>Primer:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ocene</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;janez&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="s1">&#39;metka&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]}</span>
+<span class="n">r</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">h</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">23</span><span class="p">],</span> <span class="p">[</span><span class="s2">&quot;asdf&quot;</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="p">[]]])</span>
+<span class="n">k</span> <span class="o">=</span> <span class="p">{}</span>
+</pre></div>
+</div>
+<p>Tu smo po vrsti naredili slovarje: <code class="docutils literal notranslate"><span class="pre">ocene</span></code> s ključema <code class="docutils literal notranslate"><span class="pre">janez</span></code> in <code class="docutils literal notranslate"><span class="pre">metka</span></code>,
+<code class="docutils literal notranslate"><span class="pre">r</span></code> s ključi <code class="docutils literal notranslate"><span class="pre">a</span></code>, <code class="docutils literal notranslate"><span class="pre">b</span></code>, <code class="docutils literal notranslate"><span class="pre">c</span></code>, slovar <code class="docutils literal notranslate"><span class="pre">h</span></code> s ključi <code class="docutils literal notranslate"><span class="pre">1</span></code>, <code class="docutils literal notranslate"><span class="pre">asdf</span></code>, in
+<code class="docutils literal notranslate"><span class="pre">3</span></code> in prazen slovar.</p>
+<p>Do elementov v slovarju dostopamo tako kot v seznamu, <code class="docutils literal notranslate"><span class="pre">ocene[&quot;metka&quot;]</span></code> nam
+vrne vrednost <code class="docutils literal notranslate"><span class="pre">[5,</span> <span class="pre">3,</span> <span class="pre">4]</span></code>. Ključi v slovarju so lahko mešanih tipov, prav
+tako vrednosti. Ključi niso urejeni in morajo biti enolični. S <code class="docutils literal notranslate"><span class="pre">for</span></code> zanko se
+lahko zapeljemo čez vse ključe v slovarju (v nekem vrstnem redu):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">ime</span> <span class="ow">in</span> <span class="n">ocene</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ime</span><span class="p">,</span> <span class="s2">&quot;=&gt;&quot;</span><span class="p">,</span> <span class="n">ocene</span><span class="p">[</span><span class="n">ime</span><span class="p">])</span>
+
+<span class="n">janez</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">metka</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Z operatorjem <code class="docutils literal notranslate"><span class="pre">in</span></code> lahko preverimo, ali določen ključ obstaja v slovarju –
+vrne nam logično vrednost. Če želimo dostopati do elementa, ki ga ni v
+slovarju, Python vrže izjemo</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">ocene</span><span class="p">[</span><span class="s1">&#39;lojze&#39;</span><span class="p">]</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">KeyError</span>: <span class="n">&#39;lojze&#39;</span>
+</pre></div>
+</div>
+<p>Slovarji imajo zelo veliko metod podobnih seznamom.
+Nove elemente dodamo kar s klicem <code class="docutils literal notranslate"><span class="pre">ocene[&quot;piflar&quot;]</span> <span class="pre">=</span> <span class="pre">[5,</span> <span class="pre">5,</span> <span class="pre">5]</span></code>.
+Dolžino jim lahko izračunamo s pomočjo funkcije <code class="docutils literal notranslate"><span class="pre">len</span></code>.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="id1">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dict</span></span><a class="headerlink" href="#id1" title="Link to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="dict.get">
+<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dict.get" title="Link to this definition">¶</a></dt>
+<dd><p>Vrne vrednost pri ključu <code class="docutils literal notranslate"><span class="pre">key</span></code>, če obstaja, sicer vrne <code class="docutils literal notranslate"><span class="pre">default</span></code>. Ne
+vrže izjeme.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dict.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slovar</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#dict.update" title="Link to this definition">¶</a></dt>
+<dd><p>V slovar doda nov slovar, pri čemer prepiše morebitne že obstoječe ključe z
+novimi.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="dict.pop">
+<span class="sig-name descname"><span class="pre">pop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">default</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#dict.pop" title="Link to this definition">¶</a></dt>
+<dd><p>Iz seznama pobriše element pri ključu <code class="docutils literal notranslate"><span class="pre">key</span></code> in vrne njegovo vrednost. Če
+ne obstaja potem vrže izjemo, razen če je podan tudi parameter <code class="docutils literal notranslate"><span class="pre">default</span></code>
+(ki ni obvezen). V slednjem primeru vrne <code class="docutils literal notranslate"><span class="pre">default</span></code>.</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="mnozice">
+<h2>Množice<a class="headerlink" href="#mnozice" title="Link to this heading">¶</a></h2>
+<p>Množice (set) implementirajo matematične množice, torej zbirko z neurejenimi
+<strong>nespremenljivimi</strong> elementi, ki se ne smejo ponavljati. Množico ustvarimo s
+pomočjo zavitih oklepajev <code class="docutils literal notranslate"><span class="pre">{</span></code> in <code class="docutils literal notranslate"><span class="pre">}</span></code>, podobno kot seznam ali slovar (le da
+tu ne pišemo ključev), ali pa iz katere koli druge zbirke s klicem funkcije
+<code class="docutils literal notranslate"><span class="pre">set</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">imena</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;janez&#39;</span><span class="p">,</span> <span class="s1">&#39;metka&#39;</span><span class="p">,</span> <span class="s1">&#39;lojze&#39;</span><span class="p">}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stevila</span> <span class="o">=</span> <span class="nb">set</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stevila</span>
+<span class="go">{3, 1, 5}</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">}</span> <span class="o">==</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">}</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+<p>Množice so tako zelo uporabne za odstranjevanje duplikatov. Podpirajo vrsto
+matematičnih operacij, kot so unija <code class="docutils literal notranslate"><span class="pre">|</span></code>, presek <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>, “je podmnožica” <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>,
+“je nadmnožica” <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code> (tudi “pravi” verziji <code class="docutils literal notranslate"><span class="pre">&lt;</span></code> in <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>), simetrična razlika
+<code class="docutils literal notranslate"><span class="pre">^</span></code>.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="set">
+<span class="sig-name descname"><span class="pre">set</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objekt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#set" title="Link to this definition">¶</a></dt>
+<dd><p>Pretvori <code class="docutils literal notranslate"><span class="pre">objekt</span></code> v množico, če je to možno, sicer vrže izjemo. To pomeni,
+da se lahko vrsti red elementov premeša, duplikati pa se lahko odstranijo.</p>
+</dd></dl>
+
+<p>Ostale uporabne metode za manipulacijo množic:</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="id2">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">set</span></span><a class="headerlink" href="#id2" title="Link to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="set.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vrednost</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#set.add" title="Link to this definition">¶</a></dt>
+<dd><p>Doda vrednost <code class="docutils literal notranslate"><span class="pre">vrednost</span></code> v množico, če ta že obstaja, se ne zgodi nič.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="set.remove">
+<span class="sig-name descname"><span class="pre">remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vrednost</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#set.remove" title="Link to this definition">¶</a></dt>
+<dd><p>Odstrani vrednost <code class="docutils literal notranslate"><span class="pre">vrednost</span></code> iz množice, če ta ne obstaja, vrže izjemo
+<code class="docutils literal notranslate"><span class="pre">KeyError</span></code>.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="set.discard">
+<span class="sig-name descname"><span class="pre">discard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">vrednost</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#set.discard" title="Link to this definition">¶</a></dt>
+<dd><p>Odstrani vrednost <code class="docutils literal notranslate"><span class="pre">vrednost</span></code> iz množice, če ta ne obstaja, se ne zgodi
+nič.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="set.pop">
+<span class="sig-name descname"><span class="pre">pop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#set.pop" title="Link to this definition">¶</a></dt>
+<dd><p>Odstrani in vrne nek element množice. Če je prazna, vrže izjemo <code class="docutils literal notranslate"><span class="pre">KeyError</span></code>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<p>Množice so očitno spremenljivi objekti, nespremenljivo verzijo, ki jo lahko
+uporabimo kot ključ slovarja ali element množice implementira <code class="docutils literal notranslate"><span class="pre">frozenset</span></code>.</p>
+</section>
+<section id="nabori">
+<h2>Nabori<a class="headerlink" href="#nabori" title="Link to this heading">¶</a></h2>
+<p>Nabori so nespremenljivi seznami. Ustvarimo jih z okroglimi oklepaji <code class="docutils literal notranslate"><span class="pre">(</span></code>,
+<code class="docutils literal notranslate"><span class="pre">)</span></code> ali klicem funkcije <code class="docutils literal notranslate"><span class="pre">tuple</span></code>. Z njimi delamo podobno kot z nizi, in jih
+lahko uporabljamo za ključe v slovarjih ali za elemente množic.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="s2">&quot;sda&quot;</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">9</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">TypeError</span>: <span class="n">&#39;tuple&#39; object does not support item assignment</span>
+</pre></div>
+</div>
+<dl class="py function">
+<dt class="sig sig-object py" id="tuple">
+<span class="sig-name descname"><span class="pre">tuple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objekt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tuple" title="Link to this definition">¶</a></dt>
+<dd><p>Pretvori <code class="docutils literal notranslate"><span class="pre">objekt</span></code> v nabor. Vrstni red elementov se ohrani. Če pretvorba ni
+mogoča, vrže izjemo.</p>
+</dd></dl>
+
+</section>
+<section id="dodatek-o-vseh-zbikah">
+<h2>Dodatek o vseh zbikah<a class="headerlink" href="#dodatek-o-vseh-zbikah" title="Link to this heading">¶</a></h2>
+<p>Vse podatkovne strukture, ki lahko hranijo več elementov so si podobne, a se
+razlikujejo v pomembnih razlikah, ki jih naredijo uporabne za posamezne primere.
+Zelo pogosto jih lahko med sabo pretvarjamo, npr. <code class="docutils literal notranslate"><span class="pre">list</span></code> v <code class="docutils literal notranslate"><span class="pre">tuple</span></code> in
+podobno.</p>
+<p>Vendar imajo vse veliko skupnega – pri vseh dolžino dobimo s klicem funkcije
+<code class="docutils literal notranslate"><span class="pre">len</span></code>, čez vse gremo lahko s <code class="docutils literal notranslate"><span class="pre">for</span></code> zanko in pri vseh preverjamo vsebovanost
+elementov z operatorjem <code class="docutils literal notranslate"><span class="pre">in</span></code>. Na podlagi zgoraj opisanih lastnosti se
+odločite, katera najbolj ustreza vašemu problemu. Kasneje si bomo pogledali še
+bolj specifične strukture, kot na primer <code class="docutils literal notranslate"><span class="pre">deque</span></code>, <code class="docutils literal notranslate"><span class="pre">defaultdict</span></code> ali
+<code class="docutils literal notranslate"><span class="pre">namedtuple</span></code>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="turtle.html" class="btn btn-neutral float-left" title="Želvja grafika" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="funkcije_in_classi.html" class="btn btn-neutral float-right" title="Funkcije in razredi" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014–2019, Natan Žabkar, Jure Slak, Maks Kolman, Ines Meršak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

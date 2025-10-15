@@ -1,0 +1,250 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vaje iz podatkovnih tipov in funkcij &mdash; Programerski krožek na Gimnaziji Vič 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=34b5f6bb" />
+
+  
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Datoteke" href="datoteke.html" />
+    <link rel="prev" title="Vaje iz želvje grafike" href="turtle.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Programerski krožek na Gimnaziji Vič
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../python.html">Python</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../python-vaje.html">Python vaje</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="osnove.html">Osnovne vaje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="turtle.html">Vaje iz želvje grafike</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Vaje iz podatkovnih tipov in funkcij</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#palindromi">Palindromi</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#palindromi-2-0">Palindromi 2.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#kompresija">Kompresija</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#zlivanje">Zlivanje</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#krozna-prastevila">Krožna praštevila</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#politicno-orientirana-prastevila">Politično orientirana praštevila</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datoteke.html">Datoteke</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bozicne-vaje/vaje.html">Božične vaje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vislice.html">Vislice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messenger.html">Facebook messenger bot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pogovor.html">Zakodiran pogovor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kvazi_besede.html">Psevdo besede</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mario_vs_snake.html">Mario vs Snake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="projekti.html">Projekti dijakov</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../c%2B%2B.html">C++</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../c%2B%2B-vaje.html">C++ vaje</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../sql.html">SQL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../git.html">Git</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../opengl.html">OpenGL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../razbijanje.html">Kriptografija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../autodoc/modules.html">Dokumentacija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lov-na-zaklad.html">Lov na zaklad</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Programerski krožek na Gimnaziji Vič</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../python-vaje.html">Python vaje</a></li>
+      <li class="breadcrumb-item active">Vaje iz podatkovnih tipov in funkcij</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/skripta/python-vaje/podatkovni_tipi_in_funkcije.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="vaje-iz-podatkovnih-tipov-in-funkcij">
+<h1>Vaje iz podatkovnih tipov in funkcij<a class="headerlink" href="#vaje-iz-podatkovnih-tipov-in-funkcij" title="Link to this heading">¶</a></h1>
+<section id="palindromi">
+<h2>Palindromi<a class="headerlink" href="#palindromi" title="Link to this heading">¶</a></h2>
+<p>Uporabnik vpiše niz znakov, program pa pove, ali je vpisan niz palindrom ali
+ne. Palindrom je niz znakov, ki se enako prebere z leve in z desne.</p>
+<p>Primer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;abba&quot;</span>
+<span class="s2">&quot;keks&quot;</span>
+</pre></div>
+</div>
+<p>Program izpiše:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NI</span> <span class="n">palindrom</span>
+<span class="n">JE</span> <span class="n">palindrom</span>
+</pre></div>
+</div>
+</section>
+<section id="palindromi-2-0">
+<h2>Palindromi 2.0<a class="headerlink" href="#palindromi-2-0" title="Link to this heading">¶</a></h2>
+<p>Isto kot prva naloga, le da program ignorira presledke.
+Primer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;perica reže raci rep&quot;</span>
+<span class="s2">&quot;ali se bo gordana na drog obesila&quot;</span>
+<span class="s2">&quot;danes je lep dan&quot;</span>
+<span class="s2">&quot;edo suče meč usode&quot;</span>
+</pre></div>
+</div>
+<p>Program izpiše:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">JE</span> <span class="n">palindrom</span>
+<span class="n">JE</span> <span class="n">palindrom</span>
+<span class="n">NI</span> <span class="n">palindrom</span>
+<span class="n">JE</span> <span class="n">palindrom</span>
+</pre></div>
+</div>
+</section>
+<section id="kompresija">
+<h2>Kompresija<a class="headerlink" href="#kompresija" title="Link to this heading">¶</a></h2>
+<p>Napiši funkcijo, ki gre skozi seznam, in pobriše vse enake sosede (če je v
+seznamu zaporedoma več enakih elementov, jih spremeni v en sam element).
+Primer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">pobrisi_sosede</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">2</span><span class="p">])</span>
+<span class="go">[1, 2, 3, 4, 5, 6, 7, 8, 2]</span>
+</pre></div>
+</div>
+</section>
+<section id="zlivanje">
+<h2>Zlivanje<a class="headerlink" href="#zlivanje" title="Link to this heading">¶</a></h2>
+<p>Napiši funkcijo, ki združi 2 po velikosti naraščajoča urejena seznama v nov
+urejeni seznam. To naj počne tako, da vsak element pregleda le enkrat.</p>
+<p>Primer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">zdruzi</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">12</span><span class="p">])</span>
+<span class="go">[0, 1, 2, 5, 8, 12]</span>
+</pre></div>
+</div>
+</section>
+<section id="krozna-prastevila">
+<h2>Krožna praštevila<a class="headerlink" href="#krozna-prastevila" title="Link to this heading">¶</a></h2>
+<p>Praštevilu rečemo krožno, če so tudi vse rotacije praštevila. Primer je
+število 197, saj so vse rotacije (197, 971, 719) tudi praštevila. Napiši
+funkcijo krozna(<span class="math notranslate nohighlight">\(n\)</span>), ki najde vsa krožna praštevila do <span class="math notranslate nohighlight">\(n\)</span>.</p>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Če je <span class="math notranslate nohighlight">\(n=1000000\)</span> je krožnih praštevil 55.</p>
+</div>
+<p>Primer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">krozna</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="go">2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79, 97</span>
+</pre></div>
+</div>
+</section>
+<section id="politicno-orientirana-prastevila">
+<h2>Politično orientirana praštevila<a class="headerlink" href="#politicno-orientirana-prastevila" title="Link to this heading">¶</a></h2>
+<p>Praštevilo je LEVO, če ostane praštevilo, ko brišemo števke z leve.  Praštevilo
+je DESNO, če ostane praštevilo, ko brišemo števke z desne. Napiši program, kjer
+uporabnik vpiše število, program pa pove, če je to praštevilo, če je levo
+praštevilo in če je desno praštevilo. Primer levega in desnega praštevila je
+3797, saj so vse leve (3797, 797, 97, 7) in vse desne (3797, 379, 37, 3)
+iteracije praštevila.  61 je primer praštevila, ki je levo (61, 1), ni pa desno
+(61, 6).</p>
+<p>Primer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3797</span>
+<span class="mi">61</span>
+</pre></div>
+</div>
+<p>Program izpiše:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Število</span> <span class="n">JE</span> <span class="n">praštevilo</span><span class="o">.</span>
+<span class="n">Število</span> <span class="n">JE</span> <span class="n">levo</span> <span class="n">praštevilo</span><span class="o">.</span>
+<span class="n">Število</span> <span class="n">JE</span> <span class="n">desno</span> <span class="n">praštevilo</span><span class="o">.</span>
+<span class="o">-----</span>
+<span class="n">Število</span> <span class="n">JE</span> <span class="n">praštevilo</span><span class="o">.</span>
+<span class="n">Število</span> <span class="n">JE</span> <span class="n">levo</span> <span class="n">praštevilo</span><span class="o">.</span>
+<span class="n">Število</span> <span class="n">NI</span> <span class="n">desno</span> <span class="n">praštevilo</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="turtle.html" class="btn btn-neutral float-left" title="Vaje iz želvje grafike" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="datoteke.html" class="btn btn-neutral float-right" title="Datoteke" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014–2019, Natan Žabkar, Jure Slak, Maks Kolman, Ines Meršak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

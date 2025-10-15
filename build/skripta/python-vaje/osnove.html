@@ -1,0 +1,453 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Osnovne vaje &mdash; Programerski krožek na Gimnaziji Vič 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=34b5f6bb" />
+
+  
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Vaje iz želvje grafike" href="turtle.html" />
+    <link rel="prev" title="Python vaje" href="../../python-vaje.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Programerski krožek na Gimnaziji Vič
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../python.html">Python</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../python-vaje.html">Python vaje</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Osnovne vaje</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#popolni-kvadrat">Popolni kvadrat</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stetje-limon">Štetje limon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#kombiniranje-stevil">Kombiniranje števil</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#trikotniska-neenakost">Trikotniška neenakost</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#balls-are-touching">Balls are touching</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#statistika">Statistika</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#smrecice">Smrečice</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#kvadrati">Kvadrati</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#malo-aritmetike">Malo aritmetike</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#delitelji">Delitelji</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sahovnica">Šahovnica</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#obracanje-stevil">Obračanje števil</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stevke">Števke</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#maraton">Maraton</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fibonacci">Fibonacci</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lastnosti-stevil">Lastnosti števil</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#prafaktorji">Prafaktorji</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#decimalke">Decimalke</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#evklidov-algoritem">Evklidov algoritem</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#uganka">Uganka</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="turtle.html">Vaje iz želvje grafike</a></li>
+<li class="toctree-l2"><a class="reference internal" href="podatkovni_tipi_in_funkcije.html">Vaje iz podatkovnih tipov in funkcij</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datoteke.html">Datoteke</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bozicne-vaje/vaje.html">Božične vaje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vislice.html">Vislice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="messenger.html">Facebook messenger bot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pogovor.html">Zakodiran pogovor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kvazi_besede.html">Psevdo besede</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mario_vs_snake.html">Mario vs Snake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="projekti.html">Projekti dijakov</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../c%2B%2B.html">C++</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../c%2B%2B-vaje.html">C++ vaje</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../sql.html">SQL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../git.html">Git</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../opengl.html">OpenGL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../razbijanje.html">Kriptografija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../autodoc/modules.html">Dokumentacija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lov-na-zaklad.html">Lov na zaklad</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Programerski krožek na Gimnaziji Vič</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../python-vaje.html">Python vaje</a></li>
+      <li class="breadcrumb-item active">Osnovne vaje</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/skripta/python-vaje/osnove.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="osnovne-vaje">
+<h1>Osnovne vaje<a class="headerlink" href="#osnovne-vaje" title="Link to this heading">¶</a></h1>
+<section id="popolni-kvadrat">
+<h2>Popolni kvadrat<a class="headerlink" href="#popolni-kvadrat" title="Link to this heading">¶</a></h2>
+<p>Napiši program, ki prebere število in vrne njegov koren, če je ta celo število.
+Primer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Uporabnik</span> <span class="n">vnese</span> <span class="mf">25.</span>
+</pre></div>
+</div>
+<p>Program izpiše:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span>
+</pre></div>
+</div>
+<p>V nasprotnem primeru program izpiše <cite>Število ni popolni kvadrat.</cite></p>
+<blockquote>
+<div><p>Uporabnik vnese 37.</p>
+</div></blockquote>
+<p>Program izpiše:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Število</span> <span class="n">ni</span> <span class="n">popolni</span> <span class="n">kvadrat</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="stetje-limon">
+<h2>Štetje limon<a class="headerlink" href="#stetje-limon" title="Link to this heading">¶</a></h2>
+<p>Napiši program, ki prebere število in v pravilni slovenščini izpiše, koliko ima limon. Pozor pri številih, kot so na primer 101 ipd.
+Primer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Uporabnik</span> <span class="n">vnese</span> <span class="mf">2.</span>
+</pre></div>
+</div>
+<p>Program izpiše:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Imam</span> <span class="mi">2</span> <span class="n">limoni</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="kombiniranje-stevil">
+<h2>Kombiniranje števil<a class="headerlink" href="#kombiniranje-stevil" title="Link to this heading">¶</a></h2>
+<p>Napiši program, ki od uporabnika po vrsti prebere tri števila <span class="math notranslate nohighlight">\(x\)</span>, <span class="math notranslate nohighlight">\(y\)</span>,
+<span class="math notranslate nohighlight">\(z\)</span>. Program naj preveri, če se da tretje število (<span class="math notranslate nohighlight">\(z\)</span>) napisati kot
+kombinacijo prvih dveh z eno od osnovnih operacij <code class="docutils literal notranslate"><span class="pre">(+,</span> <span class="pre">-,</span> <span class="pre">*,</span> <span class="pre">/)</span></code>. Če je možno,
+naj to izpiše, drugače pa naj izpiše, da se tega ne da narediti.
+Primer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Uporabnik</span> <span class="n">vpiše</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span> <span class="ow">in</span> <span class="mf">5.</span>
+</pre></div>
+</div>
+<p>Program izpiše:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">=</span> <span class="mi">5</span>
+</pre></div>
+</div>
+</section>
+<section id="trikotniska-neenakost">
+<h2>Trikotniška neenakost<a class="headerlink" href="#trikotniska-neenakost" title="Link to this heading">¶</a></h2>
+<p>Sestavi program, ki bo prebral tri realna števila, nato pa preveril, ali obstaja trikotnik s takimi dolžinami
+stranic. Če obstaja, naj program izračuna njegovo ploščino in obseg.</p>
+</section>
+<section id="balls-are-touching">
+<h2>Balls are touching<a class="headerlink" href="#balls-are-touching" title="Link to this heading">¶</a></h2>
+<p>Sestavi program, ki bo prebral središči in polmera dveh krogov ter preveril, ali
+sta kroga ločena, se dotikata, ali pa imata skupno več kot eno točko.</p>
+</section>
+<section id="statistika">
+<h2>Statistika<a class="headerlink" href="#statistika" title="Link to this heading">¶</a></h2>
+<p>Napiši program, ki od uporabnika bere števila, dokler uporabnik ne vpiše števila 0. Program naj sproti izpisuje
+največje, najmanjše in povprečje števil, vpisanih do sedaj.</p>
+</section>
+<section id="smrecice">
+<h2>Smrečice<a class="headerlink" href="#smrecice" title="Link to this heading">¶</a></h2>
+<p>Napiši program, ki od uporabnika dobi naravno število <span class="math notranslate nohighlight">\(n\)</span>, nato pa nariše
+“smrekico” iz zvezdic. Smerkica naj ima <span class="math notranslate nohighlight">\(n\)</span> vrstic, izgleda pa naj takole
+(če je <span class="math notranslate nohighlight">\(n\)</span> enak 5):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span><span class="o">-</span><span class="n">smrečica</span><span class="p">:</span>
+<span class="o">*</span>
+<span class="o">**</span>
+<span class="o">***</span>
+<span class="o">****</span>
+<span class="o">*****</span>
+</pre></div>
+</div>
+<p>Isto, le da naj bo smrekica poravnana na desno:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span><span class="o">-</span><span class="n">smrečica</span><span class="p">:</span>
+    <span class="o">*</span>
+   <span class="o">**</span>
+  <span class="o">***</span>
+ <span class="o">****</span>
+<span class="o">*****</span>
+</pre></div>
+</div>
+<p>Isto, le da je smrekica “na oba konca”:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span><span class="o">-</span><span class="n">smrečica</span><span class="p">:</span>
+    <span class="o">*</span>
+   <span class="o">***</span>
+  <span class="o">*****</span>
+ <span class="o">*******</span>
+<span class="o">*********</span>
+</pre></div>
+</div>
+</section>
+<section id="kvadrati">
+<h2>Kvadrati<a class="headerlink" href="#kvadrati" title="Link to this heading">¶</a></h2>
+<p>Napiši program, ki od uporabnika prebere število <span class="math notranslate nohighlight">\(n\)</span>, nato pa izpiše po vrsti vse
+kvadrate naravnih števil do (vključno z) <span class="math notranslate nohighlight">\(n\)</span>.  Primer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Uporabnik</span> <span class="n">vpiše</span> <span class="mf">20.</span>
+</pre></div>
+</div>
+<p>Program izpiše:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mf">16.</span>
+</pre></div>
+</div>
+</section>
+<section id="malo-aritmetike">
+<h2>Malo aritmetike<a class="headerlink" href="#malo-aritmetike" title="Link to this heading">¶</a></h2>
+<p>Napiši program, ki od uporabnika prebere število <span class="math notranslate nohighlight">\(n\)</span>, in izpiše vsoto vseh
+naravnih števil do vključno <span class="math notranslate nohighlight">\(n\)</span>, ter produkt vseh naravnih števil do vključno
+<span class="math notranslate nohighlight">\(n\)</span>.</p>
+<p>Primer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Uporabnik</span> <span class="n">vpiše</span> <span class="mf">50.</span>
+</pre></div>
+</div>
+<p>Program izpiše:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="o">...</span> <span class="o">+</span> <span class="mi">50</span> <span class="o">=</span> <span class="mi">1275</span>
+<span class="mi">1</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">*</span> <span class="o">...</span> <span class="o">*</span> <span class="mi">50</span> <span class="o">=</span> <span class="mi">30414093201713378043612608166064768844377641568960512000000000000</span>
+</pre></div>
+</div>
+</section>
+<section id="delitelji">
+<h2>Delitelji<a class="headerlink" href="#delitelji" title="Link to this heading">¶</a></h2>
+<p>Sestavi program, ki dobi število n in izpiše vse njegove delitelje, vsakega samo enkrat, urejene po velikosti.</p>
+</section>
+<section id="sahovnica">
+<h2>Šahovnica<a class="headerlink" href="#sahovnica" title="Link to this heading">¶</a></h2>
+<p>Uporabnik vpiše dve polji po koordinatah <span class="math notranslate nohighlight">\((x, y)\)</span>, kjer <span class="math notranslate nohighlight">\(1 \leq x, y \leq 8\)</span>.
+Ugotovi, ali sta polji enake ali različne barve.</p>
+</section>
+<section id="obracanje-stevil">
+<h2>Obračanje števil<a class="headerlink" href="#obracanje-stevil" title="Link to this heading">¶</a></h2>
+<p>Sestavi program, ki prebere naravno število in ga izpiše v obratnem vrstnem redu.
+Primer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Uporabnik</span> <span class="n">vpiše</span> <span class="mf">726.</span>
+</pre></div>
+</div>
+<p>Program izpiše:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Obrat</span> <span class="n">stevila</span> <span class="mi">726</span> <span class="n">je</span> <span class="mf">627.</span>
+</pre></div>
+</div>
+</section>
+<section id="stevke">
+<h2>Števke<a class="headerlink" href="#stevke" title="Link to this heading">¶</a></h2>
+<p>Sestavi program, ki prebere naravno število in sešteje njegove števke in si to zapomni. Nato sešteje števke
+tega števila, in tako naprej, dokler ne pridemo do enomestnega števila. Program naj izpisuje vse vmesne rezultate.
+Primer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Uporabnik</span> <span class="n">vnese</span> <span class="n">število</span> <span class="mf">1234567891234567891234567891.</span>
+</pre></div>
+</div>
+<p>Program izpiše:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1234567891234567891234567891</span>
+<span class="mi">136</span>
+<span class="mi">10</span>
+<span class="mi">1</span>
+</pre></div>
+</div>
+</section>
+<section id="maraton">
+<h2>Maraton<a class="headerlink" href="#maraton" title="Link to this heading">¶</a></h2>
+<p>Sestavi program, ki prebere časa teka dveh krogov (pri maratonu recimo) in izpiše skupen čas.
+Primer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.</span> <span class="n">krog</span><span class="p">:</span>
+    <span class="n">ure</span><span class="p">:</span> <span class="mi">2</span>
+    <span class="n">minute</span><span class="p">:</span> <span class="mi">23</span>
+    <span class="n">sekunde</span><span class="p">:</span> <span class="mi">45</span>
+<span class="mf">2.</span> <span class="n">krog</span><span class="p">:</span>
+    <span class="n">ure</span><span class="p">:</span> <span class="mi">1</span>
+    <span class="n">minute</span><span class="p">:</span> <span class="mi">48</span>
+    <span class="n">sekunde</span><span class="p">:</span> <span class="mi">59</span>
+</pre></div>
+</div>
+<p>Program izpiše:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Skupen</span> <span class="n">čas</span><span class="p">:</span> <span class="mi">4</span> <span class="n">ur</span> <span class="mi">12</span> <span class="n">minut</span> <span class="ow">in</span> <span class="mi">44</span> <span class="n">sekund</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="fibonacci">
+<h2>Fibonacci<a class="headerlink" href="#fibonacci" title="Link to this heading">¶</a></h2>
+<p>Sestavi program, ki izpiše prvih n členov Fibonaccijevega zaporedja.
+To je zaporedje, podano s predpisom <span class="math notranslate nohighlight">\(f_1 = 1, f_2 = 1, f_n = f_{n-1} + f_{n-2}\)</span>.</p>
+<dl class="simple">
+<dt>Primer::</dt><dd><p>Vnesi število členov: 10</p>
+</dd>
+</dl>
+<p>Program izpiše:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Členi</span> <span class="n">zaporedja</span> <span class="n">so</span><span class="p">:</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">5</span> <span class="mi">8</span> <span class="mi">13</span> <span class="mi">21</span> <span class="mi">34</span> <span class="mi">55</span>
+</pre></div>
+</div>
+</section>
+<section id="lastnosti-stevil">
+<h2>Lastnosti števil<a class="headerlink" href="#lastnosti-stevil" title="Link to this heading">¶</a></h2>
+<p>Sestavi program, ki izpiše lastnosti števila, ki ga je vpisal uporabnik. Preveri naj, če je sodo, če je praštevilo,
+če je popolno število  (je vsota svojih pravih deliteljev), ali je morda trikotniško, ali je popolni kvadrat,
+Primer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Uporabnik</span> <span class="n">vnese</span> <span class="n">število</span> <span class="mi">28</span>
+</pre></div>
+</div>
+<p>Program izpiše:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Število</span> <span class="n">JE</span> <span class="n">sodo</span><span class="o">.</span>
+<span class="n">Število</span> <span class="n">NI</span> <span class="n">praštevilo</span><span class="o">.</span>
+<span class="n">Število</span> <span class="n">JE</span> <span class="n">popolno</span><span class="o">.</span>
+<span class="n">Število</span> <span class="n">JE</span> <span class="n">trikotniško</span><span class="o">.</span>
+<span class="n">Število</span> <span class="n">NI</span> <span class="n">popoln</span> <span class="n">kvadrat</span><span class="o">.</span>
+</pre></div>
+</div>
+</section>
+<section id="prafaktorji">
+<h2>Prafaktorji<a class="headerlink" href="#prafaktorji" title="Link to this heading">¶</a></h2>
+<p>Sestavi program, ki prebere število in izpiše njegov razcep na prafaktorje.
+Primer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Uporabnik</span> <span class="n">vnese</span> <span class="n">število</span> <span class="mf">2250.</span>
+</pre></div>
+</div>
+<p>Program izpiše:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;2250 =  2^3 * 3^2 * 5 * 7&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="decimalke">
+<h2>Decimalke<a class="headerlink" href="#decimalke" title="Link to this heading">¶</a></h2>
+<p>Sestavi program, ki prebere naravna števila <span class="math notranslate nohighlight">\(a\)</span>, <span class="math notranslate nohighlight">\(b\)</span> in n ter izpiše celi deli in še <span class="math notranslate nohighlight">\(n\)</span>
+decimalk kvocienta <span class="math notranslate nohighlight">\(a / b\)</span>.</p>
+<p>Primer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Vnesi</span> <span class="n">a</span><span class="p">:</span> <span class="mi">771</span>
+<span class="n">Vnesi</span> <span class="n">b</span><span class="p">:</span> <span class="mi">761</span>
+<span class="n">Vnesi</span> <span class="n">n</span><span class="p">:</span> <span class="mi">40</span>
+</pre></div>
+</div>
+<p>Prigram izpiše:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">771</span> <span class="o">/</span> <span class="mi">761</span> <span class="o">=</span> <span class="mf">1.0131406044678055190538764783180026281208</span>
+</pre></div>
+</div>
+</section>
+<section id="evklidov-algoritem">
+<h2>Evklidov algoritem<a class="headerlink" href="#evklidov-algoritem" title="Link to this heading">¶</a></h2>
+<p>Sestavi program, ki izračuna največji skupni delitelj števil <span class="math notranslate nohighlight">\(a\)</span> in
+<span class="math notranslate nohighlight">\(b\)</span> in izpiše vse vmesne rezultate <a class="reference external" href="http://sl.wikipedia.org/wiki/Evklidov_algoritem">evklidovega algoritma</a>.
+Primer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Vnesi</span> <span class="n">a</span><span class="p">:</span> <span class="mi">3672</span>
+<span class="n">Vnesi</span> <span class="n">b</span><span class="p">:</span> <span class="mi">624</span>
+</pre></div>
+</div>
+<p>Program izpiše:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3672</span> <span class="o">=</span>  <span class="mi">5</span> <span class="o">*</span> <span class="mi">624</span> <span class="o">+</span> <span class="mi">552</span>
+<span class="mi">624</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mi">552</span> <span class="o">+</span> <span class="mi">72</span>
+<span class="mi">552</span> <span class="o">=</span> <span class="mi">7</span> <span class="o">*</span> <span class="mi">72</span> <span class="o">+</span> <span class="mi">48</span>
+<span class="mi">72</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">*</span> <span class="mi">48</span> <span class="o">+</span> <span class="mi">24</span>
+<span class="mi">48</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">24</span> <span class="o">+</span> <span class="mi">0</span>
+<span class="n">Najvecji</span> <span class="n">skupni</span> <span class="n">delitelj</span> <span class="n">stevil</span> <span class="mi">3672</span> <span class="ow">in</span> <span class="mi">624</span> <span class="n">je</span> <span class="mf">24.</span>
+</pre></div>
+</div>
+</section>
+<section id="uganka">
+<h2>Uganka<a class="headerlink" href="#uganka" title="Link to this heading">¶</a></h2>
+<p>Sestavi program, s katerim se igraš “Ugani število”. Program si zmisli naključno število med 1 in 100
+in ti pove ali si uganil preveč ali premalo ali točno.
+Primer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Ugibaj: 50
+Premalo!
+Ugibaj: 70
+Preveč!
+Ugibaj: 62
+Premalo!
+Ugibaj: 66
+Premalo:
+Ugibaj: 68
+Premalo!
+Ugibaj: 69
+Čestitam, iskano število je 69!
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Naključno število med vklučno a in b se dobi s funkcijo randint(a, b), iz modula random.
+V vaši kodi naredite:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">random</span><span class="w"> </span><span class="kn">import</span> <span class="n">randint</span>
+<span class="n">nakljucno</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../../python-vaje.html" class="btn btn-neutral float-left" title="Python vaje" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="turtle.html" class="btn btn-neutral float-right" title="Vaje iz želvje grafike" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014–2019, Natan Žabkar, Jure Slak, Maks Kolman, Ines Meršak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

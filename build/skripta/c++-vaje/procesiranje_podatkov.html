@@ -1,0 +1,177 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Procesiranje podatkov &mdash; Programerski krožek na Gimnaziji Vič 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=34b5f6bb" />
+
+  
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="SQL" href="../../sql.html" />
+    <link rel="prev" title="C++ vaje" href="../../c%2B%2B-vaje.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Programerski krožek na Gimnaziji Vič
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../python.html">Python</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../python-vaje.html">Python vaje</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../c%2B%2B.html">C++</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../c%2B%2B-vaje.html">C++ vaje</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Procesiranje podatkov</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pomoc">Pomoč</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../sql.html">SQL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../git.html">Git</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../opengl.html">OpenGL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../razbijanje.html">Kriptografija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../autodoc/modules.html">Dokumentacija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lov-na-zaklad.html">Lov na zaklad</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Programerski krožek na Gimnaziji Vič</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../c%2B%2B-vaje.html">C++ vaje</a></li>
+      <li class="breadcrumb-item active">Procesiranje podatkov</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/skripta/c++-vaje/procesiranje_podatkov.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="procesiranje-podatkov">
+<h1>Procesiranje podatkov<a class="headerlink" href="#procesiranje-podatkov" title="Link to this heading">¶</a></h1>
+<p>Dano imaš datoteko <a class="reference download internal" download="" href="../../_downloads/8592921b3d49f35aaf40eb46301f5755/tunel.tar.bz2"><code class="xref download docutils literal notranslate"><span class="pre">tunel.tar.bz2</span></code></a>, ki vsebuje (izmišljene) podatke iz kamer (velik in
+majhen primer),
+ki snemajo promet na obeh koncih tunela.
+Za vsak avto, ki gre v tunel ali iz tunela, se zabeleži
+njegova registrska tablica, tip avtomobila, časovna značka (milisekunde od 1. 1.
+1970) in ID kamere, ki je naredila vnos.</p>
+<p>Tunel je dolg 3.2 kilometra, omejitev pa je 100 km/h za osebna vozila in motorje
+ter 80 km/h za tovornjake in avtobuse. Drugih tipov vozil ne podpiramo.  Kamere
+z ID <code class="docutils literal notranslate"><span class="pre">CAM001</span></code>, <code class="docutils literal notranslate"><span class="pre">CAM002</span></code>, <code class="docutils literal notranslate"><span class="pre">CAM003</span></code> in <code class="docutils literal notranslate"><span class="pre">CAM007</span></code> so na eni strani tunela, kamere z ID
+<code class="docutils literal notranslate"><span class="pre">CAM043</span></code>, <code class="docutils literal notranslate"><span class="pre">CAM052</span></code>, <code class="docutils literal notranslate"><span class="pre">CAM016</span></code>, <code class="docutils literal notranslate"><span class="pre">CAM008</span></code>, <code class="docutils literal notranslate"><span class="pre">CAM010</span></code> pa na drugi.</p>
+<p>Vsako vozilo je pravilnoma zabeleženo sodo mnogokrat, tako da lahko izračunamo,
+ali je prekoračilo hitrost. Izpiši tablice vseh vozila, ki so vozila vsaj 5% čez
+omejitev!</p>
+<p>Bonus naloga (za čast in slavo): pomisli na vse možne slabe podatke in
+poskrbi, da se tvoj program ne sesuje še pri tako grdi vhodni datoteki.</p>
+<section id="pomoc">
+<h2>Pomoč<a class="headerlink" href="#pomoc" title="Link to this heading">¶</a></h2>
+<p>V pomoč vam je lahko splodnja funkcija <code class="docutils literal notranslate"><span class="pre">split</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">split</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">str</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&amp;</span><span class="w"> </span><span class="n">delim</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">assert</span><span class="p">(</span><span class="o">!</span><span class="n">delim</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="s">&quot;Delimiter must not be empty.&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">tokens</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">size_t</span><span class="w"> </span><span class="n">prev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">str</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">delim</span><span class="p">,</span><span class="w"> </span><span class="n">prev</span><span class="p">);</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">pos</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">::</span><span class="n">npos</span><span class="p">)</span><span class="w"> </span><span class="n">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">str</span><span class="p">.</span><span class="n">length</span><span class="p">();</span>
+<span class="w">        </span><span class="n">tokens</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">str</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="n">prev</span><span class="p">,</span><span class="w"> </span><span class="n">pos</span><span class="o">-</span><span class="n">prev</span><span class="p">));</span>
+<span class="w">        </span><span class="n">prev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pos</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">delim</span><span class="p">.</span><span class="n">length</span><span class="p">();</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">pos</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">str</span><span class="p">.</span><span class="n">length</span><span class="p">()</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">prev</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">str</span><span class="p">.</span><span class="n">length</span><span class="p">());</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">prev</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">str</span><span class="p">.</span><span class="n">length</span><span class="p">())</span><span class="w"> </span><span class="n">tokens</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="s">&quot;&quot;</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">tokens</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Za tip vozila uporabite primeren <code class="docutils literal notranslate"><span class="pre">enum</span></code>. Več o tem si lahko preberete v poglavju <a class="reference internal" href="../c%2B%2B/enum.html#enumcpp"><span class="std std-ref">Enum</span></a>.</p>
+<p>Za pomoč je na voljo tudi primer podobne naloge: glej datoteko <a class="reference download internal" download="" href="../../_downloads/b46d5ec306407c9bbf1ab1313bd93693/ocene.cpp"><code class="xref download docutils literal notranslate"><span class="pre">ocene.cpp</span></code></a> in podatke <a class="reference download internal" download="" href="../../_downloads/82a01707722a7ed85c48a43f3774cb47/ocene.txt"><code class="xref download docutils literal notranslate"><span class="pre">ocene.txt</span></code></a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../../c%2B%2B-vaje.html" class="btn btn-neutral float-left" title="C++ vaje" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../sql.html" class="btn btn-neutral float-right" title="SQL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014–2019, Natan Žabkar, Jure Slak, Maks Kolman, Ines Meršak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -29,3 +29,40 @@ to pozabili in ste repozitorij že prenesli, pojdite v njega in zaženite:
     git submodule update --init --recursive
 
 Natan Žabkar, Jure Slak
+
+# Prenova
+by Klemen Bajec 7. 10. 2025
+
+Ker je bilo vse staro in ni bilo kompatibilno z novm pythonom sem malo popravil:
+V rerequirements.txt sem odstranil vse ==verzije, tako da namesti tazadnjo.
+Popravil nekaj kode ker imajo novejši paketi drugačne funkcije.
+
+---
+
+## Navodila
+
+Potegnete dol z  `git clone`.
+
+
+Pred namestitvijo paketov vedno ustvarite čisto virtualno okolje (venv), da izolirate projektne odvisnosti.
+
+Ustvari novo virtualno okolje z imenom 'venv'
+
+	python -m venv venv
+
+Aktivacija okolja (za Windows PowerShell)
+
+	.\venv\Scripts\Activate.ps1
+	
+V rerequirements.txt sem odstranil vse ==verzije, tako da namesti tazadnjo.
+
+	pip install --upgrade -r requirements.txt
+
+Opravi popravke: Uredi in popravi datoteke, ki so problematične (npr. conf.py, .rst datoteke).
+Počisti in zgradi: 
+
+	sphinx-build -b html . build
+
+
+
+Če je gradnja uspešna (build succeeded), se bo končna dokumentacija nahajala v mapi build/html. Odprite build/html/index.html in preverite rezultat.

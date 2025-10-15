@@ -1,0 +1,179 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Facebook messenger bot &mdash; Programerski krožek na Gimnaziji Vič 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=34b5f6bb" />
+
+  
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Zakodiran pogovor" href="pogovor.html" />
+    <link rel="prev" title="Vislice" href="vislice.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Programerski krožek na Gimnaziji Vič
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../python.html">Python</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../python-vaje.html">Python vaje</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="osnove.html">Osnovne vaje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="turtle.html">Vaje iz želvje grafike</a></li>
+<li class="toctree-l2"><a class="reference internal" href="podatkovni_tipi_in_funkcije.html">Vaje iz podatkovnih tipov in funkcij</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datoteke.html">Datoteke</a></li>
+<li class="toctree-l2"><a class="reference internal" href="bozicne-vaje/vaje.html">Božične vaje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vislice.html">Vislice</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Facebook messenger bot</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#namestitev-knjiznice">Namestitev knjižnice</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pogovor.html">Zakodiran pogovor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kvazi_besede.html">Psevdo besede</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mario_vs_snake.html">Mario vs Snake</a></li>
+<li class="toctree-l2"><a class="reference internal" href="projekti.html">Projekti dijakov</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../c%2B%2B.html">C++</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../c%2B%2B-vaje.html">C++ vaje</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../sql.html">SQL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../git.html">Git</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../opengl.html">OpenGL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../razbijanje.html">Kriptografija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../autodoc/modules.html">Dokumentacija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lov-na-zaklad.html">Lov na zaklad</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Programerski krožek na Gimnaziji Vič</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../python-vaje.html">Python vaje</a></li>
+      <li class="breadcrumb-item active">Facebook messenger bot</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/skripta/python-vaje/messenger.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="facebook-messenger-bot">
+<h1>Facebook messenger bot<a class="headerlink" href="#facebook-messenger-bot" title="Link to this heading">¶</a></h1>
+<p>V tej vaji bomo naredili robota, ki zna brati svoja sporočila na Facebooku in
+odgovarjati na njih s predpisanimi pravili.</p>
+<section id="namestitev-knjiznice">
+<h2>Namestitev knjižnice<a class="headerlink" href="#namestitev-knjiznice" title="Link to this heading">¶</a></h2>
+<p>Ker ne želimo začeti iz nič, bomo uporabili že narejeno knjižnico <code class="docutils literal notranslate"><span class="pre">fbchat</span></code>.
+Popravljena knjižnica, ki deluje dobro tudi s pythonom 3, je na voljo na
+<a class="reference external" href="https://github.com/MKolman/fbchat">https://github.com/MKolman/fbchat</a>.</p>
+<p>Ustvarimo virtualno okolje in namestimo knjižnico.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">virtualenv</span> <span class="n">lib32z1</span><span class="o">-</span><span class="n">dev</span> <span class="n">libxml2</span><span class="o">-</span><span class="n">dev</span> <span class="n">libxslt</span><span class="o">-</span><span class="n">dev</span> <span class="n">gcc</span> <span class="n">libz3</span><span class="o">-</span><span class="n">dev</span>
+<span class="n">virtualenv</span> <span class="n">venv</span> <span class="o">-</span><span class="n">p</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">python3</span>
+<span class="n">source</span> <span class="n">venv</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">activate</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="n">git</span><span class="o">+</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">MKolman</span><span class="o">/</span><span class="n">fbchat</span><span class="o">.</span><span class="n">git</span><span class="c1">#egg=fbchat</span>
+</pre></div>
+</div>
+<p>Enostaven primer kode, ki pošlje eno sporočilo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">getpass</span><span class="w"> </span><span class="kn">import</span> <span class="n">getpass</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">fbchat</span>
+
+<span class="n">username</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Username: &quot;</span><span class="p">)</span>
+<span class="n">password</span> <span class="o">=</span> <span class="n">getpass</span><span class="p">()</span>
+<span class="n">client</span> <span class="o">=</span> <span class="n">fbchat</span><span class="o">.</span><span class="n">Client</span><span class="p">(</span><span class="n">username</span><span class="p">,</span> <span class="n">password</span><span class="p">)</span>
+
+<span class="n">friend</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">getUsers</span><span class="p">(</span><span class="s2">&quot;Maks Kolman&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="n">client</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="n">friend</span><span class="o">.</span><span class="n">uid</span><span class="p">,</span> <span class="s2">&quot;Pozdravljen!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="vislice.html" class="btn btn-neutral float-left" title="Vislice" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pogovor.html" class="btn btn-neutral float-right" title="Zakodiran pogovor" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014–2019, Natan Žabkar, Jure Slak, Maks Kolman, Ines Meršak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

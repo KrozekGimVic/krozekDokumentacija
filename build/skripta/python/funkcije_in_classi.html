@@ -1,0 +1,534 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Funkcije in razredi &mdash; Programerski krožek na Gimnaziji Vič 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=34b5f6bb" />
+
+  
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Datoteke" href="datoteke.html" />
+    <link rel="prev" title="Podatkovni tipi" href="podatkovni_tipi.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Programerski krožek na Gimnaziji Vič
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../python.html">Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="osnove.html">Osnove</a></li>
+<li class="toctree-l2"><a class="reference internal" href="turtle.html">Želvja grafika</a></li>
+<li class="toctree-l2"><a class="reference internal" href="podatkovni_tipi.html">Podatkovni tipi</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Funkcije in razredi</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#funkcije">Funkcije</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sintaksa">Sintaksa</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#vracanje-rezultatov">Vračanje rezultatov</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#klicanje-funkcij">Klicanje funkcij</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#scoping">Scoping</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#razredi">Razredi</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#konstruktorji-in-destruktorji">Konstruktorji in destruktorji</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#metode">Metode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#operatorji">Operatorji</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="datoteke.html">Datoteke</a></li>
+<li class="toctree-l2"><a class="reference internal" href="baze_podatkov.html">Podatkovne baze</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tkinter.html">Tkinter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="knjiznice.html">Nameščanje knjižnic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="knjiznice.html#python-3-programi-v-sublime-text">Python 3 programi v Sublime Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pygame.html">Pygame</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../python-vaje.html">Python vaje</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../c%2B%2B.html">C++</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../c%2B%2B-vaje.html">C++ vaje</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../sql.html">SQL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../git.html">Git</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../opengl.html">OpenGL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../razbijanje.html">Kriptografija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../autodoc/modules.html">Dokumentacija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lov-na-zaklad.html">Lov na zaklad</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Programerski krožek na Gimnaziji Vič</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../python.html">Python</a></li>
+      <li class="breadcrumb-item active">Funkcije in razredi</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/skripta/python/funkcije_in_classi.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="funkcije-in-razredi">
+<span id="funkcijepython"></span><h1>Funkcije in razredi<a class="headerlink" href="#funkcije-in-razredi" title="Link to this heading">¶</a></h1>
+<p>Funkcije in razredi so zelo uporabljene strukture v programiranju. Zaradi
+splošnosti in lepih načinov za dodajanje novih funkcionalnosti in zato, ker
+naredijo kodo mnogo bolj berljivo in uporabno so eden najpomembnejših konceptov,
+ki se je zelo razvit in zelo pomemben v resnem programiranju.</p>
+<section id="funkcije">
+<h2>Funkcije<a class="headerlink" href="#funkcije" title="Link to this heading">¶</a></h2>
+<p>Velikokrat se nam zgodi, da imamo v programu zelo podobno kodo, ki dela zelo
+podobno reč, napisano večkrat. Recimo, da želimo izračunati produkt elementov v
+seznamu, v našem programu pa imamo 3 sezname, ali pa še huje, imamo zelo veliko
+seznamov, ki nam jih je podal uporabnik. Lahko pa koda postane tudi zelo
+zapletena, saj znotraj ene zanke preverjamo, kaj drugega z drugo zanko in tako
+naprej…</p>
+<p>Primera takih programov:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">pa</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+    <span class="n">pa</span> <span class="o">*=</span> <span class="n">i</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">b</span><span class="p">:</span>
+    <span class="n">pb</span> <span class="o">*=</span> <span class="n">i</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">c</span><span class="p">:</span>
+    <span class="n">pc</span> <span class="o">*=</span> <span class="n">i</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pa</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pb</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">pc</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Program preveri ali je število, ki ga vnese uporabnik popolno.&quot;&quot;&quot;</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Vpisi stevilo: &quot;</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="n">vsota_deliteljev</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">a</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">a</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">vsota_deliteljev</span> <span class="o">+=</span> <span class="n">i</span>
+    <span class="k">if</span> <span class="n">vsota_deliteljev</span> <span class="o">==</span> <span class="n">a</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Stevilo&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="s2">&quot;je popolno.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Stevilo&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="s2">&quot;ni popolno.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>V prvem primeru je problem zelo ponavljajoča koda, v drugem pa je težko
+berljiva in zelo gnezdena. V tem primeru pridejo na pomoč funkcije, ki so
+primerne ravno za take probleme: določene pomensko neodvisne izseke kode ločijo
+in jih naredijo primerne za večkratno uporabo.</p>
+<p>Funkcijo si lahko predstavljamo kot neko črno škatlo, ki ji nekaj damo, funkcija
+pa potem s tem nekaj naredi in/ali nam nekaj vrne. Velika prednost funkcij je
+to, da ni potrebno vedeti, kako točno deluje (lahko nam kakšno funkcijo npr.
+napiše kdo drug, jo skopiramo iz interneta itd.). Poleg tega funkcije naredijo
+kodo lažje za vzdrževanje, saj omogočajo preprosto popravljanje in spreminjanje.
+Če namreč v funkciji pride do kakšne napake, lahko napako popravimo le v
+definiciji, namesto da bi jo morali popraviti povsod, kjer funkcijo uporabimo.</p>
+<section id="sintaksa">
+<h3>Sintaksa<a class="headerlink" href="#sintaksa" title="Link to this heading">¶</a></h3>
+<p>Funkcijo vedno začnemo z besedo <code class="docutils literal notranslate"><span class="pre">def</span></code>, nato pride ime funkcije (kot ime
+spremenljivke mora biti nujno iz ene besede) in v oklepaju poljubno število
+parametrov. Telo funkcije je potrebno zamakniti.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">imeFunkcije</span><span class="p">(</span><span class="n">parameter1</span><span class="p">,</span> <span class="n">parameter2</span><span class="p">):</span>
+    <span class="n">Koda</span><span class="p">,</span> <span class="n">ki</span> <span class="n">se</span> <span class="n">izvede</span><span class="p">,</span> <span class="n">ko</span> <span class="n">pokličemo</span> <span class="n">funkcijo</span>
+</pre></div>
+</div>
+</section>
+<section id="vracanje-rezultatov">
+<h3>Vračanje rezultatov<a class="headerlink" href="#vracanje-rezultatov" title="Link to this heading">¶</a></h3>
+<p>Če hočemo, da funkcija kaj vrne, to povemo z ukazom <code class="docutils literal notranslate"><span class="pre">return</span></code>. Ko funkcija nekaj
+vrne, lahko to ujamemo in s tem nekaj naredimo (npr. shranimo v spremenljivko,
+izpišemo itd.) ali pa ne naredimo ničesar – s tem bo stvar, ki jo je funkcija
+vrnila, izgubljena. Poglejmo si primer, ki preveri, ali je dano število popolno,
+in vrne <code class="docutils literal notranslate"><span class="pre">True</span></code> če je, sicer pa <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">popolno</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+    <span class="n">vsota_deliteljev</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">vsota_deliteljev</span> <span class="o">+=</span> <span class="n">i</span>
+    <span class="k">if</span> <span class="n">vsota_deliteljev</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Ko se v funkciji izvede <code class="docutils literal notranslate"><span class="pre">return</span></code> ukaz, se funkcija konča, tudi če je
+pod stavkom še kaj kode. Če ukaza <code class="docutils literal notranslate"><span class="pre">return</span></code> ni, potem funkcija na koncu vrne
+<code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</div>
+</section>
+<section id="klicanje-funkcij">
+<h3>Klicanje funkcij<a class="headerlink" href="#klicanje-funkcij" title="Link to this heading">¶</a></h3>
+<p>Ko izvedemo program, ki vsebuje samo definicije funkcij, se ne zgodi nič.
+Funkcijo je treba namreč še poklicati. Naše funkcije kličemo popolnoma enako kot
+že vdelane funkcije (npr. print(), range(), …)</p>
+<p>Oglejmo si primer programov iz uvoda, samo da tokrat uporabljata definirane
+funkcije. Za vsakim programom je tudi njegov možen izpis.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">zmnozi</span><span class="p">(</span><span class="n">seznam</span><span class="p">):</span>
+    <span class="n">prod</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">seznam</span><span class="p">:</span>
+        <span class="n">prod</span> <span class="o">*=</span> <span class="n">i</span>
+    <span class="k">return</span> <span class="n">prod</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">14</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">c</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zmnozi</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zmnozi</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zmnozi</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">120</span>
+<span class="mi">0</span>
+<span class="mi">1</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;Program preveri ali je število, ki ga vnese uporabnik popolno.&quot;&quot;&quot;</span>
+<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Vpisi stevilo: &quot;</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">break</span>
+    <span class="k">if</span> <span class="n">popolno</span><span class="p">(</span><span class="n">a</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Stevilo&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="s2">&quot;je popolno.&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Stevilo&quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="s2">&quot;ni popolno.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Vpisi</span> <span class="n">stevilo</span><span class="p">:</span> <span class="mi">13</span>
+<span class="n">Stevilo</span> <span class="mi">13</span> <span class="n">ni</span> <span class="n">popolno</span><span class="o">.</span>
+<span class="n">Vpisi</span> <span class="n">stevilo</span><span class="p">:</span> <span class="mi">6</span>
+<span class="n">Stevilo</span> <span class="mi">6</span> <span class="n">je</span> <span class="n">popolno</span><span class="o">.</span>
+<span class="n">Vpisi</span> <span class="n">stevilo</span><span class="p">:</span> <span class="mi">2</span>
+<span class="n">Stevilo</span> <span class="mi">2</span> <span class="n">ni</span> <span class="n">popolno</span><span class="o">.</span>
+<span class="n">Vpisi</span> <span class="n">stevilo</span><span class="p">:</span> <span class="mi">28</span>
+<span class="n">Stevilo</span> <span class="mi">28</span> <span class="n">je</span> <span class="n">popolno</span><span class="o">.</span>
+<span class="n">Vpisi</span> <span class="n">stevilo</span><span class="p">:</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</section>
+<section id="scoping">
+<h3>Scoping<a class="headerlink" href="#scoping" title="Link to this heading">¶</a></h3>
+<p><em>Scoping</em> je angleški izraz, ki obravnava vidljivost spremenljivk po kodi.
+<em>Scope</em> je območje v kodi, z določenim naborom spremenljivk, ki so vidne samo
+znotraj tega območja. Območja se lahko gnezdijo in vsa novo ustvarjena so
+znotraj globalnega scopa. V Pythonu se novi scopi ustvarijo znotraj funkcij.
+Spremenljivke iz bolj zunanjih scopov lahko samo beremo, nastavljati jih pa ne
+moremo.  Enostavno: spremenljivke, definirane znotraj funkcije, so vidne samo
+znotraj funkcije. Primer:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">():</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="mi">8</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">()</span>
+<span class="mi">8</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">&#39;c&#39;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
+</pre></div>
+</div>
+<p>Bolj napreden primer:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">f</span><span class="p">():</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="mi">8</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="mi">7</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">&#39;c&#39;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">f</span><span class="p">()</span>  <span class="c1"># a v funkciji je lokalen, in nima povezave z zunanjim</span>
+<span class="mi">1</span> <span class="mi">7</span> <span class="mi">2</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="mi">8</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="mi">7</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">NameError</span><span class="p">:</span> <span class="n">name</span> <span class="s1">&#39;c&#39;</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">defined</span>
+</pre></div>
+</div>
+<p>Zaključek: stvari, ki jih počenemo v funkciji ne spreminjajo zunanjega sveta,
+kot se od funkcij tudi pričakuje.</p>
+<p>Za zelo podrobno razlago scopinga v Pythonu kliknite
+<a class="reference external" href="http://nbviewer.ipython.org/github/rasbt/python_reference/blob/master/tutorials/scope_resolution_legb_rule.ipynb">tukaj</a>.</p>
+</section>
+</section>
+<section id="razredi">
+<h2>Razredi<a class="headerlink" href="#razredi" title="Link to this heading">¶</a></h2>
+<p>Kdaj se zgodi, da bi radi v programu imeli na primer seznam avtomobilov. Kako
+si predstavimo avto? Za začetek mogoče kot seznam vrednosti, npr. <code class="docutils literal notranslate"><span class="pre">[&quot;Yugo&quot;,</span>
+<span class="pre">1977,</span> <span class="pre">234564]</span></code>, kjer nam prvi element pove ime, drugi letnico, tretji pa
+prevožene kilometre. Problemi nastanejo, ker bi radi dodajali nove podatke.
+A vrstnega reda podatkov ne smemo spremeniti, saj bi to podrlo že vso obstoječo
+kodo. Na vrsti red bomo odporni, če podatke poimenujemo, in seznam spremenimo v
+slovar: <code class="docutils literal notranslate"><span class="pre">{'ime':</span> <span class="pre">&quot;Yugo&quot;,</span> <span class="pre">'leto':</span> <span class="pre">1997,</span> <span class="pre">'razdalja':</span> <span class="pre">234564}</span></code>. Sedaj laže
+dodajamo nove podatke in smo odporni na vrstni red. Funkcije za delo z
+avtomobili sedaj izgledajo nekako tako:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">prevozi</span><span class="p">(</span><span class="n">avto</span><span class="p">,</span> <span class="n">km</span><span class="p">):</span>
+    <span class="n">avto</span><span class="p">[</span><span class="s1">&#39;razdalja&#39;</span><span class="p">]</span> <span class="o">+=</span> <span class="n">km</span>
+</pre></div>
+</div>
+<p>Vsaka funkcija mora poleg dodatnih parametrov sprejeti še avto, ki ga želi
+spremeniti. Take funkcije v resnici spadajo k avtu, saj so namenjene samo za
+delo z avtom. Rešitev vseh teh problemov so <em>razredi</em> (class-i). S pomočjo
+razredov definiramo svoje tipe, ki imajo lahko popolnoma enako obnašanje kot že
+vgrajeni tipi. Vedno, ko se nam pojavijo problemi kot so opisani zgoraj, je
+verjetno čas, da definirate svoj tip. Imena novih tipov se po tihem dogovoru vedno
+začnejo z veliko začetnico, če pa je ime tipa iz več besed, te kar pritaknemo
+zraven, zopet z veliko začetnico (taka imena se imenujejo <em>Camel Case</em>).</p>
+<p>Sintaksa definicije novih razredov gre takole:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">ImeTipa</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
+        <span class="n">selg</span><span class="o">.</span><span class="n">arg1</span> <span class="o">=</span> <span class="n">arg1</span>
+        <span class="c1"># code</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">metoda</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
+        <span class="c1"># code</span>
+</pre></div>
+</div>
+<p>Spremenljivka tega tipa, ki jo naredimo, se imenuje <em>objekt</em> tega razreda ali
+<em>instanca</em> tega razreda. <em>Tip</em> in <em>razred</em> se nanašata na abstraktno
+definicijo, <em>objekt</em> ali <em>instanca</em> pa na konkretno spremenljivko.
+Funkcije, ki so vsebovane v tem objektu se imenujejo <em>metode</em>, spremenljivke
+tega objekta pa <em>atributi</em>. Primer ustvarjanja objekta in klicanja metod:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">ImeTipa</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">metoda</span><span class="p">()</span>
+</pre></div>
+</div>
+<section id="konstruktorji-in-destruktorji">
+<span id="konstruktorji"></span><h3>Konstruktorji in destruktorji<a class="headerlink" href="#konstruktorji-in-destruktorji" title="Link to this heading">¶</a></h3>
+<p>Objekt ustvarimo tako, da napišemo ime razreda in podamo vse potrebne argumente.
+V tem primeru Python pokliče <em>konstruktor</em> objekta, ki objekt zgradi.
+Konstruktor objekta je metoda <code class="docutils literal notranslate"><span class="pre">___init__</span></code>, ki jo napišemo v definicijo
+razreda. Metoda kot prvi argument sprejme <code class="docutils literal notranslate"><span class="pre">self</span></code>, to je objekt na katerem
+trenutno delamo, torej na novo narejen, prazen objekt našega tipa. Metoda ima
+lahko še dodatne parametre, ki jih je potrebno podati ob klicu konstruktorja.</p>
+<p>V <code class="docutils literal notranslate"><span class="pre">self</span></code> lahko sedaj nastavimo atribute, <code class="docutils literal notranslate"><span class="pre">self.ime</span> <span class="pre">=</span> <span class="pre">vrednost</span></code>. Do tako
+nastavljenih atributov lahko dostopamo na instancah objekta s klicem <code class="docutils literal notranslate"><span class="pre">a.ime</span></code>.
+Elemente lahko tudi spreminjamo ali pa dodajamo nove. Seveda se take spremembe
+poznajo samo na trenutni instanci, in ne na vseh objektih.
+Primer:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Avto</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ime</span><span class="p">,</span> <span class="n">leto</span><span class="p">,</span> <span class="n">razdalja</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ime</span> <span class="o">=</span> <span class="n">ime</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">razdalja</span> <span class="o">=</span> <span class="n">razdalja</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">leto</span> <span class="o">=</span> <span class="n">leto</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Avto</span><span class="p">(</span><span class="s2">&quot;Yugo&quot;</span><span class="p">,</span> <span class="mi">1978</span><span class="p">,</span> <span class="mi">76234</span><span class="p">)</span>  <span class="c1"># self je a</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">leto</span><span class="p">)</span>                   <span class="c1"># branje atributov</span>
+<span class="mi">1978</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span> <span class="o">=</span> <span class="n">Avto</span><span class="p">(</span><span class="s2">&quot;Golf&quot;</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">31243</span><span class="p">)</span>  <span class="c1"># self je tukaj b</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">b</span><span class="o">.</span><span class="n">razdalja</span> <span class="o">=</span> <span class="mi">312445</span>             <span class="c1"># nastavljanje atributov</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">razdalja</span><span class="p">)</span>               <span class="c1"># atribut se spremeni</span>
+<span class="mi">312445</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">razdalja</span><span class="p">)</span>               <span class="c1"># druga instanca se ni spremenila</span>
+<span class="mi">762134</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">solata</span> <span class="o">=</span> <span class="s2">&quot;7&quot;</span>                  <span class="c1"># dodamo nov atribut, sam smo to dodali</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">solata</span><span class="p">)</span>                 <span class="c1"># b tega atributa nima, saj smo dodali samo k a-ju</span>
+<span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+  <span class="n">File</span> <span class="s2">&quot;&lt;stdin&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">AttributeError</span><span class="p">:</span> <span class="s1">&#39;Avto&#39;</span> <span class="nb">object</span> <span class="n">has</span> <span class="n">no</span> <span class="n">attribute</span> <span class="s1">&#39;solata&#39;</span>
+</pre></div>
+</div>
+<p>Destruktor je funkcija, ki se pokliče, ko objekt izbrišemo. Objekt se
+avtomatsko izbriše, ko na se na primer zaključi funkcija, ali pa če ga
+eksplicitno izbrišemo z <code class="docutils literal notranslate"><span class="pre">del</span></code>. Destuktorja ponavadi ni potrebno posebej
+spreminjati, če pa to kdaj potrebujete, se naredi z definicijo metode
+<code class="docutils literal notranslate"><span class="pre">___del__</span></code>.</p>
+</section>
+<section id="metode">
+<h3>Metode<a class="headerlink" href="#metode" title="Link to this heading">¶</a></h3>
+<p>Znotraj objekta lahko definiramo funkcije za delo s tem objektom. Te metode se
+definira enako kot navadne funkcije, vendar moramo tako kot pri konstruktorju
+za prvi parameter sprejeti <code class="docutils literal notranslate"><span class="pre">self</span></code>, ki vsebuje vse atribute, ki smo jih
+definirali. S pomočjo metod lahko sedaj spreminjamo objekt ali pa nudimo
+podatke o tem objektu. Metode se ponavadi imenuje z malimi začetnicami s
+podčrtaji, ali pa <code class="docutils literal notranslate"><span class="pre">mixedCase</span></code>, torej <em>Camel case</em> z malo začetnico na začetku.</p>
+<p>Dodajmo <code class="docutils literal notranslate"><span class="pre">Avtu</span></code> od zgoraj metodo, ki zabeleži prevožene kilometre in metodo,
+ki preveri, ali mora avto na servis.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Avto</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ime</span><span class="p">,</span> <span class="n">leto</span><span class="p">,</span> <span class="n">razdalja</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">ime</span> <span class="o">=</span> <span class="n">ime</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">razdalja</span> <span class="o">=</span> <span class="n">razdalja</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">leto</span> <span class="o">=</span> <span class="n">leto</span>
+
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">prevozi</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">prevozil_km</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">razdalja</span> <span class="o">+=</span> <span class="n">prevozil_km</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">je_za_na_servis</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">razdalja</span> <span class="o">&lt;</span> <span class="mi">20000</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span> <span class="o">=</span> <span class="n">Avto</span><span class="p">(</span><span class="s2">&quot;Yugo&quot;</span><span class="p">,</span> <span class="mi">1978</span><span class="p">,</span> <span class="mi">6234</span><span class="p">)</span>  <span class="c1"># self je a</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">je_za_na_servis</span><span class="p">()</span>           <span class="c1"># brez argumentov, saj se a samodejno poda kot self</span>
+<span class="kc">False</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">prevozil_km</span><span class="p">(</span><span class="mi">5000</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">a</span><span class="o">.</span><span class="n">je_za_na_servis</span><span class="p">()</span>
+<span class="kc">True</span>
+</pre></div>
+</div>
+</section>
+<section id="operatorji">
+<h3>Operatorji<a class="headerlink" href="#operatorji" title="Link to this heading">¶</a></h3>
+<p>Lepo je pisati na primer <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">4</span></code>, namesto <code class="docutils literal notranslate"><span class="pre">add(3,</span> <span class="pre">4)</span></code>. Enako funkcionalnost
+lahko dodamo tudi svojim tipom, z definicijo novih operatorjev. Nove operatorje
+definiramo tako, da definiramo metode s posebnimi imeni, npr. <code class="docutils literal notranslate"><span class="pre">___add__</span></code> za
+seštevanje ali <code class="docutils literal notranslate"><span class="pre">___mul__</span></code> za množenje. Seznam vseh takih metod najdete, če
+napišete npr. <code class="docutils literal notranslate"><span class="pre">dir(int)</span></code>, še bolj popoln seznam pa najdete <a class="reference external" href="https://docs.python.org/3.4/reference/datamodel.html">tukaj</a>.
+Definiranje svojega obnašanja operatorjev imenujemo <em>operator overloading</em>.
+Overloadati se da vse, kar obstaja. Za primer naredimo razred <code class="docutils literal notranslate"><span class="pre">Vector</span></code>,
+ki predstavlja vektor v <span class="math notranslate nohighlight">\(\mathbb{R}^3\)</span>, ki ga lahko množimo s skalarjem, skalarno
+množimo z vektorjem in seštevamo in lepo izpišemo na zaslon.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Vector</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">z</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">z</span> <span class="o">=</span> <span class="n">z</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>  <span class="c1"># vrne nov objekt, ki je vsota podanih</span>
+        <span class="k">return</span> <span class="n">Vector</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="n">z</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__mul__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">other</span><span class="p">,</span> <span class="n">Vector</span><span class="p">):</span> <span class="c1"># skalarni produkt</span>
+            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span> <span class="o">*</span> <span class="n">other</span><span class="o">.</span><span class="n">z</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Vector</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">*</span> <span class="n">other</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">z</span> <span class="o">*</span> <span class="n">other</span><span class="p">)</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;Vector(</span><span class="si">{0.x}</span><span class="s2">, </span><span class="si">{0.y}</span><span class="s2">, </span><span class="si">{0.z}</span><span class="s2">)&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+<span class="n">a</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mf">4.5</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">Vector</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mf">4.7</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span> <span class="o">+</span> <span class="n">b</span><span class="p">)</span>
+<span class="c1"># Vector(0, 1.7, 6.5)</span>
+</pre></div>
+</div>
+<p>S tem dosežemo, da se naši objekti po uporabi ne razlikujejo od že vgrajenih
+objektov. Te metode sicer lahko kličemo tudi direktno (tudi na Pythonovih tipih
+recimo <code class="docutils literal notranslate"><span class="pre">&quot;asdf&quot;.__add__(&quot;ghjk&quot;)</span></code>), ampak tega noben priseben človek ne počne.
+Pravzaprav je vsaka spremenljivka, ki jo naredite v Pythonu objekt, ki ni
+popolnoma nič drugačen od takega, ki bi ga definirali mi. Ko na primer naredite
+<code class="docutils literal notranslate"><span class="pre">int(&quot;1243&quot;)</span></code> kličete konstruktor (metodo <code class="docutils literal notranslate"><span class="pre">___init__</span></code>) razreda <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
+<p>Pri množenju smo uporabili funkcijo <code class="docutils literal notranslate"><span class="pre">isinstance</span></code>, ki se jo uporablja za
+preverjanje tipov.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="isinstance">
+<span class="sig-name descname"><span class="pre">isinstance</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objekt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">razred_ali_tuple_razredov</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#isinstance" title="Link to this definition">¶</a></dt>
+<dd><p>Vrne <code class="docutils literal notranslate"><span class="pre">True</span></code>, če je <code class="docutils literal notranslate"><span class="pre">objekt</span></code> kateregakoli tipa izmed
+<code class="docutils literal notranslate"><span class="pre">razred_ali_tuple_razredov</span></code>, sicer False.</p>
+</dd></dl>
+
+<p>Primer:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="mi">134</span><span class="p">,</span> <span class="nb">int</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">isinstance</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">list</span><span class="p">,</span> <span class="nb">bool</span><span class="p">))</span>    <span class="c1"># &quot;abc&quot; ni niti int niti bool niti list</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="podatkovni_tipi.html" class="btn btn-neutral float-left" title="Podatkovni tipi" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="datoteke.html" class="btn btn-neutral float-right" title="Datoteke" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014–2019, Natan Žabkar, Jure Slak, Maks Kolman, Ines Meršak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

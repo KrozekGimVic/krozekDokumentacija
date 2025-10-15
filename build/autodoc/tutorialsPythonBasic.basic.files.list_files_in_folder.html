@@ -1,0 +1,180 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tutorialsPythonBasic.basic.files.list_files_in_folder module &mdash; Programerski krožek na Gimnaziji Vič 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=34b5f6bb" />
+
+  
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="tutorialsPythonBasic.basic.recursion package" href="tutorialsPythonBasic.basic.recursion.html" />
+    <link rel="prev" title="tutorialsPythonBasic.basic.files package" href="tutorialsPythonBasic.basic.files.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Programerski krožek na Gimnaziji Vič
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../python.html">Python</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../python-vaje.html">Python vaje</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../c%2B%2B.html">C++</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../c%2B%2B-vaje.html">C++ vaje</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sql.html">SQL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../git.html">Git</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../opengl.html">OpenGL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../razbijanje.html">Kriptografija</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Dokumentacija</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="tutorialsPythonBasic.html">tutorialsPythonBasic package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="tutorialsPythonBasic.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4 current"><a class="reference internal" href="tutorialsPythonBasic.basic.html">tutorialsPythonBasic.basic package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorialsPythonBasic.medium.html">tutorialsPythonBasic.medium package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorialsPythonBasic.verybasic.html">tutorialsPythonBasic.verybasic package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tutorialsPythonBasic.html#module-tutorialsPythonBasic">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../lov-na-zaklad.html">Lov na zaklad</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Programerski krožek na Gimnaziji Vič</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">tutorialsPythonBasic</a></li>
+          <li class="breadcrumb-item"><a href="tutorialsPythonBasic.html">tutorialsPythonBasic package</a></li>
+          <li class="breadcrumb-item"><a href="tutorialsPythonBasic.basic.html">tutorialsPythonBasic.basic package</a></li>
+          <li class="breadcrumb-item"><a href="tutorialsPythonBasic.basic.files.html">tutorialsPythonBasic.basic.files package</a></li>
+      <li class="breadcrumb-item active">tutorialsPythonBasic.basic.files.list_files_in_folder module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/autodoc/tutorialsPythonBasic.basic.files.list_files_in_folder.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-tutorialsPythonBasic.basic.files.list_files_in_folder">
+<span id="tutorialspythonbasic-basic-files-list-files-in-folder-module"></span><h1>tutorialsPythonBasic.basic.files.list_files_in_folder module<a class="headerlink" href="#module-tutorialsPythonBasic.basic.files.list_files_in_folder" title="Link to this heading">¶</a></h1>
+<p>An example on how to list all files and folders inside a directory. Keep in
+mind that the paths are relative, so you need to run this file from inside the
+folder it is located in for the tests to work.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="tutorialsPythonBasic.basic.files.list_files_in_folder.list_files_and_folders">
+<span class="sig-prename descclassname"><span class="pre">tutorialsPythonBasic.basic.files.list_files_in_folder.</span></span><span class="sig-name descname"><span class="pre">list_files_and_folders</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tutorialsPythonBasic/basic/files/list_files_in_folder.html#list_files_and_folders"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tutorialsPythonBasic.basic.files.list_files_in_folder.list_files_and_folders" title="Link to this definition">¶</a></dt>
+<dd><p>Lists files and folders in the (relative) folder by the name ‘folder’.
+If you don’t specify a folder, it is called on the current directory.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">list_files_and_folders</span><span class="p">(</span><span class="s1">&#39;example_folder&#39;</span><span class="p">)</span>
+<span class="go">a.txt</span>
+<span class="go">b.txt</span>
+<span class="go">c.txt</span>
+<span class="go">folder</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tutorialsPythonBasic.basic.files.list_files_in_folder.list_files_only">
+<span class="sig-prename descclassname"><span class="pre">tutorialsPythonBasic.basic.files.list_files_in_folder.</span></span><span class="sig-name descname"><span class="pre">list_files_only</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">folder</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tutorialsPythonBasic/basic/files/list_files_in_folder.html#list_files_only"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tutorialsPythonBasic.basic.files.list_files_in_folder.list_files_only" title="Link to this definition">¶</a></dt>
+<dd><p>Lists only files in the (relative) folder by the name ‘folder’. If you
+don’t specify a folder, it is called on the current directory.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">list_files_only</span><span class="p">(</span><span class="s1">&#39;example_folder&#39;</span><span class="p">)</span>
+<span class="go">a.txt</span>
+<span class="go">b.txt</span>
+<span class="go">c.txt</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tutorialsPythonBasic.basic.files.html" class="btn btn-neutral float-left" title="tutorialsPythonBasic.basic.files package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tutorialsPythonBasic.basic.recursion.html" class="btn btn-neutral float-right" title="tutorialsPythonBasic.basic.recursion package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014–2019, Natan Žabkar, Jure Slak, Maks Kolman, Ines Meršak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

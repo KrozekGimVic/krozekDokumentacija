@@ -1,0 +1,221 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Osnove SQL &mdash; Programerski krožek na Gimnaziji Vič 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=34b5f6bb" />
+
+  
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Git" href="../../git.html" />
+    <link rel="prev" title="SQL" href="../../sql.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Programerski krožek na Gimnaziji Vič
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../python.html">Python</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../python-vaje.html">Python vaje</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../c%2B%2B.html">C++</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../c%2B%2B-vaje.html">C++ vaje</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../sql.html">SQL</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Osnove SQL</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#select">SELECT</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../git.html">Git</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../opengl.html">OpenGL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../razbijanje.html">Kriptografija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../autodoc/modules.html">Dokumentacija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lov-na-zaklad.html">Lov na zaklad</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Programerski krožek na Gimnaziji Vič</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../sql.html">SQL</a></li>
+      <li class="breadcrumb-item active">Osnove SQL</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/skripta/sql/osnove.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="osnove-sql">
+<span id="osnovesql"></span><h1>Osnove SQL<a class="headerlink" href="#osnove-sql" title="Link to this heading">¶</a></h1>
+<p>Jezik SQL je namenjen delu z bazami podatkov. Bazo spreminjamo in iz nje
+dobivamo podatke s pomočjo izvrševanja “queryev”. Baze so shranjene kot tabele.
+Vsi naši primeri bodo potekali na naslednjem primeru s tremi tabelami,
+<code class="docutils literal notranslate"><span class="pre">ucenci</span></code>, <code class="docutils literal notranslate"><span class="pre">ocene</span></code> in <code class="docutils literal notranslate"><span class="pre">predmeti</span></code>.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>ID</p></th>
+<th class="head"><p>ime</p></th>
+<th class="head"><p>priimek</p></th>
+<th class="head"><p>letnik</p></th>
+<th class="head"><p>oddelek</p></th>
+<th class="head"><p>rojstni_datum</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>Janez</p></td>
+<td><p>Novak</p></td>
+<td><p>4</p></td>
+<td><p>A</p></td>
+<td><p>1996-12-23</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Mojca</p></td>
+<td><p>Mavec</p></td>
+<td><p>3</p></td>
+<td><p>C</p></td>
+<td><p>1997-09-31</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>Marko</p></td>
+<td><p>Kos</p></td>
+<td><p>2</p></td>
+<td><p>F</p></td>
+<td><p>1998-06-18</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>Luka</p></td>
+<td><p>Vrh</p></td>
+<td><p>1</p></td>
+<td><p>G</p></td>
+<td><p>1999-03-03</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>Miha</p></td>
+<td><p>Kovač</p></td>
+<td><p>2</p></td>
+<td><p>B</p></td>
+<td><p>1998-01-04</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>Lara</p></td>
+<td><p>Petek</p></td>
+<td><p>4</p></td>
+<td><p>E</p></td>
+<td><p>1996-10-29</p></td>
+</tr>
+</tbody>
+</table>
+<section id="select">
+<h2>SELECT<a class="headerlink" href="#select" title="Link to this heading">¶</a></h2>
+<p>Najbolj enostaven stavek s katerim izbiramo podatke is tabele. Sintaksa:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">polja</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">tabela</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">pogoj</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">polja</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Besede jezika se ponavadi piše z veliko začetnico, čeprav ni obvezno. Deli
+stavka od <code class="docutils literal notranslate"><span class="pre">WHERE</span></code> naprej niso obvezni. Če želimo na primer dobiti vse podatke iz tabele
+<code class="docutils literal notranslate"><span class="pre">ucenci</span></code>, napišemo:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">ucenci</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Če pa želimo priimke učencev 4. letnika urejene po njihovi starosti napišemo:</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">priimek</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">ucenci</span><span class="w"> </span><span class="k">WHERE</span><span class="w"> </span><span class="n">letnik</span><span class="o">=</span><span class="mi">4</span><span class="w"> </span><span class="k">ORDER</span><span class="w"> </span><span class="k">BY</span><span class="w"> </span><span class="n">rostni_datum</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>V pogoju lahko uporabljamo logične veznike <code class="docutils literal notranslate"><span class="pre">AND</span></code>, <code class="docutils literal notranslate"><span class="pre">NOT</span></code> in <code class="docutils literal notranslate"><span class="pre">OR</span></code>, za
+primerjanje stringov lahko uporabimo <code class="docutils literal notranslate"><span class="pre">LIKE</span></code>, in vrstni red urejanja lahko
+povemo z <code class="docutils literal notranslate"><span class="pre">ASC</span></code> ali <code class="docutils literal notranslate"><span class="pre">DESC</span></code>. Obstaja tudi verzija <code class="docutils literal notranslate"><span class="pre">SELECT</span> <span class="pre">DISTINCT</span></code>, ki
+izbere samo ne ponavljajoče se vnose.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../../sql.html" class="btn btn-neutral float-left" title="SQL" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../git.html" class="btn btn-neutral float-right" title="Git" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014–2019, Natan Žabkar, Jure Slak, Maks Kolman, Ines Meršak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

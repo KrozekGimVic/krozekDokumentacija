@@ -1,0 +1,205 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Predloge (templates) &mdash; Programerski krožek na Gimnaziji Vič 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=34b5f6bb" />
+
+  
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Organizacija kode" href="organizacija.html" />
+    <link rel="prev" title="Dedovanje" href="dedovanje.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Programerski krožek na Gimnaziji Vič
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../python.html">Python</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../python-vaje.html">Python vaje</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../c%2B%2B.html">C++</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="uvod.html">Uvod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="osnove.html">Osnove</a></li>
+<li class="toctree-l2"><a class="reference internal" href="podatkovni_tipi.html">Podatkovni tipi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enum.html">Enum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="funkcije.html">Funkcije</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pointers.html">Kazalci in reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="objekti.html">Objekti</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dedovanje.html">Dedovanje</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Predloge (templates)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="organizacija.html">Organizacija kode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="izjeme.html">Izjeme (exceptions)</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../c%2B%2B-vaje.html">C++ vaje</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../sql.html">SQL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../git.html">Git</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../opengl.html">OpenGL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../razbijanje.html">Kriptografija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../autodoc/modules.html">Dokumentacija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lov-na-zaklad.html">Lov na zaklad</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Programerski krožek na Gimnaziji Vič</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../c%2B%2B.html">C++</a></li>
+      <li class="breadcrumb-item active">Predloge (templates)</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/skripta/c++/templates.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="predloge-templates">
+<h1>Predloge (templates)<a class="headerlink" href="#predloge-templates" title="Link to this heading">¶</a></h1>
+<p>Recimo, da želimo napisati funkcijo <code class="docutils literal notranslate"><span class="pre">max</span></code>, ki sprejme dve vrednosti in vrne
+večjo izmed obeh.</p>
+<p>Za števila bi jo napisali recimo tako:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Zelo podobna bi bila funkcija za <code class="docutils literal notranslate"><span class="pre">double</span></code>:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">double</span><span class="w"> </span><span class="nf">max</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Če bi jo želeli napisati za kater drug tip, bi prav tako izgledala zelo
+podobno. Da se izognemo temu nepotrebnemu ponavaljanju kode, lahko napišemo eno
+samo funkcijo, ki deluje za splošen tip <code class="docutils literal notranslate"><span class="pre">T</span></code>. Zapišemo jo tako:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span><span class="w"> </span><span class="nc">T</span><span class="o">&gt;</span>
+<span class="n">T</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">T</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Beseda <code class="docutils literal notranslate"><span class="pre">template</span></code> pred funkcijo označuje, da je ta funkcija predloga, zvevza
+<code class="docutils literal notranslate"><span class="pre">typename</span> <span class="pre">T</span></code>, pa pomeni, da <code class="docutils literal notranslate"><span class="pre">T</span></code> označuje naš neznani tip. Namesto besedice
+<code class="docutils literal notranslate"><span class="pre">typename</span></code> lahko uporabimo tudi <code class="docutils literal notranslate"><span class="pre">class</span></code>. Ko funkcijo
+pokličemo z npr. <code class="docutils literal notranslate"><span class="pre">max(1.2,</span> <span class="pre">4.5)</span></code>, prevajalnik sam ve, da smo jo poklicali z
+dvema parametroma tipa <code class="docutils literal notranslate"><span class="pre">double</span></code> in v predlogo vstavi namesto <code class="docutils literal notranslate"><span class="pre">T</span></code> tip <code class="docutils literal notranslate"><span class="pre">double</span></code>
+ter dobi funkcijo, kot smo jo napisali prej.</p>
+<p>Če pa bi npr. želeli funkcijo poklicati kot <code class="docutils literal notranslate"><span class="pre">max(3,</span> <span class="pre">1.2)</span></code>, torej s
+parametroma <code class="docutils literal notranslate"><span class="pre">int</span></code> in <code class="docutils literal notranslate"><span class="pre">double</span></code>, pa se koda ne bi prevedla, saj morata biti v
+predlogi oba tipa enaka (oba sta <code class="docutils literal notranslate"><span class="pre">T</span></code>).</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>a.cpp:16:23: error: no matching function for call to ‘max(int, double)’
+     cout &lt;&lt; max(3, 1.2) &lt;&lt; endl;
+                       ^
+a.cpp:7:3: note: candidate: template&lt;class T&gt; T max(T, T)
+ T max(T x, T y) {
+   ^~~
+a.cpp:7:3: note:   template argument deduction/substitution failed:
+a.cpp:16:23: note:   deduced conflicting types for parameter ‘T’ (‘int’ and ‘double’)
+     cout &lt;&lt; max(3, 1.2) &lt;&lt; endl;
+                       ^
+</pre></div>
+</div>
+<p>TODO: Funckije s poljubno argumenti, templated classes.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="dedovanje.html" class="btn btn-neutral float-left" title="Dedovanje" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="organizacija.html" class="btn btn-neutral float-right" title="Organizacija kode" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014–2019, Natan Žabkar, Jure Slak, Maks Kolman, Ines Meršak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

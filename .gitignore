@@ -12,3 +12,5 @@ tunel_large.txt
 
 _build/html/autodoc/*
 _build/html/_modules/tutorialsPythonBasic*
+
+venv/

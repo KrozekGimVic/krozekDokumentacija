@@ -1,0 +1,267 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Osnove &mdash; Programerski krožek na Gimnaziji Vič 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=34b5f6bb" />
+
+  
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Kriptografija" href="../../razbijanje.html" />
+    <link rel="prev" title="OpenGL" href="../../opengl.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Programerski krožek na Gimnaziji Vič
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../python.html">Python</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../python-vaje.html">Python vaje</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../c%2B%2B.html">C++</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../c%2B%2B-vaje.html">C++ vaje</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../sql.html">SQL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../git.html">Git</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../opengl.html">OpenGL</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Osnove</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#kako-deluje">Kako deluje</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#instalacija">Instalacija</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#prvo-okno">Prvo okno</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../razbijanje.html">Kriptografija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../autodoc/modules.html">Dokumentacija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lov-na-zaklad.html">Lov na zaklad</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Programerski krožek na Gimnaziji Vič</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../opengl.html">OpenGL</a></li>
+      <li class="breadcrumb-item active">Osnove</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/skripta/opengl/osnove.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="osnove">
+<h1>Osnove<a class="headerlink" href="#osnove" title="Link to this heading">¶</a></h1>
+<p><a class="reference external" href="https://www.opengl.org/">OpenGL</a> je knjižnica za risanje 2D in 3D vektorske
+grafike. Opengl je trenutno na verziji 4.5, mi pa se bomoučili verzijo 3.x, ki
+je že dovolj stara, da jo podpira večina računalnikov, hkrati pa je dovolj
+nova, da je že potreben noveji pristop, z razliko od OpenGL 2.</p>
+<section id="kako-deluje">
+<h2>Kako deluje<a class="headerlink" href="#kako-deluje" title="Link to this heading">¶</a></h2>
+<p>Open GL je knjižnica, ki komunicira s storjno opremo na računalniku,
+predvsem z grafično kartico, da doseže strojno pospešeno risanje. Zaradi
+tega so njeni ukazi na precej nižjem nivoju kot običajno. Najbolj običajna
+implementacija OpenGL na Linux-u je Mesa, nVidia pa ima na primer svojo
+implementacijo.</p>
+<p>Proces si lahko natančneje prebere <a class="reference external" href="http://duriansoftware.com/joe/An-intro-to-modern-OpenGL.-Chapter-1:-The-Graphics-Pipeline.html">tukaj</a>,
+za nas pa naj bo dovolj naslednjih 7 korakov, ki opisujejo, kako poteka pot
+ptrevarjanja podatkov v risbo.</p>
+<ul class="simple">
+<li><p>seznam točk – podatki za risbo</p></li>
+<li><p>globalno stanje in teksture – globalni podatki, ki so na voljo shaderju</p></li>
+<li><p>vertex shader – računanje pozicij</p></li>
+<li><p>sestavljanje trikotnikov</p></li>
+<li><p>rasterizacija – spreminjanje gladkih robov v piksle</p></li>
+<li><p>fragment shader – dobi slke, ustvari svetlobo, vrne seznam barv (najbolj zahteven korak)</p></li>
+<li><p>buffers and blending – nariše na zaslon, več bufferjev, globina</p></li>
+</ul>
+<img alt="../../_images/pipeline.png" src="../../_images/pipeline.png" />
+</section>
+<section id="instalacija">
+<h2>Instalacija<a class="headerlink" href="#instalacija" title="Link to this heading">¶</a></h2>
+<p>Potrebovali bomo <code class="docutils literal notranslate"><span class="pre">g++</span></code>, <code class="docutils literal notranslate"><span class="pre">cmake</span></code> in knjižnice za <code class="docutils literal notranslate"><span class="pre">opengl</span></code>, <code class="docutils literal notranslate"><span class="pre">glut</span></code> in
+<code class="docutils literal notranslate"><span class="pre">glew</span></code>. Sledili bomo gradivu na <a class="reference external" href="http://www.opengl-tutorial.org/">opengl-tutorial.org</a>, kodo pa lahko dobite z</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/opengl-tutorials/ogl
+</pre></div>
+</div>
+<p>Projekt zgradite tko kot ponavadi, če ste v mapi <code class="docutils literal notranslate"><span class="pre">ogl/</span></code> naredite <code class="docutils literal notranslate"><span class="pre">build/</span></code> folder in poženete
+<code class="docutils literal notranslate"><span class="pre">cmake</span></code>. Programe zaganjate preko launch skript, ki jih ustvari <code class="docutils literal notranslate"><span class="pre">cmake</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-<span class="w"> </span>build/
+<span class="nb">cd</span><span class="w"> </span>build/
+cmake<span class="w"> </span>..
+make
+./launch-tutorial01_first_window.sh
+</pre></div>
+</div>
+</section>
+<section id="prvo-okno">
+<h2>Prvo okno<a class="headerlink" href="#prvo-okno" title="Link to this heading">¶</a></h2>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// Include standard headers</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdio.h&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;stdlib.h&gt;</span>
+
+<span class="c1">// Include GLEW</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;GL/glew.h&gt;</span>
+
+<span class="c1">// Include GLFW</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;glfw3.h&gt;</span>
+<span class="n">GLFWwindow</span><span class="o">*</span><span class="w"> </span><span class="n">window</span><span class="p">;</span>
+
+<span class="c1">// Include GLM</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;glm/glm.hpp&gt;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">glm</span><span class="p">;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Initialise GLFW</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="n">glfwInit</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Failed to initialize GLFW</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">getchar</span><span class="p">();</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">glfwWindowHint</span><span class="p">(</span><span class="n">GLFW_SAMPLES</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+<span class="w">    </span><span class="n">glfwWindowHint</span><span class="p">(</span><span class="n">GLFW_CONTEXT_VERSION_MAJOR</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
+<span class="w">    </span><span class="n">glfwWindowHint</span><span class="p">(</span><span class="n">GLFW_CONTEXT_VERSION_MINOR</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// To make MacOS happy; should not be needed</span>
+<span class="w">    </span><span class="n">glfwWindowHint</span><span class="p">(</span><span class="n">GLFW_OPENGL_FORWARD_COMPAT</span><span class="p">,</span><span class="w"> </span><span class="n">GL_TRUE</span><span class="p">);</span>
+<span class="w">    </span><span class="n">glfwWindowHint</span><span class="p">(</span><span class="n">GLFW_OPENGL_PROFILE</span><span class="p">,</span><span class="w"> </span><span class="n">GLFW_OPENGL_CORE_PROFILE</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Open a window and create its OpenGL context</span>
+<span class="w">    </span><span class="n">window</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">glfwCreateWindow</span><span class="p">(</span><span class="mi">1024</span><span class="p">,</span><span class="w"> </span><span class="mi">768</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Tutorial 01&quot;</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">,</span><span class="w"> </span><span class="nb">NULL</span><span class="p">);</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">window</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">NULL</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span>
+<span class="w">                </span><span class="s">&quot;Failed to open GLFW window. If you have an Intel GPU, &quot;</span>
+<span class="w">                </span><span class="s">&quot;they are not 3.3 compatible. Try the 2.1 &quot;</span>
+<span class="w">                </span><span class="s">&quot;version of the tutorials.</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">getchar</span><span class="p">();</span>
+<span class="w">        </span><span class="n">glfwTerminate</span><span class="p">();</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="n">glfwMakeContextCurrent</span><span class="p">(</span><span class="n">window</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Initialize GLEW</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">glewInit</span><span class="p">()</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">GLEW_OK</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">fprintf</span><span class="p">(</span><span class="n">stderr</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;Failed to initialize GLEW</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">);</span>
+<span class="w">        </span><span class="n">getchar</span><span class="p">();</span>
+<span class="w">        </span><span class="n">glfwTerminate</span><span class="p">();</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="c1">// Ensure we can capture the escape key being pressed below</span>
+<span class="w">    </span><span class="n">glfwSetInputMode</span><span class="p">(</span><span class="n">window</span><span class="p">,</span><span class="w"> </span><span class="n">GLFW_STICKY_KEYS</span><span class="p">,</span><span class="w"> </span><span class="n">GL_TRUE</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Dark blue background</span>
+<span class="w">    </span><span class="n">glClearColor</span><span class="p">(</span><span class="mf">0.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.4f</span><span class="p">,</span><span class="w"> </span><span class="mf">0.0f</span><span class="p">);</span>
+
+<span class="w">    </span><span class="k">do</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="c1">// Clear the screen. It&#39;s not mentioned before Tutorial 02,</span>
+<span class="w">        </span><span class="c1">// but it can cause flickering, so it&#39;s there nonetheless.</span>
+<span class="w">        </span><span class="n">glClear</span><span class="p">(</span><span class="n">GL_COLOR_BUFFER_BIT</span><span class="p">);</span>
+
+<span class="w">        </span><span class="c1">// Draw nothing, see you in tutorial 2 !</span>
+
+<span class="w">        </span><span class="c1">// Swap buffers</span>
+<span class="w">        </span><span class="n">glfwSwapBuffers</span><span class="p">(</span><span class="n">window</span><span class="p">);</span>
+<span class="w">        </span><span class="n">glfwPollEvents</span><span class="p">();</span>
+
+<span class="w">    </span><span class="p">}</span><span class="w">  </span><span class="c1">// Check if the ESC key was pressed or the window was closed</span>
+<span class="w">    </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">glfwGetKey</span><span class="p">(</span><span class="n">window</span><span class="p">,</span><span class="w"> </span><span class="n">GLFW_KEY_ESCAPE</span><span class="p">)</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">GLFW_PRESS</span><span class="w"> </span><span class="o">&amp;&amp;</span>
+<span class="w">           </span><span class="n">glfwWindowShouldClose</span><span class="p">(</span><span class="n">window</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Close OpenGL window and terminate GLFW</span>
+<span class="w">    </span><span class="n">glfwTerminate</span><span class="p">();</span>
+
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../../opengl.html" class="btn btn-neutral float-left" title="OpenGL" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../razbijanje.html" class="btn btn-neutral float-right" title="Kriptografija" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014–2019, Natan Žabkar, Jure Slak, Maks Kolman, Ines Meršak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

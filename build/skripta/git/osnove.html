@@ -1,0 +1,197 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Osnove &mdash; Programerski krožek na Gimnaziji Vič 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=34b5f6bb" />
+
+  
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="OpenGL" href="../../opengl.html" />
+    <link rel="prev" title="Namestitev" href="namestitev.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Programerski krožek na Gimnaziji Vič
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../python.html">Python</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../python-vaje.html">Python vaje</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../c%2B%2B.html">C++</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../c%2B%2B-vaje.html">C++ vaje</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../sql.html">SQL</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../git.html">Git</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="uvod.html">Uvod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namestitev.html">Namestitev</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Osnove</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#clone">Clone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#add-in-commit">Add in Commit</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#primer">Primer</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#status-in-diff">Status in Diff</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#push-in-pull">Push in Pull</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#konflikti">Konflikti</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../opengl.html">OpenGL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../razbijanje.html">Kriptografija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../autodoc/modules.html">Dokumentacija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lov-na-zaklad.html">Lov na zaklad</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Programerski krožek na Gimnaziji Vič</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../git.html">Git</a></li>
+      <li class="breadcrumb-item active">Osnove</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/skripta/git/osnove.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="osnove">
+<h1>Osnove<a class="headerlink" href="#osnove" title="Link to this heading">¶</a></h1>
+<section id="clone">
+<h2>Clone<a class="headerlink" href="#clone" title="Link to this heading">¶</a></h2>
+<p>Prva stvar, ki se jo bomo naučili je kloniranje repozitorija iz spleta na lokalno napravo. Kloniranje je nekaj kar moraš storiti zgolj enkrat na vsaki napravi, kjer želiš urejati repozitorij. S tem dobiš vso kodo in nastavitve repozitorija. Najprej skopiraj URL repozitorija, ki ga želiš klonirati. To lahko storiš njegovi strani, kjer lahko vidiš takšno polje</p>
+<img alt="../../_images/git_url.png" class="align-center" src="../../_images/git_url.png" />
+<p>Sedaj zaženi <code class="docutils literal notranslate"><span class="pre">git-cmd.exe</span></code> iz svoje namestitve git-a. S pomočjo ukaza <code class="docutils literal notranslate"><span class="pre">cd</span></code> se premakni do željene lokacije na disku, kamor želiš shraniti svoj repozitorij. Tam zaženi <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone</span> <span class="pre">&lt;url&gt;</span></code>, kamor vneseš URL svojega repozitorija.To bo ustvarilo novo mapo z imenom enakim repozitoriju in vanj preneslo vso kodo, ki je že na strani.</p>
+</section>
+<section id="add-in-commit">
+<h2>Add in Commit<a class="headerlink" href="#add-in-commit" title="Link to this heading">¶</a></h2>
+<p>Glavna ukaza za shranjevanje sprememb sta <code class="docutils literal notranslate"><span class="pre">add</span></code> in <code class="docutils literal notranslate"><span class="pre">commit</span></code>. Ukaz <code class="docutils literal notranslate"><span class="pre">commit</span></code> naredi novo točko pri razvoju kode. To pomeni, da lahko spremembe v kodi commitaš in potem bo trenutna verzija kode shranjena tudi, ko boš v novejših verzijah projekta. Tako lahko vedno pogledaš zgodovino sprememb, ko rezimo iščeš od kje je prišla kakšna napaka.</p>
+<p>Z ukazom <code class="docutils literal notranslate"><span class="pre">add</span></code> pa povemo katere datoteke želimo commitat. Saj je pametno, da so vse spremembe v enem commitu povezane. Vsak commit mora imeti tudi <cite>commit message</cite>, ki na kratko razloži kaj smo spremenili s tem commitom.</p>
+<section id="primer">
+<h3>Primer<a class="headerlink" href="#primer" title="Link to this heading">¶</a></h3>
+<p>Recimo, da imamo projekt kjer smo od zadnjega commita spremenili naslednje datoteke. V mapi <code class="docutils literal notranslate"><span class="pre">images</span></code> smo izboljšali kvaliteto <code class="docutils literal notranslate"><span class="pre">slika1.jpg</span></code> in <code class="docutils literal notranslate"><span class="pre">ozadje.png</span></code>. Poleg tega pa smo v datoteki <code class="docutils literal notranslate"><span class="pre">main.py</span></code> odpravili hrošča zaradi katerega je lahko naš junak skakal skozi stene.</p>
+<p>Odločimo se, da bomo to spravili v dva commita. Najprej se lotimo slik:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>img/slika1.jpg<span class="w"> </span>img/ozadje.png
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Izboljsana kvaliteta slik&quot;</span>
+</pre></div>
+</div>
+<p>Najprej smo dodali obe datoteki v t.i. <cite>staging</cite>. Nato pa ukaz <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> za stalno zapiše spremembe v repozitorij. Zastavica <code class="docutils literal notranslate"><span class="pre">-m</span> <span class="pre">&quot;Sporocilo</span></code> poda sporočilo commita. Enako zapišemo še commit za drugi del sprememb:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>main.py
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Skakanje skozi zid Bug fix&quot;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="status-in-diff">
+<h2>Status in Diff<a class="headerlink" href="#status-in-diff" title="Link to this heading">¶</a></h2>
+<p>Ker nimamo ves čas v glavi sprememb, ki smo jih naredili v naši kodi sta za to na voljo ukaza <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">status</span></code> in <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span></code>. Prvi pove katere datoteke so se spremenile, katere datoteke so povsem nove in katere so pripravljene za commit (v stagingu). Ukaz <code class="docutils literal notranslate"><span class="pre">diff</span></code> pa nam poda točne spremembe izbrane datoteke. Recimo z <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">diff</span> <span class="pre">main.py</span></code> bomo videli katere vrstice smo spremenili od zadnjega commita.</p>
+</section>
+<section id="push-in-pull">
+<h2>Push in Pull<a class="headerlink" href="#push-in-pull" title="Link to this heading">¶</a></h2>
+<p>Po tem, ko si naredil enega ali več commitov, lahko le-te pošlješ nazaj v spletni repositorij (npr. na github) s pomočjo ukaza <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">push</span></code>. Vpisati boš moral svoje uporabniško ime in geslo, da program preveri ali imaš ustrezne pravice za spreminjanje spletnega repozitorija, nato bo prenesel vse spremembe na splet. Ampak pazi, če so na spletu kakšni commiti, ki jih ti še nimaš na svojem računalniku moraš najprej te prenesti k sebi. Takrat lahko dobiš sporočilo kot je prikazano na spodnji sliki. Za to uporabiš <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>.</p>
+<img alt="../../_images/fast_forward.png" src="../../_images/fast_forward.png" />
+<p>Ko se spremeni vsebina repozitorija na spletu in si želiš prenesti zadnjo verzijo kode, to narediš z ukazom <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">pull</span></code>. Včasih se zgodi, da je več ljudi spreminjalo enake dele kode in takrat dobiš konflikt v kodi. Več o tem v svojem poglavju.</p>
+</section>
+<section id="konflikti">
+<h2>Konflikti<a class="headerlink" href="#konflikti" title="Link to this heading">¶</a></h2>
+<p>Če sta dva uporabnika hkrati urejala isto datoteko lahko naletimo na <cite>merge conflict</cite>. To pomeni, da git ni znal sam združiti sprememb različnih uporabnikov in moramo to storiti sami. Git nam ponudi naslednje sporočilo, ki nam pove, da kje je prišlo do konflikta:</p>
+<img alt="../../_images/conflict.png" class="align-center" src="../../_images/conflict.png" />
+<p>Odpremo datoteko in poiščemo problematičen del kode, ki nam jo je git označil z <code class="docutils literal notranslate"><span class="pre">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</span></code>, <code class="docutils literal notranslate"><span class="pre">========</span></code> in <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;</span></code>, kot lahko vidimo na sliki</p>
+<img alt="../../_images/conflict_file.png" class="align-center" src="../../_images/conflict_file.png" />
+<p>Med prvima dvema znakoma so spremembe, ki smo jih naredili mi, nato pa spremembe, ki smo jih dobili iz spletnega repozitorija in jih je naredil nekdo drug (ali mi na drugi napravi). Za primer vzemimo, da smo imeli problem z datoteko <code class="docutils literal notranslate"><span class="pre">main.py</span></code>. Sedaj moramo na roko popraviti kodo tako, da bo vse pravilno delovalo, nato pa commitat spremembe z</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>main.py
+git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Odpravljen konflikt v datoteki main&quot;</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="namestitev.html" class="btn btn-neutral float-left" title="Namestitev" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../opengl.html" class="btn btn-neutral float-right" title="OpenGL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014–2019, Natan Žabkar, Jure Slak, Maks Kolman, Ines Meršak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

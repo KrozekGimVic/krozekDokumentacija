@@ -1,0 +1,170 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Možni napadi &mdash; Programerski krožek na Gimnaziji Vič 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=34b5f6bb" />
+
+  
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="tutorialsPythonBasic" href="../../autodoc/modules.html" />
+    <link rel="prev" title="Kriptografija" href="../../razbijanje.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Programerski krožek na Gimnaziji Vič
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../python.html">Python</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../python-vaje.html">Python vaje</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../c%2B%2B.html">C++</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../c%2B%2B-vaje.html">C++ vaje</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../sql.html">SQL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../git.html">Git</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../opengl.html">OpenGL</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../razbijanje.html">Kriptografija</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Možni napadi</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#napad-surove-moci">Napad surove moči</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#slovarski-napad">Slovarski napad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#casovni-napad">Časovni napad</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gui">GUI</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../autodoc/modules.html">Dokumentacija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lov-na-zaklad.html">Lov na zaklad</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Programerski krožek na Gimnaziji Vič</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../razbijanje.html">Kriptografija</a></li>
+      <li class="breadcrumb-item active">Možni napadi</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/skripta/sifre/crypto.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="mozni-napadi">
+<h1>Možni napadi<a class="headerlink" href="#mozni-napadi" title="Link to this heading">¶</a></h1>
+<section id="napad-surove-moci">
+<h2>Napad surove moči<a class="headerlink" href="#napad-surove-moci" title="Link to this heading">¶</a></h2>
+<p>Dan imaš program <a class="reference download internal" download="" href="../../_downloads/3f874ea7951ad6820b0f2099ceed3cf5/brute_force"><code class="xref download docutils literal notranslate"><span class="pre">brute_force</span></code></a>. Če v program napišeš
+pravilno geslo, boš dobil dostop do naslednjega problema.</p>
+<p>Napiši program, ki bo poizkusil v program vnesti vse nize osmih malih črk
+angleške abecede in tako ugotovi geslo.</p>
+</section>
+<section id="slovarski-napad">
+<h2>Slovarski napad<a class="headerlink" href="#slovarski-napad" title="Link to this heading">¶</a></h2>
+<p>V prejšnji nalogi si dobil povezavo do programa z novim geslom. Geslo je ponovno
+sestavljeno iz malih črk angleške abecede. Geslo je daljše, zato ga boš le s
+težavo ugotovil z napadom surove moči.</p>
+<p>Geslo je sestavljeno iz dveh angleških besed. Pomagaj si z angleškim slovarjem
+in napši program, ki preizkusi vse možne kombinacije dveh besed.</p>
+</section>
+<section id="casovni-napad">
+<h2>Časovni napad<a class="headerlink" href="#casovni-napad" title="Link to this heading">¶</a></h2>
+<p>Naslednji program ima geslo dolgo 1000 znakov sestavljeno iz črk “a” in “b”.
+Program po vrsti primerja geslo z vašim vhodom in neha čim najde razliko med
+njima. To pomeni, da je čas izvajanja programa odvisen od števila ujemajočih
+začetnih znakov. Uporabi to dejstvo, da po vrsti uganeš vse znake v geslu.</p>
+</section>
+<section id="gui">
+<h2>GUI<a class="headerlink" href="#gui" title="Link to this heading">¶</a></h2>
+<p>Pri delanju si pomagaj z datoteko <a class="reference download internal" download="" href="../../_downloads/8d62fb08d18173578cf17977789f1f20/cracker_gui.zip"><code class="xref download docutils literal notranslate"><span class="pre">cracker_gui.zip</span></code></a>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../../razbijanje.html" class="btn btn-neutral float-left" title="Kriptografija" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../autodoc/modules.html" class="btn btn-neutral float-right" title="tutorialsPythonBasic" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014–2019, Natan Žabkar, Jure Slak, Maks Kolman, Ines Meršak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

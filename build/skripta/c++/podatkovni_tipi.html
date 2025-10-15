@@ -1,0 +1,717 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Podatkovni tipi &mdash; Programerski krožek na Gimnaziji Vič 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=34b5f6bb" />
+
+  
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Enum" href="enum.html" />
+    <link rel="prev" title="Osnove" href="osnove.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Programerski krožek na Gimnaziji Vič
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../python.html">Python</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../python-vaje.html">Python vaje</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../c%2B%2B.html">C++</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="uvod.html">Uvod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="osnove.html">Osnove</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Podatkovni tipi</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#uvod">Uvod</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#stevila">Števila</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#omejitve">Omejitve</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#pretvorbe">Pretvorbe</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#logicne-vrednosti">Logične vrednosti</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#seznami">Seznami</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#dostopanje-in-spreminjanje-elementov">Dostopanje in spreminjanje elementov</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#iteratorji">Iteratorji</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#spreminjanje-vektorja">Spreminjanje vektorja</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#nizi-znakov">Nizi znakov</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv46gelineR7istreamR6string"><code class="docutils literal notranslate"><span class="pre">geline()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv46string"><code class="docutils literal notranslate"><span class="pre">string</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#mnozice">Množice</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#_CPPv4I0E3set"><code class="docutils literal notranslate"><span class="pre">set</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#asociativni-seznami">Asociativni seznami</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pari">Pari</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#uporaba-asociativnih-seznamov">Uporaba asociativnih seznamov</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#dodatek-o-vseh-zbirkah">Dodatek o vseh zbirkah</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#range-for-zanka">Range for zanka</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="enum.html">Enum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="funkcije.html">Funkcije</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pointers.html">Kazalci in reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="objekti.html">Objekti</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dedovanje.html">Dedovanje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="templates.html">Predloge (templates)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="organizacija.html">Organizacija kode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="izjeme.html">Izjeme (exceptions)</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../c%2B%2B-vaje.html">C++ vaje</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../sql.html">SQL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../git.html">Git</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../opengl.html">OpenGL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../razbijanje.html">Kriptografija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../autodoc/modules.html">Dokumentacija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lov-na-zaklad.html">Lov na zaklad</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Programerski krožek na Gimnaziji Vič</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../c%2B%2B.html">C++</a></li>
+      <li class="breadcrumb-item active">Podatkovni tipi</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/skripta/c++/podatkovni_tipi.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="podatkovni-tipi">
+<span id="podatkovnitipi"></span><h1>Podatkovni tipi<a class="headerlink" href="#podatkovni-tipi" title="Link to this heading">¶</a></h1>
+<p>Podatkovni tipi so zelo pomemben koncept v C++-u. Vsaka spremenljivka ima svoj
+tip in ena najpogostejših napak pri compilanju je, da se tipi ne ujemajo. Morda
+je potrebno nekaj truda, da se na tipe navadimo, ampak pri velikih projektih
+lahko tipi zelo pomagajo pri jasnosti kode in pri boljšem razumevanju kaj
+počnemo, saj ne moremo npr. ponesreči podati funkciji napačnih parametrov.</p>
+<section id="uvod">
+<h2>Uvod<a class="headerlink" href="#uvod" title="Link to this heading">¶</a></h2>
+<p>Tipe delimo na primitivne in neprimitivne. Neprimitivni so tipi, ki so
+definirani kot razredi, vendar ta razlika nima posebnega vpliva. Primitivni so
+vsi številski in logični tipi.</p>
+</section>
+<section id="stevila">
+<h2>Števila<a class="headerlink" href="#stevila" title="Link to this heading">¶</a></h2>
+<p>Številski tipi se razlikujejo glede na to ali predstavljajo cela ali decimalna
+števila in po velikosti. Celoštevilski tipi so <code class="docutils literal notranslate"><span class="pre">short</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">long</span></code> in
+<code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">long</span></code>, decimalni pa <code class="docutils literal notranslate"><span class="pre">float</span></code>, <code class="docutils literal notranslate"><span class="pre">double</span></code> in <code class="docutils literal notranslate"><span class="pre">long</span> <span class="pre">double</span></code>. Med
+celoštevilske tipe lahko štejemo tudi <code class="docutils literal notranslate"><span class="pre">char</span></code>, ki predstavlja en znak, a je v
+resnici številka (koda znaka v ASCII tabeli). Tipi podpirajo standardne aritmetične in bitne operacije.
+Primer:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span>
+<span class="kt">char</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sc">&#39;a&#39;</span><span class="p">;</span>
+<span class="kt">short</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="sc">&#39;1&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">// b = 155</span>
+<span class="kt">double</span><span class="w"> </span><span class="n">g</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">-12.44</span><span class="p">;</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.1e15</span><span class="p">;</span>
+</pre></div>
+</div>
+<section id="omejitve">
+<h3>Omejitve<a class="headerlink" href="#omejitve" title="Link to this heading">¶</a></h3>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>ime</p></th>
+<th class="head"><p>velikost <a class="footnote-reference brackets" href="#f1" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p></th>
+<th class="head"><p>približen razpon</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>char</p></td>
+<td><p>8 bit</p></td>
+<td><p><span class="math notranslate nohighlight">\(\pm 127\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>short</p></td>
+<td><p>16 bit</p></td>
+<td><p><span class="math notranslate nohighlight">\(\pm 32\,767\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>int</p></td>
+<td><p>32 bit</p></td>
+<td><p><span class="math notranslate nohighlight">\(\pm 2.14 \cdot 10^9\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>long</p></td>
+<td><p>native</p></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>long long</p></td>
+<td><p>64 bit</p></td>
+<td><p><span class="math notranslate nohighlight">\(\pm 9.22 \cdot 10^{19}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>float</p></td>
+<td><p>32 bit</p></td>
+<td><p><span class="math notranslate nohighlight">\(\pm 3.4 \cdot 10^{\pm 38}\)</span>, 7 decimalk</p></td>
+</tr>
+<tr class="row-even"><td><p>double</p></td>
+<td><p>64 bit</p></td>
+<td><p><span class="math notranslate nohighlight">\(\pm 3.4 \cdot 10^{\pm 308}\)</span>, 15 decimalk</p></td>
+</tr>
+<tr class="row-odd"><td><p>long double</p></td>
+<td><p>80 bit</p></td>
+<td><p><span class="math notranslate nohighlight">\(\pm 1.1 \cdot 10^{\pm 4932}\)</span>, 18 decimalk</p></td>
+</tr>
+</tbody>
+</table>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="f1" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p>Velikost je odvisna od operacijskega sistema in računalnika. Native
+pomeni ponavadi 64 ali 32 biten, zopet odvisno od računalnika. V tabeli so naštete
+najbolj pogoste velikosi. <code class="docutils literal notranslate"><span class="pre">unsigned</span></code> verzije imajo enak razpon, samo da je
+cel na pozitivnem delu osi. Več <a class="reference external" href="http://en.cppreference.com/w/cpp/language/types#Properties">tukaj</a>.</p>
+</aside>
+</aside>
+<p>Mnogo bolj podrobno in pravilno tabelo najdete <a class="reference external" href="http://en.cppreference.com/w/cpp/language/types#Range_of_values">tukaj</a>.</p>
+<p>Naj vas to ne prestraši, pametno je poznati omejitve, a mi bomo ponavadi za
+cela števila uporabljali kar <code class="docutils literal notranslate"><span class="pre">int</span></code> in za decimalna <code class="docutils literal notranslate"><span class="pre">double</span></code>. (Float je
+precej nenatančen, kar je na tekmovanjih, ali pa za kakšne resne izračune
+problematično. Je pa lahko npr. uporabno v računalniški grafiki, kjer je
+na koncu pomembna le natančnost na en piksel.
+Pred celoštevilske tipe lahko vtaknemo tudi <code class="docutils literal notranslate"><span class="pre">unsigned</span></code>, ki razpon
+števila premakne na pozitivno os. Če število povečamo čez razsežnost tipa, se
+ne zgodi na videz nič, številka se samo navije okrog spodnje meje. Torej, če
+rečemo <code class="docutils literal notranslate"><span class="pre">char</span> <span class="pre">a</span> <span class="pre">=</span> <span class="pre">130;</span></code> bo <code class="docutils literal notranslate"><span class="pre">a</span></code> v resnici enak <code class="docutils literal notranslate"><span class="pre">-126</span></code>.</p>
+<p>Decimalna števila zaokrožujejo in zaradi tega se pojavljajo napake. Obstaja
+zelo močna veja matematike, ki se ukvarja s preučevanjem in odpravljanjem teh
+napak, ampak za nas bo dovolj, da se samo zavedamo, da obstajajo. Če na primer
+10 krat seštejete 0.1, to ni nujno enako celemu številu 1 (<code class="docutils literal notranslate"><span class="pre">if</span></code> stavek se
+lahko recimo ne izvede, če je kaj takega v pogoju). Dveh decimalnih števil
+nikoli ni pametno direktno preverjati, ali sta enaki, ponavadi se za mero
+enakosti vzame kaj podobnega kot <code class="docutils literal notranslate"><span class="pre">abs(a</span> <span class="pre">-</span> <span class="pre">b)</span> <span class="pre">&lt;</span> <span class="pre">-1e9</span></code>. Decimalna števila imajo
+omejitve tudi glede tega, kako blizu 0 lahko pridejo (vsa lahko predstavijo
+točno 0). Podobne omejitve za decimalna števila veljajo tudi v Pythonu in
+ostalih programskih jezikih.</p>
+</section>
+<section id="pretvorbe">
+<h3>Pretvorbe<a class="headerlink" href="#pretvorbe" title="Link to this heading">¶</a></h3>
+<p>Med tipi lahko med pretvarjamo, poznamo implicitne in eksplicitne pretvorbe.
+Compiler bo avtomatsko naredil pretvorbe, ki ne škodujejo “kvaliteti” tipa, pri
+pretvorbi iz npr. <code class="docutils literal notranslate"><span class="pre">double</span></code> v <code class="docutils literal notranslate"><span class="pre">int</span></code> pa bo posvaril vsaj z opozorilom. Tako
+pretvorbo lahko sami naredimo na več načinov (ki so glede na rezultat ekvivalentni):</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">static_cast</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="p">(</span><span class="mf">12.34</span><span class="p">);</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kt">int</span><span class="p">(</span><span class="mf">12.34</span><span class="p">);</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="p">)</span><span class="w"> </span><span class="mf">12.34</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Če uporabimo <code class="docutils literal notranslate"><span class="pre">static_cast</span></code>, to dovoljuje prevajalniku, da preveri, da ne
+počnemo česa preveč nepravilnega. Ostale pretvorbe te varnosti nimajo.</p>
+</section>
+</section>
+<section id="logicne-vrednosti">
+<h2>Logične vrednosti<a class="headerlink" href="#logicne-vrednosti" title="Link to this heading">¶</a></h2>
+<p>Logični vrednosti sta <code class="docutils literal notranslate"><span class="pre">true</span></code> in <code class="docutils literal notranslate"><span class="pre">false</span></code>. Z logičnimi vrednostmi lahko
+računamo kot vedno, z operatorji <code class="docutils literal notranslate"><span class="pre">&amp;&amp;</span></code>, <code class="docutils literal notranslate"><span class="pre">||</span></code> in <code class="docutils literal notranslate"><span class="pre">!</span></code>. Kot številski
+vrednosti predstavljata 0 in 1. Logične spremenljivke imajo tip <code class="docutils literal notranslate"><span class="pre">bool</span></code>.
+Vrsti red operatorjev je enak kot v matematiki, a je priporočljivo uporabljati
+oklepaje. Primer:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">false</span><span class="p">;</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">2.3</span><span class="p">;</span>
+<span class="kt">bool</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="o">!</span><span class="n">c</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="seznami">
+<h2>Seznami<a class="headerlink" href="#seznami" title="Link to this heading">¶</a></h2>
+<p>V C++u imamo tri vrste sezamov, ki so podobni Pythonovim, eni so stari C
+seznami, in dvoji novi C++ seznami. Starih C seznamov ne bomo uporabljali, ker
+imajo novejši C++ seznami boljšo funkcionalnost in primerljivo hitrost.
+C++ seznami se delijo na sezname fiksne dolžine in sezname spremenljive
+dolžine. Seznamu fiksne dolžine moramo že na začetku povedati, kako dolg je, in
+to je nespremenljivo, zaradi česar so tudi hitrejši. Seznami spremenljive
+dolžine zelo podobni Pythonovim in mi jih bomo uporabljali vedno, ko bomo
+potrebovali seznam, saj so zanemarljivo počasnejši od fiksnih. Seznami fiksne
+dolžine so definirani v knjižnici <code class="docutils literal notranslate"><span class="pre">array</span></code>, spremenljive dolžine pa v knjižnici
+<code class="docutils literal notranslate"><span class="pre">vector</span></code>. Za delo s seznami je treba to knjižnico seveda <code class="docutils literal notranslate"><span class="pre">#include</span></code>-ati.</p>
+<p>Vektor (rekli mu bomo tudi kar array, seznam, tabela) definiramo s
+<code class="docutils literal notranslate"><span class="pre">vector&lt;tip&gt;</span> <span class="pre">ime;</span></code>, kjer je <code class="docutils literal notranslate"><span class="pre">tip</span></code> tip elementov, ki so v vektorju.
+Vektorja ne mešati z matematičnim 3D vektorjem, ta vektor si predstavljajte kot
+seznam, ki nima veze s puščicami iz matematike.
+Vsi elementi v seznamu morajo biti istega tipa. Sedaj smo definirali prazen
+seznam <code class="docutils literal notranslate"><span class="pre">ime</span></code>. Vektor lahko naredimo še na veliko drugih načinov:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;vector&gt;</span>
+
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w">                          </span><span class="c1">// prazen</span>
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">b</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="mi">-12</span><span class="p">,</span><span class="w"> </span><span class="mi">44</span><span class="p">});</span><span class="w">   </span><span class="c1">// naštejemo elemente</span>
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">c</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w">                   </span><span class="c1">// 10 štiric</span>
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">d</span><span class="p">(</span><span class="n">b</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="o">+</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">.</span><span class="n">end</span><span class="p">()</span><span class="mi">-1</span><span class="p">);</span><span class="w">  </span><span class="c1">// [3, 8, -12]</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<section id="dostopanje-in-spreminjanje-elementov">
+<h3>Dostopanje in spreminjanje elementov<a class="headerlink" href="#dostopanje-in-spreminjanje-elementov" title="Link to this heading">¶</a></h3>
+<p>Vektor podpira operator <code class="docutils literal notranslate"><span class="pre">[]</span></code>, s katerim dostopamo in spreminjamo element na
+določenem indeksu:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">b</span><span class="p">({</span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span><span class="w"> </span><span class="mi">-12</span><span class="p">,</span><span class="w"> </span><span class="mi">44</span><span class="p">});</span>
+<span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39; &#39;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="c1">// izpiše 7 3</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Če v C++-u dostopamo do elementa čez dolžino seznama, se dogajajo čudne reči.
+Lahko se ne zagodi nič in preberemo neko vrednost, ki bo neka solata, ki je
+na naslednjem mestu v ramu, lahko pa se naš program sesuje na zanimive
+načine, npr. s sporočilom <code class="docutils literal notranslate"><span class="pre">segmentation</span> <span class="pre">fault</span></code>. Ta sporočila niso tako
+prijazna in lepa kot v Pythonu, a so posledica tega, da vektor ne preverja,
+sli dostopate izven njega in poskuša to pač naresti, če posegate v spomin, ki
+ni njegov, pa sistem ubije vaš program, zato recimo ne dobite podatka o tem,
+koliko ste šli čez in v kateri vrstici kode.</p>
+</div>
+</section>
+<section id="iteratorji">
+<span id="iteratorjiuvod"></span><h3>Iteratorji<a class="headerlink" href="#iteratorji" title="Link to this heading">¶</a></h3>
+<p>Iterator je objekt, ki vsebuje podatek o svoji poziciji v neki zbirki. Na nek
+način je podoben indeksu. Iteratorji so mnogo bolj uporabni kot vrednosti v
+zbirki same. Poglejmo si to na primeru indeksov. V seznamu najdemo vrednost 5.
+Kaj na ta vrednost pove? Nič prav dosti, ali vemo katera je naslednja, katera
+je prejšnja, ali smo na začetku? Če pa poznamo <em>indeks</em> vrednosti, recimo
+vrednost 5 je na mestu 2, potem na vprašanja lažje odgovorimo. Iteratorji so
+torej neke vrste objekti, ki hranijo pozicijo v zbirki in lahko dostopajo do
+vrednosti na tem mestu, gredo na naslednje mesto, preverijo ali smo na koncu …
+Poleg tega so po tipu različni od števil, kar omogoča manj napak, saj nas
+compiler na morebitno neujemanje tipov vedno opozori.</p>
+<p>Pomembne operacije ki jih lahko počnemo z iteratorji (ne vsemi, nekateri ne
+podpirajo vsega tega) so: dobivanje vrednosti, povečevanje in zmanjševanje,
+povečevanje in zmanjševanje za dano število, računanje razlike med dvema
+iteratorjema (razdalje). Seveda jih lahko tudi primerjamo. Pridobivanju
+vrednosti iz iteratorja se reče <em>dereferenciranje</em>.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">({</span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">-2</span><span class="p">,</span><span class="w"> </span><span class="mi">11</span><span class="p">});</span><span class="w">      </span><span class="c1">// tip iteratorja po zbirki je &#39;zbirka::iterator&#39;</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w">   </span><span class="c1">// .begin() vrne iterator, ki kaže na začetek zbirke</span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">it</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w">                    </span><span class="c1">// vrednost dobimo z operatorjem *</span>
+<span class="o">++</span><span class="n">it</span><span class="p">;</span><span class="w">                                   </span><span class="c1">// povečamo za 1</span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">it</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="n">it</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w">                                </span><span class="c1">// povečamo za 3</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">it</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">end</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">                </span><span class="c1">// se izpiše</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;konec!&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w">           </span><span class="c1">// .end() vrne iteartor, ki kaže čez konec vektorja</span>
+<span class="p">}</span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">end</span><span class="p">()</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w">    </span><span class="c1">// to je zato da a.end() - a.begin() vrne dolžino</span>
+</pre></div>
+</div>
+<p>Iteratorjev ali seznamov samih se ne da izpisati, seznam lahko izpišete s for
+zanko, iterator pa lahko izpišete kot številski indeks tako, da izpišete <code class="docutils literal notranslate"><span class="pre">it</span> <span class="pre">-</span>
+<span class="pre">a.begin()</span></code>.
+Napaka, ki jo prevajalnik javi pri tem je podobna temu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">cpp</span><span class="p">:</span><span class="mi">8</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span> <span class="n">error</span><span class="p">:</span> <span class="n">invalid</span> <span class="n">operands</span> <span class="n">to</span> <span class="n">binary</span> <span class="n">expression</span>
+        <span class="p">(</span><span class="s1">&#39;ostream&#39;</span> <span class="p">(</span><span class="n">aka</span> <span class="s1">&#39;basic_ostream&lt;char&gt;&#39;</span><span class="p">)</span> <span class="ow">and</span> <span class="s1">&#39;vector&lt;int&gt;&#39;</span><span class="p">)</span>
+    <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">a</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+    <span class="o">~~~~</span> <span class="o">^</span>  <span class="o">~</span>
+<span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span><span class="o">/../</span><span class="n">lib64</span><span class="o">/</span><span class="n">gcc</span><span class="o">/</span><span class="n">x86_64</span><span class="o">-</span><span class="n">unknown</span><span class="o">-</span><span class="n">linux</span><span class="o">-</span><span class="n">gnu</span><span class="o">/</span><span class="mf">4.9.1</span><span class="o">/../../../../</span><span class="n">include</span><span class="o">/</span><span class="n">c</span><span class="o">++/</span><span class="mf">4.9.1</span><span class="o">/</span><span class="n">ostream</span><span class="p">:</span><span class="mi">245</span><span class="p">:</span><span class="mi">7</span><span class="p">:</span>
+<span class="n">note</span><span class="p">:</span> <span class="n">candidate</span> <span class="n">function</span> <span class="ow">not</span> <span class="n">viable</span><span class="p">:</span> <span class="n">no</span> <span class="n">known</span> <span class="n">conversion</span> <span class="kn">from</span>
+<span class="w">        </span><span class="s1">&#39;vector&lt;int&gt;&#39;</span> <span class="n">to</span> <span class="s1">&#39;int&#39;</span> <span class="k">for</span> <span class="mi">1</span><span class="n">st</span> <span class="n">argument</span>
+    <span class="n">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="nb">int</span> <span class="n">__p</span><span class="p">)</span>
+    <span class="o">^</span>
+</pre></div>
+</div>
+<p>To se je potrebno malo naučiti brati. Prvi vrstici povesta napako: v <code class="docutils literal notranslate"><span class="pre">ostream</span></code>
+(= output stream = <code class="docutils literal notranslate"><span class="pre">cout</span></code>) ste poskusili zatlačiti <code class="docutils literal notranslate"><span class="pre">vector&lt;int&gt;</span></code>, kar se ne da.
+Ostalih 80 <code class="docutils literal notranslate"><span class="pre">info</span></code> napak vam pove kaj pa se v <code class="docutils literal notranslate"><span class="pre">ostream</span></code> da zatlačiti, npr.
+<code class="docutils literal notranslate"><span class="pre">int</span></code>.</p>
+</section>
+<section id="spreminjanje-vektorja">
+<h3>Spreminjanje vektorja<a class="headerlink" href="#spreminjanje-vektorja" title="Link to this heading">¶</a></h3>
+<p>Tu so funkcije s katerimi lahko spreminjamo vektor. Pred vsako funkcijo piše
+tip, ki ga vrača, pišejo pa tudi tipi parametrov. Funkcije so poenostavljene za
+lažje razumevanje. <code class="docutils literal notranslate"><span class="pre">T</span></code> pomeni katerikoli tip se pač odločimo, da bo naš
+vektor vseboval. <code class="docutils literal notranslate"><span class="pre">void</span></code> pomeni, da funkcija ne vrača ničesar.</p>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I0E6vector">
+<span id="_CPPv3I0E6vector"></span><span id="_CPPv2I0E6vector"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">vector</span></span></span><a class="headerlink" href="#_CPPv4I0E6vector" title="Link to this definition">¶</a><br /></dt>
+<dd><dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6vector5beginEv">
+<span id="_CPPv3N6vector5beginEv"></span><span id="_CPPv2N6vector5beginEv"></span><span id="vector::begin"></span><span class="n"><span class="pre">iterator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">begin</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6vector5beginEv" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Vrne iterator, ki kaže na prvi element vektorja.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6vector3endEv">
+<span id="_CPPv3N6vector3endEv"></span><span id="_CPPv2N6vector3endEv"></span><span id="vector::end"></span><span class="n"><span class="pre">iterator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">end</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6vector3endEv" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Vrne iterator, ki kaže čez zadnji element vektorja.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6vector4sizeEv">
+<span id="_CPPv3N6vector4sizeEv"></span><span id="_CPPv2N6vector4sizeEv"></span><span id="vector::size"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">size</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6vector4sizeEv" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Vrne velikost (dolžino) vektorja.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6vector6insertE8iterator1T">
+<span id="_CPPv3N6vector6insertE8iterator1T"></span><span id="_CPPv2N6vector6insertE8iterator1T"></span><span id="vector::insert__iterator.T"></span><span class="n"><span class="pre">iterator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">insert</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">iterator</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span>, <a class="reference internal" href="#_CPPv4I0E6vector" title="vector::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">vrednost</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6vector6insertE8iterator1T" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Vstavi element na mesto pred iterator <code class="docutils literal notranslate"><span class="pre">pos</span></code> in vrne iterator na
+novo vstavljeni element. Vsi elementi za tem se premaknejo za eno mesto
+nazaj, tako da ta operacija lahko traja dolgo.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6vector5eraseE8iterator">
+<span id="_CPPv3N6vector5eraseE8iterator"></span><span id="_CPPv2N6vector5eraseE8iterator"></span><span id="vector::erase__iterator"></span><span class="n"><span class="pre">iterator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">erase</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">iterator</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6vector5eraseE8iterator" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Izbriše element, na katerega kaže <code class="docutils literal notranslate"><span class="pre">pos</span></code>. Vektor je za en element krajši,
+vsi elementi za izbrisanim se premaknejo eno mesto naprej, tako da ta
+operacija lahko traja dolgo.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6vector9push_backE1T">
+<span id="_CPPv3N6vector9push_backE1T"></span><span id="_CPPv2N6vector9push_backE1T"></span><span id="vector::push_back__T"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">push_back</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0E6vector" title="vector::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">vrednost</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6vector9push_backE1T" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Doda <code class="docutils literal notranslate"><span class="pre">vrednost</span></code> na konec vektorja.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6vector8pop_backEv">
+<span id="_CPPv3N6vector8pop_backEv"></span><span id="_CPPv2N6vector8pop_backEv"></span><span id="vector::pop_back"></span><span class="kt"><span class="pre">void</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">pop_back</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6vector8pop_backEv" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Zbriše zadnji element iz vektorja.</p>
+</dd></dl>
+
+</dd></dl>
+
+<p>Primer:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">});</span><span class="w">                                 </span><span class="c1">// [1, 2, 3]</span>
+<span class="n">a</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">4</span><span class="p">);</span><span class="w">                                           </span><span class="c1">// [1, 2, 3, 4]</span>
+<span class="n">a</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w">                                           </span><span class="c1">// [1, 2, 3, 4, 5]</span>
+<span class="n">a</span><span class="p">.</span><span class="n">pop_back</span><span class="p">();</span><span class="w">                                             </span><span class="c1">// [1, 2, 3, 4]</span>
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">begin</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">);</span><span class="w">  </span><span class="c1">// [1, 100, 2, 3, 4]</span>
+<span class="n">a</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="n">it</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w">                                          </span><span class="c1">// [1, 100, 2, 4]</span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w">                                 </span><span class="c1">// izpiše 4</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="nizi-znakov">
+<h2>Nizi znakov<a class="headerlink" href="#nizi-znakov" title="Link to this heading">¶</a></h2>
+<p>V C-ju so nizi natanko seznami znakov. To je zelo bedno, zato bomo uporabljali
+C++ stringe. Ti so definirani v headerju <code class="docutils literal notranslate"><span class="pre">string</span></code>, tako da je treba za delo s
+stringi napisati <code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&lt;string&gt;</span></code>.</p>
+<p>Stringi se obnašajo v C++-u kot seznami znakov, to pomeni da jih lahko
+spreminjamo, brišemo in dodajamo znake, hkrati pa imajo veliko metod, namenjene
+delu z njimi. Dobesedni stringi (to so dejanske besede v narekovajih (npr.
+<code class="docutils literal notranslate"><span class="pre">&quot;beseda&quot;</span></code>) v kodi) se
+interpretirajo kot stari C stringi, a se implicitno pretvorijo v C++ stringe.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>C++ pozna močno razliko med enojnimi in dvojnimi narekovaji: <cite>“”</cite> označujejo
+<code class="docutils literal notranslate"><span class="pre">string</span></code>, med tem ko <cite>‘’</cite> označujejo <code class="docutils literal notranslate"><span class="pre">char</span></code> (ki se lahko implicitno pretvori tudi v
+string). Napisati npr. <code class="docutils literal notranslate"><span class="pre">'asdf'</span></code> bo compile error, seveda pa je popolnoma
+veljavno napisati <code class="docutils literal notranslate"><span class="pre">'\n'</span></code>, ki je v resnici število znaka za novo vrstico v
+ASCII tabeli.</p>
+</div>
+<p>Stringi so lahko sestavljeni samo iz ASCII znakov, posebne znake kot vedno
+vnašamo z <code class="docutils literal notranslate"><span class="pre">\</span></code>, npr. <code class="docutils literal notranslate"><span class="pre">\n</span></code> ali <code class="docutils literal notranslate"><span class="pre">\\</span></code>.</p>
+<p>Stringe se lahko izpiše s <code class="docutils literal notranslate"><span class="pre">cout</span></code> in
+preber s <code class="docutils literal notranslate"><span class="pre">cin</span></code>. Cin prebere vse do prvega whitespacea. Če želimo prebrati celo
+vrstico, uporabimo funkcijo <code class="docutils literal notranslate"><span class="pre">getline</span></code>.</p>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv46gelineR7istreamR6string">
+<span id="_CPPv36gelineR7istreamR6string"></span><span id="_CPPv26gelineR7istreamR6string"></span><span id="geline__istreamR.stringR"></span><span class="n"><span class="pre">istream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="sig-name descname"><span class="n"><span class="pre">geline</span></span></span><span class="sig-paren">(</span><span class="n"><span class="pre">istream</span></span><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">is</span></span>, <a class="reference internal" href="#_CPPv46string" title="string"><span class="n"><span class="pre">string</span></span></a><span class="w"> </span><span class="p"><span class="pre">&amp;</span></span><span class="n sig-param"><span class="pre">str</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv46gelineR7istreamR6string" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Iz input streama <code class="docutils literal notranslate"><span class="pre">istream</span></code> (recimo cin) prebere eno vrstico in jo shrani v niz <code class="docutils literal notranslate"><span class="pre">str</span></code>.</p>
+</dd></dl>
+
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv46string">
+<span id="_CPPv36string"></span><span id="_CPPv26string"></span><span id="string"></span><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">string</span></span></span><a class="headerlink" href="#_CPPv46string" title="Link to this definition">¶</a><br /></dt>
+<dd><dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6string6lengthEv">
+<span id="_CPPv3N6string6lengthEv"></span><span id="_CPPv2N6string6lengthEv"></span><span id="string::length"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">length</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6string6lengthEv" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Vrne dolžino niza.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6string6insertEi6string">
+<span id="_CPPv3N6string6insertEi6string"></span><span id="_CPPv2N6string6insertEi6string"></span><span id="string::insert__i.string"></span><span class="sig-name descname"><span class="n"><span class="pre">insert</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos</span></span>, <a class="reference internal" href="#_CPPv46string" title="string"><span class="n"><span class="pre">string</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">niz</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6string6insertEi6string" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Vstavi <code class="docutils literal notranslate"><span class="pre">niz</span></code> pred pozicijo <code class="docutils literal notranslate"><span class="pre">pos</span></code>.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6string4findE6string">
+<span id="_CPPv3N6string4findE6string"></span><span id="_CPPv2N6string4findE6string"></span><span id="string::find__string"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">find</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv46string" title="string"><span class="n"><span class="pre">string</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">niz</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6string4findE6string" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Vrne indeks, kjer se začne <code class="docutils literal notranslate"><span class="pre">podniz</span></code> oz <code class="docutils literal notranslate"><span class="pre">str::npos</span></code>, če <code class="docutils literal notranslate"><span class="pre">podniz</span></code> ne
+obstaja.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N6string6substrEii">
+<span id="_CPPv3N6string6substrEii"></span><span id="_CPPv2N6string6substrEii"></span><span id="string::substr__i.i"></span><a class="reference internal" href="#_CPPv46string" title="string"><span class="n"><span class="pre">string</span></span></a><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">substr</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos1</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="m"><span class="pre">0</span></span>, <span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">pos2</span></span><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><a class="reference internal" href="#_CPPv46string" title="string"><span class="n"><span class="pre">string</span></span></a><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">npos</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N6string6substrEii" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Vrne podniz od <code class="docutils literal notranslate"><span class="pre">pos1</span></code> do <code class="docutils literal notranslate"><span class="pre">pos2</span></code>.</p>
+</dd></dl>
+
+</dd></dl>
+
+<p>String ima res veliko metod, popolno dokumentacijo najdete <a class="reference external" href="http://www.cplusplus.com/reference/string/string/">tukaj</a>.</p>
+<p>Primer:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">string</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;Danes je lep dan in Janezu se kot vedno ne da v sluzbo&quot;</span><span class="p">.</span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">indeks</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="s">&quot;da&quot;</span><span class="p">);</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">indeks</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">string</span><span class="o">::</span><span class="n">npos</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">string</span><span class="w"> </span><span class="n">konec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">substr</span><span class="p">(</span><span class="n">indeks</span><span class="p">);</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">kones</span><span class="p">.</span><span class="n">length</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="mnozice">
+<h2>Množice<a class="headerlink" href="#mnozice" title="Link to this heading">¶</a></h2>
+<p>Množice so podobne matematičnim množicam, elementi so različni in unikatni.
+Posebnost v C++-u je, da so elementi tudi vedno sortirani. Množice ne podpirajo
+dostopa pri danem indeksu, podpirajo pa hitro preverjanje ali je nek element v
+množic ter hitro dodajanje in brisanje glede na vrednost. Množice so tako kot
+seznami iterabilne (seveda z iteratorji, saj ne moremo narediti <code class="docutils literal notranslate"><span class="pre">set[x]</span></code>)</p>
+<p>Množice so definirane v headerju <code class="docutils literal notranslate"><span class="pre">set</span></code>, tako da je treba za delo z množicami
+na začetek datoteke dodati <code class="docutils literal notranslate"><span class="pre">#include</span> <span class="pre">&lt;set&gt;</span></code>. Kot pri vektorju je tip množice
+<code class="docutils literal notranslate"><span class="pre">set&lt;T&gt;</span></code>, kjer je <code class="docutils literal notranslate"><span class="pre">T</span></code> izbrani tip, ki definira operator <code class="docutils literal notranslate"><span class="pre">&lt;</span></code>.</p>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I0E3set">
+<span id="_CPPv3I0E3set"></span><span id="_CPPv2I0E3set"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">T</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">set</span></span></span><a class="headerlink" href="#_CPPv4I0E3set" title="Link to this definition">¶</a><br /></dt>
+<dd><dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3set4sizeEv">
+<span id="_CPPv3N3set4sizeEv"></span><span id="_CPPv2N3set4sizeEv"></span><span id="set::size"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">size</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3set4sizeEv" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Vrne velikost množice.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3set6insertE1T">
+<span id="_CPPv3N3set6insertE1T"></span><span id="_CPPv2N3set6insertE1T"></span><span id="set::insert__T"></span><span class="n"><span class="pre">iterator</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">insert</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0E3set" title="set::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">vrednost</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3set6insertE1T" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Vstavi vrednost <code class="docutils literal notranslate"><span class="pre">vrednost</span></code> v množico, če ta še ne obstaja. Vrne iterator
+na vstavljeno vrednost.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3set5eraseE1T">
+<span id="_CPPv3N3set5eraseE1T"></span><span id="_CPPv2N3set5eraseE1T"></span><span id="set::erase__T"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">erase</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I0E3set" title="set::T"><span class="n"><span class="pre">T</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">vrednost</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3set5eraseE1T" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Odstrani vrednost <code class="docutils literal notranslate"><span class="pre">vrednost</span></code> iz množice. Če vrednost ne obstaja v
+množici, se ne zgodi nič. Vrne število izbrisanih vrednosti, torej 0 ali 1.</p>
+</dd></dl>
+
+</dd></dl>
+
+<p>Primer:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">({</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">});</span><span class="w">            </span><span class="c1">// {1, 2, 3}</span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">size</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w">                  </span><span class="c1">// 3</span>
+<span class="n">a</span><span class="p">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span><span class="w">                               </span><span class="c1">// {1, 2, 3, 5}</span>
+<span class="n">a</span><span class="p">.</span><span class="n">erase</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span><span class="w">                                </span><span class="c1">// {1, 2, 5}</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">                           </span><span class="c1">// true</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;1 is in the set&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w">     </span><span class="c1">// se izpiše</span>
+<span class="p">}</span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Vsebina:&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">set</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">a</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">it</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="o">*</span><span class="n">it</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span><span class="w">                   </span><span class="c1">// {1, 2, 5}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Obstaja tudi ponavadi hitrejša in neurejena verzija množic z enakimi
+metodami, ki se imenuje <code class="docutils literal notranslate"><span class="pre">unordered_set</span></code>.</p>
+</section>
+<section id="asociativni-seznami">
+<h2>Asociativni seznami<a class="headerlink" href="#asociativni-seznami" title="Link to this heading">¶</a></h2>
+<p>To je struktura podobna Pythonovim slovarjem (v bistvu še bolj <code class="docutils literal notranslate"><span class="pre">deafultdict</span></code>),
+a je kot vse ostale podatkovne strukture homogena. Podatke, vrednosti, ki so
+enega tipa, imamo shranjene pod ključi, ki so nekega drugega tipa. Ta dva tipa
+bomo klicali <code class="docutils literal notranslate"><span class="pre">K</span></code> in <code class="docutils literal notranslate"><span class="pre">V</span></code>.  Asociativni seznami (mapi), so definirani v
+headerju <code class="docutils literal notranslate"><span class="pre">map</span></code> in za njihovo uporabo moramo na začetek napisati <code class="docutils literal notranslate"><span class="pre">#include</span>
+<span class="pre">&lt;map&gt;</span></code>. Ključi so enolični, vrednosti se pri novem ključu ustvarijo
+avtomatično. V resnici so vrednosti v mapu pari, kar pomeni, da lahko do
+ključev in vrednosti dostopamo kot do prvega in do drugega elementa para.</p>
+<section id="pari">
+<h3>Pari<a class="headerlink" href="#pari" title="Link to this heading">¶</a></h3>
+<p>C++ definira pare, to so objekt, ki lahko držijo dva različna tipa.
+Definira se jih s kot <code class="docutils literal notranslate"><span class="pre">pair&lt;A,</span> <span class="pre">B&gt;</span> <span class="pre">par;</span></code>, kjer sta <code class="docutils literal notranslate"><span class="pre">A</span></code> in <code class="docutils literal notranslate"><span class="pre">B</span></code> tipa
+elementov v paru. Do elementov dostopamo z atributoma <code class="docutils literal notranslate"><span class="pre">.first</span></code> in
+<code class="docutils literal notranslate"><span class="pre">.second</span></code>. Par lahko tudi naredimo s funkcijo <code class="docutils literal notranslate"><span class="pre">make_pair</span></code>.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">int</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="o">&gt;</span><span class="w"> </span><span class="n">par</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">make_pair</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;asdfasdf&quot;</span><span class="p">);</span><span class="w">  </span><span class="c1">// lahko tudi = {12, &quot;asdfasdf&quot;}</span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;(&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">par</span><span class="p">.</span><span class="n">first</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;, &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">par</span><span class="p">.</span><span class="n">second</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;)</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">;</span>
+</pre></div>
+</div>
+</section>
+<section id="uporaba-asociativnih-seznamov">
+<h3>Uporaba asociativnih seznamov<a class="headerlink" href="#uporaba-asociativnih-seznamov" title="Link to this heading">¶</a></h3>
+<p>Mapi podpirajo dodajanje in dostopanje do elementov z uporabo operatorja
+<code class="docutils literal notranslate"><span class="pre">[]</span></code>.</p>
+<dl class="cpp class">
+<dt class="sig sig-object cpp" id="_CPPv4I00E3map">
+<span id="_CPPv3I00E3map"></span><span id="_CPPv2I00E3map"></span><span class="k"><span class="pre">template</span></span><span class="p"><span class="pre">&lt;</span></span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">K</span></span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="k"><span class="pre">typename</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">V</span></span></span><span class="p"><span class="pre">&gt;</span></span><br /><span class="k"><span class="pre">class</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">map</span></span></span><a class="headerlink" href="#_CPPv4I00E3map" title="Link to this definition">¶</a><br /></dt>
+<dd><dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3map4sizeEv">
+<span id="_CPPv3N3map4sizeEv"></span><span id="_CPPv2N3map4sizeEv"></span><span id="map::size"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">size</span></span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3map4sizeEv" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Vrne število elementov v mapu.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3map5eraseE1K">
+<span id="_CPPv3N3map5eraseE1K"></span><span id="_CPPv2N3map5eraseE1K"></span><span id="map::erase__K"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">erase</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I00E3map" title="map::K"><span class="n"><span class="pre">K</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">kljuc</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3map5eraseE1K" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Zbriše element s ključem <code class="docutils literal notranslate"><span class="pre">ključ</span></code>, če obstaja in vrne število izbrisanih
+argumentov.</p>
+</dd></dl>
+
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N3map4findE1K">
+<span id="_CPPv3N3map4findE1K"></span><span id="_CPPv2N3map4findE1K"></span><span id="map::find__K"></span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">find</span></span></span><span class="sig-paren">(</span><a class="reference internal" href="#_CPPv4I00E3map" title="map::K"><span class="n"><span class="pre">K</span></span></a><span class="w"> </span><span class="n sig-param"><span class="pre">kljuc</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N3map4findE1K" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Vrne število elementov s ključem <code class="docutils literal notranslate"><span class="pre">kljuc</span></code>, torej 0 ali 1.</p>
+</dd></dl>
+
+</dd></dl>
+
+<p>Primer uporabe:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">map</span><span class="o">&lt;</span><span class="kt">char</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">counter</span><span class="p">;</span>
+<span class="n">string</span><span class="w"> </span><span class="n">znaki</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;abeceda&quot;</span><span class="p">;</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">znaki</span><span class="p">.</span><span class="n">length</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">counter</span><span class="p">[</span><span class="n">znaki</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="o">++</span><span class="p">;</span><span class="w">    </span><span class="c1">// pri danem znaku povečamo count</span>
+<span class="p">}</span>
+<span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">map</span><span class="o">&lt;</span><span class="kt">char</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">counter</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">counter</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">it</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">it</span><span class="o">-&gt;</span><span class="n">first</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; =&gt; &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">it</span><span class="o">-&gt;</span><span class="n">second</span><span class="w">  </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c1">// Izpis:</span>
+<span class="c1">// a =&gt; 2</span>
+<span class="c1">// b =&gt; 1</span>
+<span class="c1">// c =&gt; 1</span>
+<span class="c1">// d =&gt; 1</span>
+<span class="c1">// e =&gt; 2</span>
+</pre></div>
+</div>
+<p>Tukaj bi morali po vseh pravilih do sedaj napisati <code class="docutils literal notranslate"><span class="pre">(*it).first</span></code> (torej,
+najprej dobimo vrednost, in potem dobimo <code class="docutils literal notranslate"><span class="pre">first</span></code> te vrednosti, toda C++ to
+poenostavi in definira operator <code class="docutils literal notranslate"><span class="pre">x-&gt;y</span></code>, ki pomeni natanko <code class="docutils literal notranslate"><span class="pre">(*x).y</span></code>.</p>
+</section>
+</section>
+<section id="dodatek-o-vseh-zbirkah">
+<h2>Dodatek o vseh zbirkah<a class="headerlink" href="#dodatek-o-vseh-zbirkah" title="Link to this heading">¶</a></h2>
+<p>C++-ove podatkovne strukture pokrivajo veliko širše področje kot opisano tukaj,
+obstajajo še strukture <code class="docutils literal notranslate"><span class="pre">deque</span></code>, <code class="docutils literal notranslate"><span class="pre">queue</span></code>, <code class="docutils literal notranslate"><span class="pre">priority_queue</span></code>, <code class="docutils literal notranslate"><span class="pre">stack</span></code>,
+<code class="docutils literal notranslate"><span class="pre">bitset</span></code>, <code class="docutils literal notranslate"><span class="pre">multiset</span></code>, <code class="docutils literal notranslate"><span class="pre">multimap</span></code>, <code class="docutils literal notranslate"><span class="pre">list</span></code>, ki imajo druge prednosti in
+namene uporabe. Ko izbirate svojo strukturo, pomislite na to kaj od nje
+potrebujete, kakšne operacije boste izvajali in kakšne elemente boste
+shranjevali.</p>
+<section id="range-for-zanka">
+<span id="range-for"></span><h3>Range for zanka<a class="headerlink" href="#range-for-zanka" title="Link to this heading">¶</a></h3>
+<p>Za vsako zbirko, ki definira <code class="docutils literal notranslate"><span class="pre">.begin()</span></code> in <code class="docutils literal notranslate"><span class="pre">.end()</span></code> iteratorja, ki
+podpirata <code class="docutils literal notranslate"><span class="pre">++it</span></code>, <code class="docutils literal notranslate"><span class="pre">*it</span></code> in <code class="docutils literal notranslate"><span class="pre">!=</span></code>, se lahko uporablja <code class="docutils literal notranslate"><span class="pre">range</span> <span class="pre">for</span></code> zanko.
+Vse zbirke opisane zgoraj, te metode definirajo.</p>
+<p>Torej lahko za vektor <code class="docutils literal notranslate"><span class="pre">v</span></code>, če nas indeksi njegovih elementov ne zanimajo, ali
+pa morda naša zbirka sploh ne podpira dostopa po indeksih, namesto:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;::</span><span class="n">iterator</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">begin</span><span class="p">();</span><span class="w"> </span><span class="n">it</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="n">end</span><span class="p">();</span><span class="w"> </span><span class="o">++</span><span class="n">it</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// počni nekaj z *it</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>napišemo:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// počni nekaj z x</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Paziti je potrebno, da se v tem primeru ustvari kopija <code class="docutils literal notranslate"><span class="pre">x</span></code>, in da če <code class="docutils literal notranslate"><span class="pre">x</span></code>
+spremenimo, to nima vpliva na <code class="docutils literal notranslate"><span class="pre">v</span></code>. A je tudi to rešljivo. Zgornja verzija v
+nobenem primeru ni optimalna, če vrednosti ne želimo spreminjati, napišemo</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// počni nekaj z x</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>kar prepreči kopiranje <code class="docutils literal notranslate"><span class="pre">x</span></code>, saj je <code class="docutils literal notranslate"><span class="pre">x</span></code> dejanski objekt iz <code class="docutils literal notranslate"><span class="pre">v</span></code>. Če
+<code class="docutils literal notranslate"><span class="pre">const</span></code> izpustimo, lahko <code class="docutils literal notranslate"><span class="pre">x</span></code> tudi spreminjamo, kar bo spremenilo tudi
+elemente <code class="docutils literal notranslate"><span class="pre">v</span></code>. Več o referencah (to so tisti &amp; znaki) v poglavju
+<a class="reference internal" href="funkcije.html#funkcijecpp"><span class="std std-ref">Funkcije</span></a>. Tip <code class="docutils literal notranslate"><span class="pre">int</span></code> lahko nadomestimo tudi z <code class="docutils literal notranslate"><span class="pre">auto</span></code>, da nam ni
+potrebno pisati zelo dolgih tipov, pri čemer še vedno popolnoma veljavno
+uporabljamo npr. <code class="docutils literal notranslate"><span class="pre">auto&amp;</span> <span class="pre">x</span></code> z enakim pomenom kot prej.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="osnove.html" class="btn btn-neutral float-left" title="Osnove" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="enum.html" class="btn btn-neutral float-right" title="Enum" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014–2019, Natan Žabkar, Jure Slak, Maks Kolman, Ines Meršak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

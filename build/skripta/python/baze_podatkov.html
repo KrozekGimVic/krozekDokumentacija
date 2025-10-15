@@ -1,0 +1,260 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Podatkovne baze &mdash; Programerski krožek na Gimnaziji Vič 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=34b5f6bb" />
+
+  
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Tkinter" href="tkinter.html" />
+    <link rel="prev" title="Datoteke" href="datoteke.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Programerski krožek na Gimnaziji Vič
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../python.html">Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="osnove.html">Osnove</a></li>
+<li class="toctree-l2"><a class="reference internal" href="turtle.html">Želvja grafika</a></li>
+<li class="toctree-l2"><a class="reference internal" href="podatkovni_tipi.html">Podatkovni tipi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="funkcije_in_classi.html">Funkcije in razredi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datoteke.html">Datoteke</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Podatkovne baze</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#connect"><code class="docutils literal notranslate"><span class="pre">connect()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#Connection"><code class="docutils literal notranslate"><span class="pre">Connection</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Connection.cursor"><code class="docutils literal notranslate"><span class="pre">Connection.cursor()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Connection.close"><code class="docutils literal notranslate"><span class="pre">Connection.close()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#Cursor"><code class="docutils literal notranslate"><span class="pre">Cursor</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#Cursor.execute"><code class="docutils literal notranslate"><span class="pre">Cursor.execute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Cursor.executemany"><code class="docutils literal notranslate"><span class="pre">Cursor.executemany()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">Cursor.execute()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Cursor.fetchone"><code class="docutils literal notranslate"><span class="pre">Cursor.fetchone()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#Cursor.fetchall"><code class="docutils literal notranslate"><span class="pre">Cursor.fetchall()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="tkinter.html">Tkinter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="knjiznice.html">Nameščanje knjižnic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="knjiznice.html#python-3-programi-v-sublime-text">Python 3 programi v Sublime Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pygame.html">Pygame</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../python-vaje.html">Python vaje</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../c%2B%2B.html">C++</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../c%2B%2B-vaje.html">C++ vaje</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../sql.html">SQL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../git.html">Git</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../opengl.html">OpenGL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../razbijanje.html">Kriptografija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../autodoc/modules.html">Dokumentacija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lov-na-zaklad.html">Lov na zaklad</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Programerski krožek na Gimnaziji Vič</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../python.html">Python</a></li>
+      <li class="breadcrumb-item active">Podatkovne baze</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/skripta/python/baze_podatkov.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="podatkovne-baze">
+<h1>Podatkovne baze<a class="headerlink" href="#podatkovne-baze" title="Link to this heading">¶</a></h1>
+<p>Podatkovne baze so zanesljiv, skalabilen  in praktičen način, kako hraniti
+podatke, ki jih nek program potrebuje. V praksi so datoteka ali več datotek na
+disku (ali na več diskih), ki ni običajno berljiva, ampak jo lahko spreminjamo
+s posebnimi programskimi paketi za določen jezik. Veliko baz podatkov je
+zgrajeno na sistemih, ki podpirajo operacije v jezku SQL, to je jezik za delo s
+podatki shranjenimi v relacijskih podatkovnih bazah.</p>
+<p>Python ima za delo s podatkovnimi bazami modul <a class="reference external" href="https://docs.python.org/3.4/library/sqlite3.html">sqlite</a>, ki je eden izmed blj
+razširjenih implementacij podatkovnih baz, druge znane so še MySQL, PostgreSql, …</p>
+<p>Več o jeziku SQL in impementaciji SQLite si lahko preberete v poglavju
+<a class="reference internal" href="../sql/osnove.html#osnovesql"><span class="std std-ref">Osnove SQL</span></a>.</p>
+<p>Za uporabo modula na začetek programa napišemo <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">sqlite3</span></code>.
+Najprej se moramo vedno povezati z databazo, ki jo želimo uporabljati, to je
+datoteka, kjer imamo bazo shranjeno. Če te baze še ni, potem jo ustvari.
+Bazo lahko (za vajo) naredimo tudi kar v RAMu, tako da za datoteko damo
+argument <code class="docutils literal notranslate"><span class="pre">:memory:</span></code>.</p>
+<p>Ko imamo enkrat povezavo vzpostvaljeno, si naredimo kazalec na našo bazo, in
+prek njega pošiljamo poizvedbe (querye) in dobivamo podatke. Primer:</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="connect">
+<span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#connect" title="Link to this definition">¶</a></dt>
+<dd><p>Povežemo se z bazo podatkov shranjeno v datoteki <code class="docutils literal notranslate"><span class="pre">file</span></code>. Vrne
+<code class="docutils literal notranslate"><span class="pre">Connection</span></code> objekt.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Connection">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Connection</span></span><a class="headerlink" href="#Connection" title="Link to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="Connection.cursor">
+<span class="sig-name descname"><span class="pre">cursor</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Connection.cursor" title="Link to this definition">¶</a></dt>
+<dd><p>Vrne kazalec na bazo podatkov s katerim lahko izvršimo ukaze.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Connection.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Connection.close" title="Link to this definition">¶</a></dt>
+<dd><p>Zapre povezavo, po tem branje in pisanje v bazo ni več mogoče.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="Cursor">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">Cursor</span></span><a class="headerlink" href="#Cursor" title="Link to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="Cursor.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vars</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Cursor.execute" title="Link to this definition">¶</a></dt>
+<dd><p>Izvede query <code class="docutils literal notranslate"><span class="pre">query</span></code> na bazi, kjer <code class="docutils literal notranslate"><span class="pre">?</span></code> v queryu zamena s spremenljivkami iz tupla <code class="docutils literal notranslate"><span class="pre">vars</span></code>, v takem vrtnem redu.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Cursor.executemany">
+<span class="sig-name descname"><span class="pre">executemany</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vars_iterable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#Cursor.executemany" title="Link to this definition">¶</a></dt>
+<dd><p>Izvede query <code class="docutils literal notranslate"><span class="pre">query</span></code> na bazi, kjer <code class="docutils literal notranslate"><span class="pre">?</span></code> v queryu zamena s
+spremenljivkami iz seznama tuplov <code class="docutils literal notranslate"><span class="pre">vars</span></code>, v takem vrtnem redu, za vsak tuple
+svoj query.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
+<dd><p>Izvede query <code class="docutils literal notranslate"><span class="pre">query</span></code> na bazi.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Cursor.fetchone">
+<span class="sig-name descname"><span class="pre">fetchone</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Cursor.fetchone" title="Link to this definition">¶</a></dt>
+<dd><p>Prebere in vrne en rezultat <code class="docutils literal notranslate"><span class="pre">Row</span></code> zadnjega querya.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="Cursor.fetchall">
+<span class="sig-name descname"><span class="pre">fetchall</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Cursor.fetchall" title="Link to this definition">¶</a></dt>
+<dd><p>Prebere in vrne vse rezulate zadnjega querya. Pozor, lahko jih je veliko!</p>
+</dd></dl>
+
+</dd></dl>
+
+<p>SQLite nam rezultate vrne v razredu <code class="docutils literal notranslate"><span class="pre">Row</span></code>, ki se obnaša podobno kot <code class="docutils literal notranslate"><span class="pre">dict</span></code>
+ali <code class="docutils literal notranslate"><span class="pre">tuple</span></code>, podpira iteracijo, indekse ipd …</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sqlite3</span>
+<span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;example.db&#39;</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM ucenci WHERE ime=?&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;Janez&#39;</span><span class="p">,))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">fetchone</span><span class="p">())</span>
+
+<span class="c1"># Vstavimo več reči na enkrat.</span>
+<span class="n">novi_ucenci</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;1995-03-28&#39;</span><span class="p">,</span> <span class="s1">&#39;Janez&#39;</span><span class="p">,</span> <span class="s1">&#39;Novak&#39;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mf">5.00</span><span class="p">),</span>
+               <span class="p">(</span><span class="s1">&#39;1995-04-05&#39;</span><span class="p">,</span> <span class="s1">&#39;Mojca&#39;</span><span class="p">,</span> <span class="s1">&#39;Kranjc&#39;</span><span class="p">,</span> <span class="mi">1000</span><span class="p">,</span> <span class="mf">2.47</span><span class="p">),</span>
+               <span class="p">(</span><span class="s1">&#39;1995-09-06&#39;</span><span class="p">,</span> <span class="s1">&#39;Lara&#39;</span><span class="p">,</span> <span class="s1">&#39;Jazbec&#39;</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mf">3.97</span><span class="p">)]</span>
+<span class="n">c</span><span class="o">.</span><span class="n">executemany</span><span class="p">(</span><span class="s1">&#39;INSERT INTO ucenci VALUES (?,?,?,?,?)&#39;</span><span class="p">,</span> <span class="n">novi_ucenci</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Dodaj code injection warning.</p>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="datoteke.html" class="btn btn-neutral float-left" title="Datoteke" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tkinter.html" class="btn btn-neutral float-right" title="Tkinter" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014–2019, Natan Žabkar, Jure Slak, Maks Kolman, Ines Meršak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,247 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tutorialsPythonBasic.verybasic.strings.basic_string_manipulation module &mdash; Programerski krožek na Gimnaziji Vič 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=34b5f6bb" />
+
+  
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="tutorialsPythonBasic.verybasic.hello_world module" href="tutorialsPythonBasic.verybasic.hello_world.html" />
+    <link rel="prev" title="tutorialsPythonBasic.verybasic.strings package" href="tutorialsPythonBasic.verybasic.strings.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Programerski krožek na Gimnaziji Vič
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../python.html">Python</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../python-vaje.html">Python vaje</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../c%2B%2B.html">C++</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../c%2B%2B-vaje.html">C++ vaje</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../sql.html">SQL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../git.html">Git</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../opengl.html">OpenGL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../razbijanje.html">Kriptografija</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Dokumentacija</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="tutorialsPythonBasic.html">tutorialsPythonBasic package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="tutorialsPythonBasic.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="tutorialsPythonBasic.basic.html">tutorialsPythonBasic.basic package</a></li>
+<li class="toctree-l4"><a class="reference internal" href="tutorialsPythonBasic.medium.html">tutorialsPythonBasic.medium package</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="tutorialsPythonBasic.verybasic.html">tutorialsPythonBasic.verybasic package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="tutorialsPythonBasic.html#module-tutorialsPythonBasic">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../lov-na-zaklad.html">Lov na zaklad</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Programerski krožek na Gimnaziji Vič</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">tutorialsPythonBasic</a></li>
+          <li class="breadcrumb-item"><a href="tutorialsPythonBasic.html">tutorialsPythonBasic package</a></li>
+          <li class="breadcrumb-item"><a href="tutorialsPythonBasic.verybasic.html">tutorialsPythonBasic.verybasic package</a></li>
+          <li class="breadcrumb-item"><a href="tutorialsPythonBasic.verybasic.strings.html">tutorialsPythonBasic.verybasic.strings package</a></li>
+      <li class="breadcrumb-item active">tutorialsPythonBasic.verybasic.strings.basic_string_manipulation module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/autodoc/tutorialsPythonBasic.verybasic.strings.basic_string_manipulation.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-tutorialsPythonBasic.verybasic.strings.basic_string_manipulation">
+<span id="tutorialspythonbasic-verybasic-strings-basic-string-manipulation-module"></span><h1>tutorialsPythonBasic.verybasic.strings.basic_string_manipulation module<a class="headerlink" href="#module-tutorialsPythonBasic.verybasic.strings.basic_string_manipulation" title="Link to this heading">¶</a></h1>
+<p>Some basic string manipulation. Since it’s important to know exactly what
+goes on, all the code will be in a big doctest.</p>
+<p>Let’s create a simple string</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">our_string</span> <span class="o">=</span> <span class="s2">&quot;     hahaha tralala</span><span class="se">\n</span><span class="s2">hopsasa&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">our_string</span><span class="p">)</span>
+<span class="go">     hahaha tralala</span>
+<span class="go">hopsasa</span>
+</pre></div>
+</div>
+<p>Now let’s say we wanted to get rid of the spaces at the beginning. We can do
+this using the .strip() method, which strips whitespace from the left and right
+side of the string, but keeps whitespace in the middle.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">our_string</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+<span class="go">hahaha tralala</span>
+<span class="go">hopsasa</span>
+</pre></div>
+</div>
+<p>We can also only strip from the left, or from the right using .rstrip(). If we
+provide a parameter, we strip the provided characters instead of whitespace.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">our_string</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s1">&#39;as&#39;</span><span class="p">))</span>
+<span class="go">     hahaha tralala</span>
+<span class="go">hop</span>
+</pre></div>
+</div>
+<p>What about replacing some characters in a string? No problem, just use the
+.replace() method.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">our_string</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">))</span>
+<span class="go">     hAhAhA trAlAlA</span>
+<span class="go">hopsAsA</span>
+</pre></div>
+</div>
+<p>We can also replace multiple characters</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">our_string</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;     hahaha&#39;</span><span class="p">,</span> <span class="s1">&#39;heh&#39;</span><span class="p">))</span>
+<span class="go">heh tralala</span>
+<span class="go">hopsasa</span>
+</pre></div>
+</div>
+<p>If we want to split our string into words, we can use the .split() method.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">our_string</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="go">[&#39;hahaha&#39;, &#39;tralala&#39;, &#39;hopsasa&#39;]</span>
+</pre></div>
+</div>
+<p>By default it splits on whitespace, but we can also provide a parameter</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">our_string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="go">[&#39;     h&#39;, &#39;h&#39;, &#39;h&#39;, &#39; tr&#39;, &#39;l&#39;, &#39;l&#39;, &#39;\nhops&#39;, &#39;s&#39;, &#39;&#39;]</span>
+</pre></div>
+</div>
+<p>Of course multiple string manipulations together</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">our_string</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;tral&#39;</span><span class="p">,</span> <span class="s1">&#39;gura&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="go">[&#39;hahaha&#39;, &#39;guraala&#39;, &#39;hopsasa&#39;]</span>
+</pre></div>
+</div>
+<p>If you want to get a substring, you can use the same notation as in lists</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">our_string</span><span class="p">[</span><span class="mi">6</span><span class="p">:</span><span class="mi">13</span><span class="p">])</span>
+<span class="go">ahaha t</span>
+</pre></div>
+</div>
+<p>As in lists, you can also specify the step - for instance if you want to turn
+the whole string around, you could do</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">our_string</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">())</span>
+<span class="go">asaspoh</span>
+<span class="go">alalart ahahah</span>
+</pre></div>
+</div>
+<p>There are also easy ways to check if a string starts or ends with a particular
+substring</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">our_string</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;hopsasa&#39;</span><span class="p">)</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">our_string</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;hejho&#39;</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+<p>Another useful method (especially when comparing strings) is the .lower() one</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;abCDEfgH&quot;</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+<span class="go">abcdefgh</span>
+</pre></div>
+</div>
+<p>Of course, .upper() also exists</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">our_string</span><span class="o">.</span><span class="n">upper</span><span class="p">())</span>
+<span class="go">     HAHAHA TRALALA</span>
+<span class="go">HOPSASA</span>
+</pre></div>
+</div>
+<p>What if we have a list of some kind (for instance a list of names) and want to
+join them into a nice string? We can use the .join() method. You call it on a
+“separator” string and pass it a list, then the elements of the list get joined
+together, separated by the “separator” string. The “separator” string can be
+really simple or overly complex.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Name1&#39;</span><span class="p">,</span> <span class="s1">&#39;Name2&#39;</span><span class="p">,</span> <span class="s1">&#39;Name3&#39;</span><span class="p">,</span> <span class="s1">&#39;Name4&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">names</span><span class="p">))</span>
+<span class="go">Name1Name2Name3Name4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">names</span><span class="p">))</span>
+<span class="go">Name1, Name2, Name3, Name4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39; and his/her pal &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">names</span><span class="p">))</span>
+<span class="go">Name1 and his/her pal Name2 and his/her pal Name3 and his/her pal Name4</span>
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="tutorialsPythonBasic.verybasic.strings.html" class="btn btn-neutral float-left" title="tutorialsPythonBasic.verybasic.strings package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tutorialsPythonBasic.verybasic.hello_world.html" class="btn btn-neutral float-right" title="tutorialsPythonBasic.verybasic.hello_world module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014–2019, Natan Žabkar, Jure Slak, Maks Kolman, Ines Meršak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

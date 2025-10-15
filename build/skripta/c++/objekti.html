@@ -1,0 +1,500 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Objekti &mdash; Programerski krožek na Gimnaziji Vič 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=34b5f6bb" />
+
+  
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Dedovanje" href="dedovanje.html" />
+    <link rel="prev" title="Kazalci in reference" href="pointers.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Programerski krožek na Gimnaziji Vič
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../python.html">Python</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../python-vaje.html">Python vaje</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../c%2B%2B.html">C++</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="uvod.html">Uvod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="osnove.html">Osnove</a></li>
+<li class="toctree-l2"><a class="reference internal" href="podatkovni_tipi.html">Podatkovni tipi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enum.html">Enum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="funkcije.html">Funkcije</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pointers.html">Kazalci in reference</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Objekti</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#metode">Metode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#private-public-protected">Private, public, protected</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#konstruktorji-in-destruktorji">Konstruktorji in destruktorji</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#const-metode-in-spremenljivke">Const metode in spremenljivke</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#static-metode-in-spremenljivke">Static metode in spremenljivke</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#copy-in-move-konstruktorji">Copy in move konstruktorji</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="dedovanje.html">Dedovanje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="templates.html">Predloge (templates)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="organizacija.html">Organizacija kode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="izjeme.html">Izjeme (exceptions)</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../c%2B%2B-vaje.html">C++ vaje</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../sql.html">SQL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../git.html">Git</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../opengl.html">OpenGL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../razbijanje.html">Kriptografija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../autodoc/modules.html">Dokumentacija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lov-na-zaklad.html">Lov na zaklad</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Programerski krožek na Gimnaziji Vič</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../c%2B%2B.html">C++</a></li>
+      <li class="breadcrumb-item active">Objekti</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/skripta/c++/objekti.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="objekti">
+<h1>Objekti<a class="headerlink" href="#objekti" title="Link to this heading">¶</a></h1>
+<p>Razrede v C++ uporabljamo enako kot v Pythonu. Z njimi definiramo nove
+podatkovne tipe, ki ustrezajo našim potrebam. Najprej terminologija:</p>
+<p><em>Razred</em> je definicija našega novega tipa.  Spremenljivka tega tipa, ki jo
+naredimo, se imenuje <em>objekt</em> tega razreda ali <em>instanca</em> tega razreda. <em>Tip</em> in
+<em>razred</em> se nanašata na abstraktno definicijo, <em>objekt</em> ali <em>instanca</em> pa na
+konkretno spremenljivko.  Funkcije, ki so vsebovane v tem objektu se imenujejo
+<em>metode</em>, spremenljivke tega objekta pa <em>atributi</em>. Običajno razrede označujemo
+z <em>PascalCase</em> začetnicami.</p>
+<p>Definicija novega razreda gre v C++ tako:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">ImeTipa</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="n">tip1</span><span class="w"> </span><span class="n">member1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">tip2</span><span class="w"> </span><span class="n">member2</span><span class="p">;</span>
+<span class="w">  </span><span class="k">private</span><span class="o">:</span>
+<span class="w">    </span><span class="n">tip3</span><span class="w"> </span><span class="n">member3</span><span class="p">;</span>
+<span class="w">    </span><span class="n">tip4</span><span class="w"> </span><span class="n">member4</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Na koncu definicije razreda mora biti podpičje. Če ga pozabite, lahko pride
+do zelo neprijetnih in težko razumljivih napak.</p>
+</div>
+<p>Naredimo primer razreda <em>Pravokotnik</em> in nastavimo njegove člane.
+Spremenljivke našega tipa (v tem primeru Pravokotnik) definiramo enako kot vse ostale, najprej povemo tip,
+nato pa ime. Kot pri funkcijah tudi razrede definiramo izven funkcije <code class="docutils literal notranslate"><span class="pre">main</span></code>
+preden jih želimo uporabljati. Kot v veliko drugih jezikih tudi v c++ do
+atributov in metod dostopamo s piko <code class="docutils literal notranslate"><span class="pre">a.x</span></code>.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Pravokotnik</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="p">};</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Pravokotnik</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+<span class="w">    </span><span class="n">p</span><span class="p">.</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span>
+<span class="w">    </span><span class="n">p</span><span class="p">.</span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1.2</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<section id="metode">
+<h2>Metode<a class="headerlink" href="#metode" title="Link to this heading">¶</a></h2>
+<p>Dodajmo razredu metodo, ki izračuna ploščino, in še eno, ki nastavi obe
+stranici. Metode so po sintaksi popolnoma enake funkcijam in do atributov
+razreda imajo prost dostop (ni potrebno pisati npr. <code class="docutils literal notranslate"><span class="pre">self.x</span></code>).</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Pravokotnik</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">set_sides</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">        </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">area</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="k">private</span><span class="o">:</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Pravokotnik</span><span class="w"> </span><span class="n">p</span><span class="p">{</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mf">1.2</span><span class="p">};</span>
+<span class="w">    </span><span class="n">p</span><span class="p">.</span><span class="n">set_sides</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">area</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span><span class="w">  </span><span class="c1">// prints 1</span>
+</pre></div>
+</div>
+</section>
+<section id="private-public-protected">
+<h2>Private, public, protected<a class="headerlink" href="#private-public-protected" title="Link to this heading">¶</a></h2>
+<p>To so trije tipi scopa, “vidnosti” v razredih. Do public funkcij in spremenljivk
+lahko dostopajo vsi, izven in znotraj razreda, do privatnih pa samo znotraj
+razreda. Protected se uporablja pri dedovanju, in ga bomo spoznali kasneje.</p>
+<p>Pogost vzorec v programiranju je, da so atributi private, spreminja in bere pa se jih
+lahko samo preko public metod, saj s tem uporabniku preprečimo nekontroliran
+dostop, ki bi lahko ogrozil smiselnost podatkov.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Pravokotnik</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">set_sides</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">        </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">area</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="k">private</span><span class="o">:</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Pravokotnik</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+<span class="w">    </span><span class="n">p</span><span class="p">.</span><span class="n">set_sides</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">area</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">p</span><span class="p">.</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Zgornja koda nam vrne napako, dostopamo namreč do privatne spremenljivke <cite>a</cite>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>a.cpp: In function ‘int main()’:
+a.cpp:14:14: error: ‘double Pravokotnik::a’ is private
+       double a, b;
+              ^
+a.cpp:20:9: error: within this context
+       p.a = 8;
+         ^
+</pre></div>
+</div>
+<p>Če problematično vrstico zakomentiramo, je vse ok, saj sta <code class="docutils literal notranslate"><span class="pre">set_sides</span></code> in
+<code class="docutils literal notranslate"><span class="pre">area</span></code> public metodi, ki pa znotraj razreda lahko dostopata do privatnih
+spremenljivk.</p>
+<p>Seveda je najlažje programirati, če vse naredimo kar public, vendar to ni nujno
+najboljša ideja. Pravzaprav je bolje, da vse naredimo privatno, in navzven
+pokažemo samo nekaj metod za delo z našim razredom, saj tako uporabniku našega
+razreda (torej tudi samemu sebi) preprečimo, da bi počeli kakšne neumnosti,
+spravili razred v neveljavno stanje, klicali funkcije, ki so zgolj del
+implementacije in se lahko spremenijo. Imeti stvari po defaultu private
+spodbuja boljši design kode: če je nekaj samo implementacijski detajl, potem je
+gotovo zasebno. Predstavljajte si, da bi imeli na voljo tudi vse interne
+metode, ki jih razred <code class="docutils literal notranslate"><span class="pre">vector</span></code> uporablja za alokacijo spomina, prepisovanje
+elementov, ipd. To je nepotrebno, saj ne veste kaj klicanje takih metod naredi,
+poleg tega pa se lahko te metode kadarkoli zamenjajo. Toda, ker so v privatne,
+bo vsa koda, ki <code class="docutils literal notranslate"><span class="pre">vector</span></code> uporablja, še vedno delovala (saj so bile metode
+privatne in jih nismo mogli uporabljati). Tako lahko rečemo, da public metode
+pravzaprav definirajo, kaj objekt je in kaj z njim lahko počnemo, pa tudi
+spodobi se, da vsaka public metoda pusti objekt v veljavnem stanju (kar ni
+nujno res za privatne metode). Primer: za public metode se ponavadi ne spodobi,
+da bi postavljali zahteve v stilu “Če želite poklicati x, morate najprej poklicati y.”,
+medtem ko je za privatne to običajno.</p>
+</section>
+<section id="konstruktorji-in-destruktorji">
+<span id="constructors"></span><h2>Konstruktorji in destruktorji<a class="headerlink" href="#konstruktorji-in-destruktorji" title="Link to this heading">¶</a></h2>
+<p>Kaj pa, če želimo našemu objektu dati določene parametre že na začetku, ko ga
+ustvarimo? V tem primeru definiramo <em>konstruktor</em>, to je posebna metoda, ki
+omogoča ustvarjanje razreda.</p>
+<p>Sintaksa je sledeča:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">ImeTipa</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">public</span><span class="o">:</span><span class="w"> </span><span class="c1">// konstruktor</span>
+<span class="w">    </span><span class="n">ImeTipa</span><span class="p">(</span><span class="n">tip1</span><span class="w"> </span><span class="n">member1_</span><span class="p">,</span><span class="w"> </span><span class="n">tip2</span><span class="w"> </span><span class="n">member2_</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">member1</span><span class="p">(</span><span class="n">member1_</span><span class="p">),</span><span class="w"> </span><span class="n">member2</span><span class="p">(</span><span class="n">member2_</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">       </span><span class="c1">// koda</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="k">private</span><span class="o">:</span>
+<span class="w">    </span><span class="n">tip1</span><span class="w"> </span><span class="n">member1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">tip2</span><span class="w"> </span><span class="n">member2</span><span class="p">;</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+<p>Konstruktor naredimo tako, da napišemo ime tipa, in kot običajni funkciji
+naštejemo argumente. Ponavadi želimo vsakemu članu razreda določiti vrednost,
+zato parametre imenujemo kar po članih razreda (z dodanim podčrtajem, saj
+enakih imen ne smemo uporabiti). Parametre lahko poimenujete seveda kakor
+želite, a to je najbolj sugestivno in standardno. Sledi dvopičje in seznam
+(class initializer list) članov, ki jim določimo vrednosti (kot bomo videli
+kasneje, kličemo njihove konstruktorje). Nato sledi telo, ki je kot vsako telo
+funkcije, in notri lahko počnemo običajne stvari. Ko smo znotraj telesa, so
+spremenljivke, ki smo jih nastavili v initializer list že nastavljene, in jih
+lahko uporabljamo.</p>
+<p>Konstruktor pokličemo z oklepaji za imenom spremenljivke <code class="docutils literal notranslate"><span class="pre">ImeTipa</span>
+<span class="pre">ime_spremenljivke(arg1,</span> <span class="pre">arg2)</span></code></p>
+<p>Poglejmo si primer za pravokotnik.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Pravokotnik</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="n">Pravokotnik</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">a_</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">b_</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="n">a_</span><span class="p">),</span><span class="w"> </span><span class="n">b</span><span class="p">(</span><span class="n">b_</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">set_sides</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">        </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">area</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="k">private</span><span class="o">:</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Pravokotnik</span><span class="w"> </span><span class="n">p</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">area</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span><span class="w">  </span><span class="c1">// prints 1</span>
+</pre></div>
+</div>
+<p>Vrednosti a in b smo nastavili že v konstruktorju, zato klic funkcije
+<code class="docutils literal notranslate"><span class="pre">set_values</span></code> ni bil potreben.</p>
+<p>Razred ima lahko več kot en konstruktor. Naredimo še dva.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Pravokotnik</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="n">Pravokotnik</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">b</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">    </span><span class="n">Pravokotnik</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">a_</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="n">a_</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">    </span><span class="n">Pravokotnik</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">a_</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">b_</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">         </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a_</span><span class="p">;</span>
+<span class="w">         </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b_</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="k">private</span><span class="o">:</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">Pravokotnik</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+<span class="w">    </span><span class="n">Pravokotnik</span><span class="w"> </span><span class="n">q</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="n">Pravokotnik</span><span class="w"> </span><span class="n">r</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
+<span class="w">    </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">5</span><span class="p">};</span>
+<span class="p">}</span><span class="w">  </span><span class="c1">// prints 1</span>
+</pre></div>
+</div>
+<p>Dodali smo <em>default konstruktor</em>, ki ne sprejme parametrov. Ta se pokliče ko
+spremenljivko samo deklariramo, <code class="docutils literal notranslate"><span class="pre">Pravokotnik</span> <span class="pre">p;</span></code>. Imamo še konstruktor iz ene
+spremenljivke, ki nastavi obe stranici na enako vrednost. Že znan konstruktor,
+pa smo prepisali na ekvivalenten, a manj običajen način, ki pa je morda
+začetnikom bolj jasen in morda bolj ilustrira intuicijo. V resnici je pristop z
+initializer listom tudi idejno pravi, saj tak pokličemo konstruktorje naših
+članov, na enak način kot smo poklicali konstruktor našega Pravkokotnika.
+Zadnji dve vrstici main funkcije kažeta sintakso z =, ki jo compiler tudi
+prevede v klic konstruktorja. V prvem primeru se pokliče drugi, v drugem pa
+tretji konstruktor.</p>
+</section>
+<section id="const-metode-in-spremenljivke">
+<h2>Const metode in spremenljivke<a class="headerlink" href="#const-metode-in-spremenljivke" title="Link to this heading">¶</a></h2>
+<p>Spoznali smo že konstantne spremenljivke in reference pri klicih funkcij. Na
+hitro ponovimo – konstantne spremenljivke so tiste, ki jih ne moremo
+spreminjati, niti direktno niti s klicanjem funkcij, ki bi jih spremenile.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span>
+<span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span><span class="w">   </span><span class="c1">// napaka</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">swap</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">);</span><span class="w"> </span><span class="c1">// napaka</span>
+</pre></div>
+</div>
+<p>Kaj pa, če je naša konstantna spremenljivka objekt?</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">const</span><span class="w"> </span><span class="n">Pravokotnik</span><span class="w"> </span><span class="nf">p</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
+<span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">area</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">endl</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Dobimo napako:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>a.cpp: In function ‘int main()’:
+a.cpp:29:22: error: passing ‘const Pravokotnik’ as ‘this’ argument discards qualifiers [-fpermissive]
+       cout &lt;&lt; p.area() &lt;&lt; endl;
+                      ^
+a.cpp:18:14: note:   in call to ‘double Pravokotnik::area()’
+       double area() {
+</pre></div>
+</div>
+<p>Malo kriptična napaka, pomeni, da ta funkcija “discards qualifiers”, torej ne
+spoštuje “dodatkov k tipu”, v tem primeru je to besedica <code class="docutils literal notranslate"><span class="pre">const</span></code>. Po domače,
+funkcija lahko spreminja objekt, zato je ne smeš klicati na konstantnem
+objektu.</p>
+<p><em>Ampak saj ga ne!</em></p>
+<p>Hja, ampak kako naj ubogi g++ to ve? To se reši tako, da mu poveš, da ta funckija objekta ne spreminja.
+Če bi kodo prevedli s <code class="docutils literal notranslate"><span class="pre">clang</span></code>-om, bi ta bolj prijazno rekel:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">cpp</span><span class="p">:</span><span class="mi">29</span><span class="p">:</span><span class="mi">15</span><span class="p">:</span> <span class="n">error</span><span class="p">:</span> <span class="n">member</span> <span class="n">function</span> <span class="s1">&#39;area&#39;</span> <span class="ow">not</span> <span class="n">viable</span><span class="p">:</span> <span class="s1">&#39;this&#39;</span> <span class="n">argument</span> <span class="n">has</span> <span class="nb">type</span> <span class="s1">&#39;const Pravokotnik&#39;</span><span class="p">,</span> <span class="n">but</span> <span class="n">function</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">marked</span> <span class="n">const</span>
+      <span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="n">p</span><span class="o">.</span><span class="n">area</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">endl</span><span class="p">;</span>
+              <span class="o">^</span>
+<span class="n">a</span><span class="o">.</span><span class="n">cpp</span><span class="p">:</span><span class="mi">18</span><span class="p">:</span><span class="mi">14</span><span class="p">:</span> <span class="n">note</span><span class="p">:</span> <span class="s1">&#39;area&#39;</span> <span class="n">declared</span> <span class="n">here</span>
+      <span class="n">double</span> <span class="n">area</span><span class="p">()</span> <span class="p">{</span>
+</pre></div>
+</div>
+<p>Torej, metodi moramo dodati const, ki pomeni, da ta metoda objekta, nad katerim
+je definirana, ne spreminja. Ponavadi so to metode, ki ga zračunajo, izpišejo, vrnejo.
+Dobra navada je, da metode, ki so <code class="docutils literal notranslate"><span class="pre">const</span></code>, označimo s <code class="docutils literal notranslate"><span class="pre">const</span></code>, saj imamo
+sicer lahko probleme, npr, ko objekt podamo preko const <code class="docutils literal notranslate"><span class="pre">Pravokotnik&amp;</span></code>.
+Jasno, <code class="docutils literal notranslate"><span class="pre">const</span></code> metode, lahko kličejo samo druge <code class="docutils literal notranslate"><span class="pre">const</span></code> metode, neconst
+metode, pa lahko kličejo tako <code class="docutils literal notranslate"><span class="pre">const</span></code> kot neconst metode.
+Pravilnejša definicija pravokotnika:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Pravokotnik</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="n">Pravokotnik</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">b</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">    </span><span class="n">Pravokotnik</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">a_</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="n">a_</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">    </span><span class="n">Pravokotnik</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">a_</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">b_</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="n">a_</span><span class="p">),</span><span class="w"> </span><span class="n">b</span><span class="p">(</span><span class="n">b_</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="n">set_sides</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">        </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">area</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="p">{</span><span class="w">  </span><span class="c1">// this method is const</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="k">private</span><span class="o">:</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="p">};</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">Pravokotnik</span><span class="w"> </span><span class="n">p</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">area</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span><span class="w">  </span><span class="c1">// prints 1, vse ok</span>
+</pre></div>
+</div>
+<p>Jasno metode <code class="docutils literal notranslate"><span class="pre">set_sides</span></code> nismo označili s <code class="docutils literal notranslate"><span class="pre">const</span></code>, saj spremenljivke
+nastavi in spremeni objekt, pa tudi compiler bi se pritožil, če bi jo, kajti
+znotraj kličemo funkcijo <code class="docutils literal notranslate"><span class="pre">operator</span> <span class="pre">=</span></code>, ki jasno ni <code class="docutils literal notranslate"><span class="pre">const</span></code>, kar je bi bilo
+dovoljeno.</p>
+<p>Če torej sedaj naredimo funkcijo, ki preveri, ali je pravokotnik ploščine 1, ne
+bo imela težav:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="nf">je_kvadrat</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">Pravokotnik</span><span class="o">&amp;</span><span class="w"> </span><span class="n">p</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">area</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mf">1.0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>S const lahko označimo samo metode, za navadne funkcije to nima smisla, saj
+nimajo objekta pod seboj, ki bi ga lahko spreminjale. To, ali spreminjajo
+parametre ali ne, lahko določimo že s tem, da parametrom predpišemo const ali
+ne.</p>
+</div>
+</section>
+<section id="static-metode-in-spremenljivke">
+<h2>Static metode in spremenljivke<a class="headerlink" href="#static-metode-in-spremenljivke" title="Link to this heading">¶</a></h2>
+<p>Statične so metode, ki za svoje delovanje ne potrebujejo objekta in ne dostopajo
+do nobenih (ne statičnih) spremenljivk ali metod razreda. Pravzaprav je to
+navadna funkcija, ki je zaradi logične strukture premaknjena znotraj razreda. V
+konkretnem primeru, statična funkcija bi bila taka, ki ji je vseeno, kateri
+konkreten pravokotnik ima, in lahko operira le z nečem, kar je skupno vsem
+pravokotnikom. Podobno velja za statične spremenljivke, to so spremenljivke, ki
+so neodvisne od konkretne instance, in so lastne classu.</p>
+<p>Malo neumen primer:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Pravokotnik</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">public</span><span class="o">:</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">number_of_sides</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">instance_count</span><span class="p">;</span>
+
+<span class="w">    </span><span class="n">Pravokotnik</span><span class="p">()</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span><span class="w"> </span><span class="n">b</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">instance_count</span><span class="o">++</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="n">Pravokotnik</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">a_</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="n">a_</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">instance_count</span><span class="o">++</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="n">Pravokotnik</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">a_</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">b_</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">a</span><span class="p">(</span><span class="n">a_</span><span class="p">),</span><span class="w"> </span><span class="n">b</span><span class="p">(</span><span class="n">b_</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="n">instance_count</span><span class="o">++</span><span class="p">;</span><span class="w"> </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">print_number_of_sides</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">number_of_sides</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="p">...</span>
+<span class="p">};</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">Pravokotnik</span><span class="o">::</span><span class="n">instance_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">sides</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Pravokotnik</span><span class="o">::</span><span class="n">number_of_sides</span><span class="p">;</span><span class="w">  </span><span class="c1">// lahko samo preko imena razreda</span>
+<span class="w">    </span><span class="n">Pravokotnik</span><span class="w"> </span><span class="n">p</span><span class="p">;</span>
+<span class="w">    </span><span class="n">sides</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">p</span><span class="p">.</span><span class="n">number_of_sides</span><span class="p">;</span><span class="w">  </span><span class="c1">// lahko pa tudi tako</span>
+<span class="w">    </span><span class="n">Pravokotnik</span><span class="o">::</span><span class="n">print_number_of_sides</span><span class="p">();</span>
+<span class="w">    </span><span class="n">Pravokotnik</span><span class="w"> </span><span class="n">q</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="n">q</span><span class="p">.</span><span class="n">print_number_of_sides</span><span class="p">();</span><span class="w">  </span><span class="c1">// enako velja za funkcije</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">q</span><span class="p">.</span><span class="n">instance_count</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span><span class="w">  </span><span class="c1">// print 2</span>
+</pre></div>
+</div>
+<p>Kot vidimo lahko kličemo statične metode samo preko imena tipa, ne potrebujemo
+objekta spodaj, nič pa ni narobe, če ga imamo. Spremenljivka instance_count, ki
+jo povečamo v vsakem konstruktorju, je prav tako neodvisna od instance in je na
+koncu enaka 2.</p>
+<p>Od vsega so po mojem mnenju najpogosteje uporabljene statične konstante in
+funkcije, ostalo pa bolj po redko. Statične spremenljivke imajo podobno uporabo
+tudi znotraj funkcij (ob dvojni inicilizaciji se ne ponastavijo). A o tem morda
+kasneje.</p>
+</section>
+<section id="copy-in-move-konstruktorji">
+<h2>Copy in move konstruktorji<a class="headerlink" href="#copy-in-move-konstruktorji" title="Link to this heading">¶</a></h2>
+<p>TODO</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="pointers.html" class="btn btn-neutral float-left" title="Kazalci in reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="dedovanje.html" class="btn btn-neutral float-right" title="Dedovanje" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014–2019, Natan Žabkar, Jure Slak, Maks Kolman, Ines Meršak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

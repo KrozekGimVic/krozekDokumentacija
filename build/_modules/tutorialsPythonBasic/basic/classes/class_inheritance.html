@@ -1,0 +1,257 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>tutorialsPythonBasic.basic.classes.class_inheritance &mdash; Programerski krožek na Gimnaziji Vič 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../../_static/custom.css?v=34b5f6bb" />
+
+  
+      <script src="../../../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../../index.html" class="icon icon-home">
+            Programerski krožek na Gimnaziji Vič
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../python.html">Python</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../python-vaje.html">Python vaje</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../c%2B%2B.html">C++</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../c%2B%2B-vaje.html">C++ vaje</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../sql.html">SQL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../git.html">Git</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../opengl.html">OpenGL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../razbijanje.html">Kriptografija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../autodoc/modules.html">Dokumentacija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../lov-na-zaklad.html">Lov na zaklad</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../../index.html">Programerski krožek na Gimnaziji Vič</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">tutorialsPythonBasic.basic.classes.class_inheritance</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for tutorialsPythonBasic.basic.classes.class_inheritance</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">An example of class inheritance.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+
+<div class="viewcode-block" id="Enemy">
+<a class="viewcode-back" href="../../../../autodoc/tutorialsPythonBasic.basic.classes.class_inheritance.html#tutorialsPythonBasic.basic.classes.class_inheritance.Enemy">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Enemy</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A stupid enemy that doesn&#39;t know how to attack, but knows how to die.</span>
+
+<span class="sd">    &gt;&gt;&gt; stupid = Enemy(10)</span>
+
+<span class="sd">    Let&#39;s hit him and see if he dies</span>
+
+<span class="sd">    &gt;&gt;&gt; stupid.take_damage(5)</span>
+<span class="sd">    &gt;&gt;&gt; stupid.alive</span>
+<span class="sd">    True</span>
+
+<span class="sd">    Nope, not dead yet ... let&#39;s try again!</span>
+
+<span class="sd">    &gt;&gt;&gt; stupid.take_damage(5)</span>
+<span class="sd">    &gt;&gt;&gt; stupid.alive</span>
+<span class="sd">    False</span>
+
+<span class="sd">    Woohoo, down you go stupid enemy!</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hp</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">hp</span> <span class="o">=</span> <span class="n">hp</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">alive</span> <span class="o">=</span> <span class="kc">True</span>
+
+<div class="viewcode-block" id="Enemy.take_damage">
+<a class="viewcode-back" href="../../../../autodoc/tutorialsPythonBasic.basic.classes.class_inheritance.html#tutorialsPythonBasic.basic.classes.class_inheritance.Enemy.take_damage">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">take_damage</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dmg</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Take some damage and check your HP for death.&quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">hp</span> <span class="o">-=</span> <span class="n">dmg</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">check_hp</span><span class="p">()</span></div>
+
+
+<div class="viewcode-block" id="Enemy.die">
+<a class="viewcode-back" href="../../../../autodoc/tutorialsPythonBasic.basic.classes.class_inheritance.html#tutorialsPythonBasic.basic.classes.class_inheritance.Enemy.die">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">die</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Function called when the enemy dies.&quot;&quot;&quot;</span>
+
+        <span class="bp">self</span><span class="o">.</span><span class="n">alive</span> <span class="o">=</span> <span class="kc">False</span></div>
+
+
+<div class="viewcode-block" id="Enemy.check_hp">
+<a class="viewcode-back" href="../../../../autodoc/tutorialsPythonBasic.basic.classes.class_inheritance.html#tutorialsPythonBasic.basic.classes.class_inheritance.Enemy.check_hp">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">check_hp</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;If HP is too low, die.&quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">hp</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">die</span><span class="p">()</span></div>
+</div>
+
+
+
+<div class="viewcode-block" id="Shaman">
+<a class="viewcode-back" href="../../../../autodoc/tutorialsPythonBasic.basic.classes.class_inheritance.html#tutorialsPythonBasic.basic.classes.class_inheritance.Shaman">[docs]</a>
+<span class="k">class</span><span class="w"> </span><span class="nc">Shaman</span><span class="p">(</span><span class="n">Enemy</span><span class="p">):</span>
+
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A smarter enemy - can do everything Enemy can, but can also heal</span>
+<span class="sd">    himself.</span>
+
+<span class="sd">    &gt;&gt;&gt; shaman = Shaman(12)</span>
+
+<span class="sd">    Let&#39;s hit him and check if he was damaged</span>
+
+<span class="sd">    &gt;&gt;&gt; shaman.take_damage(5)</span>
+<span class="sd">    &gt;&gt;&gt; shaman.alive</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; shaman.hp</span>
+<span class="sd">    7</span>
+
+<span class="sd">    Nope, not dead yet ... let&#39;s try again!</span>
+
+<span class="sd">    &gt;&gt;&gt; shaman.take_damage(5)</span>
+<span class="sd">    &gt;&gt;&gt; shaman.alive</span>
+<span class="sd">    True</span>
+<span class="sd">    &gt;&gt;&gt; shaman.hp</span>
+<span class="sd">    2</span>
+
+<span class="sd">    Oops, better heal yourself fast shaman!</span>
+
+<span class="sd">    &gt;&gt;&gt; shaman.heal(20)</span>
+<span class="sd">    &gt;&gt;&gt; shaman.hp</span>
+<span class="sd">    22</span>
+
+<span class="sd">    Wow, that was a strong heal ... better bring out the big guns!</span>
+
+<span class="sd">    &gt;&gt;&gt; shaman.take_damage(100)</span>
+<span class="sd">    &gt;&gt;&gt; shaman.hp</span>
+<span class="sd">    -78</span>
+<span class="sd">    &gt;&gt;&gt; shaman.alive</span>
+<span class="sd">    False</span>
+
+<span class="sd">    Wait ... what are you trying to do?</span>
+
+<span class="sd">    &gt;&gt;&gt; shaman.heal(100)</span>
+<span class="sd">    &gt;&gt;&gt; shaman.hp</span>
+<span class="sd">    -78</span>
+<span class="sd">    &gt;&gt;&gt; shaman.alive</span>
+<span class="sd">    False</span>
+
+<span class="sd">    Silly shaman, you can&#39;t heal yourself if you&#39;re already dead ...</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hp</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Call the __init__ from our superclass.&quot;&quot;&quot;</span>
+
+        <span class="nb">super</span><span class="p">(</span><span class="n">Shaman</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">hp</span><span class="p">)</span>
+
+<div class="viewcode-block" id="Shaman.heal">
+<a class="viewcode-back" href="../../../../autodoc/tutorialsPythonBasic.basic.classes.class_inheritance.html#tutorialsPythonBasic.basic.classes.class_inheritance.Shaman.heal">[docs]</a>
+    <span class="k">def</span><span class="w"> </span><span class="nf">heal</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hp</span><span class="p">):</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;Heal himself. Can only do that if he is alive.&quot;&quot;&quot;</span>
+
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">alive</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">hp</span> <span class="o">+=</span> <span class="n">hp</span></div>
+</div>
+
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="kn">import</span><span class="w"> </span><span class="nn">doctest</span>
+    <span class="n">doctest</span><span class="o">.</span><span class="n">testmod</span><span class="p">()</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014–2019, Natan Žabkar, Jure Slak, Maks Kolman, Ines Meršak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

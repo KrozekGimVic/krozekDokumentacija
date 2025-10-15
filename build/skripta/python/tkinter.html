@@ -1,0 +1,238 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tkinter &mdash; Programerski krožek na Gimnaziji Vič 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=34b5f6bb" />
+
+  
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Nameščanje knjižnic" href="knjiznice.html" />
+    <link rel="prev" title="Podatkovne baze" href="baze_podatkov.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Programerski krožek na Gimnaziji Vič
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../python.html">Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="osnove.html">Osnove</a></li>
+<li class="toctree-l2"><a class="reference internal" href="turtle.html">Želvja grafika</a></li>
+<li class="toctree-l2"><a class="reference internal" href="podatkovni_tipi.html">Podatkovni tipi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="funkcije_in_classi.html">Funkcije in razredi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datoteke.html">Datoteke</a></li>
+<li class="toctree-l2"><a class="reference internal" href="baze_podatkov.html">Podatkovne baze</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Tkinter</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#vstavljanje-gradnikov">Vstavljanje gradnikov</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="knjiznice.html">Nameščanje knjižnic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="knjiznice.html#python-3-programi-v-sublime-text">Python 3 programi v Sublime Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pygame.html">Pygame</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../python-vaje.html">Python vaje</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../c%2B%2B.html">C++</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../c%2B%2B-vaje.html">C++ vaje</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../sql.html">SQL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../git.html">Git</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../opengl.html">OpenGL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../razbijanje.html">Kriptografija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../autodoc/modules.html">Dokumentacija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lov-na-zaklad.html">Lov na zaklad</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Programerski krožek na Gimnaziji Vič</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../python.html">Python</a></li>
+      <li class="breadcrumb-item active">Tkinter</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/skripta/python/tkinter.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="tkinter">
+<h1>Tkinter<a class="headerlink" href="#tkinter" title="Link to this heading">¶</a></h1>
+<p>Pythonovo knjižnico tkinter (stoji za tk interface) uporabljamo, če želimo prikazovati sistemska okna in narediti aplikacijo z grafičnim vmesnikom.</p>
+<p>Če želimo uporabljati moramo izvesti ukaz import. Za lažje pisanje bomo tu uporabljali skrajšan zapis <cite>tk</cite></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tk</span>
+</pre></div>
+</div>
+<p>S tem je povsem lahko ustvariti prazno okno. Vse kar je potrebno storiti je narediti razred Tk:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">okno</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Ampak sedaj bo okno izginilo takoj, ko se naš prgram zaključi. Da se ohrani, tudi po zaključku našega programa lahko na koncu zaženemo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">okno</span><span class="o">.</span><span class="n">mainloop</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Da popestrimo prazno puščavo praznega okna lahko dodamo vanj t.i. widget ali gradnik. To so bodisi gumbi, tekst, slike, vnos, meni,… Spodaj je seznam gradnikov, ki jih lahko uporabljamo.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="http://effbot.org/tkinterbook/button.htm">Button</a></p></li>
+<li><p><a class="reference external" href="http://effbot.org/tkinterbook/canvas.htm">Canvas</a></p></li>
+<li><p><a class="reference external" href="http://effbot.org/tkinterbook/checkbutton.htm">Checkbutton</a></p></li>
+<li><p><a class="reference external" href="http://effbot.org/tkinterbook/entry.htm">Entry</a></p></li>
+<li><p><a class="reference external" href="http://effbot.org/tkinterbook/frame.htm">Frame</a></p></li>
+<li><p><a class="reference external" href="http://effbot.org/tkinterbook/label.htm">Label</a></p></li>
+<li><p><a class="reference external" href="http://effbot.org/tkinterbook/labelframe.htm">LabelFrame</a></p></li>
+<li><p><a class="reference external" href="http://effbot.org/tkinterbook/listbox.htm">Listbox</a></p></li>
+<li><p><a class="reference external" href="http://effbot.org/tkinterbook/menu.htm">Menu</a></p></li>
+<li><p><a class="reference external" href="http://effbot.org/tkinterbook/menubutton.htm">Menubutton</a></p></li>
+<li><p><a class="reference external" href="http://effbot.org/tkinterbook/message.htm">Message</a></p></li>
+<li><p><a class="reference external" href="http://effbot.org/tkinterbook/optionmenu.htm">OptionMenu</a></p></li>
+<li><p><a class="reference external" href="http://effbot.org/tkinterbook/panedwindow.htm">PanedWindow</a></p></li>
+<li><p><a class="reference external" href="http://effbot.org/tkinterbook/radiobutton.htm">Radiobutton</a></p></li>
+<li><p><a class="reference external" href="http://effbot.org/tkinterbook/scale.htm">Scale</a></p></li>
+<li><p><a class="reference external" href="http://effbot.org/tkinterbook/scrollbar.htm">Scrollbar</a></p></li>
+<li><p><a class="reference external" href="http://effbot.org/tkinterbook/spinbox.htm">Spinbox</a></p></li>
+<li><p><a class="reference external" href="http://effbot.org/tkinterbook/text.htm">Text</a></p></li>
+</ul>
+</div></blockquote>
+<section id="vstavljanje-gradnikov">
+<h2>Vstavljanje gradnikov<a class="headerlink" href="#vstavljanje-gradnikov" title="Link to this heading">¶</a></h2>
+<p>Ko naredimo nov gradnik moramo povedati v katero okono ga želimo vstaviti. Ko pa ga želimo vstaviti v okno moramo povedati na katero mesto ali pa pustiti da ga sam postavi kamor želi. Spodaj je najenostavneši primer okna z nekaj besedila.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tk</span>      <span class="c1"># Uvozimo tkinter</span>
+
+<span class="c1"># Naredimo prazno okno</span>
+<span class="n">okno</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+<span class="c1"># Damo mu ime &#39;Ime okna&#39;</span>
+<span class="n">okno</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Ime okna&quot;</span><span class="p">)</span>
+<span class="c1"># Če želimo mu lahko na roko nastavimo velikost</span>
+<span class="n">okno</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s2">&quot;600x400&quot;</span><span class="p">)</span>
+
+<span class="c1"># Naredimo nov besedilno etiketo</span>
+<span class="n">besedilo</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">okno</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Pozdravljen krožek!&quot;</span><span class="p">)</span>
+
+<span class="c1"># Besedilo samodejno zapakiramo v okno</span>
+<span class="n">besedilo</span><span class="o">.</span><span class="n">pack</span><span class="p">()</span>
+<span class="c1"># Alternativno lahko uporabimo ključno besedo side</span>
+<span class="n">besedilo</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">LEFT</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Če želimo naše gradnike lepo urediti lahko za to uporabimo okvirje (gradniki <code class="docutils literal notranslate"><span class="pre">Frame</span></code>), ki nimajo druge funkcije kot vsebovanja drugih gradnikov. Lahko pa namesto metode <code class="docutils literal notranslate"><span class="pre">pack</span></code> uporabimo <code class="docutils literal notranslate"><span class="pre">grid</span></code>, ki nam daje natančnejšo kontrolo nad pozicijo vstavljenega gradnika.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">tkinter</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">tk</span>
+
+<span class="c1"># Naredimo prazno okno in ga poimenujemo</span>
+<span class="n">okno</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Tk</span><span class="p">()</span>
+<span class="n">okno</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Vpiši se&quot;</span><span class="p">)</span>
+
+<span class="c1"># Naredimo dve besedilni etiketi</span>
+<span class="n">ime</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">okno</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Uporabniško ime:&quot;</span><span class="p">)</span>
+<span class="n">geslo</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Label</span><span class="p">(</span><span class="n">okno</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="s2">&quot;Geslo:&quot;</span><span class="p">)</span>
+
+<span class="c1"># Naredimo dve vhodni okni za geslo in ime</span>
+<span class="n">ime_in</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Entry</span><span class="p">(</span><span class="n">okno</span><span class="p">)</span>
+<span class="n">geslo_in</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Entry</span><span class="p">(</span><span class="n">okno</span><span class="p">,</span> <span class="n">show</span><span class="o">=</span><span class="s2">&quot;*&quot;</span><span class="p">)</span>
+
+<span class="c1"># Naredimo funkcijo, ki bo izpisala uporabniško ime in geslo</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">izpisi</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">ime_in</span><span class="o">.</span><span class="n">get</span><span class="p">(),</span> <span class="n">geslo_in</span><span class="o">.</span><span class="n">get</span><span class="p">())</span>
+
+<span class="c1"># Naredimo gumb, ki bo klical zgornjo funkcijo</span>
+<span class="n">gumb</span> <span class="o">=</span> <span class="n">tk</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span><span class="n">okno</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="sa">u</span><span class="s2">&quot;Vpiši me!&quot;</span><span class="p">,</span> <span class="n">command</span><span class="o">=</span><span class="n">izpisi</span><span class="p">)</span>
+
+<span class="c1"># Uporabimo grid, da vse postavimo v okno</span>
+<span class="n">ime</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">E</span><span class="p">)</span>
+<span class="n">geslo</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">sticky</span><span class="o">=</span><span class="n">tk</span><span class="o">.</span><span class="n">E</span><span class="p">)</span>
+<span class="n">ime_in</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">geslo_in</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">gumb</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">row</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">columnspan</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="baze_podatkov.html" class="btn btn-neutral float-left" title="Podatkovne baze" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="knjiznice.html" class="btn btn-neutral float-right" title="Nameščanje knjižnic" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014–2019, Natan Žabkar, Jure Slak, Maks Kolman, Ines Meršak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

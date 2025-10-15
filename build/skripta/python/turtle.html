@@ -1,0 +1,260 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Želvja grafika &mdash; Programerski krožek na Gimnaziji Vič 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=34b5f6bb" />
+
+  
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Podatkovni tipi" href="podatkovni_tipi.html" />
+    <link rel="prev" title="Osnove" href="osnove.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Programerski krožek na Gimnaziji Vič
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../python.html">Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="osnove.html">Osnove</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Želvja grafika</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#forward"><code class="docutils literal notranslate"><span class="pre">forward()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#backward"><code class="docutils literal notranslate"><span class="pre">backward()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#right"><code class="docutils literal notranslate"><span class="pre">right()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#left"><code class="docutils literal notranslate"><span class="pre">left()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#goto"><code class="docutils literal notranslate"><span class="pre">goto()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setheading"><code class="docutils literal notranslate"><span class="pre">setheading()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#circle"><code class="docutils literal notranslate"><span class="pre">circle()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#speed"><code class="docutils literal notranslate"><span class="pre">speed()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pendown"><code class="docutils literal notranslate"><span class="pre">pendown()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#penup"><code class="docutils literal notranslate"><span class="pre">penup()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="podatkovni_tipi.html">Podatkovni tipi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="funkcije_in_classi.html">Funkcije in razredi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datoteke.html">Datoteke</a></li>
+<li class="toctree-l2"><a class="reference internal" href="baze_podatkov.html">Podatkovne baze</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tkinter.html">Tkinter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="knjiznice.html">Nameščanje knjižnic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="knjiznice.html#python-3-programi-v-sublime-text">Python 3 programi v Sublime Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pygame.html">Pygame</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../python-vaje.html">Python vaje</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../c%2B%2B.html">C++</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../c%2B%2B-vaje.html">C++ vaje</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../sql.html">SQL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../git.html">Git</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../opengl.html">OpenGL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../razbijanje.html">Kriptografija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../autodoc/modules.html">Dokumentacija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lov-na-zaklad.html">Lov na zaklad</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Programerski krožek na Gimnaziji Vič</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../python.html">Python</a></li>
+      <li class="breadcrumb-item active">Želvja grafika</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/skripta/python/turtle.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="zelvja-grafika">
+<h1>Želvja grafika<a class="headerlink" href="#zelvja-grafika" title="Link to this heading">¶</a></h1>
+<p>Želvja grafika je enostaven načina risanja in zelo dobra za učenje
+programiranja, sal lahko hitro pogledamo in vidimo, ali pogram deluje pravilno
+ali ne. Začne se tako, da imamo želvo (puščico) na koordinatah (0, 0) v xy
+ravnini.</p>
+<p>Na voljo imamo veliko ukazov:</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="forward">
+<span class="sig-name descname"><span class="pre">forward</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#forward" title="Link to this definition">¶</a></dt>
+<dd><p>Premakne želvo naprej za <code class="docutils literal notranslate"><span class="pre">x</span></code> pikslov. Skrajšano <code class="docutils literal notranslate"><span class="pre">fd</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="backward">
+<span class="sig-name descname"><span class="pre">backward</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#backward" title="Link to this definition">¶</a></dt>
+<dd><p>Premakne želvo nazaj za <code class="docutils literal notranslate"><span class="pre">x</span></code> pikslov. Skrajšano <code class="docutils literal notranslate"><span class="pre">bk</span></code> ali
+<code class="docutils literal notranslate"><span class="pre">back</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="right">
+<span class="sig-name descname"><span class="pre">right</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kot</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#right" title="Link to this definition">¶</a></dt>
+<dd><p>Zavrti želvo v desno za <code class="docutils literal notranslate"><span class="pre">kot</span></code> stopinj. Skrajšano <code class="docutils literal notranslate"><span class="pre">rt</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="left">
+<span class="sig-name descname"><span class="pre">left</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kot</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#left" title="Link to this definition">¶</a></dt>
+<dd><p>Zavrti želvo v levo za <code class="docutils literal notranslate"><span class="pre">kot</span></code> stopinj. Skrajšano <code class="docutils literal notranslate"><span class="pre">lt</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="goto">
+<span class="sig-name descname"><span class="pre">goto</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#goto" title="Link to this definition">¶</a></dt>
+<dd><p>Postavi želvo na (<code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>). Če <code class="docutils literal notranslate"><span class="pre">y</span></code> ni podan, potem se pričakuje, da je
+<code class="docutils literal notranslate"><span class="pre">x</span></code> seznam dveh števil, ki predstavljata koordinati. Lahko tudi <code class="docutils literal notranslate"><span class="pre">setpos</span></code>
+ali <code class="docutils literal notranslate"><span class="pre">setposition</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="setheading">
+<span class="sig-name descname"><span class="pre">setheading</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">kot</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#setheading" title="Link to this definition">¶</a></dt>
+<dd><p>Nastavi želvo, da gleda pod kotom <code class="docutils literal notranslate"><span class="pre">kot</span></code> glede na x os. Skrajšano <code class="docutils literal notranslate"><span class="pre">seth</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="circle">
+<span class="sig-name descname"><span class="pre">circle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">r</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#circle" title="Link to this definition">¶</a></dt>
+<dd><p>Nariče krog s polmerom <code class="docutils literal notranslate"><span class="pre">r</span></code> okrog želvice.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="speed">
+<span class="sig-name descname"><span class="pre">speed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#speed" title="Link to this definition">¶</a></dt>
+<dd><p>Nastavi hitrost želvice od 1 do 10 (počasneje do najhitreje). Če je <code class="docutils literal notranslate"><span class="pre">n</span></code> 0,
+pa to ne pomeni najpočaneje, ampak najhitreje.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="pendown">
+<span class="sig-name descname"><span class="pre">pendown</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pendown" title="Link to this definition">¶</a></dt>
+<dd><p>Položi želvico na tla, ko se želvica premika, pušča sled. Krajše tudi <code class="docutils literal notranslate"><span class="pre">pd</span></code>
+ali <code class="docutils literal notranslate"><span class="pre">down</span></code>.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="penup">
+<span class="sig-name descname"><span class="pre">penup</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#penup" title="Link to this definition">¶</a></dt>
+<dd><p>Dvigne želvico iz tal, ko se želvica premika ne pušča sledi. Krajše tudi
+<code class="docutils literal notranslate"><span class="pre">pu</span></code> ali <code class="docutils literal notranslate"><span class="pre">up</span></code>.</p>
+</dd></dl>
+
+<p>Več metod za delo dobite <a class="reference external" href="https://docs.python.org/3.4/library/turtle.html#turtle-methods">tukaj</a>.</p>
+<p>Za delo z želvjo grafiko je potrebno dobiti funkcije iz modula <code class="docutils literal notranslate"><span class="pre">turtle</span></code>, kar
+naredimo tako, da na začetek programa napišemo <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">turtle</span></code>, nato pa
+uporabljamo funkcije iz tega module kot <code class="docutils literal notranslate"><span class="pre">turtle.funkcija()</span></code>.</p>
+<p>Za primer narišimo kvadrat.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="kn">import</span><span class="w"> </span><span class="nn">turtle</span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="c1"># Ustvarimo okno</span>
+<span class="linenos"> 6</span><span class="n">okno</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Screen</span><span class="p">()</span>
+<span class="linenos"> 7</span><span class="c1"># Ustvarimo želvico</span>
+<span class="linenos"> 8</span><span class="n">leonardo</span> <span class="o">=</span> <span class="n">turtle</span><span class="o">.</span><span class="n">Turtle</span><span class="p">()</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="c1"># Izrišemo kvadrat s premikanjem naprej in zavijanjem v levo</span>
+<span class="linenos">11</span><span class="n">leonardo</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="linenos">12</span><span class="n">leonardo</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="linenos">13</span><span class="n">leonardo</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="linenos">14</span><span class="n">leonardo</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="linenos">15</span><span class="n">leonardo</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="linenos">16</span><span class="n">leonardo</span><span class="o">.</span><span class="n">right</span><span class="p">(</span><span class="mi">90</span><span class="p">)</span>
+<span class="linenos">17</span><span class="n">leonardo</span><span class="o">.</span><span class="n">forward</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="linenos">18</span>
+<span class="linenos">19</span><span class="n">turtle</span><span class="o">.</span><span class="n">done</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Funkcija <code class="docutils literal notranslate"><span class="pre">turtle.done()</span></code> nam okno obdrži na zaslonu, tudi po tem ko se
+program konča. Namesto tega bi lahko uporabili <code class="docutils literal notranslate"><span class="pre">turtle.exitonclick()</span></code> ki
+naredi isto kot done, le da nam program zapre ob kliku z miško (uporabno na
+šolskih Windows računalnikih, saj se okna drugače občasno ne da zapreti).</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="osnove.html" class="btn btn-neutral float-left" title="Osnove" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="podatkovni_tipi.html" class="btn btn-neutral float-right" title="Podatkovni tipi" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014–2019, Natan Žabkar, Jure Slak, Maks Kolman, Ines Meršak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

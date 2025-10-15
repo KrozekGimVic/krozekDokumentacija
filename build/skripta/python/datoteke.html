@@ -1,0 +1,384 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Datoteke &mdash; Programerski krožek na Gimnaziji Vič 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=34b5f6bb" />
+
+  
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Podatkovne baze" href="baze_podatkov.html" />
+    <link rel="prev" title="Funkcije in razredi" href="funkcije_in_classi.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Programerski krožek na Gimnaziji Vič
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../python.html">Python</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="osnove.html">Osnove</a></li>
+<li class="toctree-l2"><a class="reference internal" href="turtle.html">Želvja grafika</a></li>
+<li class="toctree-l2"><a class="reference internal" href="podatkovni_tipi.html">Podatkovni tipi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="funkcije_in_classi.html">Funkcije in razredi</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Datoteke</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#odpiranje-in-zapiranje-datotek">Odpiranje in zapiranje datotek</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#open"><code class="docutils literal notranslate"><span class="pre">open()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#file"><code class="docutils literal notranslate"><span class="pre">file</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#branje-datotek">Branje datotek</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id0"><code class="docutils literal notranslate"><span class="pre">file</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#str.strip"><code class="docutils literal notranslate"><span class="pre">str.strip()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#pisanje-v-datoteke">Pisanje v datoteke</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1"><code class="docutils literal notranslate"><span class="pre">file</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#stavek-with">Stavek <code class="docutils literal notranslate"><span class="pre">with</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dodatek-stdin-in-stdout-kot-datoteki">Dodatek: <code class="docutils literal notranslate"><span class="pre">stdin</span></code> in <code class="docutils literal notranslate"><span class="pre">stdout</span></code> kot datoteki</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="baze_podatkov.html">Podatkovne baze</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tkinter.html">Tkinter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="knjiznice.html">Nameščanje knjižnic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="knjiznice.html#python-3-programi-v-sublime-text">Python 3 programi v Sublime Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pygame.html">Pygame</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../python-vaje.html">Python vaje</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../c%2B%2B.html">C++</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../c%2B%2B-vaje.html">C++ vaje</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../sql.html">SQL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../git.html">Git</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../opengl.html">OpenGL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../razbijanje.html">Kriptografija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../autodoc/modules.html">Dokumentacija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lov-na-zaklad.html">Lov na zaklad</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Programerski krožek na Gimnaziji Vič</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../python.html">Python</a></li>
+      <li class="breadcrumb-item active">Datoteke</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/skripta/python/datoteke.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="datoteke">
+<h1>Datoteke<a class="headerlink" href="#datoteke" title="Link to this heading">¶</a></h1>
+<p>Pomemben del programiranja je tudi delo z datotekami. Praktično vsak program, ki
+ga imate na računalniku uporablja datoteke tako ali drugače, ali so to slike,
+ki jih uporablja za izgled, zvok, video, tekst… V tem razdelku se bomo
+pogledali, kako se Python obnaša pri delu z datotekami.</p>
+<section id="odpiranje-in-zapiranje-datotek">
+<h2>Odpiranje in zapiranje datotek<a class="headerlink" href="#odpiranje-in-zapiranje-datotek" title="Link to this heading">¶</a></h2>
+<p>V Pythonu datoteko (kakršna koli že je, od teksta do zipa) odpremo s funkcijo
+<code class="docutils literal notranslate"><span class="pre">open</span></code>. Datoteko lahko odpremo za branje, pisanje, oboje ali dodajanje.
+Funkcija open sama po sebi ne naredi ničesar, preveri samo če tam datoteka
+obstaja, če ne obstaja in smo izbrali pisanje, jo naredi in s sistemom izmenja
+podatke za njeno branje. Če želimo brati datoteko, ki ne obstaja, potem Python
+vrže izjemo. Odpiranje samo pripravi datoteko za operacije na njej in ne naredi
+še nič resnega.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="open">
+<span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pot_do_datoteke</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">način</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#open" title="Link to this definition">¶</a></dt>
+<dd><p>Najde datoteko in vrne objekt za delo z njo. Kaj lahko počne je odvisno od
+<code class="docutils literal notranslate"><span class="pre">načina</span></code>, ki je <code class="docutils literal notranslate"><span class="pre">r</span></code> za branje, <code class="docutils literal notranslate"><span class="pre">w</span></code> za pisanje, <code class="docutils literal notranslate"><span class="pre">+</span></code> za branje in
+pisanje ter <code class="docutils literal notranslate"><span class="pre">a</span></code> za dodajanje. Kratice pomenijo <em>read</em>, <em>write</em> in <em>append</em>.
+Bolj natančno dokumentacijo najdete <a class="reference external" href="https://docs.python.org/3.4/library/functions.html#open">tukaj</a>. Na windowsih
+moramo za netekstovne datoteke dodati še <code class="docutils literal notranslate"><span class="pre">b</span></code>, ki pomeni <em>binary</em>. Če način
+ni podan, je enak <code class="docutils literal notranslate"><span class="pre">r</span></code>.  Pod do datoteke je podana kot zaporedje map ločenih
+s <code class="docutils literal notranslate"><span class="pre">/</span></code>, kjer <code class="docutils literal notranslate"><span class="pre">..</span></code> označuje <em>en mapo višje</em>. Npr. <code class="docutils literal notranslate"><span class="pre">../slike/solata.jpg</span></code>
+pomeni: odpri datoteko <code class="docutils literal notranslate"><span class="pre">solata.jpg</span></code>, ki se nahaja eno mapo višje v mapi
+slike.</p>
+</dd></dl>
+
+<p>Primer uporabe:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;besedilo.txt&quot;</span><span class="p">)</span>  <span class="c1"># recimo, da obstaja</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span>
+<span class="go">&lt;_io.TextIOWrapper name=&#39;besedilo.txt&#39; mode=&#39;r&#39; encoding=&#39;UTF-8&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;asdf&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>     <span class="c1"># naredi novo datoteko, če ne obstaja</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g</span>
+<span class="go">&lt;_io.TextIOWrapper name=&#39;asdf&#39; mode=&#39;w&#39; encoding=&#39;UTF-8&#39;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;../slike/soalta.jpg&quot;</span><span class="p">)</span>  <span class="c1"># jejhata, zatipkali smo se</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">FileNotFoundError</span>: <span class="n">[Errno 2] No such file or directory: &#39;../slike/soalta.jpg&#39;</span>
+</pre></div>
+</div>
+<p>Datoteko moramo po uporabi tudi zapreti, da sistemu povemo, da smo jo
+zaključili uporabljati. Na Windowsih datoteke recimo ne moramo izbrisati, če jo
+kakšen program uporablja (če je odprta).</p>
+<p>Datoteko zapremo s klicem metode <code class="docutils literal notranslate"><span class="pre">close</span></code>.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="file">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">file</span></span><a class="headerlink" href="#file" title="Link to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="file.close">
+<span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#file.close" title="Link to this definition">¶</a></dt>
+<dd><p>Zapre datoteko in pove sistemu, da smo jo nehali uporabljati. To tudi napiše
+vse morebitne še nenapisane podatke do konca (flusha datoteko).</p>
+</dd></dl>
+
+</dd></dl>
+
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">h</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>   <span class="c1"># ko je datoteka zaprta z njo ne moremo več delati</span>
+<span class="gt">Traceback (most recent call last):</span>
+  File <span class="nb">&quot;&lt;stdin&gt;&quot;</span>, line <span class="m">1</span>, in <span class="n">&lt;module&gt;</span>
+<span class="gr">ValueError</span>: <span class="n">I/O operation on closed file.</span>
+</pre></div>
+</div>
+<p>Ko delamo z datotekami pazimo, da je vrsti red vedno enak: odpremo, delamo,
+zapremo.</p>
+</section>
+<section id="branje-datotek">
+<h2>Branje datotek<a class="headerlink" href="#branje-datotek" title="Link to this heading">¶</a></h2>
+<p>Privzemimo, da smo datoteko odprli za branje. Za branje imamo na voljo veliko
+načinov.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="id0">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">file</span></span><a class="headerlink" href="#id0" title="Link to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="file.read">
+<span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#file.read" title="Link to this definition">¶</a></dt>
+<dd><p>Prebere celo datoteko kot niz, skupaj z vsemi posebnimi znaki (recimo
+<code class="docutils literal notranslate"><span class="pre">\n</span></code>). Če je <code class="docutils literal notranslate"><span class="pre">n</span></code> podan, prebere samo prvih <code class="docutils literal notranslate"><span class="pre">n</span></code> bajtov.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file.readline">
+<span class="sig-name descname"><span class="pre">readline</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#file.readline" title="Link to this definition">¶</a></dt>
+<dd><p>Prebere naslednjo vrstico in jo vrne (vključno z <code class="docutils literal notranslate"><span class="pre">\n</span></code>).</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file.realines">
+<span class="sig-name descname"><span class="pre">realines</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#file.realines" title="Link to this definition">¶</a></dt>
+<dd><p>Prebere vse vrstice in jih vrne kot seznam (vključno z <code class="docutils literal notranslate"><span class="pre">\n</span></code>)</p>
+</dd></dl>
+
+</dd></dl>
+
+<p>Lahko beremo tudi s <code class="docutils literal notranslate"><span class="pre">for</span></code> zanko. Pri branju si datoteka zapomni, do kam smo jo
+prebrali in naslednjič, ko kličemo kakšno funkcijo za branje nadaljuje, kjer
+smo na zadnje ostali. To pomeni, da datoteko ponavadi preberemo le enkrat (dva
+zaporedna klica <code class="docutils literal notranslate"><span class="pre">.read()</span></code> bosta povzročila da drugi vrne prazen niz, saj je
+bilo vse že prebrano). Enako se obnašajo tudi druge metode za branje, če ni
+ničesar več za prebrati, potem vrnejo prazen niz. Vsebino datoteke si moramo, če
+jo želimo uporabljati celo, shraniti v spremenljivko.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Pri uporabi <code class="docutils literal notranslate"><span class="pre">.read()</span></code> mentode je potrebno paziti na velikost datoteke, ne
+poskušajte prebrati celega filma, saj verjetno nimate 4GB prostega spomina, pa
+tudi če, bo to verjetno delovalo zelo počasi.</p>
+</div>
+<p>Primer:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;besedilo.txt&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="go">&#39;Romeo: O, Julija!\n&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+<span class="go">Julija: O, Romeo, zakaj si Romeo?</span>
+
+<span class="go">Romeo: Ženska, to ni mel smisla.</span>
+
+<span class="go">THE END</span>
+</pre></div>
+</div>
+<p>Vsebina datoteke <code class="docutils literal notranslate"><span class="pre">besedilo.txt</span></code> je seveda:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Romeo: O Julija!
+Julija: O, Romeo, zakaj si Romeo?
+Romeo: Ženska, to ni mel smisla.
+THE END
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Če se želimo znebiti nadležnih <code class="docutils literal notranslate"><span class="pre">\n</span></code> na koncu prebrane vrstice, uporabimo
+metodo <code class="docutils literal notranslate"><span class="pre">strip</span></code> na stringih.</p>
+<dl class="py class">
+<dt class="sig sig-object py">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">str</span></span></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="str.strip">
+<span class="sig-name descname"><span class="pre">strip</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">znaki</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#str.strip" title="Link to this definition">¶</a></dt>
+<dd><p>Poreže vse znake, ki se nahajajo v nizu <code class="docutils literal notranslate"><span class="pre">znaki</span></code> z začetka in konca
+niza. Če <code class="docutils literal notranslate"><span class="pre">znaki</span></code> niso podani, potem poreče ves whitespace (presledke,
+tabulatorje, <code class="docutils literal notranslate"><span class="pre">\n</span></code> in ostalo)</p>
+<p>Obstajata tudi metodi <code class="docutils literal notranslate"><span class="pre">lstrip</span></code> in <code class="docutils literal notranslate"><span class="pre">rstrip</span></code>, ki delujeta samo na levi
+in desni strani niza.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</section>
+<section id="pisanje-v-datoteke">
+<h2>Pisanje v datoteke<a class="headerlink" href="#pisanje-v-datoteke" title="Link to this heading">¶</a></h2>
+<p>V datoteko, ki je odprta za pisanje, lahko pišemo. Duh. Če je ta datoteka že
+obstajala, se njena prejšnja vsebina prepiše, kar je bilo prej noter je
+izgubljeno. Če datoteka še ni obstajala, potem se ustvari nova datoteka.</p>
+<p>Pišemo lahko na dva načina, z uporabo metode <code class="docutils literal notranslate"><span class="pre">write</span></code> ali <code class="docutils literal notranslate"><span class="pre">writelines</span></code>.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="id1">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">file</span></span><a class="headerlink" href="#id1" title="Link to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="file.write">
+<span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">niz</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file.write" title="Link to this definition">¶</a></dt>
+<dd><p>Napiše niz v datoteko. Ne doda nobenih posebnih znakov.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="file.writelines">
+<span class="sig-name descname"><span class="pre">writelines</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">seznam_nizov</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#file.writelines" title="Link to this definition">¶</a></dt>
+<dd><p>Napiše seznam nizov v datoteko, niz po niz. Ne doda nobenih vmesnih znakov.</p>
+</dd></dl>
+
+</dd></dl>
+
+<p>Primer:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;stevila.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">f</span><span class="o">.</span><span class="n">writelines</span><span class="p">([</span><span class="s2">&quot;to&quot;</span><span class="p">,</span> <span class="s2">&quot;so&quot;</span><span class="p">,</span> <span class="s2">&quot;stevila&quot;</span><span class="p">])</span>
+<span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Aja, treba je dodajati nove vrstice!&quot;</span><span class="p">)</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Vsebina datoteke je sedaj:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>01tosostevila
+Aja, treba je dodajati nove vrstice!
+</pre></div>
+</div>
+</section>
+<section id="stavek-with">
+<h2>Stavek <code class="docutils literal notranslate"><span class="pre">with</span></code><a class="headerlink" href="#stavek-with" title="Link to this heading">¶</a></h2>
+<p>Kot smo videli je postopek za delo z datotekami vedno enak, odpri, delaj,
+zapri. Python ta postopek malo poenostavi, z uporabo <code class="docutils literal notranslate"><span class="pre">with</span></code> stavka.</p>
+<p>Namesto:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;asdf&quot;</span><span class="p">)</span>
+<span class="c1"># beremo in pišemo</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>lahko uporabljamo:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="n">f</span> <span class="k">as</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;asdf&quot;</span><span class="p">):</span>
+    <span class="c1"># beremo in pišemo</span>
+</pre></div>
+</div>
+<p>Datoteka uporabljena v <code class="docutils literal notranslate"><span class="pre">with</span></code> stavku se avtomatsko zapre, ne glede na to, kaj
+se dogaja v telesu stavka. To je bolje kot lahko trdimo za prvi primer, če se
+tam nekje na sredi zgodi izjema, bo program prekinjen, datoteka pa bo ostala
+nesrečno odprta. Zaradi tega je <code class="docutils literal notranslate"><span class="pre">with</span></code> stavek najboljši način za delo z
+datotekami.</p>
+</section>
+<section id="dodatek-stdin-in-stdout-kot-datoteki">
+<h2>Dodatek: <code class="docutils literal notranslate"><span class="pre">stdin</span></code> in <code class="docutils literal notranslate"><span class="pre">stdout</span></code> kot datoteki<a class="headerlink" href="#dodatek-stdin-in-stdout-kot-datoteki" title="Link to this heading">¶</a></h2>
+<p>Tudi standardni vhod in izhod se obnašata kot datoteki, vhod je odprt za
+branje, izhod pa za pisanje. Če želimo bolj natančno kontrolo nad branjem in
+pisanjem lahko namesto <code class="docutils literal notranslate"><span class="pre">input</span></code> in <code class="docutils literal notranslate"><span class="pre">print</span></code> uporabimo “datoteki”
+<code class="docutils literal notranslate"><span class="pre">sys.stdin</span></code> in <code class="docutils literal notranslate"><span class="pre">sys.stdout</span></code>. Teh dveh “datotek” ni treba odpirati ali
+zapirati, podpirata pa običajne metode za branje in pisanje. Če želite to
+uporabljati, ne pozabite na začetku programa dodati <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">sys</span></code>, da boste
+imeli dostop do teh dveh objektov.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="funkcije_in_classi.html" class="btn btn-neutral float-left" title="Funkcije in razredi" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="baze_podatkov.html" class="btn btn-neutral float-right" title="Podatkovne baze" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014–2019, Natan Žabkar, Jure Slak, Maks Kolman, Ines Meršak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

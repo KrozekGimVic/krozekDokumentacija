@@ -1,0 +1,508 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Osnove &mdash; Programerski krožek na Gimnaziji Vič 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=34b5f6bb" />
+
+  
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Želvja grafika" href="turtle.html" />
+    <link rel="prev" title="Python" href="../../python.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Programerski krožek na Gimnaziji Vič
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../python.html">Python</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Osnove</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#spremenljivke">Spremenljivke</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#komentarji">Komentarji</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#input-in-output">Input in output</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#input"><code class="docutils literal notranslate"><span class="pre">input()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#print"><code class="docutils literal notranslate"><span class="pre">print()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#str"><code class="docutils literal notranslate"><span class="pre">str</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#if-stavki">If stavki</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#pogoji">Pogoji</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#zanke">Zanke</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#while-zanka">While zanka</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#for-zanka">For zanka</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#break">Break</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#continue">Continue</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="turtle.html">Želvja grafika</a></li>
+<li class="toctree-l2"><a class="reference internal" href="podatkovni_tipi.html">Podatkovni tipi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="funkcije_in_classi.html">Funkcije in razredi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="datoteke.html">Datoteke</a></li>
+<li class="toctree-l2"><a class="reference internal" href="baze_podatkov.html">Podatkovne baze</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tkinter.html">Tkinter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="knjiznice.html">Nameščanje knjižnic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="knjiznice.html#python-3-programi-v-sublime-text">Python 3 programi v Sublime Text</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pygame.html">Pygame</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../python-vaje.html">Python vaje</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../c%2B%2B.html">C++</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../c%2B%2B-vaje.html">C++ vaje</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../sql.html">SQL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../git.html">Git</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../opengl.html">OpenGL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../razbijanje.html">Kriptografija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../autodoc/modules.html">Dokumentacija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lov-na-zaklad.html">Lov na zaklad</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Programerski krožek na Gimnaziji Vič</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../python.html">Python</a></li>
+      <li class="breadcrumb-item active">Osnove</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/skripta/python/osnove.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="osnove">
+<h1>Osnove<a class="headerlink" href="#osnove" title="Link to this heading">¶</a></h1>
+<p>V tem poglavju si bomo ogledali osnove programiranja, s katerimi lahko
+vzpostavimo osnovno komunikacijo z računalnikom in naredimo zelo enostavne
+programe.</p>
+<section id="spremenljivke">
+<h2>Spremenljivke<a class="headerlink" href="#spremenljivke" title="Link to this heading">¶</a></h2>
+<p>Spremenljivke so prostori v spominu z določenim imenom, v katere lahko spravimo
+neko vrednost. Tako lahko npr. pod ime <code class="docutils literal notranslate"><span class="pre">leta</span></code> spravimo vrednost <code class="docutils literal notranslate"><span class="pre">5</span></code>. V
+osnovi ločimo več tipov spremenljivk, npr. <code class="docutils literal notranslate"><span class="pre">float</span></code> (realna števila), <code class="docutils literal notranslate"><span class="pre">int</span></code>
+(cela števila) in <code class="docutils literal notranslate"><span class="pre">string</span></code> (nize znakov). Začetek in konec <code class="docutils literal notranslate"><span class="pre">stringa</span></code> je
+označen z dvojnim ali enojnim narekovajem (<code class="docutils literal notranslate"><span class="pre">&quot;</span></code> ali <code class="docutils literal notranslate"><span class="pre">'</span></code>). Python tipe
+spremenljivk določa samodejno.</p>
+<p>Spremenljivke se definira na naslednji način:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="linenos">4</span><span class="n">y</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="linenos">5</span><span class="n">ime</span> <span class="o">=</span> <span class="s2">&quot;Andreja&quot;</span>
+<span class="linenos">6</span><span class="n">leta</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Znak = v programiranju nima istega pomena kot v matematiki. = pravzaprav
+pomeni “vrednost na desni zapiši v spremenljivko na levi”. Torej bo ukaz x =
+x + 2 dejansko pomenil “x povečaj za 2”.</p>
+</div>
+</section>
+<section id="komentarji">
+<h2>Komentarji<a class="headerlink" href="#komentarji" title="Link to this heading">¶</a></h2>
+<p>Komentarji so programerjeve opombe v kodi, namenjene bralcu – sebi ali nekomu
+drugemu, ki bo to bral za njim. Interpreter jih ignorira. V Pythonu (tako kot v
+veliko drugih jezikih) obstajajo enovrstični in večvrstični komentarji.
+Enovrstični komentarji se začnejo z znakom <code class="docutils literal notranslate"><span class="pre">#</span></code>, vse za tem znakom v vrsti se
+ignorira (tako lahko <code class="docutils literal notranslate"><span class="pre">#</span></code> uporabimo na začetku vrste ali pa pozneje).
+Večvrstični komentarji se začnejo in končajo s trojnim narekovajom <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;</span></code>, vse
+med začetkom in koncem pa se ignorira.</p>
+<p>Komentarje se ponavadi napiše za uvod/obrazložitev programa, pred manj
+razumljiv del kode, da obrazložimo njeno delovanje, ali pa če želimo kakšen del
+kode trenutno umakniti iz programa, ne da bi ga izbrisali. Komentarji pogosto
+tudi obrazložijo in dokumentirajo kodo in narekujejo njeno uporabo.</p>
+<p>Primer:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 4</span><span class="sd">Dobiti želimo absolutno vrednost spremenljivke x.</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="sd">To naredimo tako da ...</span>
+<span class="linenos"> 7</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="n">ime</span> <span class="o">=</span> <span class="s2">&quot;Janez&quot;</span>  <span class="c1"># ime naj bo brez presledkov in se začne z veliko začetnico</span>
+<span class="linenos">10</span><span class="c1"># v absx shranimo absolutno vrednost x</span>
+<span class="linenos">11</span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">8</span>
+<span class="linenos">12</span><span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="linenos">13</span>    <span class="n">absx</span> <span class="o">=</span> <span class="o">-</span><span class="n">x</span>
+<span class="linenos">14</span><span class="k">else</span><span class="p">:</span>
+<span class="linenos">15</span>    <span class="n">absx</span> <span class="o">=</span> <span class="n">x</span>
+</pre></div>
+</div>
+</section>
+<section id="input-in-output">
+<h2>Input in output<a class="headerlink" href="#input-in-output" title="Link to this heading">¶</a></h2>
+<p>Input in output pomeni branje uporabnikovega vpisa in izpisovanje na zaslon.
+Uporabili smo funkcije <code class="docutils literal notranslate"><span class="pre">input</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">print</span></code>, <code class="docutils literal notranslate"><span class="pre">format</span></code>.</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="input">
+<span class="sig-name descname"><span class="pre">input</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">niz_znakov</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#input" title="Link to this definition">¶</a></dt>
+<dd><p>Izpiše <code class="docutils literal notranslate"><span class="pre">niz_znakov</span></code> in vrne niz znakov, ki ga je vtipkal uporabnik.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="print">
+<span class="sig-name descname"><span class="pre">print</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">objekt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#print" title="Link to this definition">¶</a></dt>
+<dd><p>Izpiše niz objekt <code class="docutils literal notranslate"><span class="pre">objekt</span></code>. Objekt je lahko število, niz znakov, …</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="str">
+<em class="property"><span class="k"><span class="pre">class</span></span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">str</span></span><a class="headerlink" href="#str" title="Link to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="str.format">
+<span class="sig-name descname"><span class="pre">format</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">niz</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p3</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#str.format" title="Link to this definition">¶</a></dt>
+<dd><p>Na mesto ki je v <code class="docutils literal notranslate"><span class="pre">niz</span></code>-u označeno z ‘{0}’ vstavi <code class="docutils literal notranslate"><span class="pre">p1</span></code>, na ‘{1}’ vstavi
+<code class="docutils literal notranslate"><span class="pre">p2</span></code>, …</p>
+</dd></dl>
+
+</dd></dl>
+
+<p>Ogledate si lahko tudi, kaj počne funkcija <a class="reference internal" href="podatkovni_tipi.html#int" title="int"><code class="xref py py-func docutils literal notranslate"><span class="pre">int()</span></code></a>.</p>
+<p>Primer uporabe funkcije <code class="docutils literal notranslate"><span class="pre">input</span></code> in <code class="docutils literal notranslate"><span class="pre">print</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 4</span><span class="sd">How to get input from the user. Note that this is Python 3+, the Python 2.7</span>
+<span class="linenos"> 5</span><span class="sd">version is in the &quot;input.py&quot; file.</span>
+<span class="linenos"> 6</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="linenos"> 9</span>    <span class="c1"># Get an integer from the user (will error on non-integer)</span>
+<span class="linenos">10</span>    <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Write an integer: &quot;</span><span class="p">))</span>
+<span class="linenos">11</span>    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span>    <span class="c1"># Get a float (will error on non-number)</span>
+<span class="linenos">14</span>    <span class="n">y</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Write a float: &quot;</span><span class="p">))</span>
+<span class="linenos">15</span>    <span class="nb">print</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span>    <span class="c1"># Get a string</span>
+<span class="linenos">18</span>    <span class="n">z</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Write something: &quot;</span><span class="p">)</span>
+<span class="linenos">19</span>    <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Primer uporabe metode <code class="docutils literal notranslate"><span class="pre">format</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="linenos">4</span><span class="n">y</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="linenos">5</span>
+<span class="linenos">6</span><span class="c1"># Izpišimo &#39;5 plus 10 je enako 15&#39;</span>
+<span class="linenos">7</span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{0}</span><span class="s1"> plus </span><span class="si">{1}</span><span class="s1"> je enako </span><span class="si">{2}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="if-stavki">
+<h2>If stavki<a class="headerlink" href="#if-stavki" title="Link to this heading">¶</a></h2>
+<p>Če želimo, da se naš program pod drugačnimi pogoji obnaša različno, uporabimo
+<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">stavek</span></code>. Če je pogojev več, lahko za <code class="docutils literal notranslate"><span class="pre">if</span></code> uporabimo še <code class="docutils literal notranslate"><span class="pre">elif</span></code> (else
+if), ki doda dodatne pogoje. Če imamo pogojev veliko, <code class="docutils literal notranslate"><span class="pre">elif</span></code> uporabimo
+večkrat. Za konec pa lahko damo še <code class="docutils literal notranslate"><span class="pre">else</span></code>, ki se izvede takrat, ko ni bil
+izpolnjen noben od pogojev v <code class="docutils literal notranslate"><span class="pre">if</span></code> in <code class="docutils literal notranslate"><span class="pre">elif</span></code> stavkih. <code class="docutils literal notranslate"><span class="pre">elif</span></code> in <code class="docutils literal notranslate"><span class="pre">else</span></code>
+deli niso obvezni.</p>
+<p>Sintaksa if stavkov je naslednja (pazljivi moramo biti na zamik po if stavku -
+dobimo ga tako, da pritisnemo tabulator, ki se nahaja nad CAPS LOCK tipko na
+tipkovnici):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">if</span> <span class="n">pogoj</span><span class="p">:</span>
+<span class="linenos">2</span>    <span class="c1"># Se izvede če je izpolnjen pogoj</span>
+<span class="linenos">3</span><span class="k">elif</span> <span class="n">pogoj2</span><span class="p">:</span>
+<span class="linenos">4</span>    <span class="c1"># Se izvede če je izpolnjen pogoj2 (in ni izpolnjen pogoj)</span>
+<span class="linenos">5</span><span class="k">elif</span> <span class="n">pogoj3</span><span class="p">:</span>
+<span class="linenos">6</span>    <span class="c1"># Se izvede če je izpolnjen pogoj3 (in nista izpolnjena prejšnja pogoja)</span>
+<span class="linenos">7</span><span class="k">else</span><span class="p">:</span>
+<span class="linenos">8</span>    <span class="c1"># Se izvede če ni izpolnjen noben od zgornjih pogojev</span>
+</pre></div>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Bodite pazljivi na dvopičje za pogojem in zamik v naslednji vrsti. Zamiki so
+v Pythonu zelo pomembni, saj z njimi označimo del kode, ki spada pod določen
+<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">stavek</span></code> (in druge podobne stvari). Brez zamikov vaša koda ne bo
+delovala! Kodo zamaknete z uporabo tabulatorja, ki se nahaja nad tipko caps
+lock.</p>
+</div>
+<section id="pogoji">
+<h3>Pogoji<a class="headerlink" href="#pogoji" title="Link to this heading">¶</a></h3>
+<p>Pogoji so lahko enostavni ali sestavljeni. Enostavni pogoji so npr. primerjanje
+enakosti (je enako <code class="docutils literal notranslate"><span class="pre">==</span></code>, ni enako <code class="docutils literal notranslate"><span class="pre">!=</span></code>), primerjanje vrednosti (večje
+<code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, večje ali enako <code class="docutils literal notranslate"><span class="pre">&gt;=</span></code>, manjše <code class="docutils literal notranslate"><span class="pre">&gt;</span></code>, manjše ali enako <code class="docutils literal notranslate"><span class="pre">&lt;=</span></code>),
+sestavljeni pa so narejeni iz kombinacije enostavnih z uporabo logičnih
+operacij <code class="docutils literal notranslate"><span class="pre">not</span></code>, <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, <code class="docutils literal notranslate"><span class="pre">xor</span></code> itd.</p>
+<p>Primer:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Vpisite stevilo: &quot;</span><span class="p">))</span>
+<span class="linenos"> 4</span><span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+<span class="linenos"> 5</span>    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">:</span>
+<span class="linenos"> 6</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x je vecji od 100&quot;</span><span class="p">)</span>
+<span class="linenos"> 7</span>    <span class="k">else</span><span class="p">:</span>
+<span class="linenos"> 8</span>        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x je pozitiven in manjsi ali enak 100&quot;</span><span class="p">)</span>
+<span class="linenos"> 9</span><span class="k">elif</span> <span class="n">x</span> <span class="o">==</span> <span class="o">-</span><span class="mi">5</span><span class="p">:</span>
+<span class="linenos">10</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x je -5&quot;</span><span class="p">)</span>
+<span class="linenos">11</span><span class="k">else</span><span class="p">:</span>
+<span class="linenos">12</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;x je negativen in ni enak -5&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="zanke">
+<h2>Zanke<a class="headerlink" href="#zanke" title="Link to this heading">¶</a></h2>
+<p>Zanke se uporablja takrat, ko moramo neko stvar ponoviti večkrat. Če moramo
+npr. izpisati vsa števila med 1 in 100 uporabimo zanko. Če hočemo isto stvar
+ponoviti 3-krat, uporabimo zanko. Če bi radi, da se nekaj dogaja, dokler ni
+izpolnjen nek pogoj (npr. vtipkavaj geslo, dokler ne vtipkaš pravilnega),
+uporabimo zanko.</p>
+<section id="while-zanka">
+<h3>While zanka<a class="headerlink" href="#while-zanka" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">while</span> <span class="n">pogoj</span><span class="p">:</span>
+<span class="linenos">2</span>    <span class="c1"># Se izvaja dokler je pogoj izpolnjen</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">while</span></code> zanko uporabimo takrat, ko se mora nekaj izvajati dokler je pogoj
+izpolnjen. Pri <code class="docutils literal notranslate"><span class="pre">while</span></code> zanki moramo biti zelo pozorni na neskončne zanke.
+Neskončna zanka se zgodi takrat, ko je pogoj vedno izpolnjen, program pa bo
+tekel v neskončnost. Če se nam to slučajno zgodi, pritisnemo kombinacijo tipk
+<code class="docutils literal notranslate"><span class="pre">ctrl+c</span></code>, s čimer program prekinemo.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 4</span><span class="sd">Uporabnik vpisuje geslo.</span>
+<span class="linenos"> 5</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="n">geslo</span> <span class="o">=</span> <span class="mi">123</span>
+<span class="linenos"> 8</span><span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Vpisi geslo: &quot;</span><span class="p">))</span>
+<span class="linenos"> 9</span>
+<span class="linenos">10</span><span class="k">while</span> <span class="n">x</span> <span class="o">!=</span> <span class="n">geslo</span><span class="p">:</span>
+<span class="linenos">11</span>    <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ponovno vpisi: &quot;</span><span class="p">))</span>
+<span class="linenos">12</span>
+<span class="linenos">13</span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bravo!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Primer neskončne zanke:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 4</span><span class="sd">Želeli smo spremenljivko x iz 0 manjšati dokler ni enaka -100 in takrat zanko</span>
+<span class="linenos"> 5</span><span class="sd">prekiniti, a smo se zmotili in namesto - napisali +. Seveda smo dobili</span>
+<span class="linenos"> 6</span><span class="sd">neskončno zanko, ki x povečuje (in izpisuje) v neskončnost.</span>
+<span class="linenos"> 7</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">10</span><span class="k">while</span> <span class="n">x</span> <span class="o">!=</span> <span class="o">-</span><span class="mi">100</span><span class="p">:</span>
+<span class="linenos">11</span>    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="linenos">12</span>    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<div class="admonition hint">
+<p class="admonition-title">Hint</p>
+<p>Če se kdaj zataknete v neskončno zanko, pritisnite <code class="docutils literal notranslate"><span class="pre">CTRL</span> <span class="pre">+</span> <span class="pre">c</span></code>, ki prekine
+trenutno izvajani program.</p>
+</div>
+</section>
+<section id="for-zanka">
+<h3>For zanka<a class="headerlink" href="#for-zanka" title="Link to this heading">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="k">for</span> <span class="n">spremenljivka</span> <span class="ow">in</span> <span class="n">zbirka</span><span class="p">:</span>
+<span class="linenos">2</span>    <span class="c1"># Se izvaja dokler spremenljivka ne preteče vseh elementov zbirke.</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">for</span></code> zanko uporabimo takrat, ko želimo, da naša spremenljivka preteče vse
+elemente neke zbirke. Zbirka je lahko seznam, niz znakov, slovar, iterator ali
+kaj podobnega, bolj podrobno si bomo to pogledali pozneje. Zaenkrat bomo for
+zanko večinoma uporabljali skupaj s funkcijo <code class="docutils literal notranslate"><span class="pre">range(x)</span></code>, ki vrne vse elemente
+od <code class="docutils literal notranslate"><span class="pre">0</span></code> do <code class="docutils literal notranslate"><span class="pre">x-1</span></code> (torej <code class="docutils literal notranslate"><span class="pre">range(5)</span></code> vrne <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4]</span></code>).</p>
+<p>Preprost primer:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">4</span><span class="sd">Program izpiše števila od 0 do 49.</span>
+<span class="linenos">5</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">6</span>
+<span class="linenos">7</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">50</span><span class="p">):</span>
+<span class="linenos">8</span>    <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Bolj kompliciran primer:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 4</span><span class="sd">Created on 2014-09-16</span>
+<span class="linenos"> 5</span><span class="sd">:author: Natan Žabkar (nightmarebadger)</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="sd">A for loop is usually used when we want to repeat a piece of code &#39;n&#39; number of</span>
+<span class="linenos"> 8</span><span class="sd">times, or when we want to iterate through the elements of a list (or something</span>
+<span class="linenos"> 9</span><span class="sd">similar).</span>
+<span class="linenos">10</span>
+<span class="linenos">11</span><span class="sd">In this example our program will &#39;sing&#39; out the 99 bottles of beer song</span>
+<span class="linenos">12</span><span class="sd">(http://en.wikipedia.org/wiki/99_Bottles_of_Beer). We use .format() to put the</span>
+<span class="linenos">13</span><span class="sd">number of bottles in the text and we use an if sentance for the last two</span>
+<span class="linenos">14</span><span class="sd">verses.</span>
+<span class="linenos">15</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos">16</span>
+<span class="linenos">17</span><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="linenos">18</span>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">):</span>
+<span class="linenos">19</span>        <span class="n">bottle_num</span> <span class="o">=</span> <span class="mi">99</span> <span class="o">-</span> <span class="n">i</span>
+<span class="linenos">20</span>        <span class="n">song</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;</span><span class="si">{0}</span><span class="s2"> bottles of beer on the wall, </span><span class="si">{0}</span><span class="s2"> bottles of beer.</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span>
+<span class="linenos">21</span>                <span class="s2">&quot;Take one down, pass it around, </span><span class="si">{1}</span><span class="s2"> bottles of beer on the &quot;</span> <span class="o">+</span>
+<span class="linenos">22</span>                <span class="s2">&quot;wall ...</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">23</span>        <span class="n">song_one</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;1 bottle of beer on the wall, 1 bottle of beer.</span><span class="se">\n</span><span class="s2">&quot;</span> <span class="o">+</span>
+<span class="linenos">24</span>                    <span class="s2">&quot;Take it down, pass it around, there are no bottles &quot;</span> <span class="o">+</span>
+<span class="linenos">25</span>                    <span class="s2">&quot;left on the wall ...</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">26</span>        <span class="n">song_no</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;No more bottles of beer on the wall, no more bottles of &quot;</span> <span class="o">+</span>
+<span class="linenos">27</span>                   <span class="s2">&quot;beer.</span><span class="se">\n</span><span class="s2">Go to the store and buy us some more, 99 bottles &quot;</span> <span class="o">+</span>
+<span class="linenos">28</span>                   <span class="s2">&quot;of beer on the wall ...</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="linenos">29</span>        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">99</span><span class="p">:</span>
+<span class="linenos">30</span>            <span class="nb">print</span><span class="p">(</span><span class="n">song_no</span><span class="p">)</span>
+<span class="linenos">31</span>        <span class="k">elif</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">98</span><span class="p">:</span>
+<span class="linenos">32</span>            <span class="nb">print</span><span class="p">(</span><span class="n">song_one</span><span class="p">)</span>
+<span class="linenos">33</span>        <span class="k">else</span><span class="p">:</span>
+<span class="linenos">34</span>            <span class="nb">print</span><span class="p">(</span><span class="n">song</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">bottle_num</span><span class="p">,</span> <span class="n">bottle_num</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="break">
+<h3>Break<a class="headerlink" href="#break" title="Link to this heading">¶</a></h3>
+<p>Če kjerkoli v zanki napišemo ukaz <code class="docutils literal notranslate"><span class="pre">break</span></code>, bo zanka takrat prekinjena.
+Občasno se programira tudi tako, da zanalašč naredimo neskončno zanko, in potem
+ob določenih pogojih pokličemo <code class="docutils literal notranslate"><span class="pre">break</span></code>.</p>
+<p>Ukaz break prekine le ‘najbližjo’ zanko – če imamo gnezdenih več zank (npr.
+for zanka znotraj while zanke) se bo prekinila le notranja zanka (v našem
+primeru for zanka).</p>
+<p>Primer:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 4</span><span class="sd">Uporabnik vpisuje geslo. Če 5x zaporedoma vpiše napačno geslo je izključen iz</span>
+<span class="linenos"> 5</span><span class="sd">sistema (za to poskrbi spremenljivka stevec)</span>
+<span class="linenos"> 6</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="n">geslo</span> <span class="o">=</span> <span class="mi">123</span>
+<span class="linenos"> 9</span><span class="n">stevec</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="linenos">10</span><span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Vpisi geslo: &quot;</span><span class="p">))</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="k">while</span> <span class="n">x</span> <span class="o">!=</span> <span class="n">geslo</span><span class="p">:</span>
+<span class="linenos">13</span>    <span class="n">stevec</span> <span class="o">=</span> <span class="n">stevec</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="linenos">14</span>    <span class="k">if</span> <span class="n">stevec</span> <span class="o">&gt;</span> <span class="mi">4</span><span class="p">:</span>
+<span class="linenos">15</span>        <span class="k">break</span>
+<span class="linenos">16</span>    <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Ponovno vpisi: &quot;</span><span class="p">))</span>
+<span class="linenos">17</span>
+<span class="linenos">18</span><span class="k">if</span> <span class="n">x</span> <span class="o">!=</span> <span class="n">geslo</span><span class="p">:</span>
+<span class="linenos">19</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Preveckrat si poskusil, zaklenjen si iz sistema!&quot;</span><span class="p">)</span>
+<span class="linenos">20</span><span class="k">else</span><span class="p">:</span>
+<span class="linenos">21</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bravo!&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="continue">
+<h3>Continue<a class="headerlink" href="#continue" title="Link to this heading">¶</a></h3>
+<p>Continue je podoben stavku <code class="docutils literal notranslate"><span class="pre">break</span></code>, le da ne prekine najbolj notranje zanke,
+ampak preskoči vse do konca trenutne iteracije in takoj začne izvajanje
+naslednje. To je uporabno na primer za filtriranje neveljavnih podatkov:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="n">a</span> <span class="o">=</span> <span class="s2">&quot;sajkdfs adfjkhasdf jkasdkfjas dfkjhasd fasdlfkjsa dflkjsadf&quot;</span>
+<span class="linenos">4</span><span class="n">veljavno</span> <span class="o">=</span> <span class="s2">&quot;aeiou&quot;</span>
+<span class="linenos">5</span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">a</span><span class="p">:</span>
+<span class="linenos">6</span>    <span class="k">if</span> <span class="n">a</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">veljavno</span><span class="p">:</span>
+<span class="linenos">7</span>        <span class="k">continue</span>
+<span class="linenos">8</span>    <span class="c1"># tukaj zelo veliko kode, ki procesira veljavne podatke</span>
+</pre></div>
+</div>
+<p>Kot ste morda opazili, se da continue vedno nadomestiti z ustreznim <code class="docutils literal notranslate"><span class="pre">if</span></code>
+<code class="docutils literal notranslate"><span class="pre">else</span></code> stavkom, a je to lahko veliko manj berljivo.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../../python.html" class="btn btn-neutral float-left" title="Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="turtle.html" class="btn btn-neutral float-right" title="Želvja grafika" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014–2019, Natan Žabkar, Jure Slak, Maks Kolman, Ines Meršak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

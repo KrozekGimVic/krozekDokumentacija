@@ -1,0 +1,412 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Funkcije &mdash; Programerski krožek na Gimnaziji Vič 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=34b5f6bb" />
+
+  
+      <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Kazalci in reference" href="pointers.html" />
+    <link rel="prev" title="Enum" href="enum.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Programerski krožek na Gimnaziji Vič
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../python.html">Python</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../python-vaje.html">Python vaje</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../c%2B%2B.html">C++</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="uvod.html">Uvod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="osnove.html">Osnove</a></li>
+<li class="toctree-l2"><a class="reference internal" href="podatkovni_tipi.html">Podatkovni tipi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enum.html">Enum</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Funkcije</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sintaksa">Sintaksa</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vracanje-rezultatov">Vračanje rezultatov</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#klicanje-funkcij">Klicanje funkcij</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#overloading">Overloading</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#scoping">Scoping</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reference-in-konstantne-reference">Reference in konstantne reference</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#kazalci-kot-parametri-funkcij-in-vracanje-prek-parametra">Kazalci kot parametri funkcij in “vračanje” prek parametra</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="pointers.html">Kazalci in reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="objekti.html">Objekti</a></li>
+<li class="toctree-l2"><a class="reference internal" href="dedovanje.html">Dedovanje</a></li>
+<li class="toctree-l2"><a class="reference internal" href="templates.html">Predloge (templates)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="organizacija.html">Organizacija kode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="izjeme.html">Izjeme (exceptions)</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../c%2B%2B-vaje.html">C++ vaje</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../sql.html">SQL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../git.html">Git</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../opengl.html">OpenGL</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../razbijanje.html">Kriptografija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../autodoc/modules.html">Dokumentacija</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lov-na-zaklad.html">Lov na zaklad</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Programerski krožek na Gimnaziji Vič</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../c%2B%2B.html">C++</a></li>
+      <li class="breadcrumb-item active">Funkcije</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/skripta/c++/funkcije.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="funkcije">
+<span id="funkcijecpp"></span><h1>Funkcije<a class="headerlink" href="#funkcije" title="Link to this heading">¶</a></h1>
+<p>Pri C++ moramo za vsako funkcijo vedeti, katere tipe sprejme in kakšen tip vrne.
+Pravzaprav smo vedno morali napisati definicijo funkcije <code class="docutils literal notranslate"><span class="pre">main</span></code> in za ostale
+funkcije je sintaksa enaka.</p>
+<section id="sintaksa">
+<h2>Sintaksa<a class="headerlink" href="#sintaksa" title="Link to this heading">¶</a></h2>
+<p>Definicija funkcije v C++ ima naslednjo sintakso (posplošimo na poljubno število
+parametrov):</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">return_type</span><span class="w"> </span><span class="nf">ime_funkcije</span><span class="p">(</span><span class="n">tip1</span><span class="w"> </span><span class="n">parameter1</span><span class="p">,</span><span class="w"> </span><span class="n">tip2</span><span class="w"> </span><span class="n">parameter2</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// koda</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Funkcija, ki nič ne vrne, ima <code class="docutils literal notranslate"><span class="pre">return_type</span></code> enak <code class="docutils literal notranslate"><span class="pre">void</span></code>. Funkcijo moramo vedno
+definirati preden jo uporabimo, to je ponavadi nad funkcijo <code class="docutils literal notranslate"><span class="pre">main</span></code>.</p>
+</section>
+<section id="vracanje-rezultatov">
+<h2>Vračanje rezultatov<a class="headerlink" href="#vracanje-rezultatov" title="Link to this heading">¶</a></h2>
+<p>Če hočemo, da funkcija kaj vrne, to povemo z ukazom <code class="docutils literal notranslate"><span class="pre">return</span></code>. Tip
+spremenljivke ki jo vračamo se mora ujemati s tipom, ki smo ga napisali v
+funkciji.</p>
+<p>Primer funkcije, ki preveri, ali je dano število popolno.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">bool</span><span class="w"> </span><span class="nf">popolno</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">vsota_deliteljev</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span><span class="w"> </span><span class="o">++</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">vsota_deliteljev</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">i</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">vsota_deliteljev</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="klicanje-funkcij">
+<h2>Klicanje funkcij<a class="headerlink" href="#klicanje-funkcij" title="Link to this heading">¶</a></h2>
+<p>Ko izvedemo program, ki vsebuje samo definicije funkcij, se ne zgodi nič.
+Funkcijo je treba namreč še poklicati. Naše funkcije kličemo popolnoma enako kot
+že vgrajene funkcije (npr. sin(), sort()).</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="c1">// definicija bool popolno(int n);</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">n</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">popolno</span><span class="p">(</span><span class="n">n</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Stevilo &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; je popolno!&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot;Stevilo &quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">&quot; ni popolno!&quot;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="overloading">
+<span id="id1"></span><h2>Overloading<a class="headerlink" href="#overloading" title="Link to this heading">¶</a></h2>
+<p>Ker so v C++ funkcije odvisne od tipov, imamo lahko več funkcij z istim imenom
+– dokler se le razlikujejo po tipu ali številu parametrov.</p>
+<p>Primer:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">sestej</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">vsota</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="k">auto</span><span class="o">&amp;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">vsota</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">vsota</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="n">string</span><span class="w"> </span><span class="nf">sestej</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="w"> </span><span class="n">t</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">s</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">t</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Funkcije brez težav živijo druga z drugo, saj je povsem jasno, katero želi
+uporabnik poklicati – <code class="docutils literal notranslate"><span class="pre">sestej(vector&lt;int&gt;({1,</span> <span class="pre">2,</span> <span class="pre">3}))</span></code> poklice prvo,
+<code class="docutils literal notranslate"><span class="pre">sestej(&quot;abc&quot;,</span> <span class="pre">&quot;def&quot;)</span></code> pa drugo.</p>
+</section>
+<section id="scoping">
+<h2>Scoping<a class="headerlink" href="#scoping" title="Link to this heading">¶</a></h2>
+<p>V C++ funkcij vedno dobi kopijo vrednosti, ki jo podamo. Tako znotraj funkcij,
+kot smo jih definirali sedaj, vrednosti ne moremo spreminjati. Primer:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">spremeni</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">3.5</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">4.5</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">spremeni</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Zgornji program dvakrat izpiše <code class="docutils literal notranslate"><span class="pre">4.5</span></code>, saj je <code class="docutils literal notranslate"><span class="pre">x</span></code> v funkciji drugi kot v
+<code class="docutils literal notranslate"><span class="pre">main</span></code>. Res, to lahko še bolj poudarimo, če funkcij spremeni pokličemo kar
+takole: <code class="docutils literal notranslate"><span class="pre">spremeni(5.6)</span></code>. Kaj bi se sedaj zgodilo, če bi funkcija vrednost res
+spremenila? Bi 5.6 postalo 3.5? Jasno je, da mora funkcija sprejeti <em>kopijo</em>
+parametra.</p>
+</section>
+<section id="reference-in-konstantne-reference">
+<span id="referenceuvod"></span><h2>Reference in konstantne reference<a class="headerlink" href="#reference-in-konstantne-reference" title="Link to this heading">¶</a></h2>
+<p>Seveda je uporabno imeti tudi funkcije, ki spreminjajo parametre, na primer
+funkcij <code class="docutils literal notranslate"><span class="pre">swap</span></code>, ki zamenja vrednosti dveh spremenljivk.</p>
+<p>Tej funkciji namesto običajnih tipov podamo reference – to pomeni da je
+spremenljivka znotraj funkcije enaka kot zunaj. Referenco označimo tako, da na
+konec tipa dodamo znak <code class="docutils literal notranslate"><span class="pre">&amp;</span></code>.</p>
+<p>Reference je popolnoma veljaven tip tudi kar tako, brez funkcij. Poglejmo si
+primer, ki najbolje opiše njeno delovanje.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span>
+<span class="n">cot</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39; &#39;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="c1">// 9 7</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">9</span><span class="p">;</span>
+<span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="n">d</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">7</span><span class="p">;</span>
+<span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="sc">&#39; &#39;</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">d</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="c1">// 7 7</span>
+</pre></div>
+</div>
+<p>V zgornjem primeru je <code class="docutils literal notranslate"><span class="pre">d</span></code> samo drugo ime za <code class="docutils literal notranslate"><span class="pre">c</span></code>, če spremenimo <code class="docutils literal notranslate"><span class="pre">d</span></code> se
+spremeni tudi <code class="docutils literal notranslate"><span class="pre">c</span></code> in obratno.</p>
+<p>Podobno naredimo tudi v funkcijah.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">swap</span><span class="p">(</span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="w">    </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Zgornjo funkcijo pokličemo kot <code class="docutils literal notranslate"><span class="pre">swap(a,</span> <span class="pre">b)</span></code>, kjer sta <code class="docutils literal notranslate"><span class="pre">a</span></code> in <code class="docutils literal notranslate"><span class="pre">b</span></code>
+spremenljivki, funkcija pa bo njuni vrednosti zamenjala. Kaj pa se sedaj zgodi
+če funkcijo pokličemo s konstantami? Ali <code class="docutils literal notranslate"><span class="pre">swap(1,</span> <span class="pre">3)</span></code> zamenja vrednosti 1 in
+3? Seveda ne, tak klic je neveljaven in dobimo compile error:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>program.cpp:14:14: error: invalid initialization of non-const reference of type
+                                            ‘int&amp;’ from an rvalue of type ‘int’
+    swap(1, 3);
+             ^
+</pre></div>
+</div>
+<p>Res, če nekaj podamo kot referenco, mora to biti tudi dejanska spremenljivka, ki
+ji lahko spremenimo vrednost.</p>
+<p>Kaj pa če objekta nimamo namena spreminjati, vendar njegove vrednosti ne bi
+radi kopirali, saj je velik (npr. <code class="docutils literal notranslate"><span class="pre">vector</span></code>)?</p>
+<p>Ena možnost je, da podamo referenco in objekta ne spreminjamo, vendar to ni
+najbolj higienično, pa še omejitve ima, saj ne moramo funkcije klicati s
+konstantami. Druga možnost je, da funkcija sprejme konstantno referenco –
+torej dejansko isto spremenljivko kot jo podamo, a njene vrednosti nam ni
+dovoljeno spreminjati. Konstantna referenca je pravzaprav neke vrste readonly
+kopija naše spremenljivke. Za velike tipe je to privzet način sprejemanja
+parametrov. Oglejmo si razliko na primeru funkcije <code class="docutils literal notranslate"><span class="pre">append</span></code> za vektorje, ki
+bo en vektor dodala na konec drugega in funkcije <code class="docutils literal notranslate"><span class="pre">join</span></code>, ki združi dva vektorja.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">append</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">a</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">x</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">join</span><span class="p">(</span><span class="k">const</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;&amp;</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">vector</span><span class="o">&lt;</span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<span class="w">    </span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="p">);</span>
+<span class="w">    </span><span class="n">append</span><span class="p">(</span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="n">b</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Veljavna (in sicer nepotrebna) uporaba funkcije <code class="docutils literal notranslate"><span class="pre">join</span></code> je tudi
+<code class="docutils literal notranslate"><span class="pre">vector&lt;int&gt;</span> <span class="pre">a</span> <span class="pre">=</span> <span class="pre">join(vector&lt;int({1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4}),</span> <span class="pre">vector&lt;int&gt;({5,</span> <span class="pre">6,</span> <span class="pre">7,</span> <span class="pre">8}));</span></code>.
+Funkcijo smo klicali z dvema “temporary objektoma” in smo vzeli referenco, vendar
+to ni težava, saj je ne moremo spreminjati.</p>
+<p>Ena izmed težav referenc je, da ob klicu funkcije <code class="docutils literal notranslate"><span class="pre">f(a)</span></code> ne vemo, ali bo ta
+funkcija  <code class="docutils literal notranslate"><span class="pre">a</span></code> spremenila ali ne – pogledati moramo v definicijo.</p>
+</section>
+<section id="kazalci-kot-parametri-funkcij-in-vracanje-prek-parametra">
+<h2>Kazalci kot parametri funkcij in “vračanje” prek parametra<a class="headerlink" href="#kazalci-kot-parametri-funkcij-in-vracanje-prek-parametra" title="Link to this heading">¶</a></h2>
+<p>Pred branjem tega razdelka, morate biti seznanjeni s kazalci na splošno,
+ki so opisani v razdelku <a class="reference internal" href="pointers.html#pointers"><span class="std std-ref">Kazalci in reference</span></a>.</p>
+<p>Kazalce lahko podamo funkcijam kot vsak drug parameter. V C-ju, kjer ni
+referenc in se vsi parametri podajo tako, da se vrednost kopira, so kazalci
+edini način, da lahko funkcija “spreminja parameter, ki ga dobi”. Tehnično to
+seveda ne drži, saj vrednosti kazalca ne spreminja, toda ko funkciji podamo
+kazalec na neko spremenljivko o tem razmišljamo kot o tem, da smo ji podali
+kar spremenljivko samo, ne le kazalca. Primer funkcije <code class="docutils literal notranslate"><span class="pre">swap</span></code></p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">swap</span><span class="p">(</span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">*</span><span class="w"> </span><span class="n">b</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">t</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">a</span><span class="p">;</span>
+<span class="w">    </span><span class="o">*</span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">*</span><span class="n">b</span><span class="p">;</span>
+<span class="w">    </span><span class="o">*</span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">t</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">b</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">8</span><span class="p">;</span>
+<span class="w">    </span><span class="n">swap</span><span class="p">(</span><span class="o">&amp;</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">b</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Vidimo, da moramo funkcijo poklicati z naslovoma dveh spremenljivk,
+ta pa zamenja vrednosti na teh naslovih. Z razliko od C++ verzije tokrat vidimo,
+da bomo spremenljivki spreminjali, saj smo funkciji podali naslove, s čimer
+omogočimo, da funkcija na ta naslov napiše kar želi.</p>
+<p>To se je pogosto uporabljalo, da so funkcije lahko “vrnile” več kot eno
+vrednost, in še danes veliko knjižnic uporablja ta pristop. Definicija funkcije,
+ki vrne eno ali več vrednosti prek parametra ni nič drugačnega od definicije
+navadne funkcije, dogovor je le, da po nekaj
+običajnih (vhodnih) parametrih sledi še nekaj izhodnih parametrov, kjer od
+uporabnika zahtevamo, da poda naslove spremenljivk, kamor naj rezultat napišemo.</p>
+<p>Oglejmo si primer funkcije, ki točko s koordinatama <code class="docutils literal notranslate"><span class="pre">x</span></code> in <code class="docutils literal notranslate"><span class="pre">y</span></code> pretvori
+v polarni zapis in vrne njeno razdaljo od izhodišča ter kot, ki ga oklepa z
+absciso. V C++ bi funkcijo lahko napisali tako</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">pair</span><span class="o">&lt;</span><span class="kt">double</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="o">&gt;</span><span class="w"> </span><span class="n">polar</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="o">*</span><span class="n">y</span><span class="p">);</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">phi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">atan2</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">);</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">phi</span><span class="p">};</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="n">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">auto</span><span class="w"> </span><span class="n">p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">polar</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// rezultata dobimo kot p.first in p.second</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Če pa bi se odločili, da bomo <code class="docutils literal notranslate"><span class="pre">r</span></code> in <code class="docutils literal notranslate"><span class="pre">phi</span></code> vrnili prek parametra,
+napišemo tako</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span><span class="w"> </span><span class="nf">polar</span><span class="p">(</span><span class="kt">double</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="o">*</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="kt">double</span><span class="o">*</span><span class="w"> </span><span class="n">phi</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="o">*</span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="n">x</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">y</span><span class="o">*</span><span class="n">y</span><span class="p">);</span>
+<span class="w">    </span><span class="o">*</span><span class="n">phi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">atan2</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="n">x</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">phi</span><span class="p">;</span>
+<span class="w">    </span><span class="n">polar</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="o">&amp;</span><span class="n">phi</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// v r in phi sta sedaj shranjena rezultata</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Vseskozi je beseda “vrača” v narekovajih, ker druga verzija funkcije <code class="docutils literal notranslate"><span class="pre">polar</span></code>
+dejansko ne vrne ničesar, vendar o njej razmišljamo, kot da vrne dve števili,
+saj to shrani na podana naslova dveh spremenljivk. Če pa bi želeli, ki lahko
+tudi še kaj dejansko vrnila, kot to naredi npr. funkcija <code class="docutils literal notranslate"><span class="pre">scanf</span></code> iz standardne
+knjižnice. Če želimo imeti funkcijo, ki vrne več kot eno stvar, je tudi danes
+tehnika vračanja prek parametra pogosto v uporabi. V C++ lahko namesto kazalcev
+za izhodne parametre uporabimo tudi nekonstante reference. to lahko sicer
+nekoliko zmanjša berljivost kode, saj iz klica oblike <code class="docutils literal notranslate"><span class="pre">f(p,</span> <span class="pre">q,</span> <span class="pre">r,</span> <span class="pre">&amp;a,</span> <span class="pre">&amp;b)</span></code>
+hitro vidimo, da so <code class="docutils literal notranslate"><span class="pre">p</span></code>, <code class="docutils literal notranslate"><span class="pre">q</span></code>, <code class="docutils literal notranslate"><span class="pre">r</span></code> najverjetneje vhodni parametri,
+<code class="docutils literal notranslate"><span class="pre">a</span></code> in <code class="docutils literal notranslate"><span class="pre">b</span></code> pa izhodna (ni pa to nujno). Pri klicu z referencami
+pa vemo samo <code class="docutils literal notranslate"><span class="pre">f(p,</span> <span class="pre">q,</span> <span class="pre">r,</span> <span class="pre">a,</span> <span class="pre">b)</span></code> in moramo gledati v definicijo funkcije,
+da izvemo, kateri parametri so “izhodni”.</p>
+<p>Alternativno lahko za vračanje več stvari hkrati namesto izhodnih parametrov
+vrnemo tudi <code class="docutils literal notranslate"><span class="pre">tuple</span></code> več stvari, kar je postalo lepše v C++17,
+kjer lahko odpakiramo <code class="docutils literal notranslate"><span class="pre">tuple</span></code> in <code class="docutils literal notranslate"><span class="pre">pair</span></code> v dve novo definirani
+spremenljivki kar v eni vrstici kot</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">auto</span><span class="w"> </span><span class="p">[</span><span class="n">r</span><span class="p">,</span><span class="w"> </span><span class="n">phi</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">polar</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="w"> </span><span class="mf">0.5</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="enum.html" class="btn btn-neutral float-left" title="Enum" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="pointers.html" class="btn btn-neutral float-right" title="Kazalci in reference" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2014–2019, Natan Žabkar, Jure Slak, Maks Kolman, Ines Meršak.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
