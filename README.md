@@ -61,8 +61,8 @@ V rerequirements.txt sem odstranil vse ==verzije, tako da namesti tazadnjo.
 Opravi popravke: Uredi in popravi datoteke, ki so problematične (npr. conf.py, .rst datoteke).
 Počisti in zgradi: 
 
-	sphinx-build -b html . build
+	sphinx-build -b html . docs
 
+Mapa docs je zato, da lahko github streže stran iz veje in ne iz `/root`
 
-
-Če je gradnja uspešna (build succeeded), se bo končna dokumentacija nahajala v mapi build/html. Odprite build/html/index.html in preverite rezultat.
+Če je gradnja uspešna (build succeeded), se bo končna dokumentacija nahajala v mapi docs. Odprite docs/index.html in preverite rezultat.
