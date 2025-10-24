@@ -3,7 +3,7 @@ Programerski krožek na Gimnaziji Vič
 
 Povezava za prijavo 2025/26: `anketa <https://forms.gle/LwwfL6XFiPw1agJo6>`_.
 
-Discord strežnik za komunikacijo `link <https://discord.gg/Tcms2gvT>`_.
+Discord strežnik za komunikacijo `link <https://discord.gg/SKaMh6QuPJ>`_.
 
 Krožek vodim Jakob Schrader (`jakob.schrader@guest.arnes.si
 <jakob.schrader@guest.arnes.si>`_).
@@ -14,17 +14,18 @@ obiskal vrsto olimpijad. Trenutno študiram na Fakulteti za matematiko in fiziko
 v Ljubljani, programiranje pa sem v takšni ali drugačni obliki poučeval že
 preteklih 7 let.
 
-Krožek v šolskem letu 2025/26 poteka vsak četrtek, od 14:30 do 17:00. S krožkom
-začnemo 9. oktobra 2025.
-
-Ker so imeli fazani v sredo, 1. 10., neko obvezno zadevo med glavnim odmorom,
-bomo imeli še en sestanek v torek, 7. 10. 2025, na katerem bo čas za pogovor o
-terminu in o vsebini krožka to leto.
+Krožek v šolskem letu 2025/26 v prvem semestru poteka vsak torek, od 13.45 do
+16.15, in vsak četrtek, od 14:30 do 17:00. S krožkom začnemo 9. oktobra in 21.
+oktobra 2025.
 
 Učimo se programiranja v Pythonu, C++-u in drugih jezikih, izdelovanja spletnih
 strani, izdelovanja računalniških igric, priprave na tekmovanja v Sloveniji in
 po svetu in zanimive in čudne matematike. Če je le mogoče, bom ustregel tudi
 vašim željam.
+
+Za začetno učenje jezika (kateregakoli se s kom že učimo) pa uporabljamo
+`rtk-putko <https://putka-rtk.acm.si/>`_ oz. bolj specifično naloge iz 'arhiv
+nalog -> OŠ priprave'.
 
 Spodaj pa je učbenik, ki so ga spisale bivše vodje krožka in je lahko dober
 pripomoček pri učenju programiranja.
