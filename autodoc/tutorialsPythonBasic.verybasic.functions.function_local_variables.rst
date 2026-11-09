@@ -1,7 +1,7 @@
-tutorialsPythonBasic.verybasic.functions.function_local_variables module
-========================================================================
+tutorialsPythonBasic.verybasic.functions.function\_local\_variables module
+==========================================================================
 
 .. automodule:: tutorialsPythonBasic.verybasic.functions.function_local_variables
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :show-inheritance:
+   :undoc-members:

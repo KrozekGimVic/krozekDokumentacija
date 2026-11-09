@@ -5,6 +5,7 @@ Submodules
 ----------
 
 .. toctree::
+   :maxdepth: 4
 
    tutorialsPythonBasic.basic.classes.class
    tutorialsPythonBasic.basic.classes.class_inheritance
@@ -15,6 +16,6 @@ Module contents
 ---------------
 
 .. automodule:: tutorialsPythonBasic.basic.classes
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :show-inheritance:
+   :undoc-members:

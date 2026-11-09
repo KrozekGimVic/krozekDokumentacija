@@ -1,7 +1,7 @@
-tutorialsPythonBasic.basic.recursion.recursion_examples module
-==============================================================
+tutorialsPythonBasic.basic.recursion.recursion\_examples module
+===============================================================
 
 .. automodule:: tutorialsPythonBasic.basic.recursion.recursion_examples
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :show-inheritance:
+   :undoc-members:

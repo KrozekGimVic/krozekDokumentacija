@@ -1,7 +1,7 @@
-tutorialsPythonBasic.verybasic.hello_world module
-=================================================
+tutorialsPythonBasic.verybasic.hello\_world module
+==================================================
 
 .. automodule:: tutorialsPythonBasic.verybasic.hello_world
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :show-inheritance:
+   :undoc-members:

@@ -1,7 +1,7 @@
-tutorialsPythonBasic.basic.files.list_files_in_folder module
-============================================================
+tutorialsPythonBasic.basic.files.list\_files\_in\_folder module
+===============================================================
 
 .. automodule:: tutorialsPythonBasic.basic.files.list_files_in_folder
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :show-inheritance:
+   :undoc-members:

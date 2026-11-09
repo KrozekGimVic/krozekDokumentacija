@@ -5,15 +5,16 @@ Subpackages
 -----------
 
 .. toctree::
+   :maxdepth: 4
 
-    tutorialsPythonBasic.basic
-    tutorialsPythonBasic.medium
-    tutorialsPythonBasic.verybasic
+   tutorialsPythonBasic.basic
+   tutorialsPythonBasic.medium
+   tutorialsPythonBasic.verybasic
 
 Module contents
 ---------------
 
 .. automodule:: tutorialsPythonBasic
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :show-inheritance:
+   :undoc-members:

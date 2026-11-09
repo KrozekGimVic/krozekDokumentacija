@@ -5,6 +5,7 @@ Submodules
 ----------
 
 .. toctree::
+   :maxdepth: 4
 
    tutorialsPythonBasic.basic.sorting.bubblesort
    tutorialsPythonBasic.basic.sorting.mergesort
@@ -15,6 +16,6 @@ Module contents
 ---------------
 
 .. automodule:: tutorialsPythonBasic.basic.sorting
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :show-inheritance:
+   :undoc-members:

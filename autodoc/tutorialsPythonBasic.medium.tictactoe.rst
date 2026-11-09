@@ -5,6 +5,7 @@ Submodules
 ----------
 
 .. toctree::
+   :maxdepth: 4
 
    tutorialsPythonBasic.medium.tictactoe.base
 
@@ -12,6 +13,6 @@ Module contents
 ---------------
 
 .. automodule:: tutorialsPythonBasic.medium.tictactoe
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :show-inheritance:
+   :undoc-members:

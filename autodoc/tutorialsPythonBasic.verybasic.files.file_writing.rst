@@ -1,7 +1,7 @@
-tutorialsPythonBasic.verybasic.files.file_writing module
-========================================================
+tutorialsPythonBasic.verybasic.files.file\_writing module
+=========================================================
 
 .. automodule:: tutorialsPythonBasic.verybasic.files.file_writing
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :show-inheritance:
+   :undoc-members:

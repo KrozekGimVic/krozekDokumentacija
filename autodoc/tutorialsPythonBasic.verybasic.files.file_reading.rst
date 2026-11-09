@@ -1,7 +1,7 @@
-tutorialsPythonBasic.verybasic.files.file_reading module
-========================================================
+tutorialsPythonBasic.verybasic.files.file\_reading module
+=========================================================
 
 .. automodule:: tutorialsPythonBasic.verybasic.files.file_reading
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :show-inheritance:
+   :undoc-members:

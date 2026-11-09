@@ -5,6 +5,7 @@ Submodules
 ----------
 
 .. toctree::
+   :maxdepth: 4
 
    tutorialsPythonBasic.verybasic.strings.basic_string_manipulation
 
@@ -12,6 +13,6 @@ Module contents
 ---------------
 
 .. automodule:: tutorialsPythonBasic.verybasic.strings
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :show-inheritance:
+   :undoc-members:

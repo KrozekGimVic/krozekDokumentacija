@@ -5,17 +5,19 @@ Subpackages
 -----------
 
 .. toctree::
+   :maxdepth: 4
 
-    tutorialsPythonBasic.verybasic.files
-    tutorialsPythonBasic.verybasic.functions
-    tutorialsPythonBasic.verybasic.input
-    tutorialsPythonBasic.verybasic.loops
-    tutorialsPythonBasic.verybasic.strings
+   tutorialsPythonBasic.verybasic.files
+   tutorialsPythonBasic.verybasic.functions
+   tutorialsPythonBasic.verybasic.input
+   tutorialsPythonBasic.verybasic.loops
+   tutorialsPythonBasic.verybasic.strings
 
 Submodules
 ----------
 
 .. toctree::
+   :maxdepth: 4
 
    tutorialsPythonBasic.verybasic.hello_world
 
@@ -23,6 +25,6 @@ Module contents
 ---------------
 
 .. automodule:: tutorialsPythonBasic.verybasic
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :show-inheritance:
+   :undoc-members:

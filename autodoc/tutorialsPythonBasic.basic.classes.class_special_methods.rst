@@ -1,7 +1,7 @@
-tutorialsPythonBasic.basic.classes.class_special_methods module
-===============================================================
+tutorialsPythonBasic.basic.classes.class\_special\_methods module
+=================================================================
 
 .. automodule:: tutorialsPythonBasic.basic.classes.class_special_methods
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :show-inheritance:
+   :undoc-members:

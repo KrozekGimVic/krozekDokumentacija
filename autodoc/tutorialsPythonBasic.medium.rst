@@ -5,13 +5,14 @@ Subpackages
 -----------
 
 .. toctree::
+   :maxdepth: 4
 
-    tutorialsPythonBasic.medium.tictactoe
+   tutorialsPythonBasic.medium.tictactoe
 
 Module contents
 ---------------
 
 .. automodule:: tutorialsPythonBasic.medium
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :show-inheritance:
+   :undoc-members:

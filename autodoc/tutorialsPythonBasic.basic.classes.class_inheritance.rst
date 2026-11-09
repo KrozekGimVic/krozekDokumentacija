@@ -1,7 +1,7 @@
-tutorialsPythonBasic.basic.classes.class_inheritance module
-===========================================================
+tutorialsPythonBasic.basic.classes.class\_inheritance module
+============================================================
 
 .. automodule:: tutorialsPythonBasic.basic.classes.class_inheritance
-    :members:
-    :undoc-members:
-    :show-inheritance:
+   :members:
+   :show-inheritance:
+   :undoc-members:
